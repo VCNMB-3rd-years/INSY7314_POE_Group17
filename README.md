@@ -85,6 +85,8 @@ Remove-Item -Force package-lock.json
 Rename-Item router routes
 npm install
 npm install xss-clean
+npm install rate-limit-redis ioredis
+
 
 # ------------------------
 # Start Development
