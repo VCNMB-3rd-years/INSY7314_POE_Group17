@@ -149,6 +149,42 @@ git clone https://github.com/TiffanyAmberJacobs/payment-portal.git
 cd intl-payments
 ```
 ---
+
+## ⚙️ Continuous Integration (CI) Pipeline
+
+The CI pipeline ensures that every code change in the project is automatically tested, built, and verified before being merged into the main branch. It helps maintain high code quality, security, and reliability throughout the development process.
+
+---
+## 🧩 Key Features
+
+#### Automated Builds:
+- Each push or pull request triggers a fresh build of both the client (React) and server (Node.js) to verify that the application compiles successfully.
+
+#### Automated Testing:
+- Unit and integration tests run automatically to ensure that new changes don’t break existing functionality.
+
+#### Code Quality Checks (CodeQL):
+- The pipeline uses GitHub CodeQL to analyze the codebase for potential security vulnerabilities and maintain clean, safe code.
+
+#### Dependency Security Scans:
+- GitHub Dependabot monitors dependencies and automatically opens pull requests for outdated or vulnerable packages.
+
+#### Linting and Formatting:
+- Code is linted and checked for style consistency to maintain readability and avoid bugs.
+
+#### Build Artifacts:
+- Build outputs (like compiled JS bundles) are generated and stored for deployment or further testing.
+
+---
+## 🧠 Benefits
+
+- Prevents broken code from being merged
+- Improves code security and maintainability
+- Encourages consistent coding standards
+- Provides fast feedback to developers
+
+---
+
 ## 🎥 YouTube Demo
 Check out the project in action on YouTube:  
 
