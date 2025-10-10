@@ -24,11 +24,23 @@ const Login = () => {
     setError('');
   };
 
+  // ✅ NEW: Dedicated function to handle login type switching
+  const handleTypeSwitch = (type) => {
+    console.log('🔄 Switching login type from', loginType, 'to', type);
+    setLoginType(type);
+    setFormData({
+      accountNumber: '',
+      employeeId: '',
+      password: ''
+    });
+    setError('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login form submitted!');
-    console.log('Login type:', loginType);
-    console.log('Form data:', formData);
+    console.log('🔐 Login form submitted!');
+    console.log('📊 Login type:', loginType);
+    console.log('📝 Form data:', formData);
     
     setError('');
     setLoading(true);
@@ -42,11 +54,11 @@ const Login = () => {
         )
       };
 
-      console.log('Sending login data:', loginData);
+      console.log('📤 Sending login data:', loginData);
 
       const response = await authAPI.login(loginData);
       
-      console.log('Login successful:', response.data);
+      console.log('✅ Login successful:', response.data);
       
       // Store ONLY user data (NO TOKEN - using sessions/cookies now)
       localStorage.setItem('user', JSON.stringify(response.data.user));
@@ -60,8 +72,8 @@ const Login = () => {
         navigate('/customer', { replace: true });
       }
     } catch (err) {
-      console.error('Login error:', err);
-      console.error('Error response:', err.response);
+      console.error('❌ Login error:', err);
+      console.error('❌ Error response:', err.response);
       setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
@@ -75,27 +87,19 @@ const Login = () => {
         <h1>Secure and Easy International Payments</h1>
         <p className="subtitle">Securely send and manage your international payments.</p>
 
-        {/* Login Type Selector */}
+        {/* Login Type Selector - ✅ FIXED */}
         <div className="login-type-selector">
           <button
             type="button"
             className={`type-btn ${loginType === 'customer' ? 'active' : ''}`}
-            onClick={() => {
-              setLoginType('customer');
-              setFormData({ accountNumber: '', employeeId: '', password: '' });
-              setError('');
-            }}
+            onClick={() => handleTypeSwitch('customer')}
           >
             <FaRegUser /> Customer
           </button>
           <button
             type="button"
             className={`type-btn ${loginType === 'employee' ? 'active' : ''}`}
-            onClick={() => {
-              setLoginType('employee');
-              setFormData({ accountNumber: '', employeeId: '', password: '' });
-              setError('');
-            }}
+            onClick={() => handleTypeSwitch('employee')}
           >
             <FaUserLock /> Employee
           </button>

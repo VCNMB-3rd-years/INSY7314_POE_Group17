@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { employeeAPI } from '../api';
+import { employeeAPI, authAPI } from '../api';
 import TransactionRow from '../components/TransactionRow';
-
+import { FaUserTie, FaFileInvoice, FaFilter, FaChartBar } from 'react-icons/fa';
+import { MdPending, MdVerified, MdCheckCircle, MdCancel, MdAttachMoney } from 'react-icons/md';
 
 const EmployeePortal = () => {
   const navigate = useNavigate();
@@ -90,17 +91,23 @@ const EmployeePortal = () => {
     }
   };
 
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    navigate('/login');
+  const handleLogout = async () => {
+    try {
+      await authAPI.logout();
+      localStorage.removeItem('user');
+      navigate('/login');
+    } catch (err) {
+      console.error('Logout error:', err);
+      localStorage.removeItem('user');
+      navigate('/login');
+    }
   };
 
   return (
     <div className="dashboard employee-dashboard">
       <header className="dashboard-header">
         <div className="header-content">
-            <h1>💼 Employee Portal</h1>
+          <h1><FaUserTie /> Employee Portal</h1>
           <div className="user-info">
             <span>
               <strong>{user?.fullName}</strong> ({user?.employeeId})
@@ -110,47 +117,59 @@ const EmployeePortal = () => {
         </div>
       </header>
 
-   <div className="dashboard-content">
+      <div className="dashboard-content">
         {/* Statistics Cards */}
         {stats && (
           <div className="stats-grid">
-            <div className="stat-card">
-              <div className="stat-icon">📊</div>
+            <div className="stat-card total">
+              <div className="stat-icon">
+                <FaChartBar />
+              </div>
               <div className="stat-info">
                 <h3>{stats.totalTransactions}</h3>
                 <p>Total Transactions</p>
               </div>
             </div>
             <div className="stat-card pending">
-              <div className="stat-icon">⏳</div>
+              <div className="stat-icon">
+                <MdPending />
+              </div>
               <div className="stat-info">
                 <h3>{stats.pending}</h3>
                 <p>Pending</p>
               </div>
             </div>
             <div className="stat-card verified">
-              <div className="stat-icon">✅</div>
+              <div className="stat-icon">
+                <MdVerified />
+              </div>
               <div className="stat-info">
                 <h3>{stats.verified}</h3>
                 <p>Verified</p>
               </div>
             </div>
             <div className="stat-card completed">
-              <div className="stat-icon">✔️</div>
+              <div className="stat-icon">
+                <MdCheckCircle />
+              </div>
               <div className="stat-info">
                 <h3>{stats.completed}</h3>
                 <p>Completed</p>
               </div>
             </div>
             <div className="stat-card rejected">
-              <div className="stat-icon">❌</div>
+              <div className="stat-icon">
+                <MdCancel />
+              </div>
               <div className="stat-info">
                 <h3>{stats.rejected}</h3>
                 <p>Rejected</p>
               </div>
             </div>
             <div className="stat-card amount">
-              <div className="stat-icon">💰</div>
+              <div className="stat-icon">
+                <MdAttachMoney />
+              </div>
               <div className="stat-info">
                 <h3>${stats.totalAmountProcessed.toLocaleString()}</h3>
                 <p>Total Processed</p>
@@ -161,7 +180,7 @@ const EmployeePortal = () => {
 
         {/* Filters */}
         <section className="card filters-card">
-          <h2>🔍 Filter Transactions</h2>
+          <h2><FaFilter /> Filter Transactions</h2>
           <div className="filters-form">
             <div className="form-row">
               <div className="form-group">
@@ -244,7 +263,7 @@ const EmployeePortal = () => {
 
         {/* Transactions List */}
         <section className="card">
-          <h2>📋 All Transactions ({transactions.length})</h2>
+          <h2><FaFileInvoice /> All Transactions ({transactions.length})</h2>
           
           {error && <div className="error-message">{error}</div>}
           {success && <div className="success-message">{success}</div>}
