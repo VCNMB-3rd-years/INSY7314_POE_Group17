@@ -58,12 +58,14 @@ const Register = () => {
       
       console.log('✅ Response received:', response);
       
-      // Store token and user data
-      localStorage.setItem('token', response.data.token);
+      // Store ONLY user data (NO TOKEN - using sessions/cookies now)
       localStorage.setItem('user', JSON.stringify(response.data.user));
 
+      console.log('🔀 Navigating to /customer');
       alert('Registration successful!');
-      navigate('/customer');
+      
+      // Navigate directly to customer dashboard
+      navigate('/customer', { replace: true });
     } catch (err) {
       console.error('❌ Error:', err);
       console.error('❌ Error response:', err.response);

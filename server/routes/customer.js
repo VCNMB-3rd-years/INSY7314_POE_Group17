@@ -1,13 +1,13 @@
 const express = require('express');
 const { body } = require('express-validator');
 const Transaction = require('../models/Transaction');
-const authMiddleware = require('../middleware/auth');
+const { requireAuth } = require('../middleware/sessionAuth');
 const validateInput = require('../middleware/validateInput');
 
 const router = express.Router();
 
 // All routes require authentication
-router.use(authMiddleware);
+router.use(requireAuth);
 
 // @route   GET /api/customer/transactions
 // @desc    Get logged-in customer's transactions
@@ -38,12 +38,11 @@ router.post('/pay', [
   body('currency').isIn(['USD', 'EUR', 'GBP', 'ZAR', 'JPY']).withMessage('Invalid currency'),
   body('provider').isIn(['SWIFT', 'PayPal', 'Western Union', 'MoneyGram']).withMessage('Invalid payment provider'),
   body('recipientAccount').isLength({ min: 5 }).withMessage('Recipient account required'),
-  body('swiftCode').optional().matches(/^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$/).withMessage('Invalid SWIFT code format')
+  body('swiftCode').optional().matches(/^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$/).withMessage('Invalid SWIFT code')
 ], validateInput, async (req, res) => {
   try {
     const { amount, currency, provider, recipientAccount, swiftCode } = req.body;
 
-    // Validate SWIFT code if provider is SWIFT
     if (provider === 'SWIFT' && !swiftCode) {
       return res.status(400).json({ error: 'SWIFT code required for SWIFT transactions' });
     }
@@ -86,10 +85,9 @@ router.put('/transaction/:id', [
       return res.status(404).json({ error: 'Transaction not found or cannot be modified' });
     }
 
-    // Update allowed fields
     const allowedUpdates = ['amount', 'currency', 'recipientAccount', 'swiftCode'];
     allowedUpdates.forEach(field => {
-      if (req.body[field] !== undefined) {
+      if (req.body[field]) {
         transaction[field] = req.body[field];
       }
     });

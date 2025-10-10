@@ -13,7 +13,15 @@ function App() {
     <div className="app">
       <Routes>
         {/* Public Routes */}
-        <Route path="/" element={<Navigate to={user ? (user.role === 'employee' ? '/employee' : '/customer') : '/login'} />} />
+        <Route 
+          path="/" 
+          element={
+            <Navigate 
+              to={user ? (user.role === 'employee' ? '/employee' : '/customer') : '/login'} 
+              replace 
+            />
+          } 
+        />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
 
@@ -38,7 +46,7 @@ function App() {
         />
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </div>
   );

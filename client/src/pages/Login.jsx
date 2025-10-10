@@ -6,7 +6,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [loginType, setLoginType] = useState('customer'); // 'customer' or 'employee'
+  const [loginType, setLoginType] = useState('customer');
   const [formData, setFormData] = useState({
     accountNumber: '',
     employeeId: '',
@@ -45,15 +45,16 @@ const Login = () => {
       
       console.log('✅ Login successful:', response.data);
       
-      // Store token and user data
-      localStorage.setItem('token', response.data.token);
+      // Store ONLY user data (NO TOKEN - using sessions/cookies now)
       localStorage.setItem('user', JSON.stringify(response.data.user));
+
+      console.log('🔀 Navigating to:', response.data.user.role === 'employee' ? '/employee' : '/customer');
 
       // Navigate based on role
       if (response.data.user.role === 'employee') {
-        navigate('/employee');
+        navigate('/employee', { replace: true });
       } else {
-        navigate('/customer');
+        navigate('/customer', { replace: true });
       }
     } catch (err) {
       console.error('❌ Login error:', err);
