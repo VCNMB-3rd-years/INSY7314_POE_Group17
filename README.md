@@ -53,6 +53,69 @@ A secure full-stack CRUD system for managing international payments with custome
 - MongoDB (local or Atlas)
 - Git
 
+# Quick Setup & Useful Commands
+
+## Quick Setup Script (PowerShell)
+Run these commands in PowerShell to set up the project:
+
+```powershell
+# Install concurrently for running multiple npm scripts
+npm install concurrently --save-dev
+
+# ------------------------
+# Server Setup
+# ------------------------
+cd server
+npm install express cors helmet express-session express-mongo-sanitize mongoose mongodb connect-mongo bcryptjs express-rate-limit express-validator dotenv jsonwebtoken
+npm install nodemon --save-dev
+
+# ------------------------
+# Client Setup
+# ------------------------
+cd ../client
+npm install react react-dom react-router-dom axios react-icons
+npm install vite @vitejs/plugin-react @types/react @types/react-dom --save-dev
+
+# ------------------------
+# Clean & Reinstall Server Dependencies
+# ------------------------
+cd ../server
+Remove-Item -Recurse -Force node_modules
+Remove-Item -Force package-lock.json
+Rename-Item router routes
+npm install
+
+# ------------------------
+# Start Development
+# ------------------------
+cd ..
+npm run dev
+```
+
+## Useful Commands
+
+### Development
+```bash
+npm run dev         # Start both server and client
+npm run server      # Start only server
+npm run client      # Start only client
+```
+
+### Installation Shortcuts (if defined in package.json)
+```bash
+npm run install-all        # Install both server and client
+npm run install-server     # Install server only
+npm run install-client     # Install client only
+```
+
+### Troubleshooting
+```bash
+net start MongoDB          # Start MongoDB service
+npx kill-port 5000         # Kill process on port 5000
+npm cache clean --force    # Clear npm cache
+```
+
+
 ### Quick Start
 
 1. **Clone the repository**

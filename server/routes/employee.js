@@ -1,24 +1,13 @@
 const express = require('express');
 const { body } = require('express-validator');
 const Transaction = require('../models/Transaction');
-const User = require('../models/User');
-const authMiddleware = require('../middleware/auth');
+const { requireEmployee } = require('../middleware/sessionAuth');
 const validateInput = require('../middleware/validateInput');
 
 const router = express.Router();
 
 // All routes require employee authentication
-router.use(authMiddleware);
-
-// Check if user is employee
-const employeeOnly = (req, res, next) => {
-  if (req.user.role !== 'employee') {
-    return res.status(403).json({ error: 'Access denied. Employee only.' });
-  }
-  next();
-};
-
-router.use(employeeOnly);
+router.use(requireEmployee);
 
 // @route   GET /api/employee/transactions
 // @desc    Get all transactions with filters
@@ -27,7 +16,6 @@ router.get('/transactions', async (req, res) => {
   try {
     const { status, startDate, endDate, minAmount, maxAmount } = req.query;
 
-    // Build filter
     let filter = {};
     if (status) filter.status = status;
     if (startDate || endDate) {
