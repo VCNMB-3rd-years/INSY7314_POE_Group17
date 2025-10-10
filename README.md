@@ -26,7 +26,7 @@ A secure full-stack CRUD system for managing international payments with custome
 |------|----------------|----------------|
 | Samkelo Maswana | ST10141464 | Session Implementation, API Connectivity and Database |
 | Tiffany-Amber Jacobs | ST10085839 | Front-End Design and Functionality, API Creation|
-| Joshua Sutherland | ST10255930 | Security Integration for Click Jacking, SQL Injeciton, XSS, Man-In-The-Middle & DDoS |
+| Joshua Sutherland | ST10255930 | Pipeline Implementation + Security Integration for SQL Injeciton, XSS, Man-In-The-Middle & DDoS |
 
 ---
 
