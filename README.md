@@ -151,8 +151,8 @@ cd intl-payments
 ---
 ## 🎥 YouTube Demo
 Check out the project in action on YouTube:  
-[![Watch the video](https://youtu.be/sNGG1rP6kvw)
 
+https://youtu.be/sNGG1rP6kvw
 ---
 
 ## 🧾 License
