@@ -6,8 +6,29 @@ const validateInput = require('../middleware/validateInput');
 const { passwordRegex, emailRegex, idNumberRegex } = require('../utils/regexPatterns');
 const { encryptField } = require('../utils/cryptoField');
 const { regenerateSession } = require('../middleware/sessionAuth');
-
+const rateLimit = require('express-rate-limit');
 const router = express.Router();
+
+
+// Limit login attempts to 5 per 15 minutes per IP
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 5,
+  message: { error: 'Too many login attempts, try again later.' },
+  standardHeaders: true,
+  legacyHeaders: false,
+  skipFailedRequests: false // count failed logins too
+});
+
+// Limit registration attempts to 10 per hour per IP
+const registerLimiter = rateLimit({
+  windowMs: 60 * 60 * 1000, // 1 hour
+  max: 10,
+  message: { error: 'Too many accounts created from this IP, try later.' },
+  standardHeaders: true,
+  legacyHeaders: false
+});
+
 
 // @route   POST /api/auth/register
 // @desc    Register new customer
