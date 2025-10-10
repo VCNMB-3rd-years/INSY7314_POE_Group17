@@ -28,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js environment
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -45,17 +45,16 @@ jobs:
       # -------------------------------
       # Frontend Setup (React + Vite)
       # -------------------------------
-      - name: Install Client Dependencies
+      - name: 📦 Install Client Dependencies
         working-directory: ./client
         run: |
           npm ci || npm install
           echo "Client dependencies installed."
 
-      - name: Build React App
+      - name: Build React App (Optional)
         working-directory: ./client
         run: |
-          npm run build || echo " Build failed, continuing with static analysis only."
-          echo " React build complete or skipped."
+          npm run build || echo "Skipping build (not required for CodeQL)."
 
       # -------------------------------
       # Initialize CodeQL
@@ -64,19 +63,8 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          build-mode: manual
+          build-mode: none
           queries: +security-extended,security-and-quality
-
-      # -------------------------------
-      # Optional: Custom Security Queries
-      # -------------------------------
-      # You can include additional queries for strict CSP, XSS, or injection checks.
-      # Example: Place .ql files under `.github/codeql/custom-queries/` and uncomment below.
-      #
-      # - name: 🧩 Add Custom Queries
-      #   run: |
-      #     mkdir -p .github/codeql/custom-queries
-      #     echo "Using custom security query pack..."
 
       # -------------------------------
       # Run CodeQL Analysis
@@ -85,13 +73,3 @@ jobs:
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
-          upload: true
-          output: results.sarif
-
-      # -------------------------------
-      # Upload SARIF results to GitHub Security tab
-      # -------------------------------
-      - name: Upload results to GitHub Security
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: results.sarif
