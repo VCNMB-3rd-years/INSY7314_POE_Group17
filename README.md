@@ -141,10 +141,20 @@ npx kill-port 5000         # Kill process on port 5000
 npm cache clean --force    # Clear npm cache
 ```
 
-
 ### Quick Start
 
 1. **Clone the repository**
 ```bash
 git clone https://github.com/TiffanyAmberJacobs/payment-portal.git
 cd intl-payments
+```
+---
+## 🎥 YouTube Demo
+Check out the project in action on YouTube:  
+[![Watch the video](https://img.shields.io/badge/Watch%20on-YouTube-red?logo=youtube)]([https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/sNGG1rP6kvw)
+
+---
+
+## 🧾 License
+This project is licensed under the **MIT License** — you are free to use, modify, and distribute it with proper attribution.
+
