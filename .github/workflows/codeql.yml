@@ -1,0 +1,97 @@
+name: "CodeQL Security Analysis - International Payments Portal"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '22 10 * * 6'
+
+jobs:
+  analyze:
+    name: Analyze JavaScript/TypeScript (React + Node)
+    runs-on: ubuntu-latest
+
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+      packages: read
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript-typescript' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # -------------------------------
+      # Backend Setup (Node + Express)
+      # -------------------------------
+      - name: Install Server Dependencies
+        working-directory: ./server
+        run: |
+          npm ci || npm install
+          echo "Server dependencies installed."
+
+      # -------------------------------
+      # Frontend Setup (React + Vite)
+      # -------------------------------
+      - name: Install Client Dependencies
+        working-directory: ./client
+        run: |
+          npm ci || npm install
+          echo "Client dependencies installed."
+
+      - name: Build React App
+        working-directory: ./client
+        run: |
+          npm run build || echo " Build failed, continuing with static analysis only."
+          echo " React build complete or skipped."
+
+      # -------------------------------
+      # Initialize CodeQL
+      # -------------------------------
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          build-mode: manual
+          queries: +security-extended,security-and-quality
+
+      # -------------------------------
+      # Optional: Custom Security Queries
+      # -------------------------------
+      # You can include additional queries for strict CSP, XSS, or injection checks.
+      # Example: Place .ql files under `.github/codeql/custom-queries/` and uncomment below.
+      #
+      # - name: 🧩 Add Custom Queries
+      #   run: |
+      #     mkdir -p .github/codeql/custom-queries
+      #     echo "Using custom security query pack..."
+
+      # -------------------------------
+      # Run CodeQL Analysis
+      # -------------------------------
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          upload: true
+          output: results.sarif
+
+      # -------------------------------
+      # Upload SARIF results to GitHub Security tab
+      # -------------------------------
+      - name: Upload results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: results.sarif
