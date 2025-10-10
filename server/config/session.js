@@ -14,7 +14,7 @@ const sessionConfig = {
 
   cookie: {
     httpOnly: true,
-    secure: false, // false for development (http), true for production (https)
+    secure: true, 
     sameSite: 'lax', // CHANGED FROM 'strict' to 'lax'
     maxAge: 30 * 60 * 1000,
     path: '/',
