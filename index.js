@@ -28,20 +28,47 @@ if (process.env.NODE_ENV === 'production') {
 // CORS Configuration
 
 const corsOptions = {
-  origin: [
-    'http://localhost:5173',   // Customer portal
-    'http://localhost:5174',   // Employee portal
-    'http://localhost:5175',   // Admin portal
-    'http://localhost',        // ✅ ADD THIS - for when port is not specified
-    'https://localhost:5173',
-    'https://localhost:5174',
-    'https://localhost:5175'
-  ], 
+  origin: function (origin, callback) {
+    console.log(' Request from origin:', origin);
+    
+    // Allow requests with no origin (like mobile apps, curl, or same-origin)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'http://localhost',
+      'http://localhost:80',
+      'http://localhost:5173',
+      'http://localhost:5174',
+      'http://localhost:5175',
+      'https://localhost',
+      'https://localhost:443',
+      'https://localhost:5173',
+      'https://localhost:5174',
+      'https://localhost:5175'
+    ];
+    
+    // In development, allow all localhost origins
+    if (process.env.NODE_ENV === 'development') {
+      if (origin.includes('localhost') || origin.includes('127.0.0.1')) {
+        console.log(' Allowing localhost origin in development');
+        return callback(null, true);
+      }
+    }
+    
+    if (allowedOrigins.includes(origin)) {
+      console.log(' Origin allowed');
+      callback(null, true);
+    } else {
+      console.log(' Origin blocked:', origin);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
 };
+
 app.use(cors(corsOptions));
 
 // Handle preflight OPTIONS requests
