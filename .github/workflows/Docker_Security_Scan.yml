@@ -6,18 +6,15 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 0 * * 0'  # weekly scan
+    - cron: '0 0 * * 0'
 
 jobs:
   docker-scan:
     runs-on: ubuntu-latest
-
     steps:
-      # 1️. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️. Install Trivy
       - name: Install Trivy
         run: |
           sudo apt-get update
@@ -27,20 +24,25 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y trivy
 
-      # 3️. Build Docker image
-      - name: Build Docker image
-        run: docker build -t my-app:latest .
-
-      # 4️. Scan Docker image for vulnerabilities
-      - name: Scan Docker image with Trivy
+      # Scan backend Dockerfile
+      - name: Scan backend Dockerfile
         run: |
-          mkdir -p trivy-reports
-          trivy image --severity CRITICAL,HIGH,MEDIUM --format json -o trivy-reports/trivy-report.json my-app:latest
-          trivy image --severity CRITICAL,HIGH,MEDIUM my-app:latest
+          mkdir -p trivy-reports/backend
+          trivy fs --dockerfile ./server/Dockerfile --severity CRITICAL,HIGH,MEDIUM ./server \
+            --format json -o trivy-reports/backend/trivy-backend.json
+          trivy fs --dockerfile ./server/Dockerfile --severity CRITICAL,HIGH,MEDIUM ./server
 
-      # 5️. Upload vulnerability report as artifact
-      - name: Upload Trivy report
+      # Scan client Dockerfile
+      - name: Scan client Dockerfile
+        run: |
+          mkdir -p trivy-reports/client
+          trivy fs --dockerfile ./client/Dockerfile --severity CRITICAL,HIGH,MEDIUM ./client \
+            --format json -o trivy-reports/client/trivy-client.json
+          trivy fs --dockerfile ./client/Dockerfile --severity CRITICAL,HIGH,MEDIUM ./client
+
+      # Upload all reports
+      - name: Upload Trivy reports
         uses: actions/upload-artifact@v4
         with:
-          name: trivy-docker-report
-          path: trivy-reports/trivy-report.json
+          name: trivy-docker-reports
+          path: trivy-reports/
