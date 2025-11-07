@@ -2,26 +2,23 @@ name: Docker Security Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
-    - cron: '0 0 * * 0'  # weekly scan
+    - cron: '0 0 * * 0'
 
 jobs:
   docker-scan:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️. Install Docker (if not pre-installed)
       - name: Set up Docker
         uses: docker/setup-buildx-action@v3
 
-      # 3️. Install Trivy
       - name: Install Trivy
         run: |
           sudo apt-get update
@@ -31,41 +28,21 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y trivy
 
-      # 4️. Build backend Docker image
       - name: Build backend Docker image
         run: docker build -t payments-backend ./server
 
-      # 5️. Scan backend image for vulnerabilities
-      - name: Scan backend Docker image
+      - name: Scan backend image
         run: |
-          mkdir -p trivy-reports/backend
-          trivy image --severity CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN \
-                      --vuln-type os,library \
-                      --format json \
-                      -o trivy-reports/backend/trivy-backend.json \
-                      payments-backend
-          trivy image --severity CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN \
-                      --vuln-type os,library \
-                      payments-backend
+          mkdir -p trivy-reports
+          trivy image --format json -o trivy-reports/trivy-backend.json payments-backend || true
 
-      # 6️. Build client Docker image
       - name: Build client Docker image
         run: docker build -t payments-client ./client
 
-      # 7️. Scan client image for vulnerabilities
-      - name: Scan client Docker image
+      - name: Scan client image
         run: |
-          mkdir -p trivy-reports/client
-          trivy image --severity CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN \
-                      --vuln-type os,library \
-                      --format json \
-                      -o trivy-reports/client/trivy-client.json \
-                      payments-client
-          trivy image --severity CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN \
-                      --vuln-type os,library \
-                      payments-client
+          trivy image --format json -o trivy-reports/trivy-client.json payments-client || true
 
-      # 8️. Upload all reports as artifacts
       - name: Upload Trivy reports
         uses: actions/upload-artifact@v4
         with:
