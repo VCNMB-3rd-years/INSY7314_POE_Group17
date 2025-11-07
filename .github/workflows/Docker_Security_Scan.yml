@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Docker
         uses: docker/setup-buildx-action@v3
@@ -25,26 +27,30 @@ jobs:
           sudo apt-get install -y wget apt-transport-https gnupg lsb-release
           wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add -
           echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee /etc/apt/sources.list.d/trivy.list
-          sudo apt-get update
-          sudo apt-get install -y trivy
+          sudo apt-get update && sudo apt-get install -y trivy
 
       - name: Build backend Docker image
         run: docker build -t payments-backend ./server
 
       - name: Scan backend image
         run: |
-          mkdir -p trivy-reports
-          trivy image --format json -o trivy-reports/trivy-backend.json payments-backend || true
+          mkdir -p ./security-web/data
+          trivy image --format json -o ./security-web/data/trivy-backend.json payments-backend || true
 
       - name: Build client Docker image
         run: docker build -t payments-client ./client
 
       - name: Scan client image
         run: |
-          trivy image --format json -o trivy-reports/trivy-client.json payments-client || true
+          trivy image --format json -o ./security-web/data/trivy-client.json payments-client || true
 
-      - name: Upload Trivy reports
-        uses: actions/upload-artifact@v4
-        with:
-          name: docker-scan-reports
-          path: trivy-reports/
+      - name: Commit and push JSON to security-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          git checkout security-data || git checkout -b security-data
+          cp ./security-web/data/*.json ./security-web/data/
+          git add ./security-web/data/
+          git commit -m "Update Docker scan reports [skip ci]" || echo "No changes"
+          git push origin security-data
