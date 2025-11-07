@@ -45,7 +45,7 @@ jobs:
       # -------------------------------
       # Frontend Setup (React + Vite)
       # -------------------------------
-      - name: 📦 Install Client Dependencies
+      - name: Install Client Dependencies
         working-directory: ./client
         run: |
           npm ci || npm install
