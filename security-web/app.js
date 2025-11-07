@@ -210,7 +210,10 @@ function renderComparativeChart() {
 
 // --- Main renderer ---
 async function renderReports() {
-  document.getElementById('timestamp')?.textContent = `Generated: ${new Date().toLocaleString()}`;
+  const timestampEl = document.getElementById('timestamp');
+  if (timestampEl) {
+    timestampEl.textContent = `Generated: ${new Date().toLocaleString()}`;
+  }
 
   // Fetch all reports
   const npm = await fetchJSON('npm-audit.json');
