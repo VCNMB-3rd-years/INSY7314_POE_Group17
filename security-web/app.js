@@ -164,13 +164,21 @@ function renderRecommendations(containerId, type) {
     { priority: 'HIGH', text: 'Update base image to latest stable version', action: 'docker pull node:latest' },
     { priority: 'HIGH', text: 'Scan images before deployment', action: 'trivy image <image>' }
   ];
-  container.innerHTML = `<table><thead><tr><th>Priority</th><th>Recommendation</th><th>Action</th></tr></thead><tbody>${
-    recs.map(r => `<tr>
-      <td><span class="vuln-severity severity-${r.priority.toLowerCase()}">${r.priority}</span></td>
-      <td>${r.text}</td>
-      <td>${r.action ? `<code>${r.action}</code>` : '-'}</td>
-    </tr>`).join('')
-  }</tbody></table>`;
+  container.innerHTML = `
+  <table>
+    <thead>
+      <tr><th>Priority</th><th>Recommendation</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      ${recs.map(r => `
+        <tr>
+          <td><span class="vuln-severity severity-${r.priority.toLowerCase()}">${r.priority}</span></td>
+          <td>${r.text}</td>
+          <td>${r.action ? `<code>${r.action}</code>` : '-'}</td>
+        </tr>`).join('')}
+    </tbody>
+  </table>`;
+
 }
 
 function renderComparativeChart() {
