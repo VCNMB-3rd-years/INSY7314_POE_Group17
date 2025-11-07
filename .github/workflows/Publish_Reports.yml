@@ -22,29 +22,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: security-data
+      
+      - name: List JSON files
+        run: |
+          ls ./security-web/data
 
-      # --- Download previous job artifacts ---
-      - name: Download NPM Audit Report
-        uses: actions/download-artifact@v4
-        with:
-          name: npm-audit-report
-          path: ./security-web/data
-        continue-on-error: true
-
-      - name: Download Docker Scan Reports
-        uses: actions/download-artifact@v4
-        with:
-          name: docker-scan-reports
-          path: ./security-web/data
-        continue-on-error: true
-
-      - name: Download CodeQL Report
-        uses: actions/download-artifact@v4
-        with:
-          name: codeql-report
-          path: ./security-web/data
-        continue-on-error: true
-
+          
       # --- Validate JSON data ---
       - name: Validate JSON data
         run: |
