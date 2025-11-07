@@ -12,21 +12,17 @@ jobs:
   analyze:
     name: Analyze JavaScript/TypeScript (React + Node)
     runs-on: ubuntu-latest
-
     permissions:
       actions: read
-      contents: read
+      contents: write
       security-events: write
       packages: read
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: ['javascript-typescript']
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,22 +32,26 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
+          languages: javascript
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          category: "/language:${{ matrix.language }}"
+          category: "/language:javascript"
           output: ./codeql-results
 
-      - name: Rename and upload CodeQL results as JSON
+      - name: Convert SARIF to JSON (simplified placeholder)
         run: |
-          mkdir -p reports
-          mv codeql-results/${{ matrix.language }}.sarif reports/codeql-analysis.json
-        continue-on-error: true
+          mkdir -p ./security-web/data
+          cp ./codeql-results/javascript.sarif ./security-web/data/codeql-analysis.json || echo "{}" > ./security-web/data/codeql-analysis.json
 
-      - name: Upload CodeQL JSON report
-        uses: actions/upload-artifact@v4
-        with:
-          name: codeql-report
-          path: reports/codeql-analysis.json
+      - name: Commit and push JSON to security-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          git checkout security-data || git checkout -b security-data
+          cp ./security-web/data/codeql-analysis.json ./security-web/data/
+          git add ./security-web/data/codeql-analysis.json
+          git commit -m "Update CodeQL analysis report [skip ci]" || echo "No changes"
+          git push origin security-data
