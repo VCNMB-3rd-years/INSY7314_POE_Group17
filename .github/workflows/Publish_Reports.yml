@@ -22,7 +22,7 @@ jobs:
         run: npm ci
 
       - name: Generate reports site
-        run: node scripts/generate-reports.js
+        run: node scripts/generate-report.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
