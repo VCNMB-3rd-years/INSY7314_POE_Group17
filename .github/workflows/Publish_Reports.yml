@@ -2,14 +2,17 @@ name: Publish Security Reports
 
 on:
   workflow_run:
-    workflows: ["NPM Audit Security Scan", "Docker Security Scan", "CodeQL Security Analysis - International Payments Portal"]
-    types:
-      - completed
+    workflows: [
+      "NPM Audit Security Scan",
+      "Docker Security Scan",
+      "CodeQL Security Analysis - International Payments Portal"
+    ]
+    types: [completed]
 
 permissions:
   contents: write
-  pages: write      # Needed to deploy to Pages
-  id-token: write   # Required for OIDC authentication
+  pages: write
+  id-token: write
 
 concurrency:
   group: "pages"
@@ -18,17 +21,36 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - name: Download NPM Audit report
+        uses: actions/download-artifact@v4
         with:
-          node-version: 20
+          name: npm-audit-report
+          path: ./security-web/data
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Download Docker reports
+        uses: actions/download-artifact@v4
+        with:
+          name: trivy-docker-reports
+          path: ./security-web/data
+
+      - name: Download CodeQL report
+        uses: actions/download-artifact@v4
+        with:
+          name: codeql-report
+          path: ./security-web/data
+
+      - name: Ensure data format
+        run: |
+          echo "All JSON reports in ./security-web/data/"
+          ls -l ./security-web/data
+          for f in ./security-web/data/*.json; do
+            cat "$f" | jq . > tmp.json && mv tmp.json "$f"
+          done
 
       - name: Generate reports site
         run: node scripts/generate_report.js
@@ -36,7 +58,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./security-web  # this is your website folder
+          path: ./security-web
 
   deploy:
     environment:
