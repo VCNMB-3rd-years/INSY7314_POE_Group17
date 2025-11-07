@@ -50,6 +50,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
           git checkout security-data || git checkout -b security-data
-          git add ./security-web/data/
-          git commit -m "Update Docker scan reports [skip ci]" || echo "No changes"
-          git push origin security-data
+          git add ./security-web/data/*.json
+          git commit -m "Update security scan reports [skip ci]" || echo "No changes"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:security-data
+
