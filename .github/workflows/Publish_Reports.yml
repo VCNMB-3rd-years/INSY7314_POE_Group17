@@ -1,13 +1,9 @@
 name: Publish Security Reports
 
 on:
-  workflow_run:
-    workflows: [
-      "NPM Audit Security Scan",
-      "Docker Security Scan",
-      "CodeQL Security Analysis - International Payments Portal"
-    ]
-    types: [completed]
+  schedule:
+    - cron: '0 6 * * *'  # every morning
+  workflow_dispatch:  # allow manual run
 
 permissions:
   contents: write
@@ -21,51 +17,50 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Download NPM Audit report
-        uses: actions/download-artifact@v4
+      # Download all scan artifacts (latest versions)
+      - uses: actions/download-artifact@v4
         with:
           name: npm-audit-report
           path: ./security-web/data
+        continue-on-error: true
 
-      - name: Download Docker reports
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
-          name: trivy-docker-reports
+          name: docker-scan-reports
           path: ./security-web/data
+        continue-on-error: true
 
-      - name: Download CodeQL report
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: codeql-report
           path: ./security-web/data
+        continue-on-error: true
 
-      - name: Ensure data format
+      - name: Validate JSON
         run: |
-          echo "All JSON reports in ./security-web/data/"
-          ls -l ./security-web/data
+          mkdir -p ./security-web/data
+          ls ./security-web/data
           for f in ./security-web/data/*.json; do
-            cat "$f" | jq . > tmp.json && mv tmp.json "$f"
+            jq . "$f" > tmp.json && mv tmp.json "$f"
           done
 
-      - name: Generate reports site
-        run: node scripts/generate_report.js
+      - name: Generate static report website
+        run: node ./security-web/app.js
 
-      - name: Upload artifact
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./security-web
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
