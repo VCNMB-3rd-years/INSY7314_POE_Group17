@@ -13,29 +13,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout
+      # 1️. Checkout
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Set up Node
+      # 2️. Set up Node
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3️⃣ Install dependencies
+      # 3️. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Install Snyk CLI
+      # 4️. Install Snyk CLI
       - name: Install Snyk CLI
         run: npm install -g snyk
 
-      # 5️⃣ Authenticate using your token (read-only use)
+      # 5️. Authenticate
       - name: Authenticate Snyk
         run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
-      # 6️⃣ Run the scan (no monitoring/uploading)
+      # 6️. Run the scan (no monitoring/uploading)
       - name: Run Snyk Test
         run: |
           echo "🔍 Scanning for vulnerabilities..."
@@ -43,7 +43,7 @@ jobs:
           snyk test --all-projects || true
         continue-on-error: true
 
-      # 7️⃣ Upload report
+      # 7️. Upload report
       - name: Upload Snyk Report
         uses: actions/upload-artifact@v4
         with:
