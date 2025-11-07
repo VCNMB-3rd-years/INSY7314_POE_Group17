@@ -46,5 +46,5 @@ jobs:
       - name: Upload Trivy reports
         uses: actions/upload-artifact@v4
         with:
-          name: trivy-docker-reports
+          name: docker-scan-reports
           path: trivy-reports/
