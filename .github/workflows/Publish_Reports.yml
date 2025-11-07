@@ -2,7 +2,7 @@ name: Publish Security Reports
 
 on:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * *'  # Every day at 6:00 AM
   workflow_dispatch:
 
 permissions:
@@ -23,6 +23,29 @@ jobs:
         with:
           ref: security-data
 
+      # --- Download previous job artifacts ---
+      - name: Download NPM Audit Report
+        uses: actions/download-artifact@v4
+        with:
+          name: npm-audit-report
+          path: ./security-web/data
+        continue-on-error: true
+
+      - name: Download Docker Scan Reports
+        uses: actions/download-artifact@v4
+        with:
+          name: docker-scan-reports
+          path: ./security-web/data
+        continue-on-error: true
+
+      - name: Download CodeQL Report
+        uses: actions/download-artifact@v4
+        with:
+          name: codeql-report
+          path: ./security-web/data
+        continue-on-error: true
+
+      # --- Validate JSON data ---
       - name: Validate JSON data
         run: |
           mkdir -p ./security-web/data
@@ -31,9 +54,11 @@ jobs:
             jq . "$f" > tmp.json && mv tmp.json "$f"
           done
 
+      # --- Generate static site ---
       - name: Generate static site
         run: node ./scripts/generate-site.js
 
+      # --- Upload to GitHub Pages ---
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
