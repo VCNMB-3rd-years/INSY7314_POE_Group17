@@ -1,6 +1,6 @@
 let allData = {};
 
-// Tab switching
+// Tab switching - updated to work with event listeners
 function switchTab(section, index, event) {
   document.querySelectorAll(`#${section}-tab-0, #${section}-tab-1, #${section}-tab-2`).forEach((content, i) => {
     content.classList.remove('active');
@@ -10,6 +10,19 @@ function switchTab(section, index, event) {
   event.currentTarget.parentElement.querySelectorAll('.tab').forEach((tab, i) => {
     tab.classList.remove('active');
     if (i === index) tab.classList.add('active');
+  });
+}
+
+// Initialize tab event listeners
+function initializeTabs() {
+  document.querySelectorAll('.tabs').forEach(tabContainer => {
+    const section = tabContainer.getAttribute('data-section');
+    tabContainer.querySelectorAll('.tab').forEach(tab => {
+      tab.addEventListener('click', (event) => {
+        const index = parseInt(tab.getAttribute('data-index'));
+        switchTab(section, index, event);
+      });
+    });
   });
 }
 
@@ -256,5 +269,8 @@ async function renderReports() {
   renderComparativeChart();
 }
 
-// Initialize
-window.onload = renderReports;
+// Initialize - now includes tab event listeners
+window.onload = function() {
+  initializeTabs();
+  renderReports();
+};
