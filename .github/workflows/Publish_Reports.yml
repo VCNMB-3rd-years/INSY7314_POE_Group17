@@ -32,7 +32,7 @@ jobs:
           done
 
       - name: Generate static site
-        run: node ./security-web/app.js
+        run: node ./scripts/generate-site.js
 
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
