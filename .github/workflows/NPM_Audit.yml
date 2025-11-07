@@ -13,8 +13,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -24,13 +26,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run NPM Audit (JSON output)
+      - name: Run NPM Audit
         run: |
-          mkdir -p reports
-          npm audit --json > reports/npm-audit.json || true
+          mkdir -p ./security-web/data
+          npm audit --json > ./security-web/data/npm-audit.json || true
 
-      - name: Upload NPM Audit Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: npm-audit-report
-          path: reports/npm-audit.json
+      - name: Commit and push JSON to security-data branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          git checkout security-data || git checkout -b security-data
+          mkdir -p ./security-web/data
+          cp ./security-web/data/npm-audit.json ./security-web/data/
+          git add ./security-web/data/npm-audit.json
+          git commit -m "Update NPM audit report [skip ci]" || echo "No changes"
+          git push origin security-data
