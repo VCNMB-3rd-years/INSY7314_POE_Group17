@@ -1,46 +1,6 @@
-name: Snyk Security Scan
+- name: Authenticate Snyk CLI
+  run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-  schedule:
-    - cron: '0 0 * * 0' 
-
-jobs:
-  snyk:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Install Snyk CLI
-        run: npm install -g snyk
-
-      # Authenticate non-interactively with a token stored in repo secrets
-      - name: Authenticate Snyk (non-interactive)
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-
-      # Run the scan locally
-      - name: Run Snyk vulnerability scan
-        run: |
-          echo "🔍 Scanning for vulnerabilities..."
-          snyk test --all-projects --json > snyk-report.json || true
-          snyk test --all-projects || true
-        continue-on-error: true
-
-      - name: Upload Snyk Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: snyk-vulnerability-report
-          path: snyk-report.json
+- name: Run Snyk test
+  run: |
+    snyk test --all-projects --json > snyk-report.json || true
