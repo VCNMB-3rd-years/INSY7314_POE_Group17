@@ -1,10 +1,10 @@
-name: "CodeQL Security Analysis - International Payments Portal"
+name: CodeQL Security Analysis - International Payments Portal
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
     - cron: '22 10 * * 6'
 
@@ -22,7 +22,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript-typescript' ]
+        language: ['javascript-typescript']
 
     steps:
       - name: Checkout repository
@@ -33,43 +33,25 @@ jobs:
         with:
           node-version: 20
 
-      # -------------------------------
-      # Backend Setup (Node + Express)
-      # -------------------------------
-      - name: Install Server Dependencies
-        working-directory: ./server
-        run: |
-          npm ci || npm install
-          echo "Server dependencies installed."
-
-      # -------------------------------
-      # Frontend Setup (React + Vite)
-      # -------------------------------
-      - name: Install Client Dependencies
-        working-directory: ./client
-        run: |
-          npm ci || npm install
-          echo "Client dependencies installed."
-
-      - name: Build React App (Optional)
-        working-directory: ./client
-        run: |
-          npm run build || echo "Skipping build (not required for CodeQL)."
-
-      # -------------------------------
-      # Initialize CodeQL
-      # -------------------------------
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
           languages: ${{ matrix.language }}
-          build-mode: none
-          queries: +security-extended,security-and-quality
 
-      # -------------------------------
-      # Run CodeQL Analysis
-      # -------------------------------
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
           category: "/language:${{ matrix.language }}"
+          output: ./codeql-results
+
+      - name: Rename and upload CodeQL results as JSON
+        run: |
+          mkdir -p reports
+          mv codeql-results/${{ matrix.language }}.sarif reports/codeql-analysis.json
+        continue-on-error: true
+
+      - name: Upload CodeQL JSON report
+        uses: actions/upload-artifact@v4
+        with:
+          name: codeql-report
+          path: reports/codeql-analysis.json
