@@ -50,6 +50,11 @@ jobs:
         with:
           node-version: 20
 
+
+
+      - name: Ensure folders exist
+        run: mkdir -p ./security-web/data
+
       # --- Generate static site ---
       - name: Generate static site
         run: node ./scripts/generate-site.js
