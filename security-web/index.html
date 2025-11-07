@@ -40,7 +40,7 @@
                 <div class="card-title">Scan Status</div>
                 <div class="card-value" id="scanStatus">
                     <span class="status-indicator status-pass"></span>
-                    <span style="font-size: 0.5em;">Active</span>
+                    <span style="font-size: 0.85em;">Active</span>
                 </div>
                 <div class="card-subtitle">Last updated: Now</div>
             </div>
@@ -54,14 +54,12 @@
                     <span>Dependency Vulnerabilities</span>
                 </div>
             </div>
-
             <div class="tab-container">
                 <div class="tabs" data-section="npm">
                     <button class="tab active" data-index="0">Overview</button>
                     <button class="tab" data-index="1">Details</button>
                     <button class="tab" data-index="2">Recommendations</button>
                 </div>
-
                 <div class="tab-content active" id="npm-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
@@ -74,11 +72,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="tab-content" id="npm-tab-1">
                     <div id="npmVulnList"></div>
                 </div>
-
                 <div class="tab-content" id="npm-tab-2">
                     <div id="npmRecommendations"></div>
                 </div>
@@ -93,14 +89,12 @@
                     <span>Container Image Security</span>
                 </div>
             </div>
-
             <div class="tab-container">
                 <div class="tabs" data-section="backend">
                     <button class="tab active" data-index="0">Overview</button>
                     <button class="tab" data-index="1">Details</button>
                     <button class="tab" data-index="2">Recommendations</button>
                 </div>
-
                 <div class="tab-content active" id="backend-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
@@ -113,11 +107,9 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="tab-content" id="backend-tab-1">
                     <div id="backendVulnList"></div>
                 </div>
-
                 <div class="tab-content" id="backend-tab-2">
                     <div id="backendRecommendations"></div>
                 </div>
@@ -132,14 +124,12 @@
                     <span>Frontend Container Security</span>
                 </div>
             </div>
-
             <div class="tab-container">
                 <div class="tabs" data-section="client">
                     <button class="tab active" data-index="0">Overview</button>
                     <button class="tab" data-index="1">Details</button>
                     <button class="tab" data-index="2">Recommendations</button>
                 </div>
-
                 <div class="tab-content active" id="client-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
@@ -152,13 +142,36 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="tab-content" id="client-tab-1">
                     <div id="clientVulnList"></div>
                 </div>
-
                 <div class="tab-content" id="client-tab-2">
                     <div id="clientRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CodeQL Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="badge badge-codeql">CodeQL Analysis</span>
+                    <span>Code Security Vulnerabilities</span>
+                </div>
+            </div>
+            <div class="tab-container">
+                <div class="tabs" data-section="codeql">
+                    <button class="tab active" data-index="0">Overview</button>
+                    <button class="tab" data-index="1">Details</button>
+                </div>
+                <div class="tab-content active" id="codeql-tab-0">
+                    <div class="chart-container">
+                        <h3>Top Vulnerabilities</h3>
+                        <canvas id="codeqlTopChart"></canvas>
+                    </div>
+                </div>
+                <div class="tab-content" id="codeql-tab-1">
+                    <div id="codeqlVulnList"></div>
                 </div>
             </div>
         </div>
@@ -171,7 +184,6 @@
                     <span>Cross-Workflow Insights</span>
                 </div>
             </div>
-
             <div class="chart-grid">
                 <div class="chart-container">
                     <h3>Vulnerability Comparison</h3>

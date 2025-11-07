@@ -28,7 +28,7 @@ function initializeTabs() {
 
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`${window.location.pathname.replace(/\/$/, "")}/data/${file}`);
+    const res = await fetch('./data/' + file);
     if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
     return await res.json();
   } catch (err) {
@@ -164,13 +164,21 @@ function renderRecommendations(containerId, type) {
     { priority: 'HIGH', text: 'Update base image to latest stable version', action: 'docker pull node:latest' },
     { priority: 'HIGH', text: 'Scan images before deployment', action: 'trivy image <image>' }
   ];
-  container.innerHTML = `<table><thead><tr><th>Priority</th><th>Recommendation</th><th>Action</th></tr></thead><tbody>${
-    recs.map(r => `<tr>
-      <td><span class="vuln-severity severity-${r.priority.toLowerCase()}">${r.priority}</span></td>
-      <td>${r.text}</td>
-      <td>${r.action ? `<code>${r.action}</code>` : '-'}</td>
-    </tr>`).join('')
-  }</tbody></table>`;
+  container.innerHTML = `
+  <table>
+    <thead>
+      <tr><th>Priority</th><th>Recommendation</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      ${recs.map(r => `
+        <tr>
+          <td><span class="vuln-severity severity-${r.priority.toLowerCase()}">${r.priority}</span></td>
+          <td>${r.text}</td>
+          <td>${r.action ? `<code>${r.action}</code>` : '-'}</td>
+        </tr>`).join('')}
+    </tbody>
+  </table>`;
+
 }
 
 function renderComparativeChart() {
@@ -223,7 +231,10 @@ function renderComparativeChart() {
 
 // --- Main renderer ---
 async function renderReports() {
-  document.getElementById('timestamp')?.textContent = `Generated: ${new Date().toLocaleString()}`;
+  const timestampEl = document.getElementById('timestamp');
+  if (timestampEl) {
+    timestampEl.textContent = `Generated: ${new Date().toLocaleString()}`;
+  }
 
   // Fetch all reports
   const npm = await fetchJSON('npm-audit.json');
