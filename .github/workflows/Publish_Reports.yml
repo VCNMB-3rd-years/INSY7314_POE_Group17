@@ -2,8 +2,8 @@ name: Publish Security Reports
 
 on:
   schedule:
-    - cron: '0 6 * * *'  # every morning
-  workflow_dispatch:  # allow manual run
+    - cron: '0 6 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -18,28 +18,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      # Download all scan artifacts (latest versions)
-      - uses: actions/download-artifact@v4
+      - name: Checkout security-data branch
+        uses: actions/checkout@v4
         with:
-          name: npm-audit-report
-          path: ./security-web/data
-        continue-on-error: true
+          ref: security-data
 
-      - uses: actions/download-artifact@v4
-        with:
-          name: docker-scan-reports
-          path: ./security-web/data
-        continue-on-error: true
-
-      - uses: actions/download-artifact@v4
-        with:
-          name: codeql-report
-          path: ./security-web/data
-        continue-on-error: true
-
-      - name: Validate JSON
+      - name: Validate JSON data
         run: |
           mkdir -p ./security-web/data
           ls ./security-web/data
@@ -47,10 +31,10 @@ jobs:
             jq . "$f" > tmp.json && mv tmp.json "$f"
           done
 
-      - name: Generate static report website
+      - name: Generate static site
         run: node ./security-web/app.js
 
-      - name: Upload artifact for GitHub Pages
+      - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./security-web
@@ -60,7 +44,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
