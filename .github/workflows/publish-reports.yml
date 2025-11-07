@@ -61,13 +61,15 @@ jobs:
       - name: Generate static site
         run: node ./scripts/generate-site.js
 
-      - name: List site contents
-        run: ls -R ./security-web
-
+      - name: Ensure site folder exists
+        run: |
+          mkdir -p ./security-web/data
+          touch ./security-web/index.html
+          
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./security-web/*
+          path: ./security-web/
 
   deploy:
     needs: build
