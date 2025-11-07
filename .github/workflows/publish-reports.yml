@@ -52,8 +52,10 @@ jobs:
 
 
 
-      - name: Ensure folders exist
-        run: mkdir -p ./security-web/data
+      - name: Ensure folders exist and create placeholder
+        run: |
+          mkdir -p ./security-web/data
+          touch ./security-web/index.html
 
       # --- Generate static site ---
       - name: Generate static site
@@ -62,8 +64,7 @@ jobs:
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: |
-            ./security-web/
+          path: ./security-web
 
   deploy:
     needs: build
