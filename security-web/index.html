@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Analysis Dashboard - International Payments Portal</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="report.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Security Analysis Dashboard</h1>
+            <div class="subtitle">International Payments Portal - Comprehensive Security Report</div>
+            <div class="timestamp" id="timestamp"></div>
+        </header>
+
+        <div class="summary-cards" id="summaryCards">
+            <div class="card">
+                <div class="card-title">Total Vulnerabilities</div>
+                <div class="card-value" id="totalVulns">-</div>
+                <div class="card-subtitle">Across all scans</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Critical Issues</div>
+                <div class="card-value critical" id="criticalCount">-</div>
+                <div class="card-subtitle">Requires immediate action</div>
+            </div>
+            <div class="card">
+                <div class="card-title">High Priority</div>
+                <div class="card-value high" id="highCount">-</div>
+                <div class="card-subtitle">Address urgently</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Scan Status</div>
+                <div class="card-value" id="scanStatus">
+                    <span class="status-indicator status-pass"></span>
+                    <span style="font-size: 0.5em;">Active</span>
+                </div>
+                <div class="card-subtitle">Last updated: Now</div>
+            </div>
+        </div>
+
+        <!-- NPM Audit Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="badge badge-npm">NPM Audit</span>
+                    <span>Dependency Vulnerabilities</span>
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('npm', 0)">Overview</button>
+                    <button class="tab" onclick="switchTab('npm', 1)">Details</button>
+                    <button class="tab" onclick="switchTab('npm', 2)">Recommendations</button>
+                </div>
+
+                <div class="tab-content active" id="npm-tab-0">
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <canvas id="npmSeverityChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Vulnerability Types</h3>
+                            <canvas id="npmTypeChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="margin-bottom: 15px;">Top Affected Packages</h3>
+                        <canvas id="npmPackagesChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="npm-tab-1">
+                    <div id="npmVulnList"></div>
+                </div>
+
+                <div class="tab-content" id="npm-tab-2">
+                    <div id="npmRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docker Backend Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="badge badge-docker">Docker Backend</span>
+                    <span>Container Image Security</span>
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('backend', 0)">Overview</button>
+                    <button class="tab" onclick="switchTab('backend', 1)">Details</button>
+                    <button class="tab" onclick="switchTab('backend', 2)">Recommendations</button>
+                </div>
+
+                <div class="tab-content active" id="backend-tab-0">
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <canvas id="backendSeverityChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Vulnerability Timeline</h3>
+                            <canvas id="backendTimelineChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="margin-bottom: 15px;">Layer Analysis</h3>
+                        <canvas id="backendLayersChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="backend-tab-1">
+                    <div id="backendVulnList"></div>
+                </div>
+
+                <div class="tab-content" id="backend-tab-2">
+                    <div id="backendRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Docker Client Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="badge badge-docker">Docker Client</span>
+                    <span>Frontend Container Security</span>
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab active" onclick="switchTab('client', 0)">Overview</button>
+                    <button class="tab" onclick="switchTab('client', 1)">Details</button>
+                    <button class="tab" onclick="switchTab('client', 2)">Recommendations</button>
+                </div>
+
+                <div class="tab-content active" id="client-tab-0">
+                    <div class="chart-grid">
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <canvas id="clientSeverityChart"></canvas>
+                        </div>
+                        <div class="chart-container">
+                            <h3 style="margin-bottom: 15px;">Package Vulnerabilities</h3>
+                            <canvas id="clientPackagesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h3 style="margin-bottom: 15px;">Risk Assessment</h3>
+                        <canvas id="clientRiskChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="client-tab-1">
+                    <div id="clientVulnList"></div>
+                </div>
+
+                <div class="tab-content" id="client-tab-2">
+                    <div id="clientRecommendations"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparative Analysis -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <span class="badge badge-codeql">Comparative Analysis</span>
+                    <span>Cross-Workflow Insights</span>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 15px;">Vulnerability Comparison</h3>
+                    <canvas id="comparisonChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3 style="margin-bottom: 15px;">Security Score Trends</h3>
+                    <canvas id="trendChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
