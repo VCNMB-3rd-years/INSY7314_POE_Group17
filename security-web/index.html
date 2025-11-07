@@ -6,319 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Security Analysis Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
-            padding: 20px;
-            line-height: 1.5;
-        }
-
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .header-tile {
-            background: white;
-            border-radius: 8px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 1.75em;
-            color: #0f172a;
-            margin-bottom: 4px;
-        }
-
-        .subtitle {
-            color: #64748b;
-            font-size: 0.95em;
-        }
-
-        .timestamp {
-            color: #94a3b8;
-            font-size: 0.85em;
-            margin-top: 8px;
-        }
-
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .metric-tile {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .metric-tile:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .metric-label {
-            font-size: 0.8em;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
-
-        .metric-value {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .metric-subtitle {
-            font-size: 0.85em;
-            color: #94a3b8;
-        }
-
-        .critical {
-            color: #dc2626;
-        }
-
-        .high {
-            color: #ea580c;
-        }
-
-        .medium {
-            color: #d97706;
-        }
-
-        .low {
-            color: #16a34a;
-        }
-
-        .scan-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-            gap: 16px;
-            margin-bottom: 20px;
-        }
-
-        .scan-tile {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .scan-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 16px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .scan-badge {
-            padding: 4px 10px;
-            border-radius: 8px;
-            font-size: 0.75em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .badge-npm {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-
-        .badge-docker {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .badge-codeql {
-            background: #ede9fe;
-            color: #6b21a8;
-        }
-
-        .scan-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .scan-content {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 16px;
-            align-items: center;
-        }
-
-        .chart-mini {
-            width: 200px;
-            height: 200px;
-        }
-
-        .severity-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .severity-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 12px;
-            background: #f8fafc;
-            border-radius: 6px;
-            border-left: 3px solid;
-        }
-
-        .severity-item.critical {
-            border-left-color: #dc2626;
-        }
-
-        .severity-item.high {
-            border-left-color: #ea580c;
-        }
-
-        .severity-item.medium {
-            border-left-color: #d97706;
-        }
-
-        .severity-item.low {
-            border-left-color: #16a34a;
-        }
-
-        .severity-name {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: #475569;
-        }
-
-        .severity-count {
-            font-size: 1.2em;
-            font-weight: 700;
-        }
-
-        .details-tile {
-            background: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            margin-bottom: 16px;
-        }
-
-        .vuln-compact {
-            padding: 12px;
-            margin: 8px 0;
-            background: #f8fafc;
-            border-radius: 6px;
-            border-left: 3px solid;
-            font-size: 0.9em;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .vuln-compact:hover {
-            background: #f1f5f9;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .vuln-compact.expanded {
-            background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .vuln-compact.critical {
-            border-left-color: #dc2626;
-        }
-
-        .vuln-compact.high {
-            border-left-color: #ea580c;
-        }
-
-        .vuln-compact.medium {
-            border-left-color: #d97706;
-        }
-
-        .vuln-compact.low {
-            border-left-color: #16a34a;
-        }
-
-        .vuln-compact-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 4px;
-        }
-
-        .vuln-compact-title {
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .vuln-compact-badge {
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-size: 0.75em;
-            font-weight: 600;
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-
-        .status-active {
-            background: #22c55e;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-        }
-
-        .error {
-            background: #fee2e2;
-            color: #b91c1c;
-            padding: 16px;
-            border-radius: 8px;
-            margin: 16px 0;
-            border-left: 4px solid #dc2626;
-        }
-
-        @media (max-width: 768px) {
-            .scan-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .scan-content {
-                grid-template-columns: 1fr;
-            }
-
-            .chart-mini {
-                margin: 0 auto;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="report.css">
 </head>
 
 <body>
@@ -329,6 +17,7 @@
             <div class="timestamp" id="timestamp">Loading...</div>
         </div>
 
+        <!-- Metrics Grid -->
         <div class="metrics-grid">
             <div class="metric-tile">
                 <div class="metric-label">Total Vulnerabilities</div>
@@ -352,42 +41,48 @@
             </div>
         </div>
 
+        <!-- Workflow Scan Summary -->
         <div class="scan-grid" id="scanGrid">
             <div class="loading">Loading security scans...</div>
         </div>
 
-        <div class="details-tile" id="topVulnerabilities" style="display: none;">
+        <!-- Top Vulnerabilities -->
+        <div class="details-tile" id="topVulnerabilities" style="display:none;">
             <div class="scan-header">
-                <span class="scan-title">Top Critical Vulnerabilities</span>
+                <span class="scan-title">Top Critical Vulnerabilities & Insights</span>
             </div>
             <div id="topVulnsList"></div>
         </div>
+
+        <!-- Comparative Analysis Chart -->
+        <div class="chart-container">
+            <h3>Vulnerability Severity Comparison</h3>
+            <canvas id="comparisonChart"></canvas>
+        </div>
+
     </div>
 
     <script>
         let allData = {};
         let charts = {};
 
+        // --- Fetch JSON ---
         async function fetchJSON(file) {
             try {
                 const res = await fetch('./data/' + file);
-                if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
+                if (!res.ok) throw new Error(`${file} fetch failed`);
                 return await res.json();
-            } catch (err) {
-                console.error(`Error fetching ${file}:`, err);
-                return null;
-            }
+            } catch (err) { console.error(err); return null; }
         }
 
+        // --- Data Processors ---
         function processNPMAudit(data) {
             if (!data || !data.vulnerabilities) return null;
-            const vulns = Object.values(data.vulnerabilities || {});
+            const vulns = Object.values(data.vulnerabilities);
             const severityCounts = { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
             vulns.forEach(v => {
-                const severity = (v.severity || 'UNKNOWN').toUpperCase();
-                if (severityCounts.hasOwnProperty(severity)) {
-                    severityCounts[severity]++;
-                }
+                const s = (v.severity || 'UNKNOWN').toUpperCase();
+                if (severityCounts[s] !== undefined) severityCounts[s]++;
             });
             return { severityCounts, vulnerabilities: vulns };
         }
@@ -396,21 +91,11 @@
             if (!data || !data.Results) return null;
             const severityCounts = { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
             const vulnerabilities = [];
-            data.Results.forEach(result => {
-                (result.Vulnerabilities || []).forEach(v => {
-                    const severity = (v.Severity || 'UNKNOWN').toUpperCase();
-                    if (severityCounts.hasOwnProperty(severity)) {
-                        severityCounts[severity]++;
-                    }
-                    vulnerabilities.push({
-                        id: v.VulnerabilityID,
-                        severity,
-                        package: v.PkgName,
-                        version: v.InstalledVersion,
-                        fixed: v.FixedVersion,
-                        title: v.Title,
-                        description: v.Description
-                    });
+            data.Results.forEach(r => {
+                (r.Vulnerabilities || []).forEach(v => {
+                    const s = (v.Severity || 'UNKNOWN').toUpperCase();
+                    if (severityCounts[s] !== undefined) severityCounts[s]++;
+                    vulnerabilities.push({ id: v.VulnerabilityID, severity: s, package: v.PkgName, version: v.InstalledVersion, fixed: v.FixedVersion, title: v.Title, description: v.Description });
                 });
             });
             return { severityCounts, vulnerabilities };
@@ -418,211 +103,143 @@
 
         function processCodeQL(data) {
             if (!data || !data.runs) return null;
-            const vulnerabilities = [];
             const severityCounts = { CRITICAL: 0, HIGH: 0, MEDIUM: 0, LOW: 0 };
-
+            const vulnerabilities = [];
             data.runs.forEach(run => {
-                (run.results || []).forEach(result => {
-                    const level = result.level || 'note';
-                    let severity = 'LOW';
-                    if (level === 'error') severity = 'CRITICAL';
-                    else if (level === 'warning') severity = 'MEDIUM';
-
-                    severityCounts[severity]++;
-                    vulnerabilities.push({
-                        id: result.ruleId,
-                        severity,
-                        title: result.message?.text,
-                        location: result.locations?.[0]?.physicalLocation?.artifactLocation?.uri
-                    });
+                (run.results || []).forEach(r => {
+                    let s = 'LOW';
+                    if (r.level === 'error') s = 'CRITICAL';
+                    else if (r.level === 'warning') s = 'MEDIUM';
+                    severityCounts[s]++;
+                    vulnerabilities.push({ id: r.ruleId, severity: s, title: r.message?.text, location: r.locations?.[0]?.physicalLocation?.artifactLocation?.uri });
                 });
             });
-
             return { severityCounts, vulnerabilities };
         }
 
+        // --- Render Functions ---
         function createMiniChart(canvasId, data) {
             const ctx = document.getElementById(canvasId)?.getContext('2d');
             if (!ctx) return null;
-
-            if (charts[canvasId]) {
-                charts[canvasId].destroy();
-            }
-
-            const chart = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Critical', 'High', 'Medium', 'Low'],
-                    datasets: [{
-                        data: [
-                            data.CRITICAL || 0,
-                            data.HIGH || 0,
-                            data.MEDIUM || 0,
-                            data.LOW || 0
-                        ],
-                        backgroundColor: ['#dc2626', '#ea580c', '#d97706', '#16a34a'],
-                        borderWidth: 0
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: true,
-                    plugins: {
-                        legend: { display: false }
-                    }
-                }
-            });
-
+            if (charts[canvasId]) charts[canvasId].destroy();
+            const chart = new Chart(ctx, { type: 'doughnut', data: { labels: ['Critical', 'High', 'Medium', 'Low'], datasets: [{ data: [data.CRITICAL || 0, data.HIGH || 0, data.MEDIUM || 0, data.LOW || 0], backgroundColor: ['#dc2626', '#ea580c', '#d97706', '#16a34a'], borderWidth: 0 }] } });
             charts[canvasId] = chart;
-            return chart;
         }
 
         function renderScanTile(id, badge, badgeClass, title, data) {
-            const canvasId = `chart-${id}`;
+            const canvasId = 'chart-' + id;
             return `
-                <div class="scan-tile">
-                    <div class="scan-header">
-                        <span class="scan-badge ${badgeClass}">${badge}</span>
-                        <span class="scan-title">${title}</span>
-                    </div>
-                    <div class="scan-content">
-                        <canvas id="${canvasId}" class="chart-mini"></canvas>
-                        <div class="severity-list">
-                            <div class="severity-item critical">
-                                <span class="severity-name">Critical</span>
-                                <span class="severity-count critical">${data.CRITICAL || 0}</span>
-                            </div>
-                            <div class="severity-item high">
-                                <span class="severity-name">High</span>
-                                <span class="severity-count high">${data.HIGH || 0}</span>
-                            </div>
-                            <div class="severity-item medium">
-                                <span class="severity-name">Medium</span>
-                                <span class="severity-count medium">${data.MEDIUM || 0}</span>
-                            </div>
-                            <div class="severity-item low">
-                                <span class="severity-name">Low</span>
-                                <span class="severity-count low">${data.LOW || 0}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+    <div class="scan-tile">
+        <div class="scan-header">
+            <span class="scan-badge ${badgeClass}">${badge}</span>
+            <span class="scan-title">${title}</span>
+        </div>
+        <div class="scan-content">
+            <canvas id="${canvasId}" class="chart-mini"></canvas>
+            <div class="severity-list">
+                <div class="severity-item critical"><span class="severity-name">Critical</span><span class="severity-count critical">${data.CRITICAL || 0}</span></div>
+                <div class="severity-item high"><span class="severity-name">High</span><span class="severity-count high">${data.HIGH || 0}</span></div>
+                <div class="severity-item medium"><span class="severity-name">Medium</span><span class="severity-count medium">${data.MEDIUM || 0}</span></div>
+                <div class="severity-item low"><span class="severity-name">Low</span><span class="severity-count low">${data.LOW || 0}</span></div>
+            </div>
+        </div>
+        <div class="scan-insight">
+            <strong>Insight:</strong> ${generateInsight(id)}
+        </div>
+    </div>`;
+        }
+
+        function generateInsight(id) {
+            // Provide meaningful insights per workflow
+            if (id === 'npm') return "High number of dependency vulnerabilities detected. Update packages regularly and run `npm audit fix`.";
+            if (id === 'backend') return "Backend Docker images contain outdated packages. Consider rebuilding images with latest base images.";
+            if (id === 'client') return "Frontend images contain vulnerable dependencies. Review package.json and rebuild.";
+            if (id === 'codeql') return "CodeQL detected potential code-level issues. Review critical findings in source code.";
+            return "No insight available";
         }
 
         function updateMetrics() {
-            let totalVulns = 0;
-            let criticalCount = 0;
-            let highCount = 0;
-
-            Object.values(allData).forEach(dataset => {
-                if (dataset && dataset.severityCounts) {
-                    totalVulns += Object.values(dataset.severityCounts).reduce((a, b) => a + b, 0);
-                    criticalCount += dataset.severityCounts.CRITICAL || 0;
-                    highCount += dataset.severityCounts.HIGH || 0;
+            let total = 0, crit = 0, high = 0;
+            Object.values(allData).forEach(d => {
+                if (d && d.severityCounts) {
+                    total += Object.values(d.severityCounts).reduce((a, b) => a + b, 0);
+                    crit += d.severityCounts.CRITICAL || 0;
+                    high += d.severityCounts.HIGH || 0;
                 }
             });
-
-            document.getElementById('totalVulns').textContent = totalVulns;
-            document.getElementById('criticalCount').textContent = criticalCount;
-            document.getElementById('highCount').textContent = highCount;
+            document.getElementById('totalVulns').textContent = total;
+            document.getElementById('criticalCount').textContent = crit;
+            document.getElementById('highCount').textContent = high;
         }
 
         function renderTopVulnerabilities() {
             const allVulns = [];
-
-            Object.entries(allData).forEach(([source, data]) => {
-                if (data && data.vulnerabilities) {
-                    data.vulnerabilities.forEach(v => {
-                        allVulns.push({ ...v, source });
-                    });
-                }
+            Object.entries(allData).forEach(([source, d]) => {
+                if (d && d.vulnerabilities) d.vulnerabilities.forEach(v => allVulns.push({ ...v, source }));
             });
-
-            const criticalAndHigh = allVulns
-                .filter(v => v.severity === 'CRITICAL' || v.severity === 'HIGH')
-                .sort((a, b) => {
-                    if (a.severity === 'CRITICAL' && b.severity !== 'CRITICAL') return -1;
-                    if (a.severity !== 'CRITICAL' && b.severity === 'CRITICAL') return 1;
-                    return 0;
-                })
-                .slice(0, 5);
-
-            if (criticalAndHigh.length === 0) {
-                document.getElementById('topVulnerabilities').style.display = 'none';
-                return;
-            }
-
+            const top = allVulns.filter(v => v.severity === 'CRITICAL' || v.severity === 'HIGH').slice(0, 5);
+            if (top.length === 0) { document.getElementById('topVulnerabilities').style.display = 'none'; return; }
             document.getElementById('topVulnerabilities').style.display = 'block';
-
-            const html = criticalAndHigh.map(v => {
-                const badgeColor = v.severity === 'CRITICAL'
-                    ? 'background: #fee2e2; color: #991b1b;'
-                    : 'background: #ffedd5; color: #9a3412;';
-
-                return `
-                    <div class="vuln-compact ${v.severity.toLowerCase()}">
-                        <div class="vuln-compact-header">
-                            <span class="vuln-compact-title">${v.id || 'Unknown'} - ${v.title || 'No description'}</span>
-                            <span class="vuln-compact-badge" style="${badgeColor}">${v.severity}</span>
-                        </div>
-                        <div style="color: #64748b; font-size: 0.85em;">
-                            ${v.package ? `Affects: ${v.package}${v.version ? `@${v.version}` : ''}` : ''}
-                            ${v.location ? `Location: ${v.location}` : ''}
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
+            const html = top.map(v => `
+        <div class="vuln-compact ${v.severity.toLowerCase()}">
+            <div class="vuln-compact-header">
+                <span class="vuln-compact-title">${v.id || 'Unknown'} - ${v.title || 'No description'}</span>
+                <span class="vuln-compact-badge">${v.severity}</span>
+            </div>
+            <div style="font-size:0.85em; color:#64748b;">
+                ${v.package ? `Package: ${v.package}@${v.version || ''}` : ''}
+                ${v.fixed ? ` | Fixed in: ${v.fixed}` : ''}
+                ${v.location ? ` | Location: ${v.location}` : ''}
+                <br>${v.description || ''}
+            </div>
+        </div>
+    `).join('');
             document.getElementById('topVulnsList').innerHTML = html;
         }
 
+        function renderComparativeChart() {
+            const labels = ['Critical', 'High', 'Medium', 'Low'];
+            const datasets = ['npm', 'backend', 'client', 'codeql'].map((src, index) => {
+                const colors = ['#cb3837', '#2496ed', '#3cb371', '#9ca3af'];
+                return {
+                    label: src.toUpperCase(),
+                    data: labels.map(l => allData[src]?.severityCounts[l] || 0),
+                    backgroundColor: colors[index],
+                    borderColor: colors[index],
+                    borderWidth: 1
+                };
+            });
+            const ctx = document.getElementById('comparisonChart')?.getContext('2d');
+            if (!ctx) return;
+            new Chart(ctx, { type: 'bar', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { position: 'bottom' } } } });
+        }
+
+        // --- Main Renderer ---
         async function renderReports() {
             document.getElementById('timestamp').textContent = `Generated: ${new Date().toLocaleString()}`;
-
-            const npm = await fetchJSON('npm-audit.json');
-            const backend = await fetchJSON('trivy-backend.json');
-            const client = await fetchJSON('trivy-client.json');
-            const codeql = await fetchJSON('codeql-analysis.json');
-
             allData = {
-                npm: processNPMAudit(npm),
-                backend: processTrivyReport(backend),
-                client: processTrivyReport(client),
-                codeql: processCodeQL(codeql)
+                npm: processNPMAudit(await fetchJSON('npm-audit.json')),
+                backend: processTrivyReport(await fetchJSON('trivy-backend.json')),
+                client: processTrivyReport(await fetchJSON('trivy-client.json')),
+                codeql: processCodeQL(await fetchJSON('codeql-analysis.json'))
             };
 
-            let scanTilesHTML = '';
+            let html = '';
+            if (allData.npm) html += renderScanTile('npm', 'NPM', 'badge-npm', 'Dependency Vulnerabilities', allData.npm.severityCounts);
+            if (allData.backend) html += renderScanTile('backend', 'Docker', 'badge-docker', 'Backend Container Security', allData.backend.severityCounts);
+            if (allData.client) html += renderScanTile('client', 'Docker', 'badge-docker', 'Frontend Container Security', allData.client.severityCounts);
+            if (allData.codeql) html += renderScanTile('codeql', 'CodeQL', 'badge-codeql', 'Code Security Analysis', allData.codeql.severityCounts);
 
-            if (allData.npm) {
-                scanTilesHTML += renderScanTile('npm', 'NPM', 'badge-npm', 'Dependency Vulnerabilities', allData.npm.severityCounts);
-            }
+            if (!html) html = '<div class="error">No scan data found. Ensure JSON files exist in ./data/</div>';
+            document.getElementById('scanGrid').innerHTML = html;
 
-            if (allData.backend) {
-                scanTilesHTML += renderScanTile('backend', 'Docker', 'badge-docker', 'Backend Container Security', allData.backend.severityCounts);
-            }
-
-            if (allData.client) {
-                scanTilesHTML += renderScanTile('client', 'Docker', 'badge-docker', 'Frontend Container Security', allData.client.severityCounts);
-            }
-
-            if (allData.codeql) {
-                scanTilesHTML += renderScanTile('codeql', 'CodeQL', 'badge-codeql', 'Code Security Analysis', allData.codeql.severityCounts);
-            }
-
-            if (!scanTilesHTML) {
-                scanTilesHTML = '<div class="error">No scan data available. Please ensure JSON files are in the ./data/ directory.</div>';
-            }
-
-            document.getElementById('scanGrid').innerHTML = scanTilesHTML;
-
-            if (allData.npm) createMiniChart('chart-npm', allData.npm.severityCounts);
-            if (allData.backend) createMiniChart('chart-backend', allData.backend.severityCounts);
-            if (allData.client) createMiniChart('chart-client', allData.client.severityCounts);
-            if (allData.codeql) createMiniChart('chart-codeql', allData.codeql.severityCounts);
+            ['npm', 'backend', 'client', 'codeql'].forEach(src => {
+                if (allData[src]) createMiniChart('chart-' + src, allData[src].severityCounts);
+            });
 
             updateMetrics();
             renderTopVulnerabilities();
+            renderComparativeChart();
         }
 
         window.onload = renderReports;
