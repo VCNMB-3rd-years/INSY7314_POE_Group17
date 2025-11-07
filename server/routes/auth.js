@@ -280,3 +280,7 @@ router.post('/register-employee', [
 });
 
 module.exports = router;
+
+// References:
+//DigitalOcean. (2022). How To Implement Authentication in Node.js Using JWTs. [online] Available at: https://www.digitalocean.com/community/tutorials/nodejs-jwt-authentication [Accessed 4 Nov. 2025]
+//GeeksforGeeks. (2025). What is the purpose of the express-validator middleware in Express JS? [online] Available at: https://www.geeksforgeeks.org/node-js/what-is-the-purpose-of-the-express-validator-middleware-in-express-js/ [Accessed 6 Nov. 2025]

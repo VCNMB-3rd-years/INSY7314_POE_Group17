@@ -182,3 +182,8 @@ router.get('/stats', async (req, res) => {
 });
 
 module.exports = router;
+
+// References:
+//freeCodeCamp. (2023). How to Set Up Role-Based Access Control in Node.js. [online] Available at: https://www.freecodecamp.org/news/role-based-access-control-in-node-js/ [Accessed 4 Nov. 2025]
+//DigitalOcean. (2022). How To Use Express-Validator to Validate User Input in Node.js. [online] Available at: https://www.digitalocean.com/community/tutorials/how-to-use-express-validator-to-validate-user-input-in-node-js [Accessed 3 Nov. 2025].
+//DigitalOcean. (2022). How To Implement Authentication in Node.js Using JWTs. [online] Available at: https://www.digitalocean.com/community/tutorials/nodejs-jwt-authentication [Accessed 4 Nov. 2025]

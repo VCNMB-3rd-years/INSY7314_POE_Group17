@@ -271,3 +271,7 @@ const EmployeePortal = () => {
 };
 
 export default EmployeePortal;
+
+// References:
+//freeCodeCamp. (2025). How to Create Accessible and User-Friendly Forms in React. [online] Available at: https://www.freecodecamp.org/news/how-to-create-accessible-and-user-friendly-forms-in-react/ [Accessed 2 Nov. 2025]
+//DigitalOcean. (2022). How To Add Login Authentication to React Applications. [online] Available at: https://www.digitalocean.com/community/tutorials/how-to-add-login-authentication-to-react-applications [Accessed 3 Nov. 2025].

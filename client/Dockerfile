@@ -23,3 +23,7 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80 443
 
 CMD ["nginx", "-g", "daemon off;"]
+
+#References:
+#Docker Docs. (2023). Dockerizing a Node.js web app. [online] Available at: https://docs.docker.com/language/nodejs/build-images/ [Accessed 5 Nov. 2025].
+#DigitalOcean. (2022). How To Set Up a Node.js Application for Production on Docker. [online] Available at: https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-docker [Accessed 5 Nov. 2025]

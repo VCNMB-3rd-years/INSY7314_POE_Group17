@@ -237,3 +237,6 @@ const CustomerPay = () => {
 };
 
 export default CustomerPay;
+
+// References:
+//GeeksforGeeks. (2025). 90+ React Projects with Source Code. [online] Available at: https://www.geeksforgeeks.org/reactjs/reactjs-projects/ [Accessed 2 Nov. 2025]

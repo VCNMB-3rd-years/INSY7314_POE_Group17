@@ -184,3 +184,6 @@ const Register = () => {
 };
 
 export default Register;
+
+// References:
+//GeeksforGeeks. (2025). Basic Registration and Login Form Using React Hook Form. [online] Available at: https://www.geeksforgeeks.org/reactjs/react-hook-form-create-basic-reactjs-registration-and-login-form/ [Accessed 2 Nov. 2025]

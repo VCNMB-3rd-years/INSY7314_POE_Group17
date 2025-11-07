@@ -47,3 +47,7 @@ const authMiddleware = async (req, res, next) => {
 };
 
 module.exports = authMiddleware;
+
+// References:
+//Auth0. (2023). JWT Authentication Best Practices. [online] Available at: https://auth0.com/blog/jwt-authentication-best-practices/ [Accessed 4 Nov. 2025].
+//DigitalOcean. (2022). How To Implement Authentication in Node.js Using JWTs. [online] Available at: https://www.digitalocean.com/community/tutorials/nodejs-jwt-authentication [Accessed 3 Nov. 2025]

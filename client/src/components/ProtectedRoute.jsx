@@ -29,3 +29,7 @@ const ProtectedRoute = ({ children, allowedRole }) => {
 };
 
 export default ProtectedRoute;
+
+// References:
+//GeeksforGeeks. (2025). How to Create a Protected Route with react-router-dom? [online] Available at: https://www.geeksforgeeks.org/reactjs/how-to-create-a-protected-route-with-react-router-dom/ [Accessed 1 Nov. 2025]
+//freeCodeCamp. (2023). How to create protected routes in React using react-router-dom. [online] Available at: https://www.freecodecamp.org/news/how-to-create-protected-routes-in-react/ [Accessed 1 Nov. 2025]

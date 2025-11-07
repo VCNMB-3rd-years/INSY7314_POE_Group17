@@ -17,10 +17,10 @@ const TransactionRow = ({ transaction, onDelete, onVerify, userRole }) => {
 
   const getStatusBadge = (status) => {
     const badges = {
-      pending: { class: 'badge-pending', icon: '⏳', text: 'Pending' },
-      verified: { class: 'badge-verified', icon: '✅', text: 'Verified' },
-      completed: { class: 'badge-completed', icon: '✔️', text: 'Completed' },
-      rejected: { class: 'badge-rejected', icon: '❌', text: 'Rejected' }
+      pending: { class: 'badge-pending', icon: '', text: 'Pending' },
+      verified: { class: 'badge-verified', icon: '', text: 'Verified' },
+      completed: { class: 'badge-completed', icon: '', text: 'Completed' },
+      rejected: { class: 'badge-rejected', icon: '', text: 'Rejected' }
     };
     const badge = badges[status] || badges.pending;
     return (
@@ -116,9 +116,9 @@ const TransactionRow = ({ transaction, onDelete, onVerify, userRole }) => {
                 onChange={(e) => setVerifyStatus(e.target.value)}
                 className="form-select"
               >
-                <option value="verified">✅ Verify</option>
-                <option value="completed">✔️ Complete</option>
-                <option value="rejected">❌ Reject</option>
+                <option value="verified"> Verify</option>
+                <option value="completed"> Complete</option>
+                <option value="rejected"> Reject</option>
               </select>
             </div>
 
@@ -149,3 +149,7 @@ const TransactionRow = ({ transaction, onDelete, onVerify, userRole }) => {
 };
 
 export default TransactionRow;
+
+//References:
+//GeeksforGeeks. (2023). ReactJS – How to Create a Modal Component in ReactJS. [online] Available at: https://www.geeksforgeeks.org/reactjs-how-to-create-a-modal-component-in-reactjs/ [Accessed 1 Nov. 2025]
+//DigitalOcean. (2022). How to Create a Modal in React. [online] Available at: https://www.digitalocean.com/community/tutorials/react-modal-component [Accessed 2 Nov. 2025]

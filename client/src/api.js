@@ -90,3 +90,8 @@ export const adminAPI = {
 };
 
 export default api;
+
+// References:
+//DigitalOcean. (2022). How To Use Axios with React. [online] Available at: https://www.digitalocean.com/community/tutorials/react-axios-react [Accessed 3 Nov. 2025].
+//GeeksforGeeks. (2023). Axios Interceptors in ReactJS. [online] Available at: https://www.geeksforgeeks.org/axios-interceptors-in-reactjs/ [Accessed 3 Nov. 2025].
+//freeCodeCamp. (2025). How to Fetch API Data in React Using Axios. [online] Available at: https://www.freecodecamp.org/news/how-to-fetch-api-data-in-react-using-axios [Accessed 4 Nov. 2025]
