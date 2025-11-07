@@ -16,16 +16,14 @@ function switchTab(section, index, event) {
 // Fetch JSON from data folder safely
 async function fetchJSON(file) {
   try {
-    const base = './data/';
-    const res = await fetch(`${base}${file}`);
-    if (!res.ok) throw new Error(`Failed to fetch ${file}`);
+    const res = await fetch(`./data/${file}`); // relative to index.html
+    if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
     return await res.json();
   } catch (err) {
     console.error(`Error fetching ${file}:`, err);
     return null;
   }
 }
-
 
 // Chart helpers (unchanged)
 function createSeverityChart(canvasId, data, label) {
