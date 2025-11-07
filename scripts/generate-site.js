@@ -2,28 +2,35 @@ const fs = require('fs');
 const path = require('path');
 
 // Paths
-const dataSrc = path.join(__dirname, '../security-web/data');
-const dataDest = dataSrc; // Keep JSON in the same folder
+const webDir = path.join(__dirname, '../security-web');
+const dataDir = path.join(webDir, 'data');
 
-// Ensure data folder exists
-if (!fs.existsSync(dataDest)) {
-  fs.mkdirSync(dataDest, { recursive: true });
-  console.log('Created data folder');
+// Ensure web/data folder exists
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+  console.log('✓ Created data folder at', dataDir);
 }
 
+// List of JSON files to include
+const jsonFiles = [
+  'npm-audit.json',
+  'trivy-backend.json',
+  'trivy-client.json',
+  'codeql-analysis.json'
+];
+
 // Verify JSON files exist
-const jsonFiles = ['npm-audit.json', 'trivy-backend.json', 'trivy-client.json', 'codeql-analysis.json'];
 jsonFiles.forEach(file => {
-  const srcPath = path.join(dataSrc, file);
-  if (fs.existsSync(srcPath)) {
+  const filePath = path.join(dataDir, file);
+  if (fs.existsSync(filePath)) {
     console.log(`✓ Found ${file}`);
   } else {
-    console.warn(`${file} not found, will be skipped in dashboard`);
+    console.warn(`⚠ ${file} not found in ${dataDir}, dashboard will skip this file`);
   }
 });
 
 // Ensure index.html exists
-const indexPath = path.join(__dirname, '../security-web/index.html');
+const indexPath = path.join(webDir, 'index.html');
 if (!fs.existsSync(indexPath)) {
   fs.writeFileSync(indexPath, `<!DOCTYPE html>
 <html lang="en">
