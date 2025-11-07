@@ -53,4 +53,3 @@ jobs:
           git add ./security-web/data/*.json
           git commit -m "Update security scan reports [skip ci]" || echo "No changes"
           git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:security-data
-
