@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
+      # 1️. Checkout repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Install Trivy
+      # 2️. Install Trivy
       - name: Install Trivy
         run: |
           sudo apt-get update
@@ -27,18 +27,18 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y trivy
 
-      # 3️⃣ Build Docker image
+      # 3️. Build Docker image
       - name: Build Docker image
         run: docker build -t my-app:latest .
 
-      # 4️⃣ Scan Docker image for vulnerabilities
+      # 4️. Scan Docker image for vulnerabilities
       - name: Scan Docker image with Trivy
         run: |
           mkdir -p trivy-reports
           trivy image --severity CRITICAL,HIGH,MEDIUM --format json -o trivy-reports/trivy-report.json my-app:latest
           trivy image --severity CRITICAL,HIGH,MEDIUM my-app:latest
 
-      # 5️⃣ Upload vulnerability report as artifact
+      # 5️. Upload vulnerability report as artifact
       - name: Upload Trivy report
         uses: actions/upload-artifact@v4
         with:
