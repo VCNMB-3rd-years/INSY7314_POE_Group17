@@ -1,0 +1,52 @@
+name: Snyk Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 0'  # weekly scan on Sunday
+
+jobs:
+  snyk:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout your repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Step 3: Install project dependencies
+      - name: Install dependencies
+        run: npm ci  # or 'yarn install' if using yarn
+
+      # Step 4: Install Snyk CLI globally
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      # Step 5: Run Snyk Test and Save Report (workflow never fails)
+      - name: Run Snyk Test
+        run: snyk test --all-projects > snyk-report.txt || true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
+      # Step 6: Upload Snyk Report using v4
+      - name: Upload Snyk Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: snyk-report
+          path: snyk-report.txt
+
+      # Step 7 (Optional): Monitor project in Snyk for continuous monitoring
+      - name: Monitor project in Snyk
+        run: snyk monitor --all-projects
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
