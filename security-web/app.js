@@ -16,14 +16,16 @@ function switchTab(section, index, event) {
 // Fetch JSON from data folder safely
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`data/${file}`);
+    const base = 'https://github.com/VCNMB-3rd-years/INSY7314_POE_Group17/tree/main/security-web/data';
+    const res = await fetch(`${base}${file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${file}`);
     return await res.json();
   } catch (err) {
-    console.warn(`⚠ JSON not found or invalid: ${file}`, err);
+    console.error(`Error fetching ${file}:`, err);
     return null;
   }
 }
+
 
 // Chart helpers (unchanged)
 function createSeverityChart(canvasId, data, label) {
