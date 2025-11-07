@@ -2,9 +2,9 @@ name: NPM Audit Security Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
     - cron: '0 0 * * 0'
 
@@ -24,11 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run NPM Audit
+      - name: Run NPM Audit (JSON output)
         run: |
           mkdir -p reports
           npm audit --json > reports/npm-audit.json || true
-          npm audit || true
 
       - name: Upload NPM Audit Report
         uses: actions/upload-artifact@v4
