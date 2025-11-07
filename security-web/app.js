@@ -28,7 +28,7 @@ function initializeTabs() {
 
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`./data/${file}`); // relative path from index.html
+    const res = await fetch(`${window.location.pathname.replace(/\/$/, "")}/data/${file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
     return await res.json();
   } catch (err) {
@@ -173,16 +173,53 @@ function renderRecommendations(containerId, type) {
   }</tbody></table>`;
 }
 
-// Comparative chart
 function renderComparativeChart() {
   const labels = ['Critical', 'High', 'Medium', 'Low'];
-  const datasets = [
-    { label: 'NPM', data: ['CRITICAL','HIGH','MEDIUM','LOW'].map(s => allData.npm?.severityCounts[s] || 0), bg: 'rgba(203,56,55,0.4)', border: 'rgba(203,56,55,1)' },
-    { label: 'Backend', data: ['CRITICAL','HIGH','MEDIUM','LOW'].map(s => allData.backend?.severityCounts[s] || 0), bg: 'rgba(36,150,237,0.4)', border: 'rgba(36,150,237,1)' },
-    { label: 'Client', data: ['CRITICAL','HIGH','MEDIUM','LOW'].map(s => allData.client?.severityCounts[s] || 0), bg: 'rgba(60,179,113,0.4)', border: 'rgba(60,179,113,1)' }
-  ];
-  createBarChart('comparisonChart', labels, datasets.map(d => d.data), 'Vulnerability Comparison', datasets.map(d => d.bg), datasets.map(d => d.border));
+
+  const npmData = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].map(s => allData.npm?.severityCounts[s] || 0);
+  const backendData = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].map(s => allData.backend?.severityCounts[s] || 0);
+  const clientData = ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].map(s => allData.client?.severityCounts[s] || 0);
+
+  const ctx = document.getElementById('comparisonChart')?.getContext('2d');
+  if (!ctx) return;
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'NPM',
+          data: npmData,
+          backgroundColor: 'rgba(203,56,55,0.4)',
+          borderColor: 'rgba(203,56,55,1)',
+          borderWidth: 2
+        },
+        {
+          label: 'Backend',
+          data: backendData,
+          backgroundColor: 'rgba(36,150,237,0.4)',
+          borderColor: 'rgba(36,150,237,1)',
+          borderWidth: 2
+        },
+        {
+          label: 'Client',
+          data: clientData,
+          backgroundColor: 'rgba(60,179,113,0.4)',
+          borderColor: 'rgba(60,179,113,1)',
+          borderWidth: 2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: { y: { beginAtZero: true } },
+      plugins: { legend: { position: 'bottom' } }
+    }
+  });
 }
+
 
 // --- Main renderer ---
 async function renderReports() {
