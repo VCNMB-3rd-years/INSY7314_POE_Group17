@@ -16,7 +16,7 @@ function switchTab(section, index, event) {
 // Fetch JSON from data folder safely
 async function fetchJSON(file) {
   try {
-    const base = 'https://raw.githubusercontent.com/VCNMB-3rd-years/INSY7314_POE_Group17/main/security-web/data/';
+    const base = './data/';
     const res = await fetch(`${base}${file}`);
     if (!res.ok) throw new Error(`Failed to fetch ${file}`);
     return await res.json();
