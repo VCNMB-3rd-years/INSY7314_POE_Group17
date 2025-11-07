@@ -1,6 +1,6 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-11-07T20:31:27.568531841Z",
+  "CreatedAt": "2025-11-07T20:55:04.593344249Z",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -9,7 +9,7 @@
       "Family": "alpine",
       "Name": "3.22.2"
     },
-    "ImageID": "sha256:8f78d22e392b0bf2140683cdb8a23de13044c90fe71cfb62f2368b3de5b61509",
+    "ImageID": "sha256:eed0ec3b50da1144665ce312c712b09b462913bfb303da45f73c5c75dd4fde43",
     "DiffIDs": [
       "sha256:256f393e029fa2063d8c93720da36a74a032bed3355a2bc3e313ad12f8bde9d1",
       "sha256:50b58ca2a3f5df327f34b26a67bcf09e84bd922972d651ed30939fc7378f8acc",
@@ -19,15 +19,15 @@
       "sha256:3297b9628ff3624c5cec418fce70b84e81cee2d50beec077b58fb6daf478df56",
       "sha256:99ea4bde418df15b6e7a8b9e4aed69b3b46a7176e7dcd26ee8f715cf0f29a4a2",
       "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac",
-      "sha256:cfd69c69e51b81cc07745aa2c92110886fe1ae2099e2068ea03161946897055a",
-      "sha256:e40864b6ade98acfeb49850e4537a3ac7ef9d28d6e9ee4f8a1df76212f1c9a50"
+      "sha256:960ab41d0e9ed87a5d390da297287ed8129b76c0e130e39c20c3f30fea5097a8",
+      "sha256:3f89ba5f8b68485c795795512c3495b3bc15cc56bfd6670411bc8aba0eb9b867"
     ],
     "RepoTags": [
       "payments-client:latest"
     ],
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-11-07T20:31:26.492124365Z",
+      "created": "2025-11-07T20:55:03.681792827Z",
       "history": [
         {
           "created": "2025-10-08T11:04:56Z",
@@ -136,23 +136,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-07T20:31:22Z",
+          "created": "2025-11-07T20:54:59Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-07T20:31:26Z",
+          "created": "2025-11-07T20:55:03Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-07T20:31:26Z",
+          "created": "2025-11-07T20:55:03Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-11-07T20:31:26Z",
+          "created": "2025-11-07T20:55:03Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -170,8 +170,8 @@
           "sha256:3297b9628ff3624c5cec418fce70b84e81cee2d50beec077b58fb6daf478df56",
           "sha256:99ea4bde418df15b6e7a8b9e4aed69b3b46a7176e7dcd26ee8f715cf0f29a4a2",
           "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac",
-          "sha256:cfd69c69e51b81cc07745aa2c92110886fe1ae2099e2068ea03161946897055a",
-          "sha256:e40864b6ade98acfeb49850e4537a3ac7ef9d28d6e9ee4f8a1df76212f1c9a50"
+          "sha256:960ab41d0e9ed87a5d390da297287ed8129b76c0e130e39c20c3f30fea5097a8",
+          "sha256:3f89ba5f8b68485c795795512c3495b3bc15cc56bfd6670411bc8aba0eb9b867"
         ]
       },
       "config": {
@@ -238,11 +238,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:cfd69c69e51b81cc07745aa2c92110886fe1ae2099e2068ea03161946897055a"
+        "DiffID": "sha256:960ab41d0e9ed87a5d390da297287ed8129b76c0e130e39c20c3f30fea5097a8"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:e40864b6ade98acfeb49850e4537a3ac7ef9d28d6e9ee4f8a1df76212f1c9a50"
+        "DiffID": "sha256:3f89ba5f8b68485c795795512c3495b3bc15cc56bfd6670411bc8aba0eb9b867"
       }
     ]
   },
