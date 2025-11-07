@@ -158,8 +158,8 @@ Automated security scans are executed internally and results are published via a
 Security Workflow Overview and Diagram of all Scans:
 **Link**: https://vcnmb-3rd-years.github.io/INSY7314_POE_Group17/
 
-* Part 1: [https://youtu.be/sNGG1rP6kvw](https://youtu.be/sNGG1rP6kvw)
-* Part 2: *(link pending)*
+* Part 2: [https://youtu.be/sNGG1rP6kvw](https://youtu.be/sNGG1rP6kvw)
+* Part 3: https://www.youtube.com/watch?v=-Phj0oQ3lTM
 
 ---
 
