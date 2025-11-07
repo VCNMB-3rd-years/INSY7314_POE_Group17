@@ -8,6 +8,9 @@ on:
   schedule:
     - cron: '0 0 * * 0'
 
+permissions:
+  contents: write
+
 jobs:
   npm-audit:
     runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -31,12 +34,10 @@ jobs:
           mkdir -p ./security-web/data
           npm audit --json > ./security-web/data/npm-audit.json || true
 
-      - name: Commit and push JSON to security-data branch
+      - name: Commit and push JSON to main branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin
-          git checkout security-data || git checkout -b security-data
           git add ./security-web/data/*.json
-          git commit -m "Update security scan reports [skip ci]" || echo "No changes"
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:security-data
+          git commit -m "Update NPM audit reports [skip ci]" || echo "No changes to commit"
+          git push || echo "Nothing to push"

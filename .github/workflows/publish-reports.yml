@@ -3,15 +3,14 @@ name: Publish Security Reports
 on:
   workflow_run:
     workflows: 
-      - NPM Audit Security Scan
-      - Docker Security Scan
-      - CodeQL Security Analysis
+      - "NPM Audit Security Scan"
+      - "Docker Security Scan"
+      - "CodeQL Security Analysis - International Payments Portal"
     types:
       - completed
 
-
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -24,24 +23,32 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout security-data branch
+      - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          ref: security-data
+          ref: main
       
       - name: List JSON files
         run: |
-          ls ./security-web/data
+          ls -la ./security-web/data || echo "Data folder not found"
 
-          
       # --- Validate JSON data ---
       - name: Validate JSON data
         run: |
           mkdir -p ./security-web/data
-          ls ./security-web/data
-          for f in ./security-web/data/*.json; do
-            jq . "$f" > tmp.json && mv tmp.json "$f"
-          done
+          if [ -d ./security-web/data ]; then
+            for f in ./security-web/data/*.json; do
+              if [ -f "$f" ]; then
+                echo "Validating $f"
+                jq . "$f" > tmp.json && mv tmp.json "$f"
+              fi
+            done
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       # --- Generate static site ---
       - name: Generate static site
@@ -58,6 +65,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment

@@ -6,37 +6,43 @@ const dataSrc = path.join(__dirname, '../security-web/data');
 const dataDest = dataSrc; // Keep JSON in the same folder
 
 // Ensure data folder exists
-if (!fs.existsSync(dataDest)) fs.mkdirSync(dataDest, { recursive: true });
+if (!fs.existsSync(dataDest)) {
+  fs.mkdirSync(dataDest, { recursive: true });
+  console.log('Created data folder');
+}
 
-// Copy JSON files if they exist
-['npm-audit.json','docker-backend.json','docker-client.json','codeql-analysis.json'].forEach(file => {
+// Verify JSON files exist
+const jsonFiles = ['npm-audit.json', 'trivy-backend.json', 'trivy-client.json', 'codeql-analysis.json'];
+jsonFiles.forEach(file => {
   const srcPath = path.join(dataSrc, file);
-  const destPath = path.join(dataDest, file);
   if (fs.existsSync(srcPath)) {
-    fs.copyFileSync(srcPath, destPath);
-    console.log(`Copied ${file} to data folder`);
+    console.log(`✓ Found ${file}`);
   } else {
-    console.warn(`${file} not found, skipping`);
+    console.warn(`${file} not found, will be skipped in dashboard`);
   }
 });
 
 // Ensure index.html exists
 const indexPath = path.join(__dirname, '../security-web/index.html');
 if (!fs.existsSync(indexPath)) {
-  fs.writeFileSync(indexPath, `
-<!DOCTYPE html>
+  fs.writeFileSync(indexPath, `<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Security Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link rel="stylesheet" href="report.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="report.css">
 </head>
 <body>
-<h1>Security Dashboard</h1>
-<div id="content"></div>
-<script src="app.js"></script>
+  <h1>Security Dashboard</h1>
+  <div id="content"></div>
+  <script src="app.js"></script>
 </body>
 </html>`);
-  console.log('Generated placeholder index.html');
+  console.log('✓ Generated index.html');
+} else {
+  console.log('✓ index.html already exists');
 }
+
+console.log('\n✓ Site generation complete! Data is available at ./security-web/data/');
