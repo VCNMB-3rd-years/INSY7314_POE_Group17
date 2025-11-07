@@ -54,11 +54,12 @@ jobs:
       - name: Generate static site
         run: node ./scripts/generate-site.js
 
-      # --- Upload to GitHub Pages ---
       - name: Upload to GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./security-web
+          path: |
+            ./security-web/*
+            ./security-web/data/*
 
   deploy:
     needs: build
