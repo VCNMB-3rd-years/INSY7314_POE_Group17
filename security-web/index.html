@@ -17,6 +17,7 @@
             <div class="timestamp" id="timestamp"></div>
         </header>
 
+        <!-- Summary Cards -->
         <div class="summary-cards" id="summaryCards">
             <div class="card">
                 <div class="card-title">Total Vulnerabilities</div>
@@ -62,17 +63,13 @@
                 <div class="tab-content active" id="npm-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <h3>Severity Distribution</h3>
                             <canvas id="npmSeverityChart"></canvas>
                         </div>
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Vulnerability Types</h3>
-                            <canvas id="npmTypeChart"></canvas>
+                            <h3>Top Affected Packages</h3>
+                            <canvas id="npmPackagesChart"></canvas>
                         </div>
-                    </div>
-                    <div class="chart-container">
-                        <h3 style="margin-bottom: 15px;">Top Affected Packages</h3>
-                        <canvas id="npmPackagesChart"></canvas>
                     </div>
                 </div>
 
@@ -86,7 +83,7 @@
             </div>
         </div>
 
-        <!-- Docker Backend Section -->
+        <!-- Backend Docker Section -->
         <div class="section">
             <div class="section-header">
                 <div class="section-title">
@@ -105,17 +102,13 @@
                 <div class="tab-content active" id="backend-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <h3>Severity Distribution</h3>
                             <canvas id="backendSeverityChart"></canvas>
                         </div>
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Vulnerability Timeline</h3>
-                            <canvas id="backendTimelineChart"></canvas>
+                            <h3>Layer Analysis</h3>
+                            <canvas id="backendLayersChart"></canvas>
                         </div>
-                    </div>
-                    <div class="chart-container">
-                        <h3 style="margin-bottom: 15px;">Layer Analysis</h3>
-                        <canvas id="backendLayersChart"></canvas>
                     </div>
                 </div>
 
@@ -129,7 +122,7 @@
             </div>
         </div>
 
-        <!-- Docker Client Section -->
+        <!-- Client Docker Section -->
         <div class="section">
             <div class="section-header">
                 <div class="section-title">
@@ -148,17 +141,13 @@
                 <div class="tab-content active" id="client-tab-0">
                     <div class="chart-grid">
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Severity Distribution</h3>
+                            <h3>Severity Distribution</h3>
                             <canvas id="clientSeverityChart"></canvas>
                         </div>
                         <div class="chart-container">
-                            <h3 style="margin-bottom: 15px;">Package Vulnerabilities</h3>
+                            <h3>Package Vulnerabilities</h3>
                             <canvas id="clientPackagesChart"></canvas>
                         </div>
-                    </div>
-                    <div class="chart-container">
-                        <h3 style="margin-bottom: 15px;">Risk Assessment</h3>
-                        <canvas id="clientRiskChart"></canvas>
                     </div>
                 </div>
 
@@ -172,7 +161,7 @@
             </div>
         </div>
 
-        <!-- Comparative Analysis -->
+        <!-- Comparative Analysis Section -->
         <div class="section">
             <div class="section-header">
                 <div class="section-title">
@@ -183,15 +172,16 @@
 
             <div class="chart-grid">
                 <div class="chart-container">
-                    <h3 style="margin-bottom: 15px;">Vulnerability Comparison</h3>
+                    <h3>Vulnerability Comparison</h3>
                     <canvas id="comparisonChart"></canvas>
                 </div>
                 <div class="chart-container">
-                    <h3 style="margin-bottom: 15px;">Security Score Trends</h3>
+                    <h3>Security Score Trends</h3>
                     <canvas id="trendChart"></canvas>
                 </div>
             </div>
         </div>
+
     </div>
 
     <script src="app.js"></script>
