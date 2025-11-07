@@ -5,8 +5,9 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f5f7; /* soft light background */
+  color: #1f2937;
   min-height: 100vh;
   padding: 20px;
 }
@@ -17,26 +18,26 @@ body {
 }
 
 header {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 h1 {
-  color: #2d3748;
+  color: #111827;
   font-size: 2.5em;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .subtitle {
-  color: #718096;
+  color: #6b7280;
   font-size: 1.1em;
 }
 
 .timestamp {
-  color: #a0aec0;
+  color: #9ca3af;
   font-size: 0.9em;
   margin-top: 10px;
 }
@@ -49,10 +50,10 @@ h1 {
 }
 
 .card {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 25px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   transition: transform 0.3s ease;
 }
 
@@ -62,7 +63,7 @@ h1 {
 
 .card-title {
   font-size: 0.9em;
-  color: #718096;
+  color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -70,26 +71,26 @@ h1 {
 
 .card-value {
   font-size: 2.5em;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 5px;
 }
 
 .card-subtitle {
-  color: #a0aec0;
+  color: #9ca3af;
   font-size: 0.9em;
 }
 
-.critical { color: #e53e3e; }
-.high { color: #dd6b20; }
-.medium { color: #d69e2e; }
-.low { color: #38a169; }
+.critical { color: #dc2626; }
+.high { color: #d97706; }
+.medium { color: #ca8a04; }
+.low { color: #16a34a; }
 
 .section {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .section-header {
@@ -98,12 +99,12 @@ h1 {
   justify-content: space-between;
   margin-bottom: 25px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .section-title {
   font-size: 1.8em;
-  color: #2d3748;
+  color: #111827;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -118,15 +119,15 @@ h1 {
   text-transform: uppercase;
 }
 
-.badge-npm { background: #cb3837; color: white; }
-.badge-docker { background: #2496ed; color: white; }
-.badge-codeql { background: #6e40c9; color: white; }
+.badge-npm { background: #ef4444; color: white; }
+.badge-docker { background: #0284c7; color: white; }
+.badge-codeql { background: #7c3aed; color: white; }
 
 .chart-container {
   position: relative;
   margin: 20px 0;
   padding: 20px;
-  background: #f7fafc;
+  background: #f9fafb;
   border-radius: 8px;
 }
 
@@ -145,20 +146,20 @@ h1 {
   padding: 15px;
   margin: 10px 0;
   border-left: 4px solid;
-  background: #f7fafc;
+  background: #f9fafb;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 
 .vuln-item:hover {
-  background: #edf2f7;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background: #f3f4f6;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-.vuln-item.critical { border-left-color: #e53e3e; }
-.vuln-item.high { border-left-color: #dd6b20; }
-.vuln-item.medium { border-left-color: #d69e2e; }
-.vuln-item.low { border-left-color: #38a169; }
+.vuln-item.critical { border-left-color: #dc2626; }
+.vuln-item.high { border-left-color: #d97706; }
+.vuln-item.medium { border-left-color: #ca8a04; }
+.vuln-item.low { border-left-color: #16a34a; }
 
 .vuln-header {
   display: flex;
@@ -168,8 +169,8 @@ h1 {
 }
 
 .vuln-id {
-  font-weight: bold;
-  color: #2d3748;
+  font-weight: 700;
+  color: #111827;
   font-size: 1.1em;
 }
 
@@ -181,39 +182,39 @@ h1 {
   text-transform: uppercase;
 }
 
-.severity-critical { background: #fed7d7; color: #c53030; }
-.severity-high { background: #feebc8; color: #c05621; }
-.severity-medium { background: #fefcbf; color: #b7791f; }
-.severity-low { background: #c6f6d5; color: #276749; }
+.severity-critical { background: #fee2e2; color: #b91c1c; }
+.severity-high { background: #ffedd5; color: #b45309; }
+.severity-medium { background: #fef3c7; color: #78350f; }
+.severity-low { background: #d1fae5; color: #166534; }
 
 .vuln-details {
-  color: #4a5568;
+  color: #374151;
   font-size: 0.95em;
   line-height: 1.6;
 }
 
 .vuln-package {
   font-family: 'Courier New', monospace;
-  background: #edf2f7;
+  background: #f3f4f6;
   padding: 2px 6px;
   border-radius: 3px;
-  color: #2d3748;
+  color: #111827;
 }
 
 .loading {
   text-align: center;
   padding: 60px;
-  color: #718096;
+  color: #6b7280;
   font-size: 1.2em;
 }
 
 .error {
-  background: #fed7d7;
-  color: #c53030;
+  background: #fee2e2;
+  color: #b91c1c;
   padding: 20px;
   border-radius: 8px;
   margin: 20px 0;
-  border-left: 4px solid #e53e3e;
+  border-left: 4px solid #dc2626;
 }
 
 .status-indicator {
@@ -224,47 +225,9 @@ h1 {
   margin-right: 8px;
 }
 
-.status-pass { background: #48bb78; }
-.status-warn { background: #ed8936; }
-.status-fail { background: #f56565; }
-
-.metric-bar {
-  height: 8px;
-  background: #e2e8f0;
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.metric-fill {
-  height: 100%;
-  transition: width 0.5s ease;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-th {
-  background: #f7fafc;
-  font-weight: 600;
-  color: #2d3748;
-  text-transform: uppercase;
-  font-size: 0.85em;
-  letter-spacing: 0.5px;
-}
-
-tr:hover {
-  background: #f7fafc;
-}
+.status-pass { background: #22c55e; }
+.status-warn { background: #f97316; }
+.status-fail { background: #ef4444; }
 
 .tab-container {
   margin: 20px 0;
@@ -274,7 +237,7 @@ tr:hover {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-  border-bottom: 2px solid #e2e8f0;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .tab {
@@ -282,21 +245,23 @@ tr:hover {
   cursor: pointer;
   border: none;
   background: none;
-  color: #718096;
+  color: #6b7280;
   font-size: 1em;
   font-weight: 500;
   transition: all 0.3s ease;
   border-bottom: 3px solid transparent;
+  border-radius: 4px 4px 0 0;
 }
 
 .tab:hover {
-  color: #2d3748;
-  background: #f7fafc;
+  color: #111827;
+  background: #f3f4f6;
 }
 
 .tab.active {
-  color: #667eea;
-  border-bottom-color: #667eea;
+  color: #6366f1;
+  border-bottom-color: #6366f1;
+  font-weight: 600;
 }
 
 .tab-content {
