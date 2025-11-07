@@ -144,42 +144,58 @@
         function renderScanTile(id, badge, badgeClass, title, data, vulnerabilities) {
             const canvasId = 'chart-' + id;
             const vulnContainerId = 'vuln-list-' + id;
+
             return `
             <div class="scan-tile">
                 <div class="scan-header">
                     <span class="scan-badge ${badgeClass}">${badge}</span>
                     <span class="scan-title">${title}</span>
                 </div>
-                <div class="scan-content">
-                    <canvas id="${canvasId}" class="chart-mini"></canvas>
-                    <div class="severity-list">
-                        <div class="severity-item critical"><span class="severity-name">Critical</span><span class="severity-count critical">${data.CRITICAL || 0}</span></div>
-                        <div class="severity-item high"><span class="severity-name">High</span><span class="severity-count high">${data.HIGH || 0}</span></div>
-                        <div class="severity-item medium"><span class="severity-name">Medium</span><span class="severity-count medium">${data.MEDIUM || 0}</span></div>
-                        <div class="severity-item low"><span class="severity-name">Low</span><span class="severity-count low">${data.LOW || 0}</span></div>
+                
+                <div class="scan-content-grid">
+                    <!-- Left: Mini Chart + Summary -->
+                    <div class="chart-summary">
+                        <canvas id="${canvasId}" class="chart-mini"></canvas>
+                        <div class="severity-list">
+                            <div class="severity-item critical"><span>Critical</span><span class="severity-count">${data.CRITICAL || 0}</span></div>
+                            <div class="severity-item high"><span>High</span><span class="severity-count">${data.HIGH || 0}</span></div>
+                            <div class="severity-item medium"><span>Medium</span><span class="severity-count">${data.MEDIUM || 0}</span></div>
+                            <div class="severity-item low"><span>Low</span><span class="severity-count">${data.LOW || 0}</span></div>
+                        </div>
                     </div>
 
-                    <!-- Sorting controls -->
-                    <div class="vuln-sort">
-                        Sort by: 
-                        <select id="sort-${id}">
-                            <option value="severity">Severity</option>
-                            <option value="package">Package</option>
-                            <option value="id">ID</option>
-                        </select>
-                    </div>
-
-                    <!-- Full vulnerability list -->
-                    <div class="vuln-full-list" id="${vulnContainerId}">
-                        ${renderVulnerabilityListHTML(vulnerabilities)}
+                    <!-- Right: Collapsible Vulnerability List -->
+                    <div class="vuln-container">
+                        <button class="collapse-toggle" onclick="toggleVulnSection('${vulnContainerId}')">
+                            Show/Hide Vulnerabilities
+                        </button>
+                        <div class="vuln-section" id="${vulnContainerId}">
+                            <div class="vuln-sort">
+                                Sort by: 
+                                <select id="sort-${id}">
+                                    <option value="severity">Severity</option>
+                                    <option value="package">Package</option>
+                                    <option value="id">ID</option>
+                                </select>
+                            </div>
+                            <div class="vuln-full-list">
+                                ${renderVulnerabilityListHTML(vulnerabilities)}
+                            </div>
+                        </div>
                     </div>
                 </div>
+
                 <div class="scan-insight">
                     <strong>Insight:</strong> ${generateInsight(id)}
                 </div>
             </div>`;
         }
 
+        function toggleVulnSection(id) {
+            const section = document.getElementById(id);
+            if (!section) return;
+            section.classList.toggle('collapsed');
+        }
 
         function generateInsight(id) {
             // Provide meaningful insights per workflow
@@ -213,19 +229,19 @@
             if (top.length === 0) { document.getElementById('topVulnerabilities').style.display = 'none'; return; }
             document.getElementById('topVulnerabilities').style.display = 'block';
             const html = top.map(v => `
-        <div class="vuln-compact ${v.severity.toLowerCase()}">
-            <div class="vuln-compact-header">
-                <span class="vuln-compact-title">${v.id || 'Unknown'} - ${v.title || 'No description'}</span>
-                <span class="vuln-compact-badge">${v.severity}</span>
-            </div>
-            <div style="font-size:0.85em; color:#64748b;">
-                ${v.package ? `Package: ${v.package}@${v.version || ''}` : ''}
-                ${v.fixed ? ` | Fixed in: ${v.fixed}` : ''}
-                ${v.location ? ` | Location: ${v.location}` : ''}
-                <br>${v.description || ''}
-            </div>
-        </div>
-    `).join('');
+                <div class="vuln-compact ${v.severity.toLowerCase()}">
+                    <div class="vuln-compact-header">
+                        <span class="vuln-compact-title">${v.id || 'Unknown'} - ${v.title || 'No description'}</span>
+                        <span class="vuln-compact-badge">${v.severity}</span>
+                    </div>
+                    <div style="font-size:0.85em; color:#64748b;">
+                        ${v.package ? `Package: ${v.package}@${v.version || ''}` : ''}
+                        ${v.fixed ? ` | Fixed in: ${v.fixed}` : ''}
+                        ${v.location ? ` | Location: ${v.location}` : ''}
+                        <br>${v.description || ''}
+                    </div>
+                </div>
+            `).join('');
             document.getElementById('topVulnsList').innerHTML = html;
         }
 

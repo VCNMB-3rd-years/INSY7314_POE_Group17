@@ -77,6 +77,89 @@
             margin-bottom: 4px;
         }
 
+        /* --- New Layout --- */
+        .scan-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            align-items: start;
+            margin-top: 1rem;
+        }
+
+        .chart-summary {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .vuln-container {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 1rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+
+        .collapse-toggle {
+            background: #334155;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        .collapse-toggle:hover {
+            background: #475569;
+        }
+
+        .vuln-section {
+            transition: max-height 0.4s ease, opacity 0.3s ease;
+            overflow: hidden;
+            max-height: 800px; /* enough to show the laddered list */
+            opacity: 1;
+        }
+
+        .vuln-section.collapsed {
+            max-height: 0;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Ladder-style vulnerability list */
+        .vuln-full-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .vuln-item {
+            background: #fff;
+            border-left: 5px solid #ccc;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .vuln-item.critical { border-color: #dc2626; }
+        .vuln-item.high { border-color: #ea580c; }
+        .vuln-item.medium { border-color: #d97706; }
+        .vuln-item.low { border-color: #16a34a; }
+
+        .vuln-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
+        .severity-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-top: 1rem;
+        }
+
+
         .metric-subtitle {
             font-size: 0.85em;
             color: #94a3b8;
@@ -162,13 +245,6 @@
             width: 200px;
             height: 200px;
         }
-
-        .severity-list {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
         .severity-item {
             display: flex;
             justify-content: space-between;
