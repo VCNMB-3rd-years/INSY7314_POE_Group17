@@ -13,10 +13,9 @@ function switchTab(section, index, event) {
   });
 }
 
-// Fetch JSON from data folder safely
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`./data/${file}`); // relative to index.html
+    const res = await fetch(`./data/${file}`); // relative path from index.html
     if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
     return await res.json();
   } catch (err) {
