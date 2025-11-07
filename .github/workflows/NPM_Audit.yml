@@ -37,7 +37,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin
           git checkout security-data || git checkout -b security-data
-          mkdir -p ./security-web/data
-          git add ./security-web/data/npm-audit.json
-          git commit -m "Update NPM audit report [skip ci]" || echo "No changes"
-          git push origin security-data
+          git add ./security-web/data/*.json
+          git commit -m "Update security scan reports [skip ci]" || echo "No changes"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:security-data
+
