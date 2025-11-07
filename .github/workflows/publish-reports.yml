@@ -58,8 +58,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: |
-            ./security-web/*
-            ./security-web/data/*
+            ./security-web/
 
   deploy:
     needs: build
