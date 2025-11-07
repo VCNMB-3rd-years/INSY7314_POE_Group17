@@ -38,7 +38,6 @@ jobs:
           git fetch origin
           git checkout security-data || git checkout -b security-data
           mkdir -p ./security-web/data
-          cp ./security-web/data/npm-audit.json ./security-web/data/
           git add ./security-web/data/npm-audit.json
           git commit -m "Update NPM audit report [skip ci]" || echo "No changes"
           git push origin security-data
