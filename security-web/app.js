@@ -15,7 +15,7 @@ function switchTab(section, index, event) {
 
 async function fetchJSON(file) {
   try {
-    const res = await fetch(`./data/${file}`); // relative path from index.html
+    const res = await fetch('./security-web/data/' + file);
     if (!res.ok) throw new Error(`Failed to fetch ${file}: ${res.status}`);
     return await res.json();
   } catch (err) {
