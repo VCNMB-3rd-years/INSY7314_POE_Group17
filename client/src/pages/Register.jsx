@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authAPI } from '../api';
-import { FaRegUser } from "react-icons/fa6";
-
 
 const Register = () => {
   const navigate = useNavigate();
@@ -27,7 +25,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(' Form submitted!', formData);
+    console.log('🚀 Form submitted!', formData);
     setError('');
 
     // Validate passwords match
@@ -50,28 +48,26 @@ const Register = () => {
     }
 
     setLoading(true);
-    console.log('About to call API...');
+    console.log('📡 About to call API...');
 
     try {
       const { confirmPassword, ...registerData } = formData;
-      console.log('Sending data:', registerData);
+      console.log('📤 Sending data:', registerData);
       
       const response = await authAPI.register(registerData);
       
-      console.log('Response received:', response);
+      console.log('✅ Response received:', response);
       
-      // Store ONLY user data (NO TOKEN - using sessions/cookies now)
+      // Store token and user data
+      localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
 
-      console.log('🔀 Navigating to /customer');
       alert('Registration successful!');
-      
-      // Navigate directly to customer dashboard
-      navigate('/customer', { replace: true });
+      navigate('/customer');
     } catch (err) {
-      console.error('Error:', err);
-      console.error('Error response:', err.response);
-      console.error('Error message:', err.message);
+      console.error('❌ Error:', err);
+      console.error('❌ Error response:', err.response);
+      console.error('❌ Error message:', err.message);
       setError(err.response?.data?.error || err.response?.data?.details?.[0]?.message || 'Registration failed');
     } finally {
       setLoading(false);
@@ -81,7 +77,7 @@ const Register = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1><FaRegUser /></h1>
+        <h1>🏦 Customer Registration</h1>
         <p className="subtitle">Create your international payment account</p>
 
         {error && <div className="error-message">{error}</div>}

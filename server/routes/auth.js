@@ -1,34 +1,82 @@
 const express = require('express');
+const jwt = require('jsonwebtoken');
 const { body } = require('express-validator');
 const User = require('../models/User');
 const Employee = require('../models/Employee');
 const validateInput = require('../middleware/validateInput');
 const { passwordRegex, emailRegex, idNumberRegex } = require('../utils/regexPatterns');
 const { encryptField } = require('../utils/cryptoField');
-const { regenerateSession } = require('../middleware/sessionAuth');
-const rateLimit = require('express-rate-limit');
+
 const router = express.Router();
 
+// Generate JWT Token
+const generateToken = (id, role) => {
+  return jwt.sign({ id, role }, process.env.JWT_SECRET, {
+    expiresIn: '7d'
+  });
+};
 
-// Limit login attempts to 5 per 15 minutes per IP
-const loginLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 5,
-  message: { error: 'Too many login attempts, try again later.' },
-  standardHeaders: true,
-  legacyHeaders: false,
-  skipFailedRequests: false // count failed logins too
+// ⚠️ BOOTSTRAP ROUTE - REMOVE AFTER CREATING FIRST ADMIN!
+// @route   POST /api/auth/bootstrap-admin
+// @desc    Create first admin account (ONE-TIME USE ONLY)
+// @access  Public (REMOVE THIS ROUTE AFTER FIRST ADMIN IS CREATED!)
+router.post('/bootstrap-admin', async (req, res) => {
+  try {
+    console.log('🔧 Bootstrap admin attempt...');
+    
+    // Check if any admin exists
+    const existingAdmin = await Employee.findOne({ role: 'admin' });
+    if (existingAdmin) {
+      console.log('⚠️ Admin already exists');
+      return res.status(400).json({ 
+        error: 'Admin already exists! This endpoint should be removed.',
+        existingAdmin: {
+          email: existingAdmin.email,
+          employeeId: existingAdmin.employeeId,
+          fullName: existingAdmin.fullName
+        }
+      });
+    }
+
+    // Create first admin
+    const admin = await Employee.create({
+      fullName: 'System Administrator',
+      employeeId: 'EMP000001',
+      email: 'admin@company.com',
+      password: 'Admin@123456',
+      role: 'admin',
+      department: 'admin',
+      isActive: true
+    });
+
+    console.log('✅ Bootstrap admin created:', admin.employeeId);
+    
+    res.json({ 
+      success: true,
+      message: '✅ First admin created successfully!',
+      admin: {
+        _id: admin._id,
+        email: admin.email,
+        employeeId: admin.employeeId,
+        fullName: admin.fullName,
+        role: admin.role,
+        department: admin.department
+      },
+      credentials: {
+        employeeId: admin.employeeId,
+        password: 'Admin@123456'
+      },
+      loginInstructions: 'Use employeeId (not accountNumber) to login',
+      warning: '⚠️ CRITICAL: Remove this endpoint immediately and change the password!'
+    });
+  } catch (error) {
+    console.error('❌ Bootstrap error:', error);
+    res.status(500).json({ 
+      error: 'Failed to create admin',
+      details: error.message 
+    });
+  }
 });
-
-// Limit registration attempts to 10 per hour per IP
-const registerLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 10,
-  message: { error: 'Too many accounts created from this IP, try later.' },
-  standardHeaders: true,
-  legacyHeaders: false
-});
-
 
 // @route   POST /api/auth/register
 // @desc    Register new customer
@@ -49,8 +97,11 @@ router.post('/register', [
 
     const { fullName, idNumber, accountNumber, email, password } = req.body;
 
+    // Encrypt account number to check for existing user
     const encryptedAccountNumber = encryptField(accountNumber);
+    console.log('🔐 Encrypted account number for lookup');
 
+    // Check if user exists
     const existingUser = await User.findOne({ 
       $or: [
         { email: email.toLowerCase() },
@@ -63,6 +114,9 @@ router.post('/register', [
       return res.status(400).json({ error: 'User already exists with this email or account number' });
     }
 
+    console.log('✅ Creating new user...');
+
+    // Create user
     const user = await User.create({
       fullName,
       idNumber,
@@ -73,20 +127,12 @@ router.post('/register', [
 
     console.log('✅ User created successfully:', user._id);
 
-    // CREATE SESSION (replaces JWT)
-    req.session.user = {
-      _id: user._id,
-      fullName: user.fullName,
-      email: user.email,
-      role: user.role
-    };
-    req.session.lastActivity = Date.now();
-    req.session.createdAt = Date.now();
-
-    console.log('🔐 Session created for user');
+    // Generate token
+    const token = generateToken(user._id, user.role);
 
     res.status(201).json({
       message: 'Registration successful',
+      token,
       user: user.getDecryptedData()
     });
   } catch (error) {
@@ -100,7 +146,7 @@ router.post('/register', [
 // @access  Public
 router.post('/login', [
   body('accountNumber').optional().isLength({ min: 5 }).withMessage('Invalid account number'),
-  body('employeeId').optional().matches(/^EMP[0-9]{6}$/).withMessage('Invalid employee ID format'),
+  body('employeeId').optional().isString().withMessage('Invalid employee ID format'),
   body('password').notEmpty().withMessage('Password is required')
 ], validateInput, async (req, res) => {
   try {
@@ -113,81 +159,71 @@ router.post('/login', [
     const { accountNumber, employeeId, password } = req.body;
 
     let user;
-    let role;
 
+    // Check if employee login
     if (employeeId) {
       console.log('👔 Employee login attempt');
       user = await Employee.findOne({ employeeId, isActive: true }).select('+password');
-      role = 'employee';
+      
+      if (!user) {
+        console.log('❌ Employee not found in database');
+        return res.status(401).json({ error: 'Invalid credentials' });
+      }
     } 
+    // Customer login
     else if (accountNumber) {
       console.log('👤 Customer login attempt');
+      // Encrypt the account number to search in database
       const encryptedAccountNumber = encryptField(accountNumber);
+      console.log('🔐 Searching for user with encrypted account number');
+      
       user = await User.findOne({ accountNumber: encryptedAccountNumber, isActive: true }).select('+password');
-      role = 'customer';
+      console.log('👤 User found:', user ? 'YES' : 'NO');
+      
+      if (!user) {
+        console.log('❌ User not found in database');
+        return res.status(401).json({ error: 'Invalid credentials' });
+      }
     } else {
+      console.log('❌ No credentials provided');
       return res.status(400).json({ error: 'Please provide account number or employee ID' });
     }
 
-    if (!user) {
-      console.log('❌ User not found');
-      return res.status(401).json({ error: 'Invalid credentials' });
-    }
+    console.log('✅ User found, checking password...');
 
+    // Check password
     const isMatch = await user.comparePassword(password);
+    console.log('🔑 Password match:', isMatch ? 'YES' : 'NO');
     
     if (!isMatch) {
-      console.log('❌ Password mismatch');
+      console.log('❌ Password does not match');
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    console.log('✅ Login successful');
+    console.log('✅ Login successful for role:', user.role);
 
-    // SESSION REGENERATION - Prevents session fixation attacks
-    await regenerateSession(req);
-
-    // CREATE SESSION (replaces JWT)
-    if (role === 'customer') {
-      req.session.user = {
-        _id: user._id,
-        fullName: user.fullName,
-        accountNumber: accountNumber, // Store plain for session
-        email: user.email,
-        role: role
-      };
-    } else {
-      req.session.user = {
-        _id: user._id,
-        fullName: user.fullName,
-        employeeId: user.employeeId,
-        email: user.email,
-        role: role,
-        department: user.department
-      };
-    }
-
-    req.session.lastActivity = Date.now();
-    req.session.createdAt = Date.now();
-
-    console.log('🔐 Session created and regenerated');
+    // Generate token with the ACTUAL role from the database
+    const token = generateToken(user._id, user.role);
 
     // Prepare user data
     let userData;
-    if (role === 'customer') {
+    if (user.role === 'customer') {
       userData = user.getDecryptedData();
     } else {
+      // For employees and admins
       userData = {
         _id: user._id,
         fullName: user.fullName,
         employeeId: user.employeeId,
         email: user.email,
-        role: user.role,
+        role: user.role,  // This will be 'employee' or 'admin'
         department: user.department
       };
     }
 
     res.json({
       message: 'Login successful',
+      token,
       user: userData
     });
   } catch (error) {
@@ -196,47 +232,9 @@ router.post('/login', [
   }
 });
 
-// @route   POST /api/auth/logout
-// @desc    Logout user
-// @access  Private
-router.post('/logout', (req, res) => {
-  if (req.session) {
-    req.session.destroy((err) => {
-      if (err) {
-        console.error('Logout error:', err);
-        return res.status(500).json({ error: 'Logout failed' });
-      }
-      res.clearCookie('sessionId');
-      console.log('👋 User logged out, session destroyed');
-      res.json({ message: 'Logged out successfully' });
-    });
-  } else {
-    res.json({ message: 'No active session' });
-  }
-});
-
-// @route   GET /api/auth/session
-// @desc    Check session status
-// @access  Public
-router.get('/session', (req, res) => {
-  if (req.session && req.session.user) {
-    const sessionAge = Date.now() - (req.session.createdAt || 0);
-    const timeLeft = (30 * 60 * 1000) - sessionAge; // 30 minutes
-
-    res.json({
-      authenticated: true,
-      user: req.session.user,
-      sessionAge: Math.floor(sessionAge / 1000), // in seconds
-      timeLeft: Math.floor(timeLeft / 1000) // in seconds
-    });
-  } else {
-    res.json({ authenticated: false });
-  }
-});
-
 // @route   POST /api/auth/register-employee
-// @desc    Register new employee
-// @access  Public (should be protected in production)
+// @desc    Register new employee (for demo purposes - should be protected in production)
+// @access  Public
 router.post('/register-employee', [
   body('fullName').trim().isLength({ min: 2 }).withMessage('Full name required'),
   body('employeeId').matches(/^EMP[0-9]{6}$/).withMessage('Employee ID must be format EMP######'),
@@ -245,11 +243,14 @@ router.post('/register-employee', [
   body('department').isIn(['payments', 'verification', 'admin']).withMessage('Invalid department')
 ], validateInput, async (req, res) => {
   try {
+    console.log('👔 Employee registration attempt:', req.body.employeeId);
+
     const { fullName, employeeId, email, password, department } = req.body;
 
     const existing = await Employee.findOne({ $or: [{ email: email.toLowerCase() }, { employeeId }] });
     if (existing) {
-      return res.status(400).json({ error: 'Employee already exists' });
+      console.log('❌ Employee already exists');
+      return res.status(400).json({ error: 'Employee already exists with this email or employee ID' });
     }
 
     const employee = await Employee.create({
@@ -259,6 +260,8 @@ router.post('/register-employee', [
       password,
       department
     });
+
+    console.log('✅ Employee created:', employee._id);
 
     res.status(201).json({
       message: 'Employee registered successfully',

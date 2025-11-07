@@ -38,3 +38,90 @@
 .p-2 { padding: 1rem; }
 .p-3 { padding: 1.5rem; }
 .p-4 { padding: 2rem; }
+
+/* Admin Dashboard Styles */
+.admin-dashboard .dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.admin-dashboard .dashboard-header h1 {
+  color: white;
+}
+
+.admin-dashboard .user-info span {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.action-bar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.employees-table {
+  overflow-x: auto;
+}
+
+.employees-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.employees-table th {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.employees-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.employees-table tr:hover {
+  background: #f8f9fa;
+}
+
+.badge-admin {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.badge-employee {
+  background: #17a2b8;
+  color: white;
+}
+
+.modal-content.large {
+  max-width: 600px;
+  width: 90%;
+}
+
+.security-notice {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #fff3cd;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #856404;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .employees-table {
+    font-size: 0.875rem;
+  }
+  
+  .employees-table th,
+  .employees-table td {
+    padding: 0.5rem;
+  }
+}

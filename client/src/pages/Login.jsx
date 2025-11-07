@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { authAPI } from '../api';
-import { FaMoneyBillTransfer } from "react-icons/fa6";
-import { FaRegUser } from "react-icons/fa6";
-import { FaUserLock } from "react-icons/fa6";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,7 +23,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login form submitted!');
+    console.log('🔐 Login form submitted!');
     console.log('Login type:', loginType);
     console.log('Form data:', formData);
     
@@ -42,26 +39,27 @@ const Login = () => {
         )
       };
 
-      console.log('Sending login data:', loginData);
+      console.log('📤 Sending login data:', loginData);
 
       const response = await authAPI.login(loginData);
       
-      console.log('Login successful:', response.data);
+      console.log('✅ Login successful:', response.data);
       
-      // Store ONLY user data (NO TOKEN - using sessions/cookies now)
+      // Store token and user data
+      localStorage.setItem('token', response.data.token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
 
-      console.log('🔀 Navigating to:', response.data.user.role === 'employee' ? '/employee' : '/customer');
-
       // Navigate based on role
-      if (response.data.user.role === 'employee') {
-        navigate('/employee', { replace: true });
+      if (response.data.user.role === 'admin') {
+        navigate('/admin');
+      } else if (response.data.user.role === 'employee') {
+        navigate('/employee');
       } else {
-        navigate('/customer', { replace: true });
+        navigate('/customer');
       }
     } catch (err) {
-      console.error('Login error:', err);
-      console.error('Error response:', err.response);
+      console.error('❌ Login error:', err);
+      console.error('❌ Error response:', err.response);
       setError(err.response?.data?.error || 'Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
@@ -71,9 +69,8 @@ const Login = () => {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1><FaMoneyBillTransfer /></h1>
-        <h1>Secure and Easy International Payments</h1>
-        <p className="subtitle">Securely send and manage your international payments.</p>
+        <h1>🏦 International Payments</h1>
+        <p className="subtitle">Secure Payment Portal</p>
 
         {/* Login Type Selector */}
         <div className="login-type-selector">
@@ -86,7 +83,7 @@ const Login = () => {
               setError('');
             }}
           >
-            <FaRegUser /> Customer
+            👤 Customer
           </button>
           <button
             type="button"
@@ -97,7 +94,7 @@ const Login = () => {
               setError('');
             }}
           >
-            <FaUserLock /> Employee
+            💼 Employee
           </button>
         </div>
 
@@ -126,11 +123,10 @@ const Login = () => {
                 name="employeeId"
                 value={formData.employeeId}
                 onChange={handleChange}
-                placeholder="EMP######"
+                placeholder="EMP000001"
                 required
-                pattern="EMP[0-9]{6}"
               />
-              <small>Format: EMP followed by 6 digits</small>
+              <small>Format: EMP followed by digits (e.g., EMP000001)</small>
             </div>
           )}
 

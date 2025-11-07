@@ -1,23 +1,27 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 console.log('🔧 API Base URL:', API_BASE_URL);
 
-// Create axios instance with credentials
+// Create axios instance
 const api = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json'
-  },
-  withCredentials: true // CRITICAL: Send cookies with every request
+  }
 });
 
-// Request interceptor
+// Add token to requests
 api.interceptors.request.use(
   (config) => {
     console.log('📨 Making request to:', config.baseURL + config.url);
     console.log('📨 Request data:', config.data);
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
     return config;
   },
   (error) => {
@@ -26,10 +30,10 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor
+// Handle response errors
 api.interceptors.response.use(
   (response) => {
-    console.log('✅ Response received:', response.data);
+    console.log('✅ Response received:', response);
     return response;
   },
   (error) => {
@@ -37,17 +41,11 @@ api.interceptors.response.use(
     console.error('❌ Response error data:', error.response?.data);
     console.error('❌ Response status:', error.response?.status);
     
-    // Handle session expiration
     if (error.response?.status === 401) {
-      const errorCode = error.response?.data?.code;
-      
-      if (errorCode === 'SESSION_TIMEOUT' || errorCode === 'NOT_AUTHENTICATED') {
-        console.log('🔒 Session expired, redirecting to login');
-        localStorage.removeItem('user');
-        window.location.href = '/login';
-      }
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/login';
     }
-    
     return Promise.reject(error);
   }
 );
@@ -61,14 +59,6 @@ export const authAPI = {
   login: (data) => {
     console.log('🔐 authAPI.login called with:', data);
     return api.post('/auth/login', data);
-  },
-  logout: () => {
-    console.log('🔐 authAPI.logout called');
-    return api.post('/auth/logout');
-  },
-  checkSession: () => {
-    console.log('🔐 authAPI.checkSession called');
-    return api.get('/auth/session');
   },
   registerEmployee: (data) => {
     console.log('🔐 authAPI.registerEmployee called with:', data);
@@ -89,6 +79,14 @@ export const employeeAPI = {
   getTransactions: (params) => api.get('/employee/transactions', { params }),
   verifyTransaction: (id, data) => api.put(`/employee/verify/${id}`, data),
   getStats: () => api.get('/employee/stats')
+};
+
+// Admin APIs 
+export const adminAPI = {
+  getEmployees: () => api.get('/admin/employees'),
+  createEmployee: (data) => api.post('/admin/employee', data),
+  deleteEmployee: (id) => api.delete(`/admin/employee/${id}`),
+  getStats: () => api.get('/admin/stats')
 };
 
 export default api;

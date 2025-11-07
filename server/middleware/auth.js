@@ -16,7 +16,8 @@ const authMiddleware = async (req, res, next) => {
 
     // Find user based on role
     let user;
-    if (decoded.role === 'employee') {
+    // ✅ FIX: Check for both 'employee' and 'admin' roles
+    if (decoded.role === 'employee' || decoded.role === 'admin') {
       user = await Employee.findById(decoded.id).select('-password');
     } else {
       user = await User.findById(decoded.id).select('-password');
@@ -26,10 +27,10 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ error: 'Invalid token or user inactive' });
     }
 
-    // Attach user to request
+    // Attach user to request with the actual role from database
     req.user = {
       id: user._id,
-      role: decoded.role
+      role: user.role || decoded.role  // Use role from user document
     };
 
     next();
