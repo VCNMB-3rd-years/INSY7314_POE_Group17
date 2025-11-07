@@ -75,6 +75,21 @@
             } catch (err) { console.error(err); return null; }
         }
 
+
+        function groupVulnerabilitiesBySeverity(vulnerabilities) {
+            const groups = { CRITICAL: [], HIGH: [], MEDIUM: [], LOW: [] };
+            if (!vulnerabilities) return groups;
+            vulnerabilities.forEach(v => {
+                const sev = v.severity?.toUpperCase() || 'LOW';
+                if (!groups[sev]) groups[sev] = [];
+                groups[sev].push(v);
+            });
+            return groups;
+        }
+
+
+
+
         // --- Data Processors ---
         function processNPMAudit(data) {
             if (!data || !data.vulnerabilities) return null;
@@ -126,28 +141,45 @@
             charts[canvasId] = chart;
         }
 
-        function renderScanTile(id, badge, badgeClass, title, data) {
+        function renderScanTile(id, badge, badgeClass, title, data, vulnerabilities) {
             const canvasId = 'chart-' + id;
+            const vulnContainerId = 'vuln-list-' + id;
             return `
-    <div class="scan-tile">
-        <div class="scan-header">
-            <span class="scan-badge ${badgeClass}">${badge}</span>
-            <span class="scan-title">${title}</span>
-        </div>
-        <div class="scan-content">
-            <canvas id="${canvasId}" class="chart-mini"></canvas>
-            <div class="severity-list">
-                <div class="severity-item critical"><span class="severity-name">Critical</span><span class="severity-count critical">${data.CRITICAL || 0}</span></div>
-                <div class="severity-item high"><span class="severity-name">High</span><span class="severity-count high">${data.HIGH || 0}</span></div>
-                <div class="severity-item medium"><span class="severity-name">Medium</span><span class="severity-count medium">${data.MEDIUM || 0}</span></div>
-                <div class="severity-item low"><span class="severity-name">Low</span><span class="severity-count low">${data.LOW || 0}</span></div>
-            </div>
-        </div>
-        <div class="scan-insight">
-            <strong>Insight:</strong> ${generateInsight(id)}
-        </div>
-    </div>`;
+            <div class="scan-tile">
+                <div class="scan-header">
+                    <span class="scan-badge ${badgeClass}">${badge}</span>
+                    <span class="scan-title">${title}</span>
+                </div>
+                <div class="scan-content">
+                    <canvas id="${canvasId}" class="chart-mini"></canvas>
+                    <div class="severity-list">
+                        <div class="severity-item critical"><span class="severity-name">Critical</span><span class="severity-count critical">${data.CRITICAL || 0}</span></div>
+                        <div class="severity-item high"><span class="severity-name">High</span><span class="severity-count high">${data.HIGH || 0}</span></div>
+                        <div class="severity-item medium"><span class="severity-name">Medium</span><span class="severity-count medium">${data.MEDIUM || 0}</span></div>
+                        <div class="severity-item low"><span class="severity-name">Low</span><span class="severity-count low">${data.LOW || 0}</span></div>
+                    </div>
+
+                    <!-- Sorting controls -->
+                    <div class="vuln-sort">
+                        Sort by: 
+                        <select id="sort-${id}">
+                            <option value="severity">Severity</option>
+                            <option value="package">Package</option>
+                            <option value="id">ID</option>
+                        </select>
+                    </div>
+
+                    <!-- Full vulnerability list -->
+                    <div class="vuln-full-list" id="${vulnContainerId}">
+                        ${renderVulnerabilityListHTML(vulnerabilities)}
+                    </div>
+                </div>
+                <div class="scan-insight">
+                    <strong>Insight:</strong> ${generateInsight(id)}
+                </div>
+            </div>`;
         }
+
 
         function generateInsight(id) {
             // Provide meaningful insights per workflow
@@ -214,9 +246,64 @@
             new Chart(ctx, { type: 'bar', data: { labels, datasets }, options: { responsive: true, maintainAspectRatio: true, scales: { y: { beginAtZero: true } }, plugins: { legend: { position: 'bottom' } } } });
         }
 
+
+        function renderVulnerabilityListHTML(vulnerabilities, sortBy = 'severity') {
+            if (!vulnerabilities) return '';
+            let vulns = [...vulnerabilities];
+
+            // --- Sorting logic ---
+            vulns.sort((a, b) => {
+                if (sortBy === 'severity') {
+                    const order = { 'CRITICAL': 1, 'HIGH': 2, 'MEDIUM': 3, 'LOW': 4 };
+                    return (order[a.severity] || 5) - (order[b.severity] || 5);
+                } else if (sortBy === 'package') {
+                    return (a.package || '').localeCompare(b.package || '');
+                } else if (sortBy === 'id') {
+                    return (a.id || '').localeCompare(b.id || '');
+                }
+                return 0;
+            });
+
+            let html = '';
+            ['CRITICAL', 'HIGH', 'MEDIUM', 'LOW'].forEach(sev => {
+                const list = vulns.filter(v => v.severity === sev);
+                if (!list.length) return;
+                html += `<h4 class="severity-header severity-${sev.toLowerCase()}">${sev} (${list.length})</h4>`;
+                html += list.map(v => `
+                    <div class="vuln-item ${sev.toLowerCase()}">
+                        <div class="vuln-header">
+                            <span class="vuln-id">${v.id || 'Unknown'}</span>
+                            <span class="vuln-severity severity-${sev.toLowerCase()}">${sev}</span>
+                        </div>
+                        <div class="vuln-details">
+                            ${v.package ? `<strong>Package:</strong> ${v.package}<br>` : ''}
+                            ${v.version ? `<strong>Version:</strong> ${v.version}<br>` : ''}
+                            ${v.fixed ? `<strong>Fixed in:</strong> ${v.fixed}<br>` : ''}
+                            ${v.title || v.description ? `<strong>Description:</strong> ${v.title || v.description}` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            });
+            return html;
+        }
+
+        function initializeSorting(vulnerabilitiesMap) {
+            Object.keys(vulnerabilitiesMap).forEach(id => {
+                const select = document.getElementById('sort-' + id);
+                if (!select) return;
+                select.addEventListener('change', (e) => {
+                    const sortBy = e.target.value;
+                    const containerId = 'vuln-list-' + id;
+                    document.getElementById(containerId).innerHTML =
+                        renderVulnerabilityListHTML(vulnerabilitiesMap[id], sortBy);
+                });
+            });
+        }
+
+
+
         // --- Main Renderer ---
         async function renderReports() {
-            document.getElementById('timestamp').textContent = `Generated: ${new Date().toLocaleString()}`;
             allData = {
                 npm: processNPMAudit(await fetchJSON('npm-audit.json')),
                 backend: processTrivyReport(await fetchJSON('trivy-backend.json')),
@@ -224,24 +311,32 @@
                 codeql: processCodeQL(await fetchJSON('codeql-analysis.json'))
             };
 
+            const vulnerabilitiesMap = {}; // to track each scan's vulns for sorting
             let html = '';
-            if (allData.npm) html += renderScanTile('npm', 'NPM', 'badge-npm', 'Dependency Vulnerabilities', allData.npm.severityCounts, allData.npm.vulnerabilities);
-            if (allData.backend) html += renderScanTile('backend', 'Docker', 'badge-docker', 'Backend Container Security', allData.backend.severityCounts);
-            if (allData.client) html += renderScanTile('client', 'Docker', 'badge-docker', 'Frontend Container Security', allData.client.severityCounts);
-            if (allData.codeql) html += renderScanTile('codeql', 'CodeQL', 'badge-codeql', 'Code Security Analysis', allData.codeql.severityCounts);
 
-            if (!html) html = '<div class="error">No scan data found. Ensure JSON files exist in ./data/</div>';
+            ['npm', 'backend', 'client', 'codeql'].forEach(id => {
+                if (!allData[id]) return;
+                vulnerabilitiesMap[id] = allData[id].vulnerabilities || [];
+                html += renderScanTile(id,
+                    id.toUpperCase(),
+                    'badge-' + id,
+                    `${id.charAt(0).toUpperCase() + id.slice(1)} Vulnerabilities`,
+                    allData[id].severityCounts,
+                    vulnerabilitiesMap[id]
+                );
+            });
+
             document.getElementById('scanGrid').innerHTML = html;
-
-            ['npm', 'backend', 'client', 'codeql'].forEach(src => {
-                if (allData[src]) createMiniChart('chart-' + src, allData[src].severityCounts);
+            ['npm', 'backend', 'client', 'codeql'].forEach(id => {
+                if (allData[id]) createMiniChart('chart-' + id, allData[id].severityCounts);
             });
 
             updateMetrics();
             renderTopVulnerabilities();
             renderComparativeChart();
-        }
 
+            initializeSorting(vulnerabilitiesMap);
+        }
         window.onload = renderReports;
     </script>
 </body>
