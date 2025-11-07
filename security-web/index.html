@@ -225,7 +225,7 @@
             };
 
             let html = '';
-            if (allData.npm) html += renderScanTile('npm', 'NPM', 'badge-npm', 'Dependency Vulnerabilities', allData.npm.severityCounts);
+            if (allData.npm) html += renderScanTile('npm', 'NPM', 'badge-npm', 'Dependency Vulnerabilities', allData.npm.severityCounts, allData.npm.vulnerabilities);
             if (allData.backend) html += renderScanTile('backend', 'Docker', 'badge-docker', 'Backend Container Security', allData.backend.severityCounts);
             if (allData.client) html += renderScanTile('client', 'Docker', 'badge-docker', 'Frontend Container Security', allData.client.severityCounts);
             if (allData.codeql) html += renderScanTile('codeql', 'CodeQL', 'badge-codeql', 'Code Security Analysis', allData.codeql.severityCounts);
