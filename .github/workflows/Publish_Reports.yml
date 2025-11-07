@@ -1,9 +1,14 @@
 name: Publish Security Reports
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Every day at 6:00 AM
-  workflow_dispatch:
+  workflow_run:
+    workflows: 
+      - NPM Audit Security Scan
+      - Docker Security Scan
+      - CodeQL Security Analysis
+    types:
+      - completed
+
 
 permissions:
   contents: write
@@ -16,6 +21,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout security-data branch
