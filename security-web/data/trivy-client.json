@@ -1,6 +1,8 @@
 {
   "SchemaVersion": 2,
-  "CreatedAt": "2025-11-30T00:15:12.581579036Z",
+  "ReportID": "019af629-eeca-784f-95f0-3fe60e9f4d90",
+  "CreatedAt": "2025-12-07T00:15:34.602546864Z",
+  "ArtifactID": "sha256:6bef0915ed7cd31c539651d3e48c4950cde8ae18c66385bce388de9abc4b4ef2",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -9,7 +11,7 @@
       "Family": "alpine",
       "Name": "3.22.2"
     },
-    "ImageID": "sha256:5e8a632bc37d88e1c33d4cbebb87867d8bb23ff9c02e70269a3f5679ac71365e",
+    "ImageID": "sha256:529b5bb770656e632ba6f58b86fa60fa0cebbdab498018a72e5e9a20571b9a86",
     "DiffIDs": [
       "sha256:256f393e029fa2063d8c93720da36a74a032bed3355a2bc3e313ad12f8bde9d1",
       "sha256:50b58ca2a3f5df327f34b26a67bcf09e84bd922972d651ed30939fc7378f8acc",
@@ -19,15 +21,16 @@
       "sha256:3297b9628ff3624c5cec418fce70b84e81cee2d50beec077b58fb6daf478df56",
       "sha256:99ea4bde418df15b6e7a8b9e4aed69b3b46a7176e7dcd26ee8f715cf0f29a4a2",
       "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac",
-      "sha256:30c2ea06b6d0f80b1d30a923a636867e77018c97b6016a850002f0416ef358ed",
-      "sha256:b806d5cbb5bc2d2a50975f42ad2cb33196f20accc2c7f73c762e6824ccb17baa"
+      "sha256:15abcb0221b4a2c9b91057d39f63c796a9e7624aa254ec2b187cbe43edc90ecd",
+      "sha256:004b45734e0a60cf8ed55ae4f0116e405ed2a6cef54c1d33736c8cc12c9a6b6d"
     ],
     "RepoTags": [
       "payments-client:latest"
     ],
+    "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-11-30T00:15:11.71808548Z",
+      "created": "2025-12-07T00:15:33.25996449Z",
       "history": [
         {
           "created": "2025-10-08T11:04:56Z",
@@ -136,23 +139,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-30T00:15:08Z",
+          "created": "2025-12-07T00:15:28Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-30T00:15:11Z",
+          "created": "2025-12-07T00:15:33Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-11-30T00:15:11Z",
+          "created": "2025-12-07T00:15:33Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-11-30T00:15:11Z",
+          "created": "2025-12-07T00:15:33Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -170,8 +173,8 @@
           "sha256:3297b9628ff3624c5cec418fce70b84e81cee2d50beec077b58fb6daf478df56",
           "sha256:99ea4bde418df15b6e7a8b9e4aed69b3b46a7176e7dcd26ee8f715cf0f29a4a2",
           "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac",
-          "sha256:30c2ea06b6d0f80b1d30a923a636867e77018c97b6016a850002f0416ef358ed",
-          "sha256:b806d5cbb5bc2d2a50975f42ad2cb33196f20accc2c7f73c762e6824ccb17baa"
+          "sha256:15abcb0221b4a2c9b91057d39f63c796a9e7624aa254ec2b187cbe43edc90ecd",
+          "sha256:004b45734e0a60cf8ed55ae4f0116e405ed2a6cef54c1d33736c8cc12c9a6b6d"
         ]
       },
       "config": {
@@ -238,11 +241,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:30c2ea06b6d0f80b1d30a923a636867e77018c97b6016a850002f0416ef358ed"
+        "DiffID": "sha256:15abcb0221b4a2c9b91057d39f63c796a9e7624aa254ec2b187cbe43edc90ecd"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:b806d5cbb5bc2d2a50975f42ad2cb33196f20accc2c7f73c762e6824ccb17baa"
+        "DiffID": "sha256:004b45734e0a60cf8ed55ae4f0116e405ed2a6cef54c1d33736c8cc12c9a6b6d"
       }
     ]
   },
@@ -3500,6 +3503,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:a7ff76873502484bcb33e33e6b499b75307b692cec936ac6c8a641b90a18091e",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -3540,6 +3544,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:0f912d127d2b6f8c43a0f6bc82a8648b55384036147e93a1c4cfa301c4d69399",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
@@ -3590,6 +3595,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:981224b65ac72b23e6ed5d42179cda2649f85282130d20ec0923940fdbb705af",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -3630,6 +3636,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:c28debdd126473c79d4c1b051d32af3fba0363055a6d4877d31373996d584d22",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
@@ -3661,43 +3668,6 @@
           "LastModifiedDate": "2025-09-24T14:38:22.127Z"
         },
         {
-          "VulnerabilityID": "CVE-2025-64505",
-          "PkgID": "libpng@1.6.47-r0",
-          "PkgName": "libpng",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libpng@1.6.47-r0?arch=x86_64\u0026distro=3.22.2",
-            "UID": "dc7943769b551d5b"
-          },
-          "InstalledVersion": "1.6.47-r0",
-          "FixedVersion": "1.6.51-r0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-64505",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Title": "LIBPNG is a reference library for use in applications that read, creat ...",
-          "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. Prior to version 1.6.51, a heap buffer over-read vulnerability exists in libpng's png_do_quantize function when processing PNG files with malformed palette indices. The vulnerability occurs when palette_lookup array bounds are not validated against externally-supplied image data, allowing an attacker to craft a PNG file with out-of-range palette indices that trigger out-of-bounds memory access. This issue has been patched in version 1.6.51.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-125"
-          ],
-          "VendorSeverity": {
-            "photon": 3
-          },
-          "References": [
-            "https://github.com/pnggroup/libpng/commit/6a528eb5fd0dd7f6de1c39d30de0e41473431c37",
-            "https://github.com/pnggroup/libpng/pull/748",
-            "https://github.com/pnggroup/libpng/security/advisories/GHSA-4952-h5wq-4m42"
-          ],
-          "PublishedDate": "2025-11-25T00:15:47.133Z",
-          "LastModifiedDate": "2025-11-26T18:28:32.22Z"
-        },
-        {
           "VulnerabilityID": "CVE-2025-64720",
           "PkgID": "libpng@1.6.47-r0",
           "PkgName": "libpng",
@@ -3717,6 +3687,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:191b8415fc8d290d493978eccdc5df83c169e88057138f327b76856e394455c7",
           "Title": "libpng: LIBPNG buffer overflow",
           "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, an out-of-bounds read vulnerability exists in png_image_read_composite when processing palette images with PNG_FLAG_OPTIMIZE_ALPHA enabled. The palette compositing code in png_init_read_transformations incorrectly applies background compositing during premultiplication, violating the invariant component ≤ alpha × 257 required by the simplified PNG API. This issue has been patched in version 1.6.51.",
           "Severity": "HIGH",
@@ -3724,6 +3695,8 @@
             "CWE-125"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
             "photon": 3,
             "redhat": 3
           },
@@ -3765,6 +3738,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:ce3686d182652b2a406a431748b26186f7672da228ac9b510c3a6f95104f7ab5",
           "Title": "libpng: LIBPNG heap buffer overflow",
           "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, there is a heap buffer overflow vulnerability in the libpng simplified API function png_image_finish_read when processing 16-bit interlaced PNGs with 8-bit output format. Attacker-crafted interlaced PNG files cause heap writes beyond allocated buffer bounds. This issue has been patched in version 1.6.51.",
           "Severity": "HIGH",
@@ -3773,6 +3747,8 @@
             "CWE-787"
           ],
           "VendorSeverity": {
+            "azure": 3,
+            "cbl-mariner": 3,
             "photon": 3,
             "redhat": 3
           },
@@ -3796,6 +3772,56 @@
           "LastModifiedDate": "2025-11-26T18:34:53.65Z"
         },
         {
+          "VulnerabilityID": "CVE-2025-64505",
+          "PkgID": "libpng@1.6.47-r0",
+          "PkgName": "libpng",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libpng@1.6.47-r0?arch=x86_64\u0026distro=3.22.2",
+            "UID": "dc7943769b551d5b"
+          },
+          "InstalledVersion": "1.6.47-r0",
+          "FixedVersion": "1.6.51-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:25906c27b84d62cffa22785bff6e5f2d29499313c43b8a4985890528ac72c7ac"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-64505",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:0d9834c16c9c8bd980e763553bf20124c4b9683e6deda02e6918675aef5e9836",
+          "Title": "libpng: LIBPNG heap buffer overflow via malformed palette index",
+          "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. Prior to version 1.6.51, a heap buffer over-read vulnerability exists in libpng's png_do_quantize function when processing PNG files with malformed palette indices. The vulnerability occurs when palette_lookup array bounds are not validated against externally-supplied image data, allowing an attacker to craft a PNG file with out-of-range palette indices that trigger out-of-bounds memory access. This issue has been patched in version 1.6.51.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "cbl-mariner": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:L",
+              "V3Score": 4.4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2025-64505",
+            "https://github.com/pnggroup/libpng/commit/6a528eb5fd0dd7f6de1c39d30de0e41473431c37",
+            "https://github.com/pnggroup/libpng/pull/748",
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-4952-h5wq-4m42",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-64505",
+            "https://www.cve.org/CVERecord?id=CVE-2025-64505"
+          ],
+          "PublishedDate": "2025-11-25T00:15:47.133Z",
+          "LastModifiedDate": "2025-11-26T18:28:32.22Z"
+        },
+        {
           "VulnerabilityID": "CVE-2025-64506",
           "PkgID": "libpng@1.6.47-r0",
           "PkgName": "libpng",
@@ -3815,6 +3841,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:eb2c7b9dcb192bd36cd8b6a4a0ac6ee5207b508ef07d091171564c1036a172cf",
           "Title": "libpng: LIBPNG heap buffer over-read",
           "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From version 1.6.0 to before 1.6.51, a heap buffer over-read vulnerability exists in libpng's png_write_image_8bit function when processing 8-bit images through the simplified write API with convert_to_8bit enabled. The vulnerability affects 8-bit grayscale+alpha, RGB/RGBA, and images with incomplete row data. A conditional guard incorrectly allows 8-bit input to enter code expecting 16-bit input, causing reads up to 2 bytes beyond allocated buffer boundaries. This issue has been patched in version 1.6.51.",
           "Severity": "MEDIUM",
@@ -3822,7 +3849,9 @@
             "CWE-125"
           ],
           "VendorSeverity": {
-            "photon": 3,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "photon": 2,
             "redhat": 2
           },
           "CVSS": {
@@ -3862,6 +3891,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:bf445329c5a1968e52914638b85f439f61a19b565e0328ad88f2f45bf1447bf6",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -3902,6 +3932,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
+          "Fingerprint": "sha256:67e09a30d98b5e3f4b02d66dd34678611ed3571ac58b322f4aea04e56911e32e",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
