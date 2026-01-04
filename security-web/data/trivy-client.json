@@ -1,8 +1,8 @@
 {
   "SchemaVersion": 2,
-  "ReportID": "019b6250-3645-7add-8c80-880748767baf",
-  "CreatedAt": "2025-12-28T00:16:22.597714837Z",
-  "ArtifactID": "sha256:9e5bfe19f628441c7cd946c494e60c781e233db55d6fc0ece1a200da39b3d69e",
+  "ReportID": "019b865c-7bb9-7d4c-8b2c-985f783d6192",
+  "CreatedAt": "2026-01-04T00:16:06.585873668Z",
+  "ArtifactID": "sha256:3d6296eed24f030699db3e27d8dbdd2a36a07b547e081d9d35c4323bd70c7378",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -11,7 +11,7 @@
       "Family": "alpine",
       "Name": "3.23.2"
     },
-    "ImageID": "sha256:b4ad1dfc671111c17e5671feababc362e65f125e9b8cbc3399ae206901d76cd3",
+    "ImageID": "sha256:71fb32a30197cfb4bfd9ef62333b6bc40eba0e416933027aa487326a7b481995",
     "DiffIDs": [
       "sha256:7bb20cf5ef67526cb843d264145241ce4dde09a337b5be1be42ba464de9a672d",
       "sha256:fd1e40d7f74b5c12a5d7cd010e7c978719bcc364b758e951b729d6e97469f3f9",
@@ -21,8 +21,8 @@
       "sha256:ed5fa8595c7aa2584655c40c2835c75fc0c2039f72a2dac993442a4d19a7266b",
       "sha256:67ea0b046e7d3167953e9b192b7fb23be8ad6c026e65294b7070583e68fe5807",
       "sha256:e6fe11fa5b7f250edfbaca239d0f043e0d825c52a9809d13dd928a1ece6a3742",
-      "sha256:8d18b9e376cdb7abb8ac37b69155448d1ffd65d76b38514aeee7185784765bf0",
-      "sha256:b041b1b392418d0a84551377ae5b6618dcf78a05001143213972816a4d4edea6"
+      "sha256:1530ca2df84387365b0619924299432ce2b0040d78f86844ad71ec971c505f03",
+      "sha256:a23c887c2e35e38dfbe36396656f443f937b76c234bd1df4a43272dc0144d35c"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -30,7 +30,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2025-12-28T00:16:21.542343125Z",
+      "created": "2026-01-04T00:16:05.821008447Z",
       "history": [
         {
           "created": "2025-12-18T00:12:29Z",
@@ -139,23 +139,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-12-28T00:16:17Z",
+          "created": "2026-01-04T00:16:01Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-12-28T00:16:21Z",
+          "created": "2026-01-04T00:16:05Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2025-12-28T00:16:21Z",
+          "created": "2026-01-04T00:16:05Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2025-12-28T00:16:21Z",
+          "created": "2026-01-04T00:16:05Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -173,8 +173,8 @@
           "sha256:ed5fa8595c7aa2584655c40c2835c75fc0c2039f72a2dac993442a4d19a7266b",
           "sha256:67ea0b046e7d3167953e9b192b7fb23be8ad6c026e65294b7070583e68fe5807",
           "sha256:e6fe11fa5b7f250edfbaca239d0f043e0d825c52a9809d13dd928a1ece6a3742",
-          "sha256:8d18b9e376cdb7abb8ac37b69155448d1ffd65d76b38514aeee7185784765bf0",
-          "sha256:b041b1b392418d0a84551377ae5b6618dcf78a05001143213972816a4d4edea6"
+          "sha256:1530ca2df84387365b0619924299432ce2b0040d78f86844ad71ec971c505f03",
+          "sha256:a23c887c2e35e38dfbe36396656f443f937b76c234bd1df4a43272dc0144d35c"
         ]
       },
       "config": {
@@ -241,11 +241,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:8d18b9e376cdb7abb8ac37b69155448d1ffd65d76b38514aeee7185784765bf0"
+        "DiffID": "sha256:1530ca2df84387365b0619924299432ce2b0040d78f86844ad71ec971c505f03"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:b041b1b392418d0a84551377ae5b6618dcf78a05001143213972816a4d4edea6"
+        "DiffID": "sha256:a23c887c2e35e38dfbe36396656f443f937b76c234bd1df4a43272dc0144d35c"
       }
     ]
   },
