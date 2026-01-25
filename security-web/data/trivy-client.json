@@ -1,8 +1,8 @@
 {
   "SchemaVersion": 2,
-  "ReportID": "019bce75-456b-781c-b76b-ac1b3c302b96",
-  "CreatedAt": "2026-01-18T00:15:50.635532825Z",
-  "ArtifactID": "sha256:bafdba57870b3d5ce836a36f7d32cb9704541e290998399f87a231d17acc7346",
+  "ReportID": "019bf282-2736-71c4-beb8-770590fd2d5c",
+  "CreatedAt": "2026-01-25T00:16:14.64611716Z",
+  "ArtifactID": "sha256:56bc7e9e04d7ce1c32ef31d1375f9a6475b57eb346339343afee04559e525f78",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -11,7 +11,7 @@
       "Family": "alpine",
       "Name": "3.23.2"
     },
-    "ImageID": "sha256:9ff39ae7b1b723f9b6695ad2f107cead73e96e691484bfc49af55ce7c090ad98",
+    "ImageID": "sha256:236739658b0250e5383e747bc2ef81514dcfea841b7ef4e3f076f82cb60bd547",
     "DiffIDs": [
       "sha256:7bb20cf5ef67526cb843d264145241ce4dde09a337b5be1be42ba464de9a672d",
       "sha256:fd1e40d7f74b5c12a5d7cd010e7c978719bcc364b758e951b729d6e97469f3f9",
@@ -21,8 +21,8 @@
       "sha256:ed5fa8595c7aa2584655c40c2835c75fc0c2039f72a2dac993442a4d19a7266b",
       "sha256:67ea0b046e7d3167953e9b192b7fb23be8ad6c026e65294b7070583e68fe5807",
       "sha256:4b6d03d0cebbf71ac18d728efdb5a5fa9dcf277158265a8bc1748294549f4137",
-      "sha256:93277413e97f2e6916210b14bb9d548f073cb5ac33acdef79076b0ba64e5c355",
-      "sha256:132241d42e4f94fc57df055a098f8e763648c95dd021c9b12d766d49714af988"
+      "sha256:2c53b7fbe628ea6535a5505da1569bb44940f471dbba6b4440c3e178d7b13c55",
+      "sha256:81a430eee286521a29f8175b599fb9dc3a05cff78115fa2b998bdf2082cfb251"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -30,7 +30,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-01-18T00:15:49.279310945Z",
+      "created": "2026-01-25T00:16:13.572385711Z",
       "history": [
         {
           "created": "2025-12-18T00:12:29Z",
@@ -145,23 +145,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-01-18T00:15:44Z",
+          "created": "2026-01-25T00:16:08Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-01-18T00:15:49Z",
+          "created": "2026-01-25T00:16:13Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-01-18T00:15:49Z",
+          "created": "2026-01-25T00:16:13Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-01-18T00:15:49Z",
+          "created": "2026-01-25T00:16:13Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -179,8 +179,8 @@
           "sha256:ed5fa8595c7aa2584655c40c2835c75fc0c2039f72a2dac993442a4d19a7266b",
           "sha256:67ea0b046e7d3167953e9b192b7fb23be8ad6c026e65294b7070583e68fe5807",
           "sha256:4b6d03d0cebbf71ac18d728efdb5a5fa9dcf277158265a8bc1748294549f4137",
-          "sha256:93277413e97f2e6916210b14bb9d548f073cb5ac33acdef79076b0ba64e5c355",
-          "sha256:132241d42e4f94fc57df055a098f8e763648c95dd021c9b12d766d49714af988"
+          "sha256:2c53b7fbe628ea6535a5505da1569bb44940f471dbba6b4440c3e178d7b13c55",
+          "sha256:81a430eee286521a29f8175b599fb9dc3a05cff78115fa2b998bdf2082cfb251"
         ]
       },
       "config": {
@@ -248,11 +248,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:93277413e97f2e6916210b14bb9d548f073cb5ac33acdef79076b0ba64e5c355"
+        "DiffID": "sha256:2c53b7fbe628ea6535a5505da1569bb44940f471dbba6b4440c3e178d7b13c55"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:132241d42e4f94fc57df055a098f8e763648c95dd021c9b12d766d49714af988"
+        "DiffID": "sha256:81a430eee286521a29f8175b599fb9dc3a05cff78115fa2b998bdf2082cfb251"
       }
     ]
   },
@@ -3551,6 +3551,120 @@
             "usr/lib/libzstd.so.1",
             "usr/lib/libzstd.so.1.5.7"
           ]
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-22695",
+          "PkgID": "libpng@1.6.53-r0",
+          "PkgName": "libpng",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libpng@1.6.53-r0?arch=x86_64\u0026distro=3.23.2",
+            "UID": "cb73e61ec749ca01"
+          },
+          "InstalledVersion": "1.6.53-r0",
+          "FixedVersion": "1.6.54-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:4b6d03d0cebbf71ac18d728efdb5a5fa9dcf277158265a8bc1748294549f4137"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-22695",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:e44307320ee2058a2703399bd777bda59b15b3b518159373233e9141d3ee70d5",
+          "Title": "libpng: libpng: Denial of service and information disclosure via heap buffer over-read in png_image_finish_read",
+          "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.51 to 1.6.53, there is a heap buffer over-read in the libpng simplified API function png_image_finish_read when processing interlaced 16-bit PNGs with 8-bit output format and non-minimal row stride. This is a regression introduced by the fix for CVE-2025-65018. This vulnerability is fixed in 1.6.54.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125"
+          ],
+          "VendorSeverity": {
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:H",
+              "V3Score": 7.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:L/I:N/A:H",
+              "V3Score": 6.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-22695",
+            "https://github.com/pnggroup/libpng/commit/218612ddd6b17944e21eda56caf8b4bf7779d1ea",
+            "https://github.com/pnggroup/libpng/commit/e4f7ad4ea2",
+            "https://github.com/pnggroup/libpng/issues/778",
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-mmq5-27w3-rxpp",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-22695",
+            "https://ubuntu.com/security/notices/USN-7963-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-22695",
+            "https://www.openwall.com/lists/oss-security/2026/01/12/7"
+          ],
+          "PublishedDate": "2026-01-12T23:15:52.597Z",
+          "LastModifiedDate": "2026-01-21T18:58:55.787Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-22801",
+          "PkgID": "libpng@1.6.53-r0",
+          "PkgName": "libpng",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libpng@1.6.53-r0?arch=x86_64\u0026distro=3.23.2",
+            "UID": "cb73e61ec749ca01"
+          },
+          "InstalledVersion": "1.6.53-r0",
+          "FixedVersion": "1.6.54-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:4b6d03d0cebbf71ac18d728efdb5a5fa9dcf277158265a8bc1748294549f4137"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-22801",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:0d6eb1dfe03428fa8625c14002dd677816af08d1353a173731c6fa019c13a4e4",
+          "Title": "libpng: libpng: Information disclosure and denial of service via integer truncation in simplified write API",
+          "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. From 1.6.26 to 1.6.53, there is an integer truncation in the libpng simplified write API functions png_write_image_16bit and png_write_image_8bit causes heap buffer over-read when the caller provides a negative row stride (for bottom-up image layouts) or a stride exceeding 65535 bytes. The bug was introduced in libpng 1.6.26 (October 2016) by casts added to silence compiler warnings on 16-bit systems. This vulnerability is fixed in 1.6.54.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-125",
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "nvd": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:H",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-22801",
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-vgjq-8cw5-ggw8",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-22801",
+            "https://ubuntu.com/security/notices/USN-7963-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-22801",
+            "https://www.openwall.com/lists/oss-security/2026/01/12/7"
+          ],
+          "PublishedDate": "2026-01-12T23:15:52.907Z",
+          "LastModifiedDate": "2026-01-21T18:58:18.27Z"
         }
       ]
     }
