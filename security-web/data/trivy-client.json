@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.69.1"
   },
-  "ReportID": "019c82b6-0089-72bf-b443-8a606c45b158",
-  "CreatedAt": "2026-02-22T00:18:11.721182377Z",
-  "ArtifactID": "sha256:cc4bf91e55bfe47df9352c89177812f90c22c471d7f4673076f6132964162062",
+  "ReportID": "019ca6c3-95a5-789a-8e04-b8017101d9de",
+  "CreatedAt": "2026-03-01T00:19:21.637565044Z",
+  "ArtifactID": "sha256:f350242c81dee07f2dfa063168670383ea463a3433b91b650ced63b50a57d63c",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.3"
     },
-    "ImageID": "sha256:ecf811ed38ad3497f1cd6b10ce0fd407e2ceb52718b09b84c065f467fb594e49",
+    "ImageID": "sha256:73b5679d6ce343ecd6cad3dda8ef3f9e470e816f6ffcf2ea01fbdbc4391c98a2",
     "DiffIDs": [
       "sha256:989e799e634906e94dc9a5ee2ee26fc92ad260522990f26e707861a5f52bf64e",
       "sha256:53998a5033c3c508a3912f390e036cf2d3761839a9f33a3116eb4610cff01f5a",
@@ -24,8 +24,8 @@
       "sha256:6c0e59fd138a72dba956ed6d98dbca77200fd4d822ac65e8f1d04175e441d523",
       "sha256:7b2903554e639cafe89adc85ab96a86c767c9a88dfa90de2dfbe48a7988aec26",
       "sha256:da3ac26fdf0f7491d981691d9204d050a9d906fabfd5a6f73c0a14ed7304117f",
-      "sha256:647a547adab329d4a7ffd4e619308c45c620435b0b2fb5254b27d5dc40739a5d",
-      "sha256:fe3c04ee9a3b795da4a569d3149dfdf5d9f277522cdbc0e3acdbddc9605cd6d1"
+      "sha256:c8fe77fc6b073d4447ce747283e19e223bb9cc63f2a07a1626073f41a2c4ff2b",
+      "sha256:a1cf5d1e2ab3a4952c26ab5eff3367d018141c64d4d52c614c7cd94ae6739187"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-02-22T00:18:10.704664813Z",
+      "created": "2026-03-01T00:19:20.538214643Z",
       "history": [
         {
           "created": "2026-01-28T01:18:04Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-02-22T00:18:05Z",
+          "created": "2026-03-01T00:19:15Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-02-22T00:18:10Z",
+          "created": "2026-03-01T00:19:20Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-02-22T00:18:10Z",
+          "created": "2026-03-01T00:19:20Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-02-22T00:18:10Z",
+          "created": "2026-03-01T00:19:20Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:6c0e59fd138a72dba956ed6d98dbca77200fd4d822ac65e8f1d04175e441d523",
           "sha256:7b2903554e639cafe89adc85ab96a86c767c9a88dfa90de2dfbe48a7988aec26",
           "sha256:da3ac26fdf0f7491d981691d9204d050a9d906fabfd5a6f73c0a14ed7304117f",
-          "sha256:647a547adab329d4a7ffd4e619308c45c620435b0b2fb5254b27d5dc40739a5d",
-          "sha256:fe3c04ee9a3b795da4a569d3149dfdf5d9f277522cdbc0e3acdbddc9605cd6d1"
+          "sha256:c8fe77fc6b073d4447ce747283e19e223bb9cc63f2a07a1626073f41a2c4ff2b",
+          "sha256:a1cf5d1e2ab3a4952c26ab5eff3367d018141c64d4d52c614c7cd94ae6739187"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:647a547adab329d4a7ffd4e619308c45c620435b0b2fb5254b27d5dc40739a5d"
+        "DiffID": "sha256:c8fe77fc6b073d4447ce747283e19e223bb9cc63f2a07a1626073f41a2c4ff2b"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:fe3c04ee9a3b795da4a569d3149dfdf5d9f277522cdbc0e3acdbddc9605cd6d1"
+        "DiffID": "sha256:a1cf5d1e2ab3a4952c26ab5eff3367d018141c64d4d52c614c7cd94ae6739187"
       }
     ]
   },
@@ -3626,6 +3626,78 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "AnalyzedBy": "apk"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-25646",
+          "PkgID": "libpng@1.6.54-r0",
+          "PkgName": "libpng",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libpng@1.6.54-r0?arch=x86_64\u0026distro=3.23.3",
+            "UID": "72123ca33a149751"
+          },
+          "InstalledVersion": "1.6.54-r0",
+          "FixedVersion": "1.6.55-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:da3ac26fdf0f7491d981691d9204d050a9d906fabfd5a6f73c0a14ed7304117f"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-25646",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:39616a0ad3e12e87da22f0511fb084a866fd216b45b63cbc85f256be55aed790",
+          "Title": "libpng: LIBPNG has a heap buffer overflow in png_set_quantize",
+          "Description": "LIBPNG is a reference library for use in applications that read, create, and manipulate PNG (Portable Network Graphics) raster image files. Prior to 1.6.55, an out-of-bounds read vulnerability exists in the png_set_quantize() API function. When the function is called with no histogram and the number of colors in the palette is more than twice the maximum supported by the user's display, certain palettes will cause the function to enter into an infinite loop that reads past the end of an internal heap-allocated buffer. The images that trigger this vulnerability are valid per the PNG specification. This vulnerability is fixed in 1.6.55.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-122",
+            "CWE-126"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "azure": 3,
+            "nvd": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 8.1
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/02/09/7",
+            "https://access.redhat.com/errata/RHSA-2026:3031",
+            "https://access.redhat.com/security/cve/CVE-2026-25646",
+            "https://bugzilla.redhat.com/2438542",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2438542",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-25646",
+            "https://errata.almalinux.org/9/ALSA-2026-3031.html",
+            "https://errata.rockylinux.org/RLSA-2026:3031",
+            "https://github.com/pnggroup/libpng/commit/01d03b8453eb30ade759cd45c707e5a1c7277d88",
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-g8hp-mq4h-rqm3",
+            "https://linux.oracle.com/cve/CVE-2026-25646.html",
+            "https://linux.oracle.com/errata/ELSA-2026-3405.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-25646",
+            "https://ubuntu.com/security/notices/USN-8035-1",
+            "https://ubuntu.com/security/notices/USN-8039-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-25646"
+          ],
+          "PublishedDate": "2026-02-10T18:16:37.817Z",
+          "LastModifiedDate": "2026-02-13T20:43:44.69Z"
         }
       ]
     }
