@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019da320-4e15-7d8a-a49e-dcd871c099b2",
-  "CreatedAt": "2026-04-19T00:24:56.597889008Z",
-  "ArtifactID": "sha256:ad9ebcc4aa5d942a9c2666433adfad34e0b3a95ff836caa44e8d734ba799dd15",
+  "ReportID": "019dc72e-cdd2-7d68-9305-b3b3f018a217",
+  "CreatedAt": "2026-04-26T00:27:06.578879846Z",
+  "ArtifactID": "sha256:8dc3023ccdcfa922a134ac661f57e89322c3643d71166d0760f6ecf2d8d024db",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.4"
     },
-    "ImageID": "sha256:71d1e56680863b1e2c5fb3835c65d076cc77d73727e665e101523b3d8465f91f",
+    "ImageID": "sha256:d9886a1a2ba28de2a7e747b3d954a08bfa9a3b1174d0a672c821e4a3c6f90106",
     "DiffIDs": [
       "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1",
       "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146",
@@ -24,8 +24,8 @@
       "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
       "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
       "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-      "sha256:aee2fe327af6b0673eeebf7811204489dc13f04a76b07f2be47f18c0a0a9a716",
-      "sha256:ff37983881aebf0bdb43e5b0f3fa8d9f02c5104fd372dbc2ec076baf06a3d0d0"
+      "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8",
+      "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-04-19T00:24:55.930648218Z",
+      "created": "2026-04-26T00:27:05.78694399Z",
       "history": [
         {
           "created": "2026-04-15T20:01:40Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-19T00:24:50Z",
+          "created": "2026-04-26T00:27:00Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-19T00:24:55Z",
+          "created": "2026-04-26T00:27:05Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-19T00:24:55Z",
+          "created": "2026-04-26T00:27:05Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-19T00:24:55Z",
+          "created": "2026-04-26T00:27:05Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
           "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
           "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-          "sha256:aee2fe327af6b0673eeebf7811204489dc13f04a76b07f2be47f18c0a0a9a716",
-          "sha256:ff37983881aebf0bdb43e5b0f3fa8d9f02c5104fd372dbc2ec076baf06a3d0d0"
+          "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8",
+          "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:aee2fe327af6b0673eeebf7811204489dc13f04a76b07f2be47f18c0a0a9a716"
+        "DiffID": "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:ff37983881aebf0bdb43e5b0f3fa8d9f02c5104fd372dbc2ec076baf06a3d0d0"
+        "DiffID": "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
       }
     ]
   },
@@ -3623,6 +3623,38 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "AnalyzedBy": "apk"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-4367",
+          "PkgID": "libxpm@3.5.17-r0",
+          "PkgName": "libxpm",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxpm@3.5.17-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "2faaafa2cacbb10f"
+          },
+          "InstalledVersion": "3.5.17-r0",
+          "FixedVersion": "3.5.19-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4367",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:49e42c119e131dc88de1e6bd0ff888c0adb205d9917101f81883564ee5c5d53b",
+          "Description": "libXpm Out-of-bounds read in xpmNextWord()",
+          "Severity": "MEDIUM",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "References": [
+            "https://www.cve.org/CVERecord?id=CVE-2026-4367"
+          ]
         }
       ]
     }
