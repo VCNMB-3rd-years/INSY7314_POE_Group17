@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019dc72e-cdd2-7d68-9305-b3b3f018a217",
-  "CreatedAt": "2026-04-26T00:27:06.578879846Z",
-  "ArtifactID": "sha256:8dc3023ccdcfa922a134ac661f57e89322c3643d71166d0760f6ecf2d8d024db",
+  "ReportID": "019deb3e-c4c0-75b4-bdf1-52979530cd3d",
+  "CreatedAt": "2026-05-03T00:30:52.608375219Z",
+  "ArtifactID": "sha256:3b5eebc28d3319929de68f704f4c312b064685a06c1a28aa7343bbb523720499",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.4"
     },
-    "ImageID": "sha256:d9886a1a2ba28de2a7e747b3d954a08bfa9a3b1174d0a672c821e4a3c6f90106",
+    "ImageID": "sha256:5915329886b49eade805e75bb964b9497cf3a1b56b9ba289dcfced0212dcac48",
     "DiffIDs": [
       "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1",
       "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146",
@@ -24,8 +24,8 @@
       "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
       "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
       "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-      "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8",
-      "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
+      "sha256:321a33cb9a813e30c3d62ecba76a965931b756dd72416deb5949b29d73a89175",
+      "sha256:36e07287cd622f3bebcc2f9bc73dc15983eb09f4166531f294bc5a7ae0b942ce"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-04-26T00:27:05.78694399Z",
+      "created": "2026-05-03T00:30:51.634779472Z",
       "history": [
         {
           "created": "2026-04-15T20:01:40Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-26T00:27:00Z",
+          "created": "2026-05-03T00:30:46Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-26T00:27:05Z",
+          "created": "2026-05-03T00:30:51Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-26T00:27:05Z",
+          "created": "2026-05-03T00:30:51Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-26T00:27:05Z",
+          "created": "2026-05-03T00:30:51Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
           "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
           "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-          "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8",
-          "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
+          "sha256:321a33cb9a813e30c3d62ecba76a965931b756dd72416deb5949b29d73a89175",
+          "sha256:36e07287cd622f3bebcc2f9bc73dc15983eb09f4166531f294bc5a7ae0b942ce"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:fbb7d3c6bef43b13369f0f3560088f2356dea70f1d4049197e73bf6d3d9c31b8"
+        "DiffID": "sha256:321a33cb9a813e30c3d62ecba76a965931b756dd72416deb5949b29d73a89175"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:3ef5415a1858277f3643b51c93051c9cc794c7605833c65246108164119acfe2"
+        "DiffID": "sha256:36e07287cd622f3bebcc2f9bc73dc15983eb09f4166531f294bc5a7ae0b942ce"
       }
     ]
   },
@@ -3646,7 +3646,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:49e42c119e131dc88de1e6bd0ff888c0adb205d9917101f81883564ee5c5d53b",
+          "Fingerprint": "sha256:f9059ae434a9341b5cdae4e204b69a5abda9b25f9408e027ad50ae90609e9ff2",
           "Description": "libXpm Out-of-bounds read in xpmNextWord()",
           "Severity": "MEDIUM",
           "VendorSeverity": {
@@ -3655,6 +3655,127 @@
           "References": [
             "https://www.cve.org/CVERecord?id=CVE-2026-4367"
           ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-27135",
+          "PkgID": "nghttp2-libs@1.68.0-r0",
+          "PkgName": "nghttp2-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/nghttp2-libs@1.68.0-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "74e42e23a979e950"
+          },
+          "InstalledVersion": "1.68.0-r0",
+          "FixedVersion": "1.68.1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27135",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:55f401dd368053df292f955b085dbfb1e567f72acca92856178f398a8807d5b2",
+          "Title": "nghttp2: nghttp2: Denial of Service via malformed HTTP/2 frames after session termination",
+          "Description": "nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C. Prior to version 1.68.1, the nghttp2 library stops reading the incoming data when user facing public API `nghttp2_session_terminate_session` or `nghttp2_session_terminate_session2` is called by the application. They might be called internally by the library when it detects the situation that is subject to connection error. Due to the missing internal state validation, the library keeps reading the rest of the data after one of those APIs is called. Then receiving a malformed frame that causes FRAME_SIZE_ERROR causes assertion failure. nghttp2 v1.68.1 adds missing state validation to avoid assertion failure. No known workarounds are available.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-617"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "cbl-mariner": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/20/3",
+            "https://access.redhat.com/errata/RHSA-2026:7896",
+            "https://access.redhat.com/security/cve/CVE-2026-27135",
+            "https://bugzilla.redhat.com/2441268",
+            "https://bugzilla.redhat.com/2442922",
+            "https://bugzilla.redhat.com/2448754",
+            "https://bugzilla.redhat.com/2453151",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2448754",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27135",
+            "https://errata.almalinux.org/9/ALSA-2026-7896.html",
+            "https://errata.rockylinux.org/RLSA-2026:7668",
+            "https://github.com/nghttp2/nghttp2/commit/5c7df8fa815ac1004d9ecb9d1f7595c4d37f46e1",
+            "https://github.com/nghttp2/nghttp2/security/advisories/GHSA-6933-cjhr-5qg6",
+            "https://linux.oracle.com/cve/CVE-2026-27135.html",
+            "https://linux.oracle.com/errata/ELSA-2026-8339.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-27135",
+            "https://www.cve.org/CVERecord?id=CVE-2026-27135"
+          ],
+          "PublishedDate": "2026-03-18T18:16:26.723Z",
+          "LastModifiedDate": "2026-03-23T17:51:17.017Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-34743",
+          "PkgID": "xz-libs@5.8.2-r0",
+          "PkgName": "xz-libs",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/xz-libs@5.8.2-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "bc705a60e5b36919"
+          },
+          "InstalledVersion": "5.8.2-r0",
+          "FixedVersion": "5.8.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34743",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:24c21d4449e0be00478fa11f3316bc609b115e15bbba3b6efb8fb2ab04609439",
+          "Title": "xz: XZ Utils: Denial of Service via buffer overflow in index decoding",
+          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. Prior to version 5.8.3, if lzma_index_decoder() was used to decode an Index that contained no Records, the resulting lzma_index was left in a state where where a subsequent lzma_index_append() would allocate too little memory, and a buffer overflow would occur. This issue has been patched in version 5.8.3.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-122"
+          ],
+          "VendorSeverity": {
+            "azure": 1,
+            "nvd": 2,
+            "photon": 2,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+              "V3Score": 5.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/31/13",
+            "https://access.redhat.com/security/cve/CVE-2026-34743",
+            "https://github.com/tukaani-project/xz/commit/c8c22869e780ff57c96b46939c3d79ff99395f87",
+            "https://github.com/tukaani-project/xz/releases/tag/v5.8.3",
+            "https://github.com/tukaani-project/xz/security/advisories/GHSA-x872-m794-cxhv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-34743",
+            "https://www.cve.org/CVERecord?id=CVE-2026-34743"
+          ],
+          "PublishedDate": "2026-04-02T19:21:33.187Z",
+          "LastModifiedDate": "2026-04-15T17:33:17.68Z"
         }
       ]
     }
