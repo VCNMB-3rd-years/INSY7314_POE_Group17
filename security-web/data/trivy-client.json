@@ -3,29 +3,29 @@
   "Trivy": {
     "Version": "0.70.0"
   },
-  "ReportID": "019e0f4d-0dcc-7e3a-97bd-834ee51c1aec",
-  "CreatedAt": "2026-05-10T00:32:48.588934134Z",
-  "ArtifactID": "sha256:0af5028206114be033ab03c4ba0b390f6a8ff5f52a538b867048971822387909",
+  "ReportID": "019e335a-61b3-7bd1-831a-c9985cb85fad",
+  "CreatedAt": "2026-05-17T00:33:41.811775983Z",
+  "ArtifactID": "sha256:79913f9b2db8154fd3f1af0e99e76f9eca26d29eec57a65b5c98ce2387840a2f",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 63828480,
+    "Size": 64051712,
     "OS": {
       "Family": "alpine",
       "Name": "3.23.4"
     },
-    "ImageID": "sha256:307a498ceb4e70c7bcff5494e1af42fd0ad435ffcfdc61ca4024c818988838ca",
+    "ImageID": "sha256:6b8b9423845b57f1bd8a64a8fb6e126f8e284e573f1623e14c48ba5b46dce48d",
     "DiffIDs": [
       "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1",
-      "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146",
-      "sha256:f4eddaa4c30384a3db34177c1132ca20f44c1216fe41ba7f607dcee58b908104",
-      "sha256:00a43f6306382cee5fdb8e738ce0b5c7022448687d5edea1912e169c6ee03ebb",
-      "sha256:f7b74afe8798753eb53d962f1676c409e590b5865b456c309c2e364cfe98f55e",
-      "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
-      "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
-      "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-      "sha256:392cc132ebf32f9cb70310ec5041fab5ac008cc057a3bc1e2ff0c5333e5746ef",
-      "sha256:05c577c992b65a2ab6a08c7f6c46d4a6b2043adc6c5a4c3c949321a01fb3de9d"
+      "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1",
+      "sha256:dcb787d86012c1c0134996ad2297999499f6b8b8c71e331aa1122e813a7bbcee",
+      "sha256:cf531791fc4903d22f70ff3b18ac32b58a29e900a93569eb031b2df925cd3084",
+      "sha256:1d3b703bc87dabbe0ca7d2aa946d1d5fb2e9bdc08661cad53926001f4ff3168d",
+      "sha256:01f4610142c17e152ae2d40380d3b61ebc53be08144194a6d5471a02e4926cd7",
+      "sha256:e573b1a36590a61317046a7b41377b79c5040554895cdaa10620a92dc2a7577e",
+      "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff",
+      "sha256:9fcd1a27b352a04840ad29ae7a46ba94b14b95a272afd0cbb49bb01068d5ab7c",
+      "sha256:dd0e543e8e15fb8acf92e445f3c203aaf0c010bc08f69576bf51bdab4a106dd7"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-05-10T00:32:46.486640256Z",
+      "created": "2026-05-17T00:33:40.369565624Z",
       "history": [
         {
           "created": "2026-04-15T20:01:40Z",
@@ -47,124 +47,124 @@
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:52Z",
+          "created": "2026-05-13T19:05:55Z",
           "created_by": "LABEL maintainer=NGINX Docker Maintainers \u003cdocker-maint@nginx.com\u003e",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:52Z",
-          "created_by": "ENV NGINX_VERSION=1.29.8",
+          "created": "2026-05-13T19:05:55Z",
+          "created_by": "ENV NGINX_VERSION=1.31.0",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:52Z",
+          "created": "2026-05-13T19:05:55Z",
           "created_by": "ENV PKG_RELEASE=1",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:52Z",
+          "created": "2026-05-13T19:05:55Z",
           "created_by": "ENV DYNPKG_RELEASE=1",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:52Z",
-          "created_by": "RUN /bin/sh -c set -x     \u0026\u0026 addgroup -g 101 -S nginx     \u0026\u0026 adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx     \u0026\u0026 apkArch=\"$(cat /etc/apk/arch)\"     \u0026\u0026 nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}     \"     \u0026\u0026 apk add --no-cache --virtual .checksum-deps         openssl     \u0026\u0026 case \"$apkArch\" in         x86_64|aarch64)             set -x             \u0026\u0026 KEY_SHA512=\"e09fa32f0a0eab2b879ccbbc4d0e4fb9751486eedda75e35fac65802cc9faa266425edf83e261137a2f4d16281ce2c1a5f4502930fe75154723da014214f0655\"             \u0026\u0026 wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub             \u0026\u0026 if echo \"$KEY_SHA512 */tmp/nginx_signing.rsa.pub\" | sha512sum -c -; then                 echo \"key verification succeeded!\";                 mv /tmp/nginx_signing.rsa.pub /etc/apk/keys/;             else                 echo \"key verification failed!\";                 exit 1;             fi             \u0026\u0026 DEPS=$(apk query --summarize depends --recursive --no-cache                        --repository \"@nginxorg https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\"                        ${nginxPackages/=/@nginxorg=})             \u0026\u0026 apk add --no-cache $DEPS             \u0026\u0026 apk add --repositories-file /dev/null -X \"https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             \u0026\u0026 tempDir=\"$(mktemp -d)\"             \u0026\u0026 chown nobody:nobody $tempDir             \u0026\u0026 apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 bash                 alpine-sdk                 findutils                 curl             \u0026\u0026 su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 \u0026\u0026 cd ${tempDir}                 \u0026\u0026 curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 PKGOSSCHECKSUM=\\\"7074c3ba1ece708140afd0220b16df77651fbb56cc012e901bc1c4a80531872b7a58ad97a28357646575ce625e94a0540796c045f95d33e40e6d3874ce7b3d79 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 \u0026\u0026 if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 \u0026\u0026 tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 \u0026\u0026 cd alpine                 \u0026\u0026 make base                 \u0026\u0026 apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 \u0026\u0026 abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             \u0026\u0026 cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             \u0026\u0026 apk del --no-network .build-deps             \u0026\u0026 DEPS=$(apk query --summarize depends --recursive --no-cache                        --repository \"@nginxorg ${tempDir}/packages/alpine/\"                        ${nginxPackages/=/@nginxorg=})             \u0026\u0026 apk add --no-cache $DEPS             \u0026\u0026 apk add --repositories-file /dev/null -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     \u0026\u0026 apk del --no-network .checksum-deps     \u0026\u0026 if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     \u0026\u0026 if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     \u0026\u0026 apk add --no-cache gettext-envsubst     \u0026\u0026 apk add --no-cache tzdata     \u0026\u0026 ln -sf /dev/stdout /var/log/nginx/access.log     \u0026\u0026 ln -sf /dev/stderr /var/log/nginx/error.log     \u0026\u0026 mkdir /docker-entrypoint.d # buildkit",
+          "created": "2026-05-13T19:05:55Z",
+          "created_by": "RUN /bin/sh -c set -x     \u0026\u0026 addgroup -g 101 -S nginx     \u0026\u0026 adduser -S -D -H -u 101 -h /var/cache/nginx -s /sbin/nologin -G nginx -g nginx nginx     \u0026\u0026 apkArch=\"$(cat /etc/apk/arch)\"     \u0026\u0026 nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}     \"     \u0026\u0026 apk add --no-cache --virtual .checksum-deps         openssl     \u0026\u0026 case \"$apkArch\" in         x86_64|aarch64)             set -x             \u0026\u0026 KEY_SHA512=\"e09fa32f0a0eab2b879ccbbc4d0e4fb9751486eedda75e35fac65802cc9faa266425edf83e261137a2f4d16281ce2c1a5f4502930fe75154723da014214f0655\"             \u0026\u0026 wget -O /tmp/nginx_signing.rsa.pub https://nginx.org/keys/nginx_signing.rsa.pub             \u0026\u0026 if echo \"$KEY_SHA512 */tmp/nginx_signing.rsa.pub\" | sha512sum -c -; then                 echo \"key verification succeeded!\";                 mv /tmp/nginx_signing.rsa.pub /etc/apk/keys/;             else                 echo \"key verification failed!\";                 exit 1;             fi             \u0026\u0026 DEPS=$(apk query --summarize depends --recursive --no-cache                        --repository \"@nginxorg https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\"                        ${nginxPackages/=/@nginxorg=})             \u0026\u0026 apk add --no-cache $DEPS             \u0026\u0026 apk add --repositories-file /dev/null -X \"https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             \u0026\u0026 tempDir=\"$(mktemp -d)\"             \u0026\u0026 chown nobody:nobody $tempDir             \u0026\u0026 apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 bash                 alpine-sdk                 findutils                 curl             \u0026\u0026 su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 \u0026\u0026 cd ${tempDir}                 \u0026\u0026 curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 PKGOSSCHECKSUM=\\\"7c1dddf7d510642b6f352a16e4c8d7696c791a042cf9758282498d8bc8ae0760263874fbcbbadc420129b15701b32c50cebdc432ad9d2adb9776600b42cfb149 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 \u0026\u0026 if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 \u0026\u0026 tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 \u0026\u0026 cd alpine                 \u0026\u0026 make base                 \u0026\u0026 apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 \u0026\u0026 abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             \u0026\u0026 cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             \u0026\u0026 apk del --no-network .build-deps             \u0026\u0026 DEPS=$(apk query --summarize depends --recursive --no-cache                        --repository \"@nginxorg ${tempDir}/packages/alpine/\"                        ${nginxPackages/=/@nginxorg=})             \u0026\u0026 apk add --no-cache $DEPS             \u0026\u0026 apk add --repositories-file /dev/null -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     \u0026\u0026 apk del --no-network .checksum-deps     \u0026\u0026 if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     \u0026\u0026 if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     \u0026\u0026 apk add --no-cache gettext-envsubst     \u0026\u0026 apk add --no-cache tzdata     \u0026\u0026 ln -sf /dev/stdout /var/log/nginx/access.log     \u0026\u0026 ln -sf /dev/stderr /var/log/nginx/error.log     \u0026\u0026 mkdir /docker-entrypoint.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:52Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "COPY docker-entrypoint.sh / # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:52Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "COPY 10-listen-on-ipv6-by-default.sh /docker-entrypoint.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "COPY 15-local-resolvers.envsh /docker-entrypoint.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "COPY 20-envsubst-on-templates.sh /docker-entrypoint.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "COPY 30-tune-worker-processes.sh /docker-entrypoint.d # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "ENTRYPOINT [\"/docker-entrypoint.sh\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "EXPOSE map[80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "STOPSIGNAL SIGQUIT",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T20:17:53Z",
+          "created": "2026-05-13T19:05:56Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T21:19:04Z",
-          "created_by": "ENV NJS_VERSION=0.9.6",
+          "created": "2026-05-13T19:07:14Z",
+          "created_by": "ENV NJS_VERSION=0.9.8",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T21:19:04Z",
+          "created": "2026-05-13T19:07:14Z",
           "created_by": "ENV NJS_RELEASE=1",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T21:19:04Z",
-          "created_by": "ENV ACME_VERSION=0.3.1",
+          "created": "2026-05-13T19:07:14Z",
+          "created_by": "ENV ACME_VERSION=0.4.1",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-04-15T21:19:04Z",
-          "created_by": "RUN /bin/sh -c set -x     \u0026\u0026 apkArch=\"$(cat /etc/apk/arch)\"     \u0026\u0026 nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}         nginx-module-xslt=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-geoip=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-image-filter=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-njs=${NGINX_VERSION}.${NJS_VERSION}-r${NJS_RELEASE}         nginx-module-acme=${NGINX_VERSION}.${ACME_VERSION}-r${PKG_RELEASE}     \"     \u0026\u0026 apk add --no-cache --virtual .checksum-deps         openssl     \u0026\u0026 case \"$apkArch\" in         x86_64|aarch64)             apk add -X \"https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             \u0026\u0026 tempDir=\"$(mktemp -d)\"             \u0026\u0026 chown nobody:nobody $tempDir             \u0026\u0026 apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 libxslt-dev                 gd-dev                 geoip-dev                 libedit-dev                 bash                 alpine-sdk                 findutils                 curl                 cargo                 clang-libclang             \u0026\u0026 su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 \u0026\u0026 cd ${tempDir}                 \u0026\u0026 curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 PKGOSSCHECKSUM=\\\"7074c3ba1ece708140afd0220b16df77651fbb56cc012e901bc1c4a80531872b7a58ad97a28357646575ce625e94a0540796c045f95d33e40e6d3874ce7b3d79 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 \u0026\u0026 if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 \u0026\u0026 tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 \u0026\u0026 cd alpine                 \u0026\u0026 export BUILDTARGET=\\\"module-geoip module-image-filter module-njs module-xslt module-acme\\\"                 \u0026\u0026 if [ \\\"\\$(apk --print-arch)\\\" = \\\"armhf\\\" ]; then BUILDTARGET=\\\"\\$( echo \\$BUILDTARGET | sed 's,module-acme,,' )\\\"; fi                 \u0026\u0026 make \\$BUILDTARGET                 \u0026\u0026 apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 \u0026\u0026 abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             \u0026\u0026 cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             \u0026\u0026 apk del --no-network .build-deps             \u0026\u0026 if [ \"$apkArch\" = \"armhf\" ]; then nginxPackages=\"$( echo $nginxPackages | sed 's,nginx-module-acme=.*,,')\"; fi             \u0026\u0026 apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     \u0026\u0026 apk del --no-network .checksum-deps     \u0026\u0026 if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     \u0026\u0026 if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     \u0026\u0026 apk add --no-cache curl ca-certificates # buildkit",
+          "created": "2026-05-13T19:07:14Z",
+          "created_by": "RUN /bin/sh -c set -x     \u0026\u0026 apkArch=\"$(cat /etc/apk/arch)\"     \u0026\u0026 nginxPackages=\"         nginx=${NGINX_VERSION}-r${PKG_RELEASE}         nginx-module-xslt=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-geoip=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-image-filter=${NGINX_VERSION}-r${DYNPKG_RELEASE}         nginx-module-njs=${NGINX_VERSION}.${NJS_VERSION}-r${NJS_RELEASE}         nginx-module-acme=${NGINX_VERSION}.${ACME_VERSION}-r${PKG_RELEASE}     \"     \u0026\u0026 apk add --no-cache --virtual .checksum-deps         openssl     \u0026\u0026 case \"$apkArch\" in         x86_64|aarch64)             apk add -X \"https://nginx.org/packages/mainline/alpine/v$(egrep -o '^[0-9]+\\.[0-9]+' /etc/alpine-release)/main\" --no-cache $nginxPackages             ;;         *)             set -x             \u0026\u0026 tempDir=\"$(mktemp -d)\"             \u0026\u0026 chown nobody:nobody $tempDir             \u0026\u0026 apk add --no-cache --virtual .build-deps                 gcc                 libc-dev                 make                 openssl-dev                 pcre2-dev                 zlib-dev                 linux-headers                 libxslt-dev                 gd-dev                 geoip-dev                 libedit-dev                 bash                 alpine-sdk                 findutils                 curl                 cargo                 clang-libclang             \u0026\u0026 su nobody -s /bin/sh -c \"                 export HOME=${tempDir}                 \u0026\u0026 cd ${tempDir}                 \u0026\u0026 curl -f -L -O https://github.com/nginx/pkg-oss/archive/${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 PKGOSSCHECKSUM=\\\"7c1dddf7d510642b6f352a16e4c8d7696c791a042cf9758282498d8bc8ae0760263874fbcbbadc420129b15701b32c50cebdc432ad9d2adb9776600b42cfb149 *${NGINX_VERSION}-${PKG_RELEASE}.tar.gz\\\"                 \u0026\u0026 if [ \\\"\\$(openssl sha512 -r ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz)\\\" = \\\"\\$PKGOSSCHECKSUM\\\" ]; then                     echo \\\"pkg-oss tarball checksum verification succeeded!\\\";                 else                     echo \\\"pkg-oss tarball checksum verification failed!\\\";                     exit 1;                 fi                 \u0026\u0026 tar xzvf ${NGINX_VERSION}-${PKG_RELEASE}.tar.gz                 \u0026\u0026 cd pkg-oss-${NGINX_VERSION}-${PKG_RELEASE}                 \u0026\u0026 cd alpine                 \u0026\u0026 export BUILDTARGET=\\\"module-geoip module-image-filter module-njs module-xslt module-acme\\\"                 \u0026\u0026 if [ \\\"\\$(apk --print-arch)\\\" = \\\"armhf\\\" ]; then BUILDTARGET=\\\"\\$( echo \\$BUILDTARGET | sed 's,module-acme,,' )\\\"; fi                 \u0026\u0026 make \\$BUILDTARGET                 \u0026\u0026 apk index --allow-untrusted -o ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz ${tempDir}/packages/alpine/${apkArch}/*.apk                 \u0026\u0026 abuild-sign -k ${tempDir}/.abuild/abuild-key.rsa ${tempDir}/packages/alpine/${apkArch}/APKINDEX.tar.gz                 \"             \u0026\u0026 cp ${tempDir}/.abuild/abuild-key.rsa.pub /etc/apk/keys/             \u0026\u0026 apk del --no-network .build-deps             \u0026\u0026 if [ \"$apkArch\" = \"armhf\" ]; then nginxPackages=\"$( echo $nginxPackages | sed 's,nginx-module-acme=.*,,')\"; fi             \u0026\u0026 apk add -X ${tempDir}/packages/alpine/ --no-cache $nginxPackages             ;;     esac     \u0026\u0026 apk del --no-network .checksum-deps     \u0026\u0026 if [ -n \"$tempDir\" ]; then rm -rf \"$tempDir\"; fi     \u0026\u0026 if [ -f \"/etc/apk/keys/abuild-key.rsa.pub\" ]; then rm -f /etc/apk/keys/abuild-key.rsa.pub; fi     \u0026\u0026 apk add --no-cache curl ca-certificates # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-10T00:32:43Z",
+          "created": "2026-05-17T00:33:34Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-10T00:32:46Z",
+          "created": "2026-05-17T00:33:40Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-10T00:32:46Z",
+          "created": "2026-05-17T00:33:40Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-05-10T00:32:46Z",
+          "created": "2026-05-17T00:33:40Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -175,15 +175,15 @@
         "type": "layers",
         "diff_ids": [
           "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1",
-          "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146",
-          "sha256:f4eddaa4c30384a3db34177c1132ca20f44c1216fe41ba7f607dcee58b908104",
-          "sha256:00a43f6306382cee5fdb8e738ce0b5c7022448687d5edea1912e169c6ee03ebb",
-          "sha256:f7b74afe8798753eb53d962f1676c409e590b5865b456c309c2e364cfe98f55e",
-          "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff",
-          "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143",
-          "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa",
-          "sha256:392cc132ebf32f9cb70310ec5041fab5ac008cc057a3bc1e2ff0c5333e5746ef",
-          "sha256:05c577c992b65a2ab6a08c7f6c46d4a6b2043adc6c5a4c3c949321a01fb3de9d"
+          "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1",
+          "sha256:dcb787d86012c1c0134996ad2297999499f6b8b8c71e331aa1122e813a7bbcee",
+          "sha256:cf531791fc4903d22f70ff3b18ac32b58a29e900a93569eb031b2df925cd3084",
+          "sha256:1d3b703bc87dabbe0ca7d2aa946d1d5fb2e9bdc08661cad53926001f4ff3168d",
+          "sha256:01f4610142c17e152ae2d40380d3b61ebc53be08144194a6d5471a02e4926cd7",
+          "sha256:e573b1a36590a61317046a7b41377b79c5040554895cdaa10620a92dc2a7577e",
+          "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff",
+          "sha256:9fcd1a27b352a04840ad29ae7a46ba94b14b95a272afd0cbb49bb01068d5ab7c",
+          "sha256:dd0e543e8e15fb8acf92e445f3c203aaf0c010bc08f69576bf51bdab4a106dd7"
         ]
       },
       "config": {
@@ -197,12 +197,12 @@
         ],
         "Env": [
           "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-          "NGINX_VERSION=1.29.8",
+          "NGINX_VERSION=1.31.0",
           "PKG_RELEASE=1",
           "DYNPKG_RELEASE=1",
-          "NJS_VERSION=0.9.6",
+          "NJS_VERSION=0.9.8",
           "NJS_RELEASE=1",
-          "ACME_VERSION=0.3.1"
+          "ACME_VERSION=0.4.1"
         ],
         "Labels": {
           "maintainer": "NGINX Docker Maintainers \u003cdocker-maint@nginx.com\u003e"
@@ -222,40 +222,40 @@
         "DiffID": "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1"
       },
       {
-        "Size": 4737536,
-        "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+        "Size": 4775424,
+        "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
       },
       {
         "Size": 3584,
-        "DiffID": "sha256:f4eddaa4c30384a3db34177c1132ca20f44c1216fe41ba7f607dcee58b908104"
+        "DiffID": "sha256:dcb787d86012c1c0134996ad2297999499f6b8b8c71e331aa1122e813a7bbcee"
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:00a43f6306382cee5fdb8e738ce0b5c7022448687d5edea1912e169c6ee03ebb"
+        "DiffID": "sha256:cf531791fc4903d22f70ff3b18ac32b58a29e900a93569eb031b2df925cd3084"
       },
       {
         "Size": 2560,
-        "DiffID": "sha256:f7b74afe8798753eb53d962f1676c409e590b5865b456c309c2e364cfe98f55e"
+        "DiffID": "sha256:1d3b703bc87dabbe0ca7d2aa946d1d5fb2e9bdc08661cad53926001f4ff3168d"
       },
       {
         "Size": 5120,
-        "DiffID": "sha256:646d544dc619be2ab0e784ee691dc06e7a1d5ca76176b6e7fb1c8933b58350ff"
+        "DiffID": "sha256:01f4610142c17e152ae2d40380d3b61ebc53be08144194a6d5471a02e4926cd7"
       },
       {
         "Size": 7168,
-        "DiffID": "sha256:2b12ccfb247ac0c9ec2d186864ef4f2a893499e24935b14941e74aec27e62143"
+        "DiffID": "sha256:e573b1a36590a61317046a7b41377b79c5040554895cdaa10620a92dc2a7577e"
       },
       {
-        "Size": 50080256,
-        "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+        "Size": 50265600,
+        "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:392cc132ebf32f9cb70310ec5041fab5ac008cc057a3bc1e2ff0c5333e5746ef"
+        "DiffID": "sha256:9fcd1a27b352a04840ad29ae7a46ba94b14b95a272afd0cbb49bb01068d5ab7c"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:05c577c992b65a2ab6a08c7f6c46d4a6b2043adc6c5a4c3c949321a01fb3de9d"
+        "DiffID": "sha256:dd0e543e8e15fb8acf92e445f3c203aaf0c010bc08f69576bf51bdab4a106dd7"
       }
     ]
   },
@@ -458,7 +458,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:97b0c2dffcef97a0253876d015ca217de10b216a",
           "InstalledFiles": [
@@ -517,7 +517,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:0814694602f35d2741e916fdcb4c9a1e0ec50b42",
           "InstalledFiles": [
@@ -609,7 +609,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:e3bb3ff47a277ff9409b8c4bb825099cfe2bcbe2",
           "InstalledFiles": [
@@ -640,7 +640,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:af25e0f0a0412b141942909ed199144cc46f5bbc",
           "InstalledFiles": [
@@ -846,7 +846,7 @@
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:c467d4938a8ffc55afe3b1a6223787e0ecd60036",
           "InstalledFiles": [
@@ -877,7 +877,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:8037b007516a65d246442a781a05f627073394d0",
           "InstalledFiles": [
@@ -988,7 +988,7 @@
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:e227f29a00edd7ed5b1e62a050da6532183e60be",
           "InstalledFiles": [
@@ -1016,7 +1016,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:8f2ea64ecb173949f03ec2371db4b534f142450f",
           "InstalledFiles": [
@@ -1049,7 +1049,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+            "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
           },
           "Digest": "sha1:7593f7d82a7c943f0114a5f700788c53afb8a554",
           "InstalledFiles": [
@@ -1109,7 +1109,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:6e0e61c8a9d1cb5a4a5f3faa64fb597844614f93",
           "InstalledFiles": [
@@ -1138,7 +1138,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:33970b157edad359d05a2c3e6f3460e725549c8b",
           "InstalledFiles": [
@@ -1166,7 +1166,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:864d363da11ee24c7920e0d052d2da7f8429251e",
           "InstalledFiles": [
@@ -1216,7 +1216,7 @@
           "Name": "libcurl",
           "Identifier": {
             "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "13e684e456ba315f"
+            "UID": "67c003c6efbeb161"
           },
           "Version": "8.17.0-r1",
           "Arch": "x86_64",
@@ -1235,13 +1235,13 @@
             "libpsl@0.21.5-r3",
             "libssl3@3.5.6-r0",
             "musl@1.2.5-r23",
-            "nghttp2-libs@1.68.0-r0",
+            "nghttp2-libs@1.69.0-r0",
             "nghttp3@1.13.1-r0",
             "zlib@1.3.2-r0",
             "zstd-libs@1.5.7-r2"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:4018e686de80aa87659e95c1e62a3539c1d2542f",
           "InstalledFiles": [
@@ -1269,7 +1269,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:62a9676453a8b99cfb42148cfd26df3b964bcc1b",
           "InstalledFiles": [
@@ -1298,7 +1298,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:463f69335a3223b1ce6856ce3bef5c03fee721bf",
           "InstalledFiles": [
@@ -1326,7 +1326,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:5760d53ddd7cca8a742c672e4e00a475718eacaa",
           "InstalledFiles": [
@@ -1355,7 +1355,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:57fccbe9eebf23f2c4f38ee2a24f8b0bdd508ff7",
           "InstalledFiles": [
@@ -1368,7 +1368,7 @@
           "Name": "libgd",
           "Identifier": {
             "PURL": "pkg:apk/alpine/libgd@2.3.3-r10?arch=x86_64\u0026distro=3.23.4",
-            "UID": "83e1f1721ed94c93"
+            "UID": "19532dc5263abb12"
           },
           "Version": "2.3.3-r10",
           "Arch": "x86_64",
@@ -1385,13 +1385,13 @@
             "libjpeg-turbo@3.1.2-r0",
             "libpng@1.6.57-r0",
             "libwebp@1.6.0-r0",
-            "libxpm@3.5.17-r0",
+            "libxpm@3.5.19-r0",
             "musl@1.2.5-r23",
             "tiff@4.7.1-r0",
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:948454e00c660b6ddf1338a857959222f0888336",
           "InstalledFiles": [
@@ -1419,7 +1419,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:997a01303f63cee0ba9773f0cd9b26b2eb5e6ace",
           "InstalledFiles": [
@@ -1449,7 +1449,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:b8c5bfa365da5c360a01230db4d71e65af94af3d",
           "InstalledFiles": [
@@ -1477,7 +1477,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+            "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
           },
           "Digest": "sha1:0222324bb4dfd35e8a3ec821c86eb5afbd43a3af",
           "InstalledFiles": [
@@ -1507,7 +1507,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:aa025fb7ecf9bd65ef2afe47e3740639521e09ce",
           "InstalledFiles": [
@@ -1540,7 +1540,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:ce7c57bd1f6628da8ba0d3f2ac18f6d8c93c0346",
           "InstalledFiles": [
@@ -1569,7 +1569,7 @@
             "ncurses-terminfo-base@6.5_p20251123-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:649d3041c52b80620fb50a98f5979d25ebbe1523",
           "InstalledFiles": [
@@ -1598,7 +1598,7 @@
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:3f97e47e86beb0fcbce5648d5ddb21004b778eca",
           "InstalledFiles": [
@@ -1628,7 +1628,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:b663c00f920a93be49c825555aa1a212e4287393",
           "InstalledFiles": [
@@ -1656,7 +1656,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:9bbf3958ac62e163084cde753276246e56ff298b",
           "InstalledFiles": [
@@ -1686,7 +1686,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:244b3b3e68f3c6c11c6202320109d460a2498e76",
           "InstalledFiles": [
@@ -1744,7 +1744,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:528d77417a16706468af852f2859ad00f176e266",
           "InstalledFiles": [
@@ -1773,7 +1773,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:6e56562bde456bee5971787d3d95c34e84ced797",
           "InstalledFiles": [
@@ -1801,7 +1801,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:d03966d821a1d9454e5576f96ec455824112fe46",
           "InstalledFiles": [
@@ -1830,7 +1830,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:46f79fe406ce611058a6c0ce995ebe85f7b73c7a",
           "InstalledFiles": [
@@ -1859,7 +1859,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:689b36ec47d6c9abb9cbd0c7067ba4636568dbd5",
           "InstalledFiles": [
@@ -2080,7 +2080,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:89d2bc9daae3cb0e2ae095db6866357b7653f341",
           "InstalledFiles": [
@@ -2110,7 +2110,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:61b06f883e8f8d2d8ee360e4dac04ac037fcca13",
           "InstalledFiles": [
@@ -2187,7 +2187,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:99a24c0fa12282b5ef89a6e732a8d494b7696d9d",
           "InstalledFiles": [
@@ -2216,7 +2216,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:92fb4f12c2170403d6a48c7485ecaee40c84bee2",
           "InstalledFiles": [
@@ -2230,7 +2230,7 @@
           "Name": "libxml2",
           "Identifier": {
             "PURL": "pkg:apk/alpine/libxml2@2.13.9-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "1b1076ba028ac16b"
+            "UID": "a4c496351a710b02"
           },
           "Version": "2.13.9-r0",
           "Arch": "x86_64",
@@ -2242,11 +2242,11 @@
           "Maintainer": "Carlo Landmeter \u003cclandmeter@alpinelinux.org\u003e",
           "DependsOn": [
             "musl@1.2.5-r23",
-            "xz-libs@5.8.2-r0",
+            "xz-libs@5.8.3-r0",
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:9fb56eb6e62b7b6658a8abe14cded8d87a47ebc7",
           "InstalledFiles": [
@@ -2256,16 +2256,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "libxpm@3.5.17-r0",
+          "ID": "libxpm@3.5.19-r0",
           "Name": "libxpm",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/libxpm@3.5.17-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "2faaafa2cacbb10f"
+            "PURL": "pkg:apk/alpine/libxpm@3.5.19-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "9eb303ee5fb7801a"
           },
-          "Version": "3.5.17-r0",
+          "Version": "3.5.19-r0",
           "Arch": "x86_64",
           "SrcName": "libxpm",
-          "SrcVersion": "3.5.17-r0",
+          "SrcVersion": "3.5.19-r0",
           "Licenses": [
             "X-11"
           ],
@@ -2277,9 +2277,9 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:50af3a739664e6d3dc92b94be46d3b96c0b11da8",
+          "Digest": "sha1:0c1b2467462bd516e1f3b514854ccca30e0e59c0",
           "InstalledFiles": [
             "usr/bin/cxpm",
             "usr/bin/sxpm",
@@ -2308,7 +2308,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:7d73182371fbf2141e137329e5432b94551bdd1b",
           "InstalledFiles": [
@@ -2342,7 +2342,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:1cffd892c392dcaac9ad017c999f9e268b5f8ee1",
           "InstalledFiles": [
@@ -2373,7 +2373,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:8335fd57f5a479534322e6ac74968fdc7564d8d0",
           "InstalledFiles": [
@@ -2457,7 +2457,7 @@
           ],
           "Maintainer": "Natanael Copa \u003cncopa@alpinelinux.org\u003e",
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:57bd1d8124ec957eefea2314bdf45b0ed1068cee",
           "InstalledFiles": [
@@ -2506,16 +2506,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nghttp2-libs@1.68.0-r0",
+          "ID": "nghttp2-libs@1.69.0-r0",
           "Name": "nghttp2-libs",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nghttp2-libs@1.68.0-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "74e42e23a979e950"
+            "PURL": "pkg:apk/alpine/nghttp2-libs@1.69.0-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1d18d06a4faec59f"
           },
-          "Version": "1.68.0-r0",
+          "Version": "1.69.0-r0",
           "Arch": "x86_64",
           "SrcName": "nghttp2",
-          "SrcVersion": "1.68.0-r0",
+          "SrcVersion": "1.69.0-r0",
           "Licenses": [
             "MIT"
           ],
@@ -2524,12 +2524,12 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:584b6a1b0aed58a3f543bfd77729b0d8a8b1745b",
+          "Digest": "sha1:6b8651227dd3f9155ded30ddc171757a7f5b91a5",
           "InstalledFiles": [
             "usr/lib/libnghttp2.so.14",
-            "usr/lib/libnghttp2.so.14.29.2"
+            "usr/lib/libnghttp2.so.14.29.4"
           ],
           "AnalyzedBy": "apk"
         },
@@ -2552,7 +2552,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:e48fcb3e81f7e46a42e3926d8513c83b7798774b",
           "InstalledFiles": [
@@ -2562,16 +2562,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx@1.29.8-r1",
+          "ID": "nginx@1.31.0-r1",
           "Name": "nginx",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx@1.29.8-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "904ca1a12b4b98cc"
+            "PURL": "pkg:apk/alpine/nginx@1.31.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "2f37ac790ed96778"
           },
-          "Version": "1.29.8-r1",
+          "Version": "1.31.0-r1",
           "Arch": "x86_64",
           "SrcName": "nginx",
-          "SrcVersion": "1.29.8-r1",
+          "SrcVersion": "1.31.0-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2587,9 +2587,9 @@
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+            "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
           },
-          "Digest": "sha1:e9933542d51d7b6dbdbf474c5c726c5c4bb85d08",
+          "Digest": "sha1:4d1b438a3ee4db13f12c8d0d111269e939257022",
           "InstalledFiles": [
             "etc/init.d/nginx",
             "etc/init.d/nginx-debug",
@@ -2612,16 +2612,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx-module-acme@1.29.8.0.3.1-r1",
+          "ID": "nginx-module-acme@1.31.0.0.4.1-r1",
           "Name": "nginx-module-acme",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx-module-acme@1.29.8.0.3.1-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "8e93cd48911c814c"
+            "PURL": "pkg:apk/alpine/nginx-module-acme@1.31.0.0.4.1-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "21acd0dbffb6bb71"
           },
-          "Version": "1.29.8.0.3.1-r1",
+          "Version": "1.31.0.0.4.1-r1",
           "Arch": "x86_64",
           "SrcName": "nginx-module-acme",
-          "SrcVersion": "1.29.8.0.3.1-r1",
+          "SrcVersion": "1.31.0.0.4.1-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2632,12 +2632,12 @@
             "busybox-binsh@1.37.0-r30",
             "libgcc@15.2.0-r2",
             "musl@1.2.5-r23",
-            "nginx@1.29.8-r1"
+            "nginx@1.31.0-r1"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:5148c7829973ff3bc9ded69c21da4e438cc4a465",
+          "Digest": "sha1:6ed60e17bdffdc2e7b0351d864346e647ea3c0fc",
           "InstalledFiles": [
             "usr/lib/nginx/modules/ngx_http_acme_module-debug.so",
             "usr/lib/nginx/modules/ngx_http_acme_module.so",
@@ -2646,16 +2646,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx-module-geoip@1.29.8-r1",
+          "ID": "nginx-module-geoip@1.31.0-r1",
           "Name": "nginx-module-geoip",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx-module-geoip@1.29.8-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "7808e091150a1e81"
+            "PURL": "pkg:apk/alpine/nginx-module-geoip@1.31.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "375613307c3eb661"
           },
-          "Version": "1.29.8-r1",
+          "Version": "1.31.0-r1",
           "Arch": "x86_64",
           "SrcName": "nginx-module-geoip",
-          "SrcVersion": "1.29.8-r1",
+          "SrcVersion": "1.31.0-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2666,12 +2666,12 @@
             "busybox-binsh@1.37.0-r30",
             "geoip@1.6.12-r6",
             "musl@1.2.5-r23",
-            "nginx@1.29.8-r1"
+            "nginx@1.31.0-r1"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:6e226b583e4b544ffec93dd97edbae74c4e0a7b2",
+          "Digest": "sha1:21f08f7b6f95012b2bc38c7e2a6aa9106dc2791c",
           "InstalledFiles": [
             "usr/lib/nginx/modules/ngx_http_geoip_module-debug.so",
             "usr/lib/nginx/modules/ngx_http_geoip_module.so",
@@ -2682,16 +2682,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx-module-image-filter@1.29.8-r1",
+          "ID": "nginx-module-image-filter@1.31.0-r1",
           "Name": "nginx-module-image-filter",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx-module-image-filter@1.29.8-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "6506d1a2854b28e4"
+            "PURL": "pkg:apk/alpine/nginx-module-image-filter@1.31.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1c00aebdb7ec662"
           },
-          "Version": "1.29.8-r1",
+          "Version": "1.31.0-r1",
           "Arch": "x86_64",
           "SrcName": "nginx-module-image-filter",
-          "SrcVersion": "1.29.8-r1",
+          "SrcVersion": "1.31.0-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2702,12 +2702,12 @@
             "busybox-binsh@1.37.0-r30",
             "libgd@2.3.3-r10",
             "musl@1.2.5-r23",
-            "nginx@1.29.8-r1"
+            "nginx@1.31.0-r1"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:c75dd57b92753f86c1d375a2c2b7486998a8190f",
+          "Digest": "sha1:9dfd2806a727b6646ff2d3b3368f31f6d6c487a9",
           "InstalledFiles": [
             "usr/lib/nginx/modules/ngx_http_image_filter_module-debug.so",
             "usr/lib/nginx/modules/ngx_http_image_filter_module.so",
@@ -2716,16 +2716,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx-module-njs@1.29.8.0.9.6-r1",
+          "ID": "nginx-module-njs@1.31.0.0.9.8-r1",
           "Name": "nginx-module-njs",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx-module-njs@1.29.8.0.9.6-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "4c79da649bc556c6"
+            "PURL": "pkg:apk/alpine/nginx-module-njs@1.31.0.0.9.8-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "85cdba45e838b351"
           },
-          "Version": "1.29.8.0.9.6-r1",
+          "Version": "1.31.0.0.9.8-r1",
           "Arch": "x86_64",
           "SrcName": "nginx-module-njs",
-          "SrcVersion": "1.29.8.0.9.6-r1",
+          "SrcVersion": "1.31.0.0.9.8-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2738,14 +2738,14 @@
             "libedit@20251016.3.1-r0",
             "libxml2@2.13.9-r0",
             "musl@1.2.5-r23",
-            "nginx@1.29.8-r1",
+            "nginx@1.31.0-r1",
             "pcre2@10.47-r0",
             "zlib@1.3.2-r0"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:9a10cbd5c1fbb561d93b7584779cc8e4375a2ad7",
+          "Digest": "sha1:dbad2acf0323706d858a3cb6376e3266e7873d17",
           "InstalledFiles": [
             "usr/bin/njs",
             "usr/lib/nginx/modules/ngx_http_js_module-debug.so",
@@ -2758,16 +2758,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "nginx-module-xslt@1.29.8-r1",
+          "ID": "nginx-module-xslt@1.31.0-r1",
           "Name": "nginx-module-xslt",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/nginx-module-xslt@1.29.8-r1?arch=x86_64\u0026distro=3.23.4",
-            "UID": "b22e1bcb3337f188"
+            "PURL": "pkg:apk/alpine/nginx-module-xslt@1.31.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "869cd80e46e94c10"
           },
-          "Version": "1.29.8-r1",
+          "Version": "1.31.0-r1",
           "Arch": "x86_64",
           "SrcName": "nginx-module-xslt",
-          "SrcVersion": "1.29.8-r1",
+          "SrcVersion": "1.31.0-r1",
           "Licenses": [
             "2-clause",
             "BSD-3-Clause",
@@ -2779,12 +2779,12 @@
             "libxml2@2.13.9-r0",
             "libxslt@1.1.43-r3",
             "musl@1.2.5-r23",
-            "nginx@1.29.8-r1"
+            "nginx@1.31.0-r1"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:8f806b50a892eb7b3ef87ae1f117f311de2cd892",
+          "Digest": "sha1:38882795bf6bb6b90b612ec887af0245d8f99d45",
           "InstalledFiles": [
             "usr/lib/nginx/modules/ngx_http_xslt_filter_module-debug.so",
             "usr/lib/nginx/modules/ngx_http_xslt_filter_module.so",
@@ -2811,7 +2811,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+            "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
           },
           "Digest": "sha1:549059958151627bb0f5469bded945988b1bc24b",
           "InstalledFiles": [
@@ -2901,7 +2901,7 @@
             "zstd-libs@1.5.7-r2"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:b92c3394d281f51345a9375da14f347b6c1619a6",
           "InstalledFiles": [
@@ -2911,24 +2911,24 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "tzdata@2026a-r0",
+          "ID": "tzdata@2026b-r0",
           "Name": "tzdata",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/tzdata@2026a-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "a7ad329b0644c5d6"
+            "PURL": "pkg:apk/alpine/tzdata@2026b-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "86f2dfb9a4acee39"
           },
-          "Version": "2026a-r0",
+          "Version": "2026b-r0",
           "Arch": "x86_64",
           "SrcName": "tzdata",
-          "SrcVersion": "2026a-r0",
+          "SrcVersion": "2026b-r0",
           "Licenses": [
             "Public-Domain"
           ],
           "Maintainer": "Natanael Copa \u003cncopa@alpinelinux.org\u003e",
           "Layer": {
-            "DiffID": "sha256:e6082cdc2516c48531390c6f369268148ed5189748b4cdbcb30d8de04d4ef146"
+            "DiffID": "sha256:3d0102a0d0027884cedf102961819dda570da1bad507f4b88e885fb055471ef1"
           },
-          "Digest": "sha1:82f6ca3f827e313572fc0cd15bed4a040f7d515c",
+          "Digest": "sha1:2624b59cfb8182dfb3de19043c6867cd1b3e1779",
           "InstalledFiles": [
             "usr/share/zoneinfo/CET",
             "usr/share/zoneinfo/CST6CDT",
@@ -3537,16 +3537,16 @@
           "AnalyzedBy": "apk"
         },
         {
-          "ID": "xz-libs@5.8.2-r0",
+          "ID": "xz-libs@5.8.3-r0",
           "Name": "xz-libs",
           "Identifier": {
-            "PURL": "pkg:apk/alpine/xz-libs@5.8.2-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "bc705a60e5b36919"
+            "PURL": "pkg:apk/alpine/xz-libs@5.8.3-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "f68b0b2917b8b773"
           },
-          "Version": "5.8.2-r0",
+          "Version": "5.8.3-r0",
           "Arch": "x86_64",
           "SrcName": "xz",
-          "SrcVersion": "5.8.2-r0",
+          "SrcVersion": "5.8.3-r0",
           "Licenses": [
             "GPL-2.0-or-later",
             "0BSD",
@@ -3558,12 +3558,12 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "Digest": "sha1:d3eb4807f74650a151b4463266ecd1b507f3c49f",
+          "Digest": "sha1:ddf3f8b1c3d2561ae67523b9baef398f971959bb",
           "InstalledFiles": [
             "usr/lib/liblzma.so.5",
-            "usr/lib/liblzma.so.5.8.2"
+            "usr/lib/liblzma.so.5.8.3"
           ],
           "AnalyzedBy": "apk"
         },
@@ -3615,7 +3615,7 @@
             "musl@1.2.5-r23"
           ],
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
           "Digest": "sha1:d507b8ac3c4335a40405ac20e49bac9d43642be6",
           "InstalledFiles": [
@@ -3627,172 +3627,816 @@
       ],
       "Vulnerabilities": [
         {
-          "VulnerabilityID": "CVE-2026-4367",
-          "PkgID": "libxpm@3.5.17-r0",
-          "PkgName": "libxpm",
+          "VulnerabilityID": "CVE-2025-14017",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libxpm@3.5.17-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "2faaafa2cacbb10f"
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
           },
-          "InstalledVersion": "3.5.17-r0",
-          "FixedVersion": "3.5.19-r0",
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4367",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14017",
           "DataSource": {
             "ID": "alpine",
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:5127c690ac8ceabbb56fd15e00c6abf65ce56aacbd701778604bef86cfe3eb3a",
-          "Description": "libXpm Out-of-bounds read in xpmNextWord()",
+          "Fingerprint": "sha256:f78e4fa55f18bb12bc9ceb38e29ef42e30547b8ca0faccbabfdef348551e70aa",
+          "Title": "curl: curl: Security bypass due to global TLS option changes in multi-threaded LDAPS transfers",
+          "Description": "When doing multi-threaded LDAPS transfers (LDAP over TLS) with libcurl,\nchanging TLS options in one thread would inadvertently change them globally\nand therefore possibly also affect other concurrently setup transfers.\n\nDisabling certificate verification for a specific transfer could\nunintentionally disable the feature for other threads as well.",
           "Severity": "MEDIUM",
           "VendorSeverity": {
-            "ubuntu": 2
-          },
-          "References": [
-            "https://www.cve.org/CVERecord?id=CVE-2026-4367"
-          ]
-        },
-        {
-          "VulnerabilityID": "CVE-2026-27135",
-          "PkgID": "nghttp2-libs@1.68.0-r0",
-          "PkgName": "nghttp2-libs",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/nghttp2-libs@1.68.0-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "74e42e23a979e950"
-          },
-          "InstalledVersion": "1.68.0-r0",
-          "FixedVersion": "1.68.1",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27135",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:987d349d5e5f4c2d6219d38e818a73faa2d9faf671841df972a6760b701d1950",
-          "Title": "nghttp2: nghttp2: Denial of Service via malformed HTTP/2 frames after session termination",
-          "Description": "nghttp2 is an implementation of the Hypertext Transfer Protocol version 2 in C. Prior to version 1.68.1, the nghttp2 library stops reading the incoming data when user facing public API `nghttp2_session_terminate_session` or `nghttp2_session_terminate_session2` is called by the application. They might be called internally by the library when it detects the situation that is subject to connection error. Due to the missing internal state validation, the library keeps reading the rest of the data after one of those APIs is called. Then receiving a malformed frame that causes FRAME_SIZE_ERROR causes assertion failure. nghttp2 v1.68.1 adds missing state validation to avoid assertion failure. No known workarounds are available.",
-          "Severity": "HIGH",
-          "CweIDs": [
-            "CWE-617"
-          ],
-          "VendorSeverity": {
-            "alma": 3,
-            "amazon": 3,
-            "azure": 3,
-            "cbl-mariner": 3,
-            "oracle-oval": 3,
-            "photon": 3,
-            "redhat": 3,
-            "rocky": 3,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
             "ubuntu": 2
           },
           "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 6.3
+            },
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
-              "V3Score": 7.5
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/03/20/3",
-            "https://access.redhat.com/errata/RHSA-2026:7675",
-            "https://access.redhat.com/security/cve/CVE-2026-27135",
-            "https://bugzilla.redhat.com/2431340",
-            "https://bugzilla.redhat.com/2436942",
-            "https://bugzilla.redhat.com/2441268",
-            "https://bugzilla.redhat.com/2447140",
-            "https://bugzilla.redhat.com/2447141",
-            "https://bugzilla.redhat.com/2447142",
-            "https://bugzilla.redhat.com/2447143",
-            "https://bugzilla.redhat.com/2447144",
-            "https://bugzilla.redhat.com/2447145",
-            "https://bugzilla.redhat.com/2448754",
-            "https://bugzilla.redhat.com/2453037",
-            "https://bugzilla.redhat.com/2453151",
-            "https://bugzilla.redhat.com/2453152",
-            "https://bugzilla.redhat.com/2453157",
-            "https://bugzilla.redhat.com/2453158",
-            "https://bugzilla.redhat.com/2453160",
-            "https://bugzilla.redhat.com/2453161",
-            "https://bugzilla.redhat.com/2453162",
-            "https://bugzilla.redhat.com/show_bug.cgi?id=2448754",
-            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27135",
-            "https://errata.almalinux.org/10/ALSA-2026-7675.html",
-            "https://errata.rockylinux.org/RLSA-2026:7668",
-            "https://github.com/nghttp2/nghttp2/commit/5c7df8fa815ac1004d9ecb9d1f7595c4d37f46e1",
-            "https://github.com/nghttp2/nghttp2/security/advisories/GHSA-6933-cjhr-5qg6",
-            "https://linux.oracle.com/cve/CVE-2026-27135.html",
-            "https://linux.oracle.com/errata/ELSA-2026-8339.html",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-27135",
-            "https://ubuntu.com/security/notices/USN-8233-1",
-            "https://ubuntu.com/security/notices/USN-8233-2",
-            "https://www.cve.org/CVERecord?id=CVE-2026-27135"
+            "http://www.openwall.com/lists/oss-security/2026/01/07/3",
+            "https://access.redhat.com/security/cve/CVE-2025-14017",
+            "https://curl.se/docs/CVE-2025-14017.html",
+            "https://curl.se/docs/CVE-2025-14017.json",
+            "https://github.com/advisories/GHSA-jh4h-2cg6-889h",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14017",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://ubuntu.com/security/notices/USN-8062-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14017"
           ],
-          "PublishedDate": "2026-03-18T18:16:26.723Z",
-          "LastModifiedDate": "2026-03-23T17:51:17.017Z"
+          "PublishedDate": "2026-01-08T10:15:45.667Z",
+          "LastModifiedDate": "2026-01-27T21:29:39.953Z"
         },
         {
-          "VulnerabilityID": "CVE-2026-34743",
-          "PkgID": "xz-libs@5.8.2-r0",
-          "PkgName": "xz-libs",
+          "VulnerabilityID": "CVE-2025-14524",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
           "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/xz-libs@5.8.2-r0?arch=x86_64\u0026distro=3.23.4",
-            "UID": "bc705a60e5b36919"
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
           },
-          "InstalledVersion": "5.8.2-r0",
-          "FixedVersion": "5.8.3-r0",
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:36c003a300d15169fe53876c4c807b1668568414660e5249ba6d168badab54fa"
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
           },
-          "SeveritySource": "nvd",
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-34743",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14524",
           "DataSource": {
             "ID": "alpine",
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:f733e21e5d577f2e4028ba9d27f61a63e186d78c2e3b141f41936cb6992211fd",
-          "Title": "xz: XZ Utils: Denial of Service via buffer overflow in index decoding",
-          "Description": "XZ Utils provide a general-purpose data-compression library plus command-line tools. Prior to version 5.8.3, if lzma_index_decoder() was used to decode an Index that contained no Records, the resulting lzma_index was left in a state where where a subsequent lzma_index_append() would allocate too little memory, and a buffer overflow would occur. This issue has been patched in version 5.8.3.",
+          "Fingerprint": "sha256:deddf67ccf5a4cd39adde4f5f41d3e18f39d619afcea39247ec6d151c89ecda5",
+          "Title": "curl: Information disclosure via cross-protocol redirect with OAuth2 bearer token",
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a cross-protocol redirect to a second URL that uses an IMAP, LDAP,\nPOP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new\ntarget host.",
           "Severity": "MEDIUM",
           "CweIDs": [
-            "CWE-122"
+            "CWE-601"
           ],
           "VendorSeverity": {
-            "azure": 1,
-            "nvd": 2,
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
             "photon": 2,
-            "redhat": 2
+            "redhat": 1,
+            "ubuntu": 1
           },
           "CVSS": {
-            "nvd": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
               "V3Score": 5.3
             },
             "redhat": {
-              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L",
-              "V3Score": 5.3
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
             }
           },
           "References": [
-            "http://www.openwall.com/lists/oss-security/2026/03/31/13",
-            "https://access.redhat.com/security/cve/CVE-2026-34743",
-            "https://github.com/tukaani-project/xz/commit/c8c22869e780ff57c96b46939c3d79ff99395f87",
-            "https://github.com/tukaani-project/xz/releases/tag/v5.8.3",
-            "https://github.com/tukaani-project/xz/security/advisories/GHSA-x872-m794-cxhv",
-            "https://nvd.nist.gov/vuln/detail/CVE-2026-34743",
-            "https://www.cve.org/CVERecord?id=CVE-2026-34743"
+            "http://www.openwall.com/lists/oss-security/2026/01/07/4",
+            "https://access.redhat.com/security/cve/CVE-2025-14524",
+            "https://curl.se/docs/CVE-2025-14524.html",
+            "https://curl.se/docs/CVE-2025-14524.json",
+            "https://github.com/advisories/GHSA-g897-jvjx-78vg",
+            "https://hackerone.com/reports/3459417",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14524",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14524"
           ],
-          "PublishedDate": "2026-04-02T19:21:33.187Z",
-          "LastModifiedDate": "2026-04-15T17:33:17.68Z"
+          "PublishedDate": "2026-01-08T10:15:46.607Z",
+          "LastModifiedDate": "2026-01-20T14:53:11.017Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-14819",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14819",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:ce1eb71cb172150f2f848400c30279c46f121601f9300b20672632b2a01359b7",
+          "Title": "curl: libcurl: Improper certificate validation due to cached TLS settings reuse",
+          "Description": "When doing TLS related transfers with reused easy or multi handles and\naltering the  `CURLSSLOPT_NO_PARTIALCHAIN` option, libcurl could accidentally\nreuse a CA store cached in memory for which the partial chain option was\nreversed. Contrary to the user's wishes and expectations. This could make\nlibcurl find and accept a trust chain that it otherwise would not.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/5",
+            "https://access.redhat.com/security/cve/CVE-2025-14819",
+            "https://curl.se/docs/CVE-2025-14819.html",
+            "https://curl.se/docs/CVE-2025-14819.json",
+            "https://github.com/advisories/GHSA-vqhr-m87q-9jqh",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14819",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14819"
+          ],
+          "PublishedDate": "2026-01-08T10:15:46.73Z",
+          "LastModifiedDate": "2026-01-20T14:51:26.263Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-1965",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-1965",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:b85229bb7e0c05c3867c62d1202ef027fb7a7123c825fa5360c89bee16b09edd",
+          "Title": "curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication",
+          "Description": "libcurl can in some circumstances reuse the wrong connection when asked to do\nan Negotiate-authenticated HTTP or HTTPS request.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criterion must first be met. Due to a\nlogical error in the code, a request that was issued by an application could\nwrongfully reuse an existing connection to the same server that was\nauthenticated using different credentials. One underlying reason being that\nNegotiate sometimes authenticates *connections* and not *requests*, contrary\nto how HTTP is designed to work.\n\nAn application that allows Negotiate authentication to a server (that responds\nwanting Negotiate) with `user1:password1` and then does another operation to\nthe same server also using Negotiate but with `user2:password2` (while the\nprevious connection is still alive) - the second request wrongly reused the\nsame connection and since it then sees that the Negotiate negotiation is\nalready made, it just sends the request over that connection thinking it uses\nthe user2 credentials when it is in fact still using the connection\nauthenticated for user1...\n\nThe set of authentication methods to use is set with  `CURLOPT_HTTPAUTH`.\n\nApplications can disable libcurl's reuse of connections and thus mitigate this\nproblem, by using one of the following libcurl options to alter how\nconnections are or are not reused: `CURLOPT_FRESH_CONNECT`,\n`CURLOPT_MAXCONNECTS` and `CURLMOPT_MAX_HOST_CONNECTIONS` (if using the\ncurl_multi API).",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-1965",
+            "https://curl.se/docs/CVE-2026-1965.html",
+            "https://curl.se/docs/CVE-2026-1965.json",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-1965",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-1965"
+          ],
+          "PublishedDate": "2026-03-11T11:15:59.177Z",
+          "LastModifiedDate": "2026-03-12T14:11:19.07Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3783",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3783",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:03da266518c8782a54861673f19da2f1356d9979b405acf323669b5ec73cffb1",
+          "Title": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a redirect to a second URL, curl could leak that token to the second\nhostname under some circumstances.\n\nIf the hostname that the first request is redirected to has information in the\nused .netrc file, with either of the `machine` or `default` keywords, curl\nwould pass on the bearer token set for the first host also to the second one.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/2",
+            "https://access.redhat.com/security/cve/CVE-2026-3783",
+            "https://curl.se/docs/CVE-2026-3783.html",
+            "https://curl.se/docs/CVE-2026-3783.json",
+            "https://github.com/advisories/GHSA-8whr-249c-vfjp",
+            "https://hackerone.com/reports/3583983",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3783",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3783"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.08Z",
+          "LastModifiedDate": "2026-03-12T14:10:37.3Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3784",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3784",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:0ac7c50aab81274223d81715267240e60ecd37fad50da5d60e68ddc3d3a17c7a",
+          "Title": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+          "Description": "curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a\nserver, even if the new request uses different credentials for the HTTP proxy.\nThe proper behavior is to create or use a separate connection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/3",
+            "https://access.redhat.com/security/cve/CVE-2026-3784",
+            "https://curl.se/docs/CVE-2026-3784.html",
+            "https://curl.se/docs/CVE-2026-3784.json",
+            "https://github.com/advisories/GHSA-5q3w-6p3j-mw6p",
+            "https://hackerone.com/reports/3584903",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3784",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3784"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.437Z",
+          "LastModifiedDate": "2026-03-12T14:09:50.47Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3805",
+          "PkgID": "curl@8.17.0-r1",
+          "PkgName": "curl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/curl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "1681fc3d2c57fb44"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3805",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:0c879bc54d3dd6ece50840e83a5c97e0aed74284f15db2b403b056ac63c86f00",
+          "Title": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+          "Description": "When doing a second SMB request to the same host again, curl would wrongly use\na data pointer pointing into already freed memory.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+              "V3Score": 6.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/4",
+            "https://access.redhat.com/security/cve/CVE-2026-3805",
+            "https://curl.se/docs/CVE-2026-3805.html",
+            "https://curl.se/docs/CVE-2026-3805.json",
+            "https://github.com/advisories/GHSA-2289-hhfc-p684",
+            "https://hackerone.com/reports/3591944",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3805",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3805"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.967Z",
+          "LastModifiedDate": "2026-03-12T14:08:56.79Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-14017",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14017",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:8ee29350722a46a79a42cae07a838b1420aa0b662f371f2e4b318b3c2403f336",
+          "Title": "curl: curl: Security bypass due to global TLS option changes in multi-threaded LDAPS transfers",
+          "Description": "When doing multi-threaded LDAPS transfers (LDAP over TLS) with libcurl,\nchanging TLS options in one thread would inadvertently change them globally\nand therefore possibly also affect other concurrently setup transfers.\n\nDisabling certificate verification for a specific transfer could\nunintentionally disable the feature for other threads as well.",
+          "Severity": "MEDIUM",
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 6.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 4.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/3",
+            "https://access.redhat.com/security/cve/CVE-2025-14017",
+            "https://curl.se/docs/CVE-2025-14017.html",
+            "https://curl.se/docs/CVE-2025-14017.json",
+            "https://github.com/advisories/GHSA-jh4h-2cg6-889h",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14017",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://ubuntu.com/security/notices/USN-8062-2",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14017"
+          ],
+          "PublishedDate": "2026-01-08T10:15:45.667Z",
+          "LastModifiedDate": "2026-01-27T21:29:39.953Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-14524",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14524",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:5b30583f249f9d2758db9fad3fd0bfa7d6c3bba702a9ed9441e4646ca47c40bc",
+          "Title": "curl: Information disclosure via cross-protocol redirect with OAuth2 bearer token",
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a cross-protocol redirect to a second URL that uses an IMAP, LDAP,\nPOP3 or SMTP scheme, curl might wrongly pass on the bearer token to the new\ntarget host.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-601"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "azure": 2,
+            "cbl-mariner": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/4",
+            "https://access.redhat.com/security/cve/CVE-2025-14524",
+            "https://curl.se/docs/CVE-2025-14524.html",
+            "https://curl.se/docs/CVE-2025-14524.json",
+            "https://github.com/advisories/GHSA-g897-jvjx-78vg",
+            "https://hackerone.com/reports/3459417",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14524",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14524"
+          ],
+          "PublishedDate": "2026-01-08T10:15:46.607Z",
+          "LastModifiedDate": "2026-01-20T14:53:11.017Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2025-14819",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-14819",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:ab1ee45dd7a3a82fc592d67e2c7a96a8d2fd3a6c429753089186639298adb376",
+          "Title": "curl: libcurl: Improper certificate validation due to cached TLS settings reuse",
+          "Description": "When doing TLS related transfers with reused easy or multi handles and\naltering the  `CURLSSLOPT_NO_PARTIALCHAIN` option, libcurl could accidentally\nreuse a CA store cached in memory for which the partial chain option was\nreversed. Contrary to the user's wishes and expectations. This could make\nlibcurl find and accept a trust chain that it otherwise would not.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-295"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 1,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/01/07/5",
+            "https://access.redhat.com/security/cve/CVE-2025-14819",
+            "https://curl.se/docs/CVE-2025-14819.html",
+            "https://curl.se/docs/CVE-2025-14819.json",
+            "https://github.com/advisories/GHSA-vqhr-m87q-9jqh",
+            "https://nvd.nist.gov/vuln/detail/CVE-2025-14819",
+            "https://ubuntu.com/security/notices/USN-8062-1",
+            "https://www.cve.org/CVERecord?id=CVE-2025-14819"
+          ],
+          "PublishedDate": "2026-01-08T10:15:46.73Z",
+          "LastModifiedDate": "2026-01-20T14:51:26.263Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-1965",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-1965",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:774161980221eb791f44b910af2a0c615ae7e9f4a5eb7d10b5e77d3955a32422",
+          "Title": "curl: curl: Authentication bypass due to incorrect connection reuse with Negotiate authentication",
+          "Description": "libcurl can in some circumstances reuse the wrong connection when asked to do\nan Negotiate-authenticated HTTP or HTTPS request.\n\nlibcurl features a pool of recent connections so that subsequent requests can\nreuse an existing connection to avoid overhead.\n\nWhen reusing a connection a range of criterion must first be met. Due to a\nlogical error in the code, a request that was issued by an application could\nwrongfully reuse an existing connection to the same server that was\nauthenticated using different credentials. One underlying reason being that\nNegotiate sometimes authenticates *connections* and not *requests*, contrary\nto how HTTP is designed to work.\n\nAn application that allows Negotiate authentication to a server (that responds\nwanting Negotiate) with `user1:password1` and then does another operation to\nthe same server also using Negotiate but with `user2:password2` (while the\nprevious connection is still alive) - the second request wrongly reused the\nsame connection and since it then sees that the Negotiate negotiation is\nalready made, it just sends the request over that connection thinking it uses\nthe user2 credentials when it is in fact still using the connection\nauthenticated for user1...\n\nThe set of authentication methods to use is set with  `CURLOPT_HTTPAUTH`.\n\nApplications can disable libcurl's reuse of connections and thus mitigate this\nproblem, by using one of the following libcurl options to alter how\nconnections are or are not reused: `CURLOPT_FRESH_CONNECT`,\n`CURLOPT_MAXCONNECTS` and `CURLMOPT_MAX_HOST_CONNECTIONS` (if using the\ncurl_multi API).",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N",
+              "V3Score": 6.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-1965",
+            "https://curl.se/docs/CVE-2026-1965.html",
+            "https://curl.se/docs/CVE-2026-1965.json",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-1965",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-1965"
+          ],
+          "PublishedDate": "2026-03-11T11:15:59.177Z",
+          "LastModifiedDate": "2026-03-12T14:11:19.07Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3783",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3783",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:df03139f1086454b7eb96616c90bcbe127794f0b1db19766d037e1990d5d397b",
+          "Title": "curl: curl: Information disclosure via OAuth2 bearer token leakage during HTTP(S) redirect",
+          "Description": "When an OAuth2 bearer token is used for an HTTP(S) transfer, and that transfer\nperforms a redirect to a second URL, curl could leak that token to the second\nhostname under some circumstances.\n\nIf the hostname that the first request is redirected to has information in the\nused .netrc file, with either of the `machine` or `default` keywords, curl\nwould pass on the bearer token set for the first host also to the second one.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-522"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N",
+              "V3Score": 5.3
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:N/A:N",
+              "V3Score": 5.7
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/2",
+            "https://access.redhat.com/security/cve/CVE-2026-3783",
+            "https://curl.se/docs/CVE-2026-3783.html",
+            "https://curl.se/docs/CVE-2026-3783.json",
+            "https://github.com/advisories/GHSA-8whr-249c-vfjp",
+            "https://hackerone.com/reports/3583983",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3783",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3783"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.08Z",
+          "LastModifiedDate": "2026-03-12T14:10:37.3Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3784",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3784",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:dec37d0ac26d1f17423a043078ac036b82b3091aa949a31ac69268b76bc689b5",
+          "Title": "curl: curl: Unauthorized access due to improper HTTP proxy connection reuse",
+          "Description": "curl would wrongly reuse an existing HTTP proxy connection doing CONNECT to a\nserver, even if the new request uses different credentials for the HTTP proxy.\nThe proper behavior is to create or use a separate connection.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-305"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "julia": 2,
+            "photon": 2,
+            "redhat": 2,
+            "ubuntu": 1
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N",
+              "V3Score": 6.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/3",
+            "https://access.redhat.com/security/cve/CVE-2026-3784",
+            "https://curl.se/docs/CVE-2026-3784.html",
+            "https://curl.se/docs/CVE-2026-3784.json",
+            "https://github.com/advisories/GHSA-5q3w-6p3j-mw6p",
+            "https://hackerone.com/reports/3584903",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3784",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://ubuntu.com/security/notices/USN-8099-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3784"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.437Z",
+          "LastModifiedDate": "2026-03-12T14:09:50.47Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-3805",
+          "PkgID": "libcurl@8.17.0-r1",
+          "PkgName": "libcurl",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libcurl@8.17.0-r1?arch=x86_64\u0026distro=3.23.4",
+            "UID": "67c003c6efbeb161"
+          },
+          "InstalledVersion": "8.17.0-r1",
+          "FixedVersion": "8.19.0-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:26f172a95252c537fa7227bb0afd5ac4867938127299f41718aa24ac63beb9ff"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-3805",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:6bd45210a34f8a2a44ee8db8cfd428a0e5526b6dabd545335827d120f5a3bd7c",
+          "Title": "curl: curl: Arbitrary code execution or Denial of Service via use-after-free in SMB request handling",
+          "Description": "When doing a second SMB request to the same host again, curl would wrongly use\na data pointer pointing into already freed memory.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 2,
+            "julia": 3,
+            "photon": 3,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:L",
+              "V3Score": 6.3
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/03/11/4",
+            "https://access.redhat.com/security/cve/CVE-2026-3805",
+            "https://curl.se/docs/CVE-2026-3805.html",
+            "https://curl.se/docs/CVE-2026-3805.json",
+            "https://github.com/advisories/GHSA-2289-hhfc-p684",
+            "https://hackerone.com/reports/3591944",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-3805",
+            "https://ubuntu.com/security/notices/USN-8084-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-3805"
+          ],
+          "PublishedDate": "2026-03-11T11:16:00.967Z",
+          "LastModifiedDate": "2026-03-12T14:08:56.79Z"
         }
       ]
     }
