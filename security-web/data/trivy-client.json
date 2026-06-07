@@ -1,11 +1,11 @@
 {
   "SchemaVersion": 2,
   "Trivy": {
-    "Version": "0.70.0"
+    "Version": "0.71.0"
   },
-  "ReportID": "019e7b78-08f2-7efe-9a71-ebafce15ef38",
-  "CreatedAt": "2026-05-31T00:38:44.722984585Z",
-  "ArtifactID": "sha256:be0caf94e62096a4ab0dec12de81d004421f1a8dc9afb585ffe87c2994997f31",
+  "ReportID": "019e9f86-1356-71f4-8b31-3c868293bf52",
+  "CreatedAt": "2026-06-07T00:40:24.66213022Z",
+  "ArtifactID": "sha256:369558ea8f67558d3ff32bd593630748080e806c0ee1649ccde207085fb5b111",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.4"
     },
-    "ImageID": "sha256:2276af27f540336a6c84914fee7a99fd27b13b7183a6a7db9b10b08556e9854b",
+    "ImageID": "sha256:440dda7e190eb91551e676d3e3e4f3df671a535010e4908ca58dec9f8a6a22ba",
     "DiffIDs": [
       "sha256:29df493baa13de438d6d2ece3a8333032e0b7b9b9d8cce4ee82194da255f61e1",
       "sha256:b910427bd94b3f8656a5557f6e4f484de3b83065ed7699fbbbeadcc313fbc2d9",
@@ -24,8 +24,8 @@
       "sha256:ad8253b95bde4ae533795f5e5730ba07f7f764d66f8af245a3118fb66a8ba546",
       "sha256:9a2cbc774b1f8a067ead2895c6fe744793f41aef4abd01771df1fadc16ec6f25",
       "sha256:5519239b187cd3709c07332d1796e87305684dbc91e05de8de1682602b6c3118",
-      "sha256:fc3a4bc080d6908d5a95d4de6bea4e6f4d8fca3396e3bfa87197f29e94e013cf",
-      "sha256:33839e39784982d8c4ffded9ad41a7e119dbdef753cb65bfc7d32cfed567bea5"
+      "sha256:558dcf710da8b04784394bc927667fe450959793ae1f26a91da9595820e68a2c",
+      "sha256:fbfca9cad74c9af3e0639f85d10cde34f300a45e18b9e5da1448f012545a8c41"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-05-31T00:38:43.427020533Z",
+      "created": "2026-06-07T00:40:23.322047117Z",
       "history": [
         {
           "created": "2026-04-15T20:01:40Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-31T00:38:37Z",
+          "created": "2026-06-07T00:40:17Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-31T00:38:43Z",
+          "created": "2026-06-07T00:40:23Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-05-31T00:38:43Z",
+          "created": "2026-06-07T00:40:23Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-05-31T00:38:43Z",
+          "created": "2026-06-07T00:40:23Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:ad8253b95bde4ae533795f5e5730ba07f7f764d66f8af245a3118fb66a8ba546",
           "sha256:9a2cbc774b1f8a067ead2895c6fe744793f41aef4abd01771df1fadc16ec6f25",
           "sha256:5519239b187cd3709c07332d1796e87305684dbc91e05de8de1682602b6c3118",
-          "sha256:fc3a4bc080d6908d5a95d4de6bea4e6f4d8fca3396e3bfa87197f29e94e013cf",
-          "sha256:33839e39784982d8c4ffded9ad41a7e119dbdef753cb65bfc7d32cfed567bea5"
+          "sha256:558dcf710da8b04784394bc927667fe450959793ae1f26a91da9595820e68a2c",
+          "sha256:fbfca9cad74c9af3e0639f85d10cde34f300a45e18b9e5da1448f012545a8c41"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:fc3a4bc080d6908d5a95d4de6bea4e6f4d8fca3396e3bfa87197f29e94e013cf"
+        "DiffID": "sha256:558dcf710da8b04784394bc927667fe450959793ae1f26a91da9595820e68a2c"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:33839e39784982d8c4ffded9ad41a7e119dbdef753cb65bfc7d32cfed567bea5"
+        "DiffID": "sha256:fbfca9cad74c9af3e0639f85d10cde34f300a45e18b9e5da1448f012545a8c41"
       }
     ]
   },
@@ -3594,6 +3594,62 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "AnalyzedBy": "apk"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-6732",
+          "PkgID": "libxml2@2.13.9-r0",
+          "PkgName": "libxml2",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libxml2@2.13.9-r0?arch=x86_64\u0026distro=3.23.4",
+            "UID": "a4c496351a710b02"
+          },
+          "InstalledVersion": "2.13.9-r0",
+          "FixedVersion": "2.13.9-r1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:5519239b187cd3709c07332d1796e87305684dbc91e05de8de1682602b6c3118"
+          },
+          "SeveritySource": "nvd",
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-6732",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:48ea3fd7746e2c5dc19de9b5e9ff617a5d8921627135022a26757393d029b03a",
+          "Title": "libxml2: libxml2: Denial of Service via crafted XSD-validated document",
+          "Description": "A flaw was found in libxml2. This vulnerability occurs when the library processes a specially crafted XML Schema Definition (XSD) validated document that includes an internal entity reference. An attacker could exploit this by providing a malicious document, leading to a type confusion error that causes the application to crash. This results in a denial of service (DoS), making the affected system or application unavailable.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-843"
+          ],
+          "VendorSeverity": {
+            "nvd": 3,
+            "redhat": 2
+          },
+          "CVSS": {
+            "nvd": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:A/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 6.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:11503",
+            "https://access.redhat.com/security/cve/CVE-2026-6732",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2461300",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/issues/1097",
+            "https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/411",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-6732",
+            "https://www.cve.org/CVERecord?id=CVE-2026-6732"
+          ],
+          "PublishedDate": "2026-04-23T23:16:16.443Z",
+          "LastModifiedDate": "2026-05-15T14:36:35.823Z"
         }
       ]
     }
