@@ -13,11 +13,7 @@
       "nodes": [
         "node_modules/concurrently"
       ],
-      "fixAvailable": {
-        "name": "concurrently",
-        "version": "9.2.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     },
     "shell-quote": {
       "name": "shell-quote",
@@ -49,11 +45,7 @@
       "nodes": [
         "node_modules/shell-quote"
       ],
-      "fixAvailable": {
-        "name": "concurrently",
-        "version": "9.2.0",
-        "isSemVerMajor": true
-      }
+      "fixAvailable": true
     }
   },
   "metadata": {
