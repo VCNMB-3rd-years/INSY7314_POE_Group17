@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.71.2"
   },
-  "ReportID": "019f2fb1-878f-74ca-9db7-48341c3f6677",
-  "CreatedAt": "2026-07-05T00:33:11.567315856Z",
-  "ArtifactID": "sha256:3248244f757efa31d7bcc4f3469764b32ebe8d506be81d5ca9e6af1687f69d54",
+  "ReportID": "019f53b9-e8e2-71e0-b746-3f9143ff09ef",
+  "CreatedAt": "2026-07-12T00:28:40.546124249Z",
+  "ArtifactID": "sha256:03459c6aa633f168c93aab8d9dabc94363206e5aa0d8efe173b941011ed36258",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.23.5"
     },
-    "ImageID": "sha256:f7af9a410fa511608f33256dda6a08ac9b1b441603af659bd6e58b673888b89a",
+    "ImageID": "sha256:4edbdbabeced4f3ff7bf8a0502c9fd24593dc9d6349e2b26d9506b07e129f0f7",
     "DiffIDs": [
       "sha256:31ad4a471c6852bfec14d757cc75a566c82a9769f12c3918cf6bf52cc0eeb3d0",
       "sha256:c91b7a48dd9f6fce74f14b5d0920e59c09773787293e3749fb2a07c068f17a46",
@@ -24,8 +24,8 @@
       "sha256:1876c8091457c6f55a9542d29f3549ef9f96ef9c8085bdbbf4ced393948a8753",
       "sha256:4979493d808a77835f23fb742b89b125901b9ec9af28e104555adca56fa854ca",
       "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a",
-      "sha256:b500c0ffe9132206e0efd39c74ed6088c67ba245f08d211085028b1e659abaf4",
-      "sha256:3ed44fa98fa188c0aebeadfa4184e7bc69b269f48ddad1a5765523d8cd81740d"
+      "sha256:1f253e1582ddc850f39e2636adec6267c07f807d5b3f540de63c0184c95086f7",
+      "sha256:4f437e8fdb42a5e18a8305c465c9f011d59fe3f8be690ea664ac63bc12991537"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-07-05T00:33:10.128556752Z",
+      "created": "2026-07-12T00:28:39.826840139Z",
       "history": [
         {
           "created": "2026-06-22T19:20:09Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-05T00:33:04Z",
+          "created": "2026-07-12T00:28:34Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-05T00:33:10Z",
+          "created": "2026-07-12T00:28:39Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-05T00:33:10Z",
+          "created": "2026-07-12T00:28:39Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-05T00:33:10Z",
+          "created": "2026-07-12T00:28:39Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:1876c8091457c6f55a9542d29f3549ef9f96ef9c8085bdbbf4ced393948a8753",
           "sha256:4979493d808a77835f23fb742b89b125901b9ec9af28e104555adca56fa854ca",
           "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a",
-          "sha256:b500c0ffe9132206e0efd39c74ed6088c67ba245f08d211085028b1e659abaf4",
-          "sha256:3ed44fa98fa188c0aebeadfa4184e7bc69b269f48ddad1a5765523d8cd81740d"
+          "sha256:1f253e1582ddc850f39e2636adec6267c07f807d5b3f540de63c0184c95086f7",
+          "sha256:4f437e8fdb42a5e18a8305c465c9f011d59fe3f8be690ea664ac63bc12991537"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:b500c0ffe9132206e0efd39c74ed6088c67ba245f08d211085028b1e659abaf4"
+        "DiffID": "sha256:1f253e1582ddc850f39e2636adec6267c07f807d5b3f540de63c0184c95086f7"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:3ed44fa98fa188c0aebeadfa4184e7bc69b269f48ddad1a5765523d8cd81740d"
+        "DiffID": "sha256:4f437e8fdb42a5e18a8305c465c9f011d59fe3f8be690ea664ac63bc12991537"
       }
     ]
   },
@@ -3572,6 +3572,161 @@
       ],
       "Vulnerabilities": [
         {
+          "VulnerabilityID": "CVE-2026-33630",
+          "PkgID": "c-ares@1.34.6-r0",
+          "PkgName": "c-ares",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/c-ares@1.34.6-r0?arch=x86_64\u0026distro=3.23.5",
+            "UID": "5be96d5420bec243"
+          },
+          "InstalledVersion": "1.34.6-r0",
+          "FixedVersion": "1.34.8-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-33630",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:120dbcdf59fdb3e7ad2ba82be6b0cc554d4fba17b6e97bbf341e4d705f541f0b",
+          "Title": "c-ares: c-ares: Use-after-free / double-free in query-completion handling",
+          "Description": "A flaw was found in c-ares. A use-after-free / double-free vulnerability exists in the query-completion handling path, where a query callback is invoked while the query is still linked in internal lookup structures. A remote attacker can exploit this via ares_getaddrinfo() over TCP by sending crafted DNS responses that force an EDNS-downgrade retry followed by a connection reset, causing the internal completion handler to access freed memory. This leads to memory corruption and a crash (denial of service), with potential for further impact depending on the allocator and build configuration.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+              "V3Score": 7.5
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-33630",
+            "https://github.com/c-ares/c-ares/commit/1fa3b86a0b8d18fe7b60f3228a01d770feb026bc",
+            "https://github.com/c-ares/c-ares/commit/d823199b688052dcdc1646f2ab4cb8c16b1c644a",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-33630",
+            "https://www.cve.org/CVERecord?id=CVE-2026-33630"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-56131",
+          "PkgID": "libexpat@2.8.1-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
+            "UID": "937779c088749efc"
+          },
+          "InstalledVersion": "2.8.1-r0",
+          "FixedVersion": "2.8.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56131",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:8912a13177d29e43794bdc93faa9f6d6f504c75d4fb5f0a8535608e2f705bb64",
+          "Title": "libexpat before 2.8.2 lacks handler call depth tracking for calls to X ...",
+          "Description": "libexpat before 2.8.2 lacks handler call depth tracking for calls to XML_ResumeParser from within handlers in cases of a policy violation. Thus, a use-after-free can occur (similar to the CVE-2026-50219 situation).",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-416"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2
+          },
+          "References": [
+            "https://github.com/libexpat/libexpat/pull/1267",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56131"
+          ],
+          "PublishedDate": "2026-06-19T06:17:10.107Z",
+          "LastModifiedDate": "2026-06-23T20:15:48.007Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-56407",
+          "PkgID": "libexpat@2.8.1-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
+            "UID": "937779c088749efc"
+          },
+          "InstalledVersion": "2.8.1-r0",
+          "FixedVersion": "2.8.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56407",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:3eda743868d130bf4c3aea80c289ebeafafcd2d2868e75ae25eda077246877fa",
+          "Title": "libexpat before 2.8.2 has an integer overflow in doProlog that is rela ...",
+          "Description": "libexpat before 2.8.2 has an integer overflow in doProlog that is related to storeEntityValue and entity textLen.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2
+          },
+          "References": [
+            "https://github.com/libexpat/libexpat/pull/1262",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56407"
+          ],
+          "PublishedDate": "2026-06-21T16:16:27.987Z",
+          "LastModifiedDate": "2026-06-23T16:28:29.983Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-56408",
+          "PkgID": "libexpat@2.8.1-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
+            "UID": "937779c088749efc"
+          },
+          "InstalledVersion": "2.8.1-r0",
+          "FixedVersion": "2.8.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56408",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:41ffc294c9fc310514dbc56160a96d62614a8a0ada9243e5411ef43f2f599548",
+          "Title": "libexpat before 2.8.2 has an integer overflow in copyString.",
+          "Description": "libexpat before 2.8.2 has an integer overflow in copyString.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2
+          },
+          "References": [
+            "https://github.com/libexpat/libexpat/commit/16e2efd867ea8567ffa012210b52ef5918e20817",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56408"
+          ],
+          "PublishedDate": "2026-06-21T16:16:28.11Z",
+          "LastModifiedDate": "2026-06-23T16:27:26.523Z"
+        },
+        {
           "VulnerabilityID": "CVE-2026-50219",
           "PkgID": "libexpat@2.8.1-r0",
           "PkgName": "libexpat",
@@ -3592,7 +3747,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:5e38a2d347e1ab0e7469b0055670f313b02d6b2dbf177a101ee3cd626c10abdf",
+          "Fingerprint": "sha256:134f4f2c69eb8d6c6d46c1ec4ed6f784e3c4b19a53aecee43c5001e68d870867",
           "Title": "expat: libexpat: Use-after-free vulnerability due to improper handler call depth tracking",
           "Description": "libexpat before 2.8.2 lacks handler call depth tracking for calls to XML_GetBuffer, XML_Parse, XML_ParseBuffer, XML_ParserFree, or XML_ParserReset from within handlers in cases of a policy violation. Thus, a use-after-free can occur,",
           "Severity": "MEDIUM",
@@ -3600,6 +3755,8 @@
             "CWE-416"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 1,
             "nvd": 2,
             "redhat": 2
           },
@@ -3643,7 +3800,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:904de702bc0a59a24eba960f049dd58a85c8e7a69229b4ae4fbc1807f8cd88e4",
+          "Fingerprint": "sha256:d1ef23c156761cd2183014a859fc01ad55e4b452ec0c42e53979a87472bfafe2",
           "Title": "expat: libexpat: Arbitrary Code Execution via Heap-based Buffer Overflow",
           "Description": "In libexpat before 2.8.2, there is a heap-based buffer overflow in doProlog in xmlparse.c because scaffold backing array reallocation is mishandled when there is data-structure sharing across parsers.",
           "Severity": "MEDIUM",
@@ -3651,6 +3808,8 @@
             "CWE-821"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "nvd": 2,
             "redhat": 2
           },
@@ -3694,7 +3853,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:bf2d0160ea24ae81b3c916051ab64faebc2811b0cc178ba6aaee7d9d572b87b8",
+          "Fingerprint": "sha256:815bd6c269c5821d01bb75dd7a742aeaa86f5f857519a4050bcc04a6c1f12021",
           "Title": "libexpat: libexpat: Arbitrary code execution due to integer overflow in storeAtts",
           "Description": "libexpat before 2.8.2 has an integer overflow in storeAtts.",
           "Severity": "MEDIUM",
@@ -3702,6 +3861,8 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "nvd": 2,
             "redhat": 2
           },
@@ -3745,7 +3906,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:6dff9acd02586e721c764d363d93d3217def80b531e470eec7e7434ed9705545",
+          "Fingerprint": "sha256:4b7ec3858c7d8b935765dd252fae1824aca12554f6e5523fa5ad514e8baac729",
           "Title": "libexpat before 2.8.2 has an integer overflow in addBinding.",
           "Description": "libexpat before 2.8.2 has an integer overflow in addBinding.",
           "Severity": "MEDIUM",
@@ -3753,6 +3914,8 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "nvd": 2
           },
           "CVSS": {
@@ -3762,7 +3925,8 @@
             }
           },
           "References": [
-            "https://github.com/libexpat/libexpat/pull/1249"
+            "https://github.com/libexpat/libexpat/pull/1249",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56404"
           ],
           "PublishedDate": "2026-06-21T16:16:27.62Z",
           "LastModifiedDate": "2026-06-23T20:15:05.85Z"
@@ -3788,7 +3952,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:326fc017cbe9016d38ea318d31da9711775c5db476a763dbae0ea826f20e532a",
+          "Fingerprint": "sha256:9becfb93022c01896ce908d29984ed9a6b1e9eed90f5c05ba50f9972a4bf66b5",
           "Title": "libexpat: libexpat: Information disclosure and arbitrary code execution via integer overflow",
           "Description": "libexpat before 2.8.2 has an integer overflow in getAttributeId.",
           "Severity": "MEDIUM",
@@ -3796,6 +3960,8 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "nvd": 2,
             "redhat": 2
           },
@@ -3838,7 +4004,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:03c48ced5da6ce73fcb03f4da55cf64eb287e742de42bdd53ab3927d32dbaffb",
+          "Fingerprint": "sha256:f2741e06e4b97f62c6a606c4389c4b83e44eef59a7cc49b53cd9603686244697",
           "Title": "libexpat: libexpat: Arbitrary code execution via integer overflow in XML_ParseBuffer",
           "Description": "libexpat before 2.8.2 has an integer overflow in XML_ParseBuffer because it lacked a check that was present in XML_Parse.",
           "Severity": "MEDIUM",
@@ -3846,6 +4012,8 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "redhat": 2
           },
           "CVSS": {
@@ -3862,6 +4030,43 @@
           ],
           "PublishedDate": "2026-06-21T16:16:27.87Z",
           "LastModifiedDate": "2026-06-23T16:29:06.077Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-56409",
+          "PkgID": "libexpat@2.8.1-r0",
+          "PkgName": "libexpat",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
+            "UID": "937779c088749efc"
+          },
+          "InstalledVersion": "2.8.1-r0",
+          "FixedVersion": "2.8.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56409",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:4bc2a67161f24aaa2228c22b5a89e159053edcb9008cf60a19b16d80cf508634",
+          "Title": "xmlwf in libexpat before 2.8.2 has an integer overflow for the output  ...",
+          "Description": "xmlwf in libexpat before 2.8.2 has an integer overflow for the output filename when -d outputDir is used.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "azure": 2
+          },
+          "References": [
+            "https://github.com/libexpat/libexpat/pull/1259",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-56409"
+          ],
+          "PublishedDate": "2026-06-21T16:16:28.23Z",
+          "LastModifiedDate": "2026-06-23T16:21:55.607Z"
         },
         {
           "VulnerabilityID": "CVE-2026-56410",
@@ -3883,7 +4088,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:6b2001e437262d97bcbef2148ebe7ad824d893c8fd8649435434d74487264ab1",
+          "Fingerprint": "sha256:5830f69f27c2968bc4796c1a1512bed95ef1973ec63e9a87f7f90658c21a8b81",
           "Title": "libexpat: libexpat: Integer overflow in xmlwf can lead to information disclosure and arbitrary code execution.",
           "Description": "xmlwf in libexpat before 2.8.2 has an integer overflow in resolveSystemId.",
           "Severity": "MEDIUM",
@@ -3891,6 +4096,7 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2
           },
           "CVSS": {
@@ -3928,7 +4134,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:822781d1c5c98e7213ef4f7479236527d351669327882c4890d2ca8abeb6df27",
+          "Fingerprint": "sha256:8f7bbc9050526b69441b30ca18895d21d6ab4382bd22ad544094fcd13a8d64c5",
           "Title": "expat: libexpat: Integer Overflow Vulnerability Leading to Information Disclosure or Code Execution",
           "Description": "xmlwf in libexpat before 2.8.2 has an integer overflow in endDoctypeDecl via NOTATION declarations.",
           "Severity": "MEDIUM",
@@ -3936,6 +4142,7 @@
             "CWE-190"
           ],
           "VendorSeverity": {
+            "azure": 2,
             "redhat": 2
           },
           "CVSS": {
@@ -3974,7 +4181,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:e3e47e36371704f7cf3b0252238af00186d1f6a4752b1913efd8b09b7994a09d",
+          "Fingerprint": "sha256:ca805a17073a837beee986ced2f179a6baec36d952a4b1e5b56269f043da453f",
           "Title": "libexpat: libexpat: Use-after-free vulnerability due to improper handling of XML CDATA sections",
           "Description": "libexpat before 2.8.2 does not consider XML_TOK_DATA_CHARS in doCdataSection and thus lacks handler call depth tracking for various calls from within handlers in cases of a policy violation. Thus, a use-after-free can occur. NOTE: this issue exists because of an incomplete fix for CVE-2026-50219.",
           "Severity": "MEDIUM",
@@ -3982,6 +4189,8 @@
             "CWE-416"
           ],
           "VendorSeverity": {
+            "amazon": 3,
+            "azure": 2,
             "nvd": 2,
             "redhat": 2
           },
@@ -4003,138 +4212,6 @@
           ],
           "PublishedDate": "2026-06-21T17:16:44.657Z",
           "LastModifiedDate": "2026-06-23T15:31:30.853Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-56131",
-          "PkgID": "libexpat@2.8.1-r0",
-          "PkgName": "libexpat",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
-            "UID": "937779c088749efc"
-          },
-          "InstalledVersion": "2.8.1-r0",
-          "FixedVersion": "2.8.2-r0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56131",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:fe694531607409abc0cd1904997c5a5edf7dbef7ce9a8a70fc61c7221604f30e",
-          "Title": "libexpat before 2.8.2 lacks handler call depth tracking for calls to X ...",
-          "Description": "libexpat before 2.8.2 lacks handler call depth tracking for calls to XML_ResumeParser from within handlers in cases of a policy violation. Thus, a use-after-free can occur (similar to the CVE-2026-50219 situation).",
-          "Severity": "UNKNOWN",
-          "CweIDs": [
-            "CWE-416"
-          ],
-          "References": [
-            "https://github.com/libexpat/libexpat/pull/1267"
-          ],
-          "PublishedDate": "2026-06-19T06:17:10.107Z",
-          "LastModifiedDate": "2026-06-23T20:15:48.007Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-56407",
-          "PkgID": "libexpat@2.8.1-r0",
-          "PkgName": "libexpat",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
-            "UID": "937779c088749efc"
-          },
-          "InstalledVersion": "2.8.1-r0",
-          "FixedVersion": "2.8.2-r0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56407",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:3058f6cb3bfde931941594165b3b934f2e27aca28b216c65cd47441be918d611",
-          "Title": "libexpat before 2.8.2 has an integer overflow in doProlog that is rela ...",
-          "Description": "libexpat before 2.8.2 has an integer overflow in doProlog that is related to storeEntityValue and entity textLen.",
-          "Severity": "UNKNOWN",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "References": [
-            "https://github.com/libexpat/libexpat/pull/1262"
-          ],
-          "PublishedDate": "2026-06-21T16:16:27.987Z",
-          "LastModifiedDate": "2026-06-23T16:28:29.983Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-56408",
-          "PkgID": "libexpat@2.8.1-r0",
-          "PkgName": "libexpat",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
-            "UID": "937779c088749efc"
-          },
-          "InstalledVersion": "2.8.1-r0",
-          "FixedVersion": "2.8.2-r0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56408",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:9256eefa6a8ba0ab6a39b6e262c04ade4579765389a8ce50c19b7ea05493574d",
-          "Title": "libexpat before 2.8.2 has an integer overflow in copyString.",
-          "Description": "libexpat before 2.8.2 has an integer overflow in copyString.",
-          "Severity": "UNKNOWN",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "References": [
-            "https://github.com/libexpat/libexpat/commit/16e2efd867ea8567ffa012210b52ef5918e20817"
-          ],
-          "PublishedDate": "2026-06-21T16:16:28.11Z",
-          "LastModifiedDate": "2026-06-23T16:27:26.523Z"
-        },
-        {
-          "VulnerabilityID": "CVE-2026-56409",
-          "PkgID": "libexpat@2.8.1-r0",
-          "PkgName": "libexpat",
-          "PkgIdentifier": {
-            "PURL": "pkg:apk/alpine/libexpat@2.8.1-r0?arch=x86_64\u0026distro=3.23.5",
-            "UID": "937779c088749efc"
-          },
-          "InstalledVersion": "2.8.1-r0",
-          "FixedVersion": "2.8.2-r0",
-          "Status": "fixed",
-          "Layer": {
-            "DiffID": "sha256:afbf6a2e4dc808fd59c8694426ca7e1ede0f87d699f3e5f24c506e3aff3cba2a"
-          },
-          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-56409",
-          "DataSource": {
-            "ID": "alpine",
-            "Name": "Alpine Secdb",
-            "URL": "https://secdb.alpinelinux.org/"
-          },
-          "Fingerprint": "sha256:3821072e8c11794fc14b0ac776c490c3f3d6250fe763736de4ec0cffd3353ad7",
-          "Title": "xmlwf in libexpat before 2.8.2 has an integer overflow for the output  ...",
-          "Description": "xmlwf in libexpat before 2.8.2 has an integer overflow for the output filename when -d outputDir is used.",
-          "Severity": "UNKNOWN",
-          "CweIDs": [
-            "CWE-190"
-          ],
-          "References": [
-            "https://github.com/libexpat/libexpat/pull/1259"
-          ],
-          "PublishedDate": "2026-06-21T16:16:28.23Z",
-          "LastModifiedDate": "2026-06-23T16:21:55.607Z"
         }
       ]
     }
