@@ -1,11 +1,11 @@
 {
   "SchemaVersion": 2,
   "Trivy": {
-    "Version": "0.71.2"
+    "Version": "0.72.0"
   },
-  "ReportID": "019f77c5-ab57-7cdb-a25c-02dec9ea5037",
-  "CreatedAt": "2026-07-19T00:27:50.999844262Z",
-  "ArtifactID": "sha256:19adb887a893d17897758c8e26553bfa6955078cda9a665e4b9c37016d85970c",
+  "ReportID": "019f9bd6-a945-766f-8ba7-86903247a3ee",
+  "CreatedAt": "2026-07-26T00:32:44.357423963Z",
+  "ArtifactID": "sha256:e00348f23565a5cc38fafe982f99ec6edfd5c16de5780ea7a64eb9a92e9a7405",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.24.1"
     },
-    "ImageID": "sha256:5c0c3f25027337a7fd0f14985936bf4d5315dc0574578d3a862306ddfd393669",
+    "ImageID": "sha256:06886162051235797b4c5636a35b7e9ab23803551bf98bb82e1be9ea9c580450",
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
       "sha256:548098c6fe2fca0719cdfb84f13de923748e311ec743235b44f4b4d5fb1bf7b4",
@@ -24,8 +24,8 @@
       "sha256:ba418be4ca73f2e644b01101aaf3647140cfd1407d4d01f762a78896c2f1bdff",
       "sha256:d53e22d501e6f52a15053d3ba14e286af2271838c34bf9754a777381e77a7bfd",
       "sha256:fbd591214bfc6863ddb2bada420ddcfa29b96a7593286fefb75b3ed2e2c78216",
-      "sha256:eec28ea078505ca9da9b92b28124975b6974486e134466b7790dcc5476f34481",
-      "sha256:e71713860ea089aa9a22b0ef66646db944e631820ea6ba91992151178394765c"
+      "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1",
+      "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-07-19T00:27:49.53607775Z",
+      "created": "2026-07-26T00:32:41.026256376Z",
       "history": [
         {
           "created": "2026-06-16T00:01:29Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-19T00:27:43Z",
+          "created": "2026-07-26T00:32:38Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-19T00:27:49Z",
+          "created": "2026-07-26T00:32:41Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-19T00:27:49Z",
+          "created": "2026-07-26T00:32:41Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-19T00:27:49Z",
+          "created": "2026-07-26T00:32:41Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:ba418be4ca73f2e644b01101aaf3647140cfd1407d4d01f762a78896c2f1bdff",
           "sha256:d53e22d501e6f52a15053d3ba14e286af2271838c34bf9754a777381e77a7bfd",
           "sha256:fbd591214bfc6863ddb2bada420ddcfa29b96a7593286fefb75b3ed2e2c78216",
-          "sha256:eec28ea078505ca9da9b92b28124975b6974486e134466b7790dcc5476f34481",
-          "sha256:e71713860ea089aa9a22b0ef66646db944e631820ea6ba91992151178394765c"
+          "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1",
+          "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:eec28ea078505ca9da9b92b28124975b6974486e134466b7790dcc5476f34481"
+        "DiffID": "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:e71713860ea089aa9a22b0ef66646db944e631820ea6ba91992151178394765c"
+        "DiffID": "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
       }
     ]
   },
