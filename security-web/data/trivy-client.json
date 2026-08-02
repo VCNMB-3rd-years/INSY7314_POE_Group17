@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.72.0"
   },
-  "ReportID": "019f9bd6-a945-766f-8ba7-86903247a3ee",
-  "CreatedAt": "2026-07-26T00:32:44.357423963Z",
-  "ArtifactID": "sha256:e00348f23565a5cc38fafe982f99ec6edfd5c16de5780ea7a64eb9a92e9a7405",
+  "ReportID": "019fbfe0-974e-79f6-8837-7874737456b3",
+  "CreatedAt": "2026-08-02T00:29:54.894654919Z",
+  "ArtifactID": "sha256:fda705063b225c13862550db5bf46eaf53a9a995b5822f316c86eb11237f6a6b",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.24.1"
     },
-    "ImageID": "sha256:06886162051235797b4c5636a35b7e9ab23803551bf98bb82e1be9ea9c580450",
+    "ImageID": "sha256:74fc7da54e9230f2aa9da5af58bdb7cd1b64bb8e82dd38caf9a845a261a2d464",
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
       "sha256:548098c6fe2fca0719cdfb84f13de923748e311ec743235b44f4b4d5fb1bf7b4",
@@ -24,8 +24,8 @@
       "sha256:ba418be4ca73f2e644b01101aaf3647140cfd1407d4d01f762a78896c2f1bdff",
       "sha256:d53e22d501e6f52a15053d3ba14e286af2271838c34bf9754a777381e77a7bfd",
       "sha256:fbd591214bfc6863ddb2bada420ddcfa29b96a7593286fefb75b3ed2e2c78216",
-      "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1",
-      "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
+      "sha256:18f364649bb8b64fe80ab7a244f0d11b442c197112c5c79b741c3e768e69a2e3",
+      "sha256:f87617a83d31491f3f5cce53753a4561adbad2115f50f10ffcad6121fb85ae03"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-07-26T00:32:41.026256376Z",
+      "created": "2026-08-02T00:29:53.790730614Z",
       "history": [
         {
           "created": "2026-06-16T00:01:29Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-26T00:32:38Z",
+          "created": "2026-08-02T00:29:48Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-26T00:32:41Z",
+          "created": "2026-08-02T00:29:53Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-07-26T00:32:41Z",
+          "created": "2026-08-02T00:29:53Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-07-26T00:32:41Z",
+          "created": "2026-08-02T00:29:53Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:ba418be4ca73f2e644b01101aaf3647140cfd1407d4d01f762a78896c2f1bdff",
           "sha256:d53e22d501e6f52a15053d3ba14e286af2271838c34bf9754a777381e77a7bfd",
           "sha256:fbd591214bfc6863ddb2bada420ddcfa29b96a7593286fefb75b3ed2e2c78216",
-          "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1",
-          "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
+          "sha256:18f364649bb8b64fe80ab7a244f0d11b442c197112c5c79b741c3e768e69a2e3",
+          "sha256:f87617a83d31491f3f5cce53753a4561adbad2115f50f10ffcad6121fb85ae03"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:ba8fac43d2e77fa1f9681c2b2edbb63ed4d669ed10c39349d279d0061ac657f1"
+        "DiffID": "sha256:18f364649bb8b64fe80ab7a244f0d11b442c197112c5c79b741c3e768e69a2e3"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:3f478e77d28829449f48284626ef0e606af085a52368b6fef1323d58dba0974c"
+        "DiffID": "sha256:f87617a83d31491f3f5cce53753a4561adbad2115f50f10ffcad6121fb85ae03"
       }
     ]
   },
