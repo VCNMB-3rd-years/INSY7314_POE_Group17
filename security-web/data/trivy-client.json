@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.72.0"
   },
-  "ReportID": "01a07416-88f1-7505-97e5-20c8360213f3",
-  "CreatedAt": "2026-09-06T00:20:29.041331174Z",
-  "ArtifactID": "sha256:ccc4acdd9ed76eaf442e5595849864cd788dcb7497a584a4eb96a2d5348a9f75",
+  "ReportID": "01a09822-e0dd-76d6-9f67-28644ff57601",
+  "CreatedAt": "2026-09-13T00:20:17.757449946Z",
+  "ArtifactID": "sha256:86438531db3fd164f0626f498c96aceb06acc2bac8ad0d76e6c70d3c43841bca",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.24.1"
     },
-    "ImageID": "sha256:89bf708cd8ad8f6a3ea15885e195b8aeaf92afaad291d7ed7214420ec4af3f66",
+    "ImageID": "sha256:1692a9ff5988764d333e5521a1481e817f347065b499a885e53c1d12cf601d6e",
     "DiffIDs": [
       "sha256:34884abbe92863fce933ed7c39c0e045631af0ed86d5cc0dfbdf9fdca426ce3c",
       "sha256:5c0955c965f2bb372759bcdc7e37ef45b310e15da13cfb9cd18547bd1b464ebe",
@@ -24,8 +24,8 @@
       "sha256:67184216cf5a9e041173bb37279613f1b39ea4b4a1c111a2cce7850192770aa0",
       "sha256:85c413237288f49067e52d602c6764bda82510dedbfa3e1a8589d7705c409c07",
       "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd",
-      "sha256:69cd043d62cbf95979bd05451cdb14acd69214de3297e71dd8661f4c135d7616",
-      "sha256:79955579e49b361c0cc72b37296b203df3c250041a89e3f01d22a7af3755ebb2"
+      "sha256:66b5d405a76cd8289dbbd842c82b7473c06f2032de21eee8789609627a54b053",
+      "sha256:20532c017685a876031de8d264006c7a232abc486efe679642f50ec42a366687"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-09-06T00:20:27.21818975Z",
+      "created": "2026-09-13T00:20:16.92521386Z",
       "history": [
         {
           "created": "2026-06-16T00:01:29Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-06T00:20:21Z",
+          "created": "2026-09-13T00:20:11Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-06T00:20:27Z",
+          "created": "2026-09-13T00:20:16Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-06T00:20:27Z",
+          "created": "2026-09-13T00:20:16Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-09-06T00:20:27Z",
+          "created": "2026-09-13T00:20:16Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:67184216cf5a9e041173bb37279613f1b39ea4b4a1c111a2cce7850192770aa0",
           "sha256:85c413237288f49067e52d602c6764bda82510dedbfa3e1a8589d7705c409c07",
           "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd",
-          "sha256:69cd043d62cbf95979bd05451cdb14acd69214de3297e71dd8661f4c135d7616",
-          "sha256:79955579e49b361c0cc72b37296b203df3c250041a89e3f01d22a7af3755ebb2"
+          "sha256:66b5d405a76cd8289dbbd842c82b7473c06f2032de21eee8789609627a54b053",
+          "sha256:20532c017685a876031de8d264006c7a232abc486efe679642f50ec42a366687"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:69cd043d62cbf95979bd05451cdb14acd69214de3297e71dd8661f4c135d7616"
+        "DiffID": "sha256:66b5d405a76cd8289dbbd842c82b7473c06f2032de21eee8789609627a54b053"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:79955579e49b361c0cc72b37296b203df3c250041a89e3f01d22a7af3755ebb2"
+        "DiffID": "sha256:20532c017685a876031de8d264006c7a232abc486efe679642f50ec42a366687"
       }
     ]
   },
@@ -3569,6 +3569,388 @@
             "usr/lib/libzstd.so.1.5.7"
           ],
           "AnalyzedBy": "apk"
+        }
+      ],
+      "Vulnerabilities": [
+        {
+          "VulnerabilityID": "CVE-2026-53612",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53612",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:3345df5e695900f258a95f6a61cba6569460370ce7c90d68a106de89bd51937f",
+          "Title": "util-linux: util-linux: TOCTOU in the mount program when applying post-mount ownership/mode changes",
+          "Description": "A flaw was found in util-linux. When an /etc/fstab entry uses the user option together with X-mount.owner, X-mount.group, or X-mount.mode, mount(8) changes ownership or permissions on the mount target after mounting without re-verifying the path. A local unprivileged user can exploit this Time-of-Check-Time-of-Use (TOCTOU) window by swapping the target directory, redirecting the ownership/permission change to an arbitrary file and potentially escalating privileges to root.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-53612",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-g8wm-75wr-g2vh",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-53612",
+            "https://ubuntu.com/security/notices/USN-8702-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53612"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53613",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53613",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:fde7ee27fb7546c2b742b244f17168a914acba6051bc38b6c1817898de99e72f",
+          "Title": "util-linux: util-linux: TOCTOU in the mount program via ancestor directory swap on target path",
+          "Description": "When an /etc/fstab entry is configured with the user or users option, mount(8) validates the target path before performing the mount syscall, creating a Time-of-Check-Time-of-Use (TOCTOU) window. A local unprivileged user with write access to an ancestor directory of the mount target can swap that directory to redirect the mount to an arbitrary root-owned location, potentially escalating privileges to root.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-53613",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-8gj5-72r3-428g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-53613",
+            "https://ubuntu.com/security/notices/USN-8702-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53613"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-53614",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-53614",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:d10ca8a8e1b2394b7ab1b8731f1b6f0e00c0e00cf9b6486e2a79a9516b9e09d2",
+          "Title": "util-linux: util-linux: SUID mount(8) allows nosuid/noexec bypass via LIBMOUNT_FORCE_MOUNT2",
+          "Description": "A flaw was found in util-linux. The mount(8) SUID binary does not sanitize the LIBMOUNT_FORCE_MOUNT2 environment variable before use. A local unprivileged user can set this variable to force mount(8) to use the legacy two-step mount(2) code path, which applies security restrictions such as nosuid and noexec after the mount is already active. During this window, an attacker can execute a SUID binary from the mounted filesystem, allowing local privilege escalation to root.",
+          "Severity": "HIGH",
+          "VendorSeverity": {
+            "redhat": 3,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-53614",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-67r7-8m5w-22wx",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-53614",
+            "https://ubuntu.com/security/notices/USN-8702-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-53614"
+          ]
+        },
+        {
+          "VulnerabilityID": "CVE-2026-76642",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-76642",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:9112075aaef7fa36812ff972b5ebfe6943557c02ba72cd9a65649dafebda25bb",
+          "Title": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+          "Description": "util-linux versions through 2.41.5 and 2.42.2 fail to check mount helper exit status before running post-mount hooks, allowing unprivileged users to execute privileged operations on pre-existing filesystems. Attackers can exploit X-mount.idmap or X-mount.owner hooks to clone filesystems with inherited suid bits or modify target inode permissions after a helper fails, achieving privilege escalation.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-390"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/security/cve/CVE-2026-76642",
+            "https://github.com/util-linux/util-linux",
+            "https://github.com/util-linux/util-linux/blob/v2.42.2/libmount/src/context_mount.c#L476",
+            "https://github.com/util-linux/util-linux/blob/v2.42.2/libmount/src/context_mount.c#L892",
+            "https://github.com/util-linux/util-linux/commit/1d14676ea70003e9f5b2a6a76af0cadb1190411a",
+            "https://github.com/util-linux/util-linux/commit/a15c00a9e545aa8b9cf6ec0f888ff6c7b3eaeedc",
+            "https://github.com/util-linux/util-linux/commit/f57cea130839c0af8dc0525274267ae4cfd66bbf",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-m25x-3hj9-m26f",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-76642",
+            "https://www.cve.org/CVERecord?id=CVE-2026-76642",
+            "https://www.vulncheck.com/advisories/util-linux-libmount-privilege-escalation-via-failed-mount-helper"
+          ],
+          "PublishedDate": "2026-09-03T13:06:08.44Z",
+          "LastModifiedDate": "2026-09-03T15:17:33.49Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78408",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78408",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:3cd2b01b6ec6f622be728b8573e667ccf7fcdd4feb708c9038d50fede1a6ecc6",
+          "Title": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+          "Description": "The nsenter --join-cgroup option opens the target cgroup.procs file as root and leaves that file descriptor open across later namespace and credential changes and across execve(). Because the kernel checks later cgroup migrations using the credentials from the original open, a program run in an attacker-controlled target can inherit root's ability to move host processes between cgroups. After a privileged operator uses --join-cgroup against that target, an unprivileged user can migrate and terminate unrelated root processes.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-775"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:R/S:C/C:N/I:H/A:H",
+              "V3Score": 7.9
+            }
+          },
+          "References": [
+            "http://www.openwall.com/lists/oss-security/2026/09/05/2",
+            "https://access.redhat.com/errata/RHSA-2026:63162",
+            "https://access.redhat.com/security/cve/CVE-2026-78408",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2522497",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-55fx-f4gg-cfhj",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78408",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78408"
+          ],
+          "PublishedDate": "2026-09-02T16:17:23.687Z",
+          "LastModifiedDate": "2026-09-05T14:17:23.727Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78409",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78409",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:c2a37de2b151212bdfa2f2623b93f613781ab8dcc1b8e769b3819895ab8d5f42",
+          "Title": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+          "Description": "The X-mount.subdir option uses a detached-tree fast path on Linux 6.15 and later and passes the configured subdirectory to open_tree() with AT_SYMLINK_NOFOLLOW. That flag does not stop intermediate symlink traversal or keep resolution inside the newly mounted filesystem. A local unprivileged user with an fstab-authorized X-mount.subdir entry can attach a host path at the intended mountpoint.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-59"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:63162",
+            "https://access.redhat.com/security/cve/CVE-2026-78409",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2522607",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-8f2p-47x3-43mv",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78409",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78409"
+          ],
+          "PublishedDate": "2026-09-02T16:17:23.833Z",
+          "LastModifiedDate": "2026-09-03T18:12:56.407Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-78410",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-78410",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:af18015575f60382461e32f2fc582f24bb94b45d8c7454df4a4a75e8c9ee42f6",
+          "Title": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+          "Description": "A flaw was found in util-linux. Restricted bind mounts take the source path from fstab but do not pin that source before the privileged mount. A local unprivileged user who can replace the authorized source or a writable ancestor can redirect SUID mount(8) to bind another host directory. If the fstab entry also sets X-mount.owner, X-mount.group, or X-mount.mode, root then changes ownership or mode on that redirected inode.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "redhat": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:63162",
+            "https://access.redhat.com/security/cve/CVE-2026-78410",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2522684",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-rh77-686x-2f2m",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-78410",
+            "https://www.cve.org/CVERecord?id=CVE-2026-78410"
+          ],
+          "PublishedDate": "2026-09-02T16:17:23.983Z",
+          "LastModifiedDate": "2026-09-04T19:17:27.567Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-27456",
+          "PkgID": "libuuid@2.42.1-r0",
+          "PkgName": "libuuid",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/libuuid@2.42.1-r0?arch=x86_64\u0026distro=3.24.1",
+            "UID": "61e289a52fcab6f6"
+          },
+          "InstalledVersion": "2.42.1-r0",
+          "FixedVersion": "2.42.3-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:bf413c2718bce32a14274f57ddfa79b3b744a5cb6267cda487f0e1acb2b64fdd"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-27456",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:5fe0956457904c8a3ecf74bf84a6f110176f19329ae80c6f8c220ca5acdef85b",
+          "Title": "util-linux: TOCTOU in the mount program when setting up loop devices",
+          "Description": "util-linux is a random collection of Linux utilities. Prior to version 2.41.4, a TOCTOU (Time-of-Check-Time-of-Use) vulnerability has been identified in the SUID binary /usr/bin/mount from util-linux. The mount binary, when setting up loop devices, validates the source file path with user privileges via fork() + setuid() + realpath(), but subsequently re-canonicalizes and opens it with root privileges (euid=0) without verifying that the path has not been replaced between both operations. Neither O_NOFOLLOW, nor inode comparison, nor post-open fstat() are employed. This allows a local unprivileged user to replace the source file with a symlink pointing to any root-owned file or device during the race window, causing the SUID binary to open and mount it as root. Exploitation requires an /etc/fstab entry with user,loop options whose path points to a directory where the attacker has write permission, and that /usr/bin/mount has the SUID bit set (the default configuration on virtually all Linux distributions). The impact is unauthorized read access to root-protected files and block devices, including backup images, disk volumes, and any file containing a valid filesystem. This issue has been patched in version 2.41.4.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-59",
+            "CWE-269",
+            "CWE-367"
+          ],
+          "VendorSeverity": {
+            "azure": 2,
+            "bottlerocket": 2,
+            "julia": 2,
+            "redhat": 2,
+            "ubuntu": 2
+          },
+          "CVSS": {
+            "julia": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 4.7
+            },
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
+              "V3Score": 4.7
+            }
+          },
+          "References": [
+            "http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-27456",
+            "https://access.redhat.com/security/cve/CVE-2026-27456",
+            "https://github.com/bottlerocket-os/bottlerocket-core-kit/blob/develop/advisories/14.5.0/BRSA-jgcxwcxt3sxd.toml",
+            "https://github.com/util-linux/util-linux/commit/5e390467b26a3cf3fecc04e1a0d482dff3162fc4",
+            "https://github.com/util-linux/util-linux/releases/tag/v2.41.4",
+            "https://github.com/util-linux/util-linux/security/advisories/GHSA-qq4x-vfq4-9h9g",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-27456",
+            "https://ubuntu.com/security/notices/USN-8702-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-27456"
+          ],
+          "PublishedDate": "2026-04-03T22:16:25.4Z",
+          "LastModifiedDate": "2026-07-24T22:10:00.14Z"
         }
       ]
     }
