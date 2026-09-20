@@ -3,27 +3,27 @@
   "Trivy": {
     "Version": "0.72.0"
   },
-  "ReportID": "01a09822-bff1-7bd4-a614-d1fd60cbfef2",
-  "CreatedAt": "2026-09-13T00:20:09.329776643Z",
-  "ArtifactID": "sha256:c6af29fffe857ecd0faeeaedf84810a5a62e8eddfa29897a1c87607fc68f3cf9",
+  "ReportID": "01a0bc2f-3857-7400-900a-4143893af270",
+  "CreatedAt": "2026-09-20T00:20:06.35926351Z",
+  "ArtifactID": "sha256:fd330bcf160fd33a6f1b3385fe2e0de856ec4d69aea88b5295e2e88e44325704",
   "ArtifactName": "payments-backend",
   "ArtifactType": "container_image",
   "Metadata": {
-    "Size": 156379136,
+    "Size": 156381696,
     "OS": {
       "Family": "alpine",
       "Name": "3.21.3"
     },
-    "ImageID": "sha256:e33a3e4b00cf27bd18af2fe7998f926fbbd3c6f34cf0300b5a0fc7186d3a93b6",
+    "ImageID": "sha256:8e9ccda34b1329fcda88a02dd38cc5b5b63c84264cc105dbe88624c32b4c5e2e",
     "DiffIDs": [
       "sha256:08000c18d16dadf9553d747a58cf44023423a9ab010aab96cf263d2216b8b350",
       "sha256:0b1f26057bd0491a50f56fd7f2983bd3ad478511f12fff2b361a97c50cb5828b",
       "sha256:f3b40b0cdb1caad1db11b8589c814f85b3e69f3ed33f64a686e465e74a47c9f0",
       "sha256:82140d9a70a706b719632fec8e4d083419fc62159f94afec80dcabc52e0ed0d2",
-      "sha256:ae131e9e8e26f758eb87c0131da505816ea8ad69037dccac4395262384aab73f",
-      "sha256:e5b7544273784347e933654fd4ba79774103c0c554b2f92cde6579c7abb27df5",
-      "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c",
-      "sha256:885df35522cdf4e58b8eb9c0c27673ba676ec680f3307fc3c1906827dc65b730"
+      "sha256:13d4e731ac641b4b70bb291eac976f5b829b72164cc026f220c9b1f0a23d7c10",
+      "sha256:82aa50f59bfdf355d000e74faa306d4e6de8e55b42831f093043319f9ae85a1a",
+      "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e",
+      "sha256:40d081c1f7e67aa28a0e6e1b7a0d438221a19fc85a51405a4bf8a9c6a750c325"
     ],
     "RepoTags": [
       "payments-backend:latest"
@@ -31,7 +31,7 @@
     "Reference": "payments-backend:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-09-13T00:20:00.070137091Z",
+      "created": "2026-09-20T00:19:58.327484728Z",
       "history": [
         {
           "created": "2025-02-14T03:28:36Z",
@@ -84,39 +84,39 @@
           "empty_layer": true
         },
         {
-          "created": "2026-09-13T00:19:57Z",
+          "created": "2026-09-20T00:19:55Z",
           "created_by": "WORKDIR /app",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-13T00:19:57Z",
+          "created": "2026-09-20T00:19:55Z",
           "created_by": "COPY package*.json ./ # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-13T00:20:00Z",
+          "created": "2026-09-20T00:19:58Z",
           "created_by": "RUN /bin/sh -c npm ci --only=production # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-13T00:20:00Z",
+          "created": "2026-09-20T00:19:58Z",
           "created_by": "COPY . . # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-09-13T00:20:00Z",
+          "created": "2026-09-20T00:19:58Z",
           "created_by": "EXPOSE map[5000/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-09-13T00:20:00Z",
+          "created": "2026-09-20T00:19:58Z",
           "created_by": "HEALTHCHECK \u0026{[\"CMD-SHELL\" \"node -e \\\"require('http').get('http://localhost:5000/api/health', (res) =\u003e { process.exit(res.statusCode === 200 ? 0 : 1); }).on('error', () =\u003e process.exit(1));\\\"\"] \"30s\" \"3s\" \"5s\" \"0s\" '\\x03'}",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-09-13T00:20:00Z",
+          "created": "2026-09-20T00:19:58Z",
           "created_by": "CMD [\"node\" \"index.js\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -130,10 +130,10 @@
           "sha256:0b1f26057bd0491a50f56fd7f2983bd3ad478511f12fff2b361a97c50cb5828b",
           "sha256:f3b40b0cdb1caad1db11b8589c814f85b3e69f3ed33f64a686e465e74a47c9f0",
           "sha256:82140d9a70a706b719632fec8e4d083419fc62159f94afec80dcabc52e0ed0d2",
-          "sha256:ae131e9e8e26f758eb87c0131da505816ea8ad69037dccac4395262384aab73f",
-          "sha256:e5b7544273784347e933654fd4ba79774103c0c554b2f92cde6579c7abb27df5",
-          "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c",
-          "sha256:885df35522cdf4e58b8eb9c0c27673ba676ec680f3307fc3c1906827dc65b730"
+          "sha256:13d4e731ac641b4b70bb291eac976f5b829b72164cc026f220c9b1f0a23d7c10",
+          "sha256:82aa50f59bfdf355d000e74faa306d4e6de8e55b42831f093043319f9ae85a1a",
+          "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e",
+          "sha256:40d081c1f7e67aa28a0e6e1b7a0d438221a19fc85a51405a4bf8a9c6a750c325"
         ]
       },
       "config": {
@@ -185,19 +185,19 @@
       },
       {
         "Size": 1536,
-        "DiffID": "sha256:ae131e9e8e26f758eb87c0131da505816ea8ad69037dccac4395262384aab73f"
+        "DiffID": "sha256:13d4e731ac641b4b70bb291eac976f5b829b72164cc026f220c9b1f0a23d7c10"
       },
       {
         "Size": 63488,
-        "DiffID": "sha256:e5b7544273784347e933654fd4ba79774103c0c554b2f92cde6579c7abb27df5"
+        "DiffID": "sha256:82aa50f59bfdf355d000e74faa306d4e6de8e55b42831f093043319f9ae85a1a"
       },
       {
-        "Size": 26822656,
-        "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+        "Size": 26825216,
+        "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
       },
       {
         "Size": 61952,
-        "DiffID": "sha256:885df35522cdf4e58b8eb9c0c27673ba676ec680f3307fc3c1906827dc65b730"
+        "DiffID": "sha256:40d081c1f7e67aa28a0e6e1b7a0d438221a19fc85a51405a4bf8a9c6a750c325"
       }
     ]
   },
@@ -790,7 +790,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:047aa8f9febf53359918d8bf5662b2464f8c0bbf0f6814c1322dab168a4a42f3",
+          "Fingerprint": "sha256:0a8f7899635b09f64defbe1542625bb056cfd516c886b431c3fc309b2772c888",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -831,7 +831,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:66c2881e1221024b1369cac71d7ce5064ce50161e70879821c53f01d365df2e8",
+          "Fingerprint": "sha256:e8d4f3a7106306760ff05006765d77253b1bf943338d43a2c992af40d4cd6a10",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
@@ -883,7 +883,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:11a46eda762cb5907e40f9452bac7e0554cce42b65b811d441c7cec58c5fe498",
+          "Fingerprint": "sha256:859f865b43400639dde71fd6ebdb5d5caed0506bb5e5c704e5f675a62efcbd77",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -924,7 +924,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:67e71a6874aa6ecb9e70b94dbd8aa5eb6deed0417a0feffbfbcc60d146dba83a",
+          "Fingerprint": "sha256:7fa7f34d1eae545acd3563bc571dbe4e8e8e258cac49e189ee352acce5aa5299",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
@@ -977,7 +977,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:0808eecc31f4fb9078decc365364dfa434e0e383a4b1e01ce73d8d94fa999750",
+          "Fingerprint": "sha256:d249162a4eb3174121920b92abd15e44de76f1d18d227ff7007c6d9ae745c069",
           "Title": "openssl: OpenSSL: Heap buffer overflow on 32-bit systems from large X.509 certificate processing",
           "Description": "Issue summary: Converting an excessively large OCTET STRING value to\na hexadecimal string leads to a heap buffer overflow on 32 bit platforms.\n\nImpact summary: A heap buffer overflow may lead to a crash or possibly\nan attacker controlled code execution or other undefined behavior.\n\nIf an attacker can supply a crafted X.509 certificate with an excessively\nlarge OCTET STRING value in extensions such as the Subject Key Identifier\n(SKID) or Authority Key Identifier (AKID) which are being converted to hex,\nthe size of the buffer needed for the result is calculated as multiplication\nof the input length by 3. On 32 bit platforms, this multiplication may overflow\nresulting in the allocation of a smaller buffer and a heap buffer overflow.\n\nApplications and services that print or log contents of untrusted X.509\ncertificates are vulnerable to this issue. As the certificates would have\nto have sizes of over 1 Gigabyte, printing or logging such certificates\nis a fairly unlikely operation and only 32 bit platforms are affected,\nthis issue was assigned Low severity.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "CRITICAL",
@@ -1044,7 +1044,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:c4e1e2b5ba901b84b5febdacedee4845150564d494cadebe7bbae987da585f09",
+          "Fingerprint": "sha256:e41e6f2cc09797b8b714c369d117f9e3be55902cf35dd32ad77fe6ea5c7e2590",
           "Title": "openssl: OpenSSL: Remote code execution or Denial of Service via oversized Initialization Vector in CMS parsing",
           "Description": "Issue summary: Parsing CMS AuthEnvelopedData or EnvelopedData message with\nmaliciously crafted AEAD parameters can trigger a stack buffer overflow.\n\nImpact summary: A stack buffer overflow may lead to a crash, causing Denial\nof Service, or potentially remote code execution.\n\nWhen parsing CMS (Auth)EnvelopedData structures that use AEAD ciphers such as\nAES-GCM, the IV (Initialization Vector) encoded in the ASN.1 parameters is\ncopied into a fixed-size stack buffer without verifying that its length fits\nthe destination. An attacker can supply a crafted CMS message with an\noversized IV, causing a stack-based out-of-bounds write before any\nauthentication or tag verification occurs.\n\nApplications and services that parse untrusted CMS or PKCS#7 content using\nAEAD ciphers (e.g., S/MIME (Auth)EnvelopedData with AES-GCM) are vulnerable.\nBecause the overflow occurs prior to authentication, no valid key material\nis required to trigger it. While exploitability to remote code execution\ndepends on platform and toolchain mitigations, the stack-based write\nprimitive represents a severe risk.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3 and 3.0 are vulnerable to this issue.\n\nOpenSSL 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "HIGH",
@@ -1183,7 +1183,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:a260654375d76a71593a39dce74bfab6803907185c4b7e9c298f25c3560ab1dd",
+          "Fingerprint": "sha256:d77cefbdd7af9660bdcdced753a46bef27d4386e5a0ed41bc07b4315a16244d1",
           "Title": "openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing",
           "Description": "Issue summary: Processing a malformed PKCS#12 file can trigger a NULL pointer\ndereference in the PKCS12_item_decrypt_d2i_ex() function.\n\nImpact summary: A NULL pointer dereference can trigger a crash which leads to\nDenial of Service for an application processing PKCS#12 files.\n\nThe PKCS12_item_decrypt_d2i_ex() function does not check whether the oct\nparameter is NULL before dereferencing it. When called from\nPKCS12_unpack_p7encdata() with a malformed PKCS#12 file, this parameter can\nbe NULL, causing a crash. The vulnerability is limited to Denial of Service\nand cannot be escalated to achieve code execution or memory disclosure.\n\nExploiting this issue requires an attacker to provide a malformed PKCS#12 file\nto an application that processes it. For that reason the issue was assessed as\nLow severity according to our Security Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "HIGH",
@@ -1299,7 +1299,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:1f61a441cb9d5201fcfc58894c1978caee70088bbabd217112c98e000001e67d",
+          "Fingerprint": "sha256:b7c4fb9061574915ce0852bf36c90f9ef5a072e60f9218a74cb3a24321b9439b",
           "Title": "openssl: OpenSSL: Arbitrary code execution due to use-after-free in DANE TLSA authentication",
           "Description": "Issue summary: An uncommon configuration of clients performing DANE TLSA-based\nserver authentication, when paired with uncommon server DANE TLSA records, may\nresult in a use-after-free and/or double-free on the client side.\n\nImpact summary: A use after free can have a range of potential consequences\nsuch as the corruption of valid data, crashes or execution of arbitrary code.\n\nHowever, the issue only affects clients that make use of TLSA records with both\nthe PKIX-TA(0/PKIX-EE(1) certificate usages and the DANE-TA(2) certificate\nusage.\n\nBy far the most common deployment of DANE is in SMTP MTAs for which RFC7672\nrecommends that clients treat as 'unusable' any TLSA records that have the PKIX\ncertificate usages.  These SMTP (or other similar) clients are not vulnerable\nto this issue.  Conversely, any clients that support only the PKIX usages, and\nignore the DANE-TA(2) usage are also not vulnerable.\n\nThe client would also need to be communicating with a server that publishes a\nTLSA RRset with both types of TLSA records.\n\nNo FIPS modules are affected by this issue, the problem code is outside the\nFIPS module boundary.",
           "Severity": "HIGH",
@@ -1369,7 +1369,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:3f87d14272d7fe3107b214412e8dffd5e97cf7ef41b42e8a612e700487ab8dc0",
+          "Fingerprint": "sha256:48dec05a066d43a585d8994b2fe2e7cb150b59b29553b04901e5406040087281",
           "Title": "openssl: OpenSSL: Denial of Service due to NULL pointer dereference in delta CRL processing",
           "Description": "Issue summary: When a delta CRL that contains a Delta CRL Indicator extension\nis processed a NULL pointer dereference might happen if the required CRL\nNumber extension is missing.\n\nImpact summary: A NULL pointer dereference can trigger a crash which\nleads to a Denial of Service for an application.\n\nWhen CRL processing and delta CRL processing is enabled during X.509\ncertificate verification, the delta CRL processing does not check\nwhether the CRL Number extension is NULL before dereferencing it.\nWhen a malformed delta CRL file is being processed, this parameter\ncan be NULL, causing a NULL pointer dereference.\n\nExploiting this issue requires the X509_V_FLAG_USE_DELTAS flag to be enabled in\nthe verification context, the certificate being verified to contain a\nfreshestCRL extension or the base CRL to have the EXFLAG_FRESHEST flag set, and\nan attacker to provide a malformed CRL to an application that processes it.\n\nThe vulnerability is limited to Denial of Service and cannot be escalated to\nachieve code execution or memory disclosure. For that reason the issue was\nassessed as Low severity according to our Security Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -1439,7 +1439,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:4f1c1b73ec9c647297c67db4a741de08bb861a34d888c14f3fe2a747de47e441",
+          "Fingerprint": "sha256:5917a5826e6b4cc714fb44a4e5d0ad9dc8776175e33c657e22efc9b90101767e",
           "Title": "openssl: OpenSSL: Denial of Service vulnerability in CMS processing",
           "Description": "Issue summary: During processing of a crafted CMS EnvelopedData message\nwith KeyAgreeRecipientInfo a NULL pointer dereference can happen.\n\nImpact summary: Applications that process attacker-controlled CMS data may\ncrash before authentication or cryptographic operations occur resulting in\nDenial of Service.\n\nWhen a CMS EnvelopedData message that uses KeyAgreeRecipientInfo is\nprocessed, the optional parameters field of KeyEncryptionAlgorithmIdentifier\nis examined without checking for its presence. This results in a NULL\npointer dereference if the field is missing.\n\nApplications and services that call CMS_decrypt() on untrusted input\n(e.g., S/MIME processing or CMS-based protocols) are vulnerable.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -1510,7 +1510,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:116161bb976c0cdd7cb11f45da88a5f5fb7816ce7ee996eed2195e212c6ee11e",
+          "Fingerprint": "sha256:6e4aec48861b25b1735b8fc41ccf95acb53d49480173a1e7aa254b9f516015bf",
           "Title": "openssl: OpenSSL: Denial of Service due to NULL pointer dereference in CMS EnvelopedData processing",
           "Description": "Issue summary: During processing of a crafted CMS EnvelopedData message\nwith KeyTransportRecipientInfo a NULL pointer dereference can happen.\n\nImpact summary: Applications that process attacker-controlled CMS data may\ncrash before authentication or cryptographic operations occur resulting in\nDenial of Service.\n\nWhen a CMS EnvelopedData message that uses KeyTransportRecipientInfo with\nRSA-OAEP encryption is processed, the optional parameters field of\nRSA-OAEP SourceFunc algorithm identifier is examined without checking\nfor its presence. This results in a NULL pointer dereference if the field\nis missing.\n\nApplications and services that call CMS_decrypt() on untrusted input\n(e.g., S/MIME processing or CMS-based protocols) are vulnerable.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -1592,7 +1592,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:889d68e4ec62a3581aecbd6ccd5154f64ddec939a8a16ef44eb330f0907a33c6",
+          "Fingerprint": "sha256:0974694c3aefd7b58e2abcee5567c39b92d08bb84442147d32162ff56eb4e4d8",
           "Title": "openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write in PKCS#12 processing",
           "Description": "Issue summary: Calling PKCS12_get_friendlyname() function on a maliciously\ncrafted PKCS#12 file with a BMPString (UTF-16BE) friendly name containing\nnon-ASCII BMP code point can trigger a one byte write before the allocated\nbuffer.\n\nImpact summary: The out-of-bounds write can cause a memory corruption\nwhich can have various consequences including a Denial of Service.\n\nThe OPENSSL_uni2utf8() function performs a two-pass conversion of a PKCS#12\nBMPString (UTF-16BE) to UTF-8. In the second pass, when emitting UTF-8 bytes,\nthe helper function bmp_to_utf8() incorrectly forwards the remaining UTF-16\nsource byte count as the destination buffer capacity to UTF8_putc(). For BMP\ncode points above U+07FF, UTF-8 requires three bytes, but the forwarded\ncapacity can be just two bytes. UTF8_putc() then returns -1, and this negative\nvalue is added to the output length without validation, causing the\nlength to become negative. The subsequent trailing NUL byte is then written\nat a negative offset, causing write outside of heap allocated buffer.\n\nThe vulnerability is reachable via the public PKCS12_get_friendlyname() API\nwhen parsing attacker-controlled PKCS#12 files. While PKCS12_parse() uses a\ndifferent code path that avoids this issue, PKCS12_get_friendlyname() directly\ninvokes the vulnerable function. Exploitation requires an attacker to provide\na malicious PKCS#12 file to be parsed by the application and the attacker\ncan just trigger a one zero byte write before the allocated buffer.\nFor that reason the issue was assessed as Low severity according to our\nSecurity Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "MEDIUM",
@@ -1669,7 +1669,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:bbff2e76fd51ccd03cdf79c9378afd51d403ea9ea66ba72a723b241c3c1f6c5b",
+          "Fingerprint": "sha256:65002fe1906640454c96980f0f8201a878e29d33718c5c023dd3a9e1f6651567",
           "Title": "openssl: Out-of-bounds read \u0026 write in RFC 3211 KEK Unwrap",
           "Description": "Issue summary: An application trying to decrypt CMS messages encrypted using\npassword based encryption can trigger an out-of-bounds read and write.\n\nImpact summary: This out-of-bounds read may trigger a crash which leads to\nDenial of Service for an application. The out-of-bounds write can cause\na memory corruption which can have various consequences including\na Denial of Service or Execution of attacker-supplied code.\n\nAlthough the consequences of a successful exploit of this vulnerability\ncould be severe, the probability that the attacker would be able to\nperform it is low. Besides, password based (PWRI) encryption support in CMS\nmessages is very rarely used. For that reason the issue was assessed as\nModerate severity according to our Security Policy.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary.",
           "Severity": "MEDIUM",
@@ -1755,7 +1755,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:5a4ac7d97f24096783d0d9e476d81a2aca2ad1b46db9ee5a2f2aedd68e2c485d",
+          "Fingerprint": "sha256:a6880c98c2f598f8c8e20df163de3eeed6d89fc85f35fb2105ff7543cea41cd5",
           "Title": "openssl: Timing side-channel in SM2 algorithm on 64 bit ARM",
           "Description": "Issue summary: A timing side-channel which could potentially allow remote\nrecovery of the private key exists in the SM2 algorithm implementation on 64 bit\nARM platforms.\n\nImpact summary: A timing side-channel in SM2 signature computations on 64 bit\nARM platforms could allow recovering the private key by an attacker..\n\nWhile remote key recovery over a network was not attempted by the reporter,\ntiming measurements revealed a timing signal which may allow such an attack.\n\nOpenSSL does not directly support certificates with SM2 keys in TLS, and so\nthis CVE is not relevant in most TLS contexts.  However, given that it is\npossible to add support for such certificates via a custom provider, coupled\nwith the fact that in such a custom provider context the private key may be\nrecoverable via remote timing measurements, we consider this to be a Moderate\nseverity issue.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as SM2 is not an approved algorithm.",
           "Severity": "MEDIUM",
@@ -1820,7 +1820,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:0ec1b13cada68b748f761602ce4454c05f33fee275acf12b0f8bde0b78d40736",
+          "Fingerprint": "sha256:ed7f1cb73e66db439269b262a4cd7fa30b653545b7d2fee4b74c2ca3d2e82f4d",
           "Title": "openssl: openssl: Information Disclosure from Uninitialized Memory via Invalid RSA Public Key",
           "Description": "Issue summary: Applications using RSASVE key encapsulation to establish\na secret encryption key can send contents of an uninitialized memory buffer to\na malicious peer.\n\nImpact summary: The uninitialized buffer might contain sensitive data from the\nprevious execution of the application process which leads to sensitive data\nleakage to an attacker.\n\nRSA_public_encrypt() returns the number of bytes written on success and -1\non error. The affected code tests only whether the return value is non-zero.\nAs a result, if RSA encryption fails, encapsulation can still return success to\nthe caller, set the output lengths, and leave the caller to use the contents of\nthe ciphertext buffer as if a valid KEM ciphertext had been produced.\n\nIf applications use EVP_PKEY_encapsulate() with RSA/RSASVE on an\nattacker-supplied invalid RSA public key without first validating that key,\nthen this may cause stale or uninitialized contents of the caller-provided\nciphertext buffer to be disclosed to the attacker in place of the KEM\nciphertext.\n\nAs a workaround calling EVP_PKEY_public_check() or\nEVP_PKEY_public_check_quick() before EVP_PKEY_encapsulate() will mitigate\nthe issue.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3, 3.1 and 3.0 are affected by this issue.",
           "Severity": "MEDIUM",
@@ -1896,7 +1896,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:b09bcbb6fbe5084ef0a730766d3544797b6b7c59d86a1187c3e73a9c5f38f92d",
+          "Fingerprint": "sha256:ae1099cd9c101460da719cbaa3521d49f042ce13e3699e74f2e55d8c0f8486b5",
           "Title": "openssl: OpenSSL: Denial of Service via NULL pointer dereference in QUIC protocol handling",
           "Description": "Issue summary: If an application using the SSL_CIPHER_find() function in\na QUIC protocol client or server receives an unknown cipher suite from\nthe peer, a NULL dereference occurs.\n\nImpact summary: A NULL pointer dereference leads to abnormal termination of\nthe running process causing Denial of Service.\n\nSome applications call SSL_CIPHER_find() from the client_hello_cb callback\non the cipher ID received from the peer. If this is done with an SSL object\nimplementing the QUIC protocol, NULL pointer dereference will happen if\nthe examined cipher ID is unknown or unsupported.\n\nAs it is not very common to call this function in applications using the QUIC \nprotocol and the worst outcome is Denial of Service, the issue was assessed\nas Low severity.\n\nThe vulnerable code was introduced in the 3.2 version with the addition\nof the QUIC protocol support.\n\nThe FIPS modules in 3.6, 3.5, 3.4 and 3.3 are not affected by this issue,\nas the QUIC implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4 and 3.3 are vulnerable to this issue.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "LOW",
@@ -2002,7 +2002,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:26c8b644e609196096be50f9db3b5a85f5dfa7032cd05b1499de85e008eef361",
+          "Fingerprint": "sha256:7aced46cadf3130e12c54a2400276937dd58d59d689371b93e278361dcc6b68d",
           "Title": "openssl: OpenSSL: Denial of Service due to excessive memory allocation in TLS 1.3 certificate compression",
           "Description": "Issue summary: A TLS 1.3 connection using certificate compression can be\nforced to allocate a large buffer before decompression without checking\nagainst the configured certificate size limit.\n\nImpact summary: An attacker can cause per-connection memory allocations of\nup to approximately 22 MiB and extra CPU work, potentially leading to\nservice degradation or resource exhaustion (Denial of Service).\n\nIn affected configurations, the peer-supplied uncompressed certificate\nlength from a CompressedCertificate message is used to grow a heap buffer\nprior to decompression. This length is not bounded by the max_cert_list\nsetting, which otherwise constrains certificate message sizes. An attacker\ncan exploit this to cause large per-connection allocations followed by\nhandshake failure. No memory corruption or information disclosure occurs.\n\nThis issue only affects builds where TLS 1.3 certificate compression is\ncompiled in (i.e., not OPENSSL_NO_COMP_ALG) and at least one compression\nalgorithm (brotli, zlib, or zstd) is available, and where the compression\nextension is negotiated. Both clients receiving a server CompressedCertificate\nand servers in mutual TLS scenarios receiving a client CompressedCertificate\nare affected. Servers that do not request client certificates are not\nvulnerable to client-initiated attacks.\n\nUsers can mitigate this issue by setting SSL_OP_NO_RX_CERTIFICATE_COMPRESSION\nto disable receiving compressed certificates.\n\nThe FIPS modules in 3.6, 3.5, 3.4 and 3.3 are not affected by this issue,\nas the TLS implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4 and 3.3 are vulnerable to this issue.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "LOW",
@@ -2108,7 +2108,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:715c7b0571b0465c66bcb32320decffa4be15e7417e6ac10a78d298c8c922d72",
+          "Fingerprint": "sha256:e875a611c6f6e34f1849d2d6a08a574ef937a1be4d756158b9ee319a91179b50",
           "Title": "openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO filter",
           "Description": "Issue summary: Writing large, newline-free data into a BIO chain using the\nline-buffering filter where the next BIO performs short writes can trigger\na heap-based out-of-bounds write.\n\nImpact summary: This out-of-bounds write can cause memory corruption which\ntypically results in a crash, leading to Denial of Service for an application.\n\nThe line-buffering BIO filter (BIO_f_linebuffer) is not used by default in\nTLS/SSL data paths. In OpenSSL command-line applications, it is typically\nonly pushed onto stdout/stderr on VMS systems. Third-party applications that\nexplicitly use this filter with a BIO chain that can short-write and that\nwrite large, newline-free data influenced by an attacker would be affected.\nHowever, the circumstances where this could happen are unlikely to be under\nattacker control, and BIO_f_linebuffer is unlikely to be handling non-curated\ndata controlled by an attacker. For that reason the issue was assessed as\nLow severity.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the BIO implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "LOW",
@@ -2218,7 +2218,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:471b93af1436b847ad6159248520ced7f00349297ff5eb9640c6399678abf79b",
+          "Fingerprint": "sha256:e139221962fba77302e64762d06922101947b2c43d47ab2cec634bd597288e96",
           "Title": "openssl: OpenSSL: Information disclosure and data tampering via specific low-level OCB encryption/decryption calls",
           "Description": "Issue summary: When using the low-level OCB API directly with AES-NI or\u003cbr\u003eother hardware-accelerated code paths, inputs whose length is not a multiple\u003cbr\u003eof 16 bytes can leave the final partial block unencrypted and unauthenticated.\u003cbr\u003e\u003cbr\u003eImpact summary: The trailing 1-15 bytes of a message may be exposed in\u003cbr\u003ecleartext on encryption and are not covered by the authentication tag,\u003cbr\u003eallowing an attacker to read or tamper with those bytes without detection.\u003cbr\u003e\u003cbr\u003eThe low-level OCB encrypt and decrypt routines in the hardware-accelerated\u003cbr\u003estream path process full 16-byte blocks but do not advance the input/output\u003cbr\u003epointers. The subsequent tail-handling code then operates on the original\u003cbr\u003ebase pointers, effectively reprocessing the beginning of the buffer while\u003cbr\u003eleaving the actual trailing bytes unprocessed. The authentication checksum\u003cbr\u003ealso excludes the true tail bytes.\u003cbr\u003e\u003cbr\u003eHowever, typical OpenSSL consumers using EVP are not affected because the\u003cbr\u003ehigher-level EVP and provider OCB implementations split inputs so that full\u003cbr\u003eblocks and trailing partial blocks are processed in separate calls, avoiding\u003cbr\u003ethe problematic code path. Additionally, TLS does not use OCB ciphersuites.\u003cbr\u003eThe vulnerability only affects applications that call the low-level\u003cbr\u003eCRYPTO_ocb128_encrypt() or CRYPTO_ocb128_decrypt() functions directly with\u003cbr\u003enon-block-aligned lengths in a single call on hardware-accelerated builds.\u003cbr\u003eFor these reasons the issue was assessed as Low severity.\u003cbr\u003e\u003cbr\u003eThe FIPS modules in 3.6, 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected\u003cbr\u003eby this issue, as OCB mode is not a FIPS-approved algorithm.\u003cbr\u003e\u003cbr\u003eOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\u003cbr\u003e\u003cbr\u003eOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -2328,7 +2328,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:b25f9b9bf406b98693c7b79ded806a7c9dc6735f27660ec5d4d2e3e6dccbd49f",
+          "Fingerprint": "sha256:e59b0271a91e58a59235eb4f8b43d8a112b6377311534a63ed3a5b628fa4eea1",
           "Title": "openssl: OpenSSL: Denial of Service via malformed TimeStamp Response",
           "Description": "Issue summary: A type confusion vulnerability exists in the TimeStamp Response\nverification code where an ASN1_TYPE union member is accessed without first\nvalidating the type, causing an invalid or NULL pointer dereference when\nprocessing a malformed TimeStamp Response file.\n\nImpact summary: An application calling TS_RESP_verify_response() with a\nmalformed TimeStamp Response can be caused to dereference an invalid or\nNULL pointer when reading, resulting in a Denial of Service.\n\nThe functions ossl_ess_get_signing_cert() and ossl_ess_get_signing_cert_v2()\naccess the signing cert attribute value without validating its type.\nWhen the type is not V_ASN1_SEQUENCE, this results in accessing invalid memory\nthrough the ASN1_TYPE union, causing a crash.\n\nExploiting this vulnerability requires an attacker to provide a malformed\nTimeStamp Response to an application that verifies timestamp responses. The\nTimeStamp protocol (RFC 3161) is not widely used and the impact of the\nexploit is just a Denial of Service. For these reasons the issue was\nassessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the TimeStamp Response implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -2438,7 +2438,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:7fb86ecd195f6e7a76cad20fa984bb8e2fa6d3c71c45d82ac5851eed6df4e3e0",
+          "Fingerprint": "sha256:4662c6a8b037d8c68b72913bf31d27609741095c10ef735259ee5154dcdf7a4c",
           "Title": "openssl: Out-of-bounds read in HTTP client no_proxy handling",
           "Description": "Issue summary: An application using the OpenSSL HTTP client API functions may\ntrigger an out-of-bounds read if the 'no_proxy' environment variable is set and\nthe host portion of the authority component of the HTTP URL is an IPv6 address.\n\nImpact summary: An out-of-bounds read can trigger a crash which leads to\nDenial of Service for an application.\n\nThe OpenSSL HTTP client API functions can be used directly by applications\nbut they are also used by the OCSP client functions and CMP (Certificate\nManagement Protocol) client implementation in OpenSSL. However the URLs used\nby these implementations are unlikely to be controlled by an attacker.\n\nIn this vulnerable code the out of bounds read can only trigger a crash.\nFurthermore the vulnerability requires an attacker-controlled URL to be\npassed from an application to the OpenSSL function and the user has to have\na 'no_proxy' environment variable set. For the aforementioned reasons the\nissue was assessed as Low severity.\n\nThe vulnerable code was introduced in the following patch releases:\n3.0.16, 3.1.8, 3.2.4, 3.3.3, 3.4.0 and 3.5.0.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the HTTP client implementation is outside the OpenSSL FIPS module\nboundary.",
           "Severity": "LOW",
@@ -2506,7 +2506,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:4a0c8cb327ebb02861c20c19040aed4bf2bdcc2948718f57c22450576042f1b2",
+          "Fingerprint": "sha256:a8902b0ec33ce6940e49eee413ba46f19889d63b93f766b3fc1e520ba2682bbc",
           "Title": "openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file processing",
           "Description": "Issue summary: An invalid or NULL pointer dereference can happen in\nan application processing a malformed PKCS#12 file.\n\nImpact summary: An application processing a malformed PKCS#12 file can be\ncaused to dereference an invalid or NULL pointer on memory read, resulting\nin a Denial of Service.\n\nA type confusion vulnerability exists in PKCS#12 parsing code where\nan ASN1_TYPE union member is accessed without first validating the type,\ncausing an invalid pointer read.\n\nThe location is constrained to a 1-byte address space, meaning any\nattempted pointer manipulation can only target addresses between 0x00 and 0xFF.\nThis range corresponds to the zero page, which is unmapped on most modern\noperating systems and will reliably result in a crash, leading only to a\nDenial of Service. Exploiting this issue also requires a user or application\nto process a maliciously crafted PKCS#12 file. It is uncommon to accept\nuntrusted PKCS#12 files in applications as they are usually used to store\nprivate keys which are trusted by definition. For these reasons, the issue\nwas assessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -2616,7 +2616,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:d3efdda0784f8d2f0853222bb7d494f66be3852b23aa937eaa9ded6c7dac5444",
+          "Fingerprint": "sha256:9b221b4e36e0a4759d01eb46ddb7d9d9f9ed4aa503fc1d76e4d8d5976fd51407",
           "Title": "openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature verification",
           "Description": "Issue summary: A type confusion vulnerability exists in the signature\nverification of signed PKCS#7 data where an ASN1_TYPE union member is\naccessed without first validating the type, causing an invalid or NULL\npointer dereference when processing malformed PKCS#7 data.\n\nImpact summary: An application performing signature verification of PKCS#7\ndata or calling directly the PKCS7_digest_from_attributes() function can be\ncaused to dereference an invalid or NULL pointer when reading, resulting in\na Denial of Service.\n\nThe function PKCS7_digest_from_attributes() accesses the message digest attribute\nvalue without validating its type. When the type is not V_ASN1_OCTET_STRING,\nthis results in accessing invalid memory through the ASN1_TYPE union, causing\na crash.\n\nExploiting this vulnerability requires an attacker to provide a malformed\nsigned PKCS#7 to an application that verifies it. The impact of the\nexploit is just a Denial of Service, the PKCS7 API is legacy and applications\nshould be using the CMS API instead. For these reasons the issue was\nassessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#7 parsing implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "LOW",
@@ -2727,7 +2727,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:5ae1c6437885d2cfcb35eabd46a5d9232de4a3bf7ae0199f8a8e2da7e097aa20",
+          "Fingerprint": "sha256:ae6e789262c8d3fe07124d973957948b78db1cf4ba73055484e59d9abf03c427",
           "Title": "openssl: OpenSSL: Heap buffer overflow on 32-bit systems from large X.509 certificate processing",
           "Description": "Issue summary: Converting an excessively large OCTET STRING value to\na hexadecimal string leads to a heap buffer overflow on 32 bit platforms.\n\nImpact summary: A heap buffer overflow may lead to a crash or possibly\nan attacker controlled code execution or other undefined behavior.\n\nIf an attacker can supply a crafted X.509 certificate with an excessively\nlarge OCTET STRING value in extensions such as the Subject Key Identifier\n(SKID) or Authority Key Identifier (AKID) which are being converted to hex,\nthe size of the buffer needed for the result is calculated as multiplication\nof the input length by 3. On 32 bit platforms, this multiplication may overflow\nresulting in the allocation of a smaller buffer and a heap buffer overflow.\n\nApplications and services that print or log contents of untrusted X.509\ncertificates are vulnerable to this issue. As the certificates would have\nto have sizes of over 1 Gigabyte, printing or logging such certificates\nis a fairly unlikely operation and only 32 bit platforms are affected,\nthis issue was assigned Low severity.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "CRITICAL",
@@ -2794,7 +2794,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:bfdbdbf48fd79bbbbada4922c666071b790b2aa00b31d0c2906e6ab271a7c8f4",
+          "Fingerprint": "sha256:8b4fe1d7598125b56b2ff60ac3ecd3b3256b1eb85022cd46ded2dbf95568c7f8",
           "Title": "openssl: OpenSSL: Remote code execution or Denial of Service via oversized Initialization Vector in CMS parsing",
           "Description": "Issue summary: Parsing CMS AuthEnvelopedData or EnvelopedData message with\nmaliciously crafted AEAD parameters can trigger a stack buffer overflow.\n\nImpact summary: A stack buffer overflow may lead to a crash, causing Denial\nof Service, or potentially remote code execution.\n\nWhen parsing CMS (Auth)EnvelopedData structures that use AEAD ciphers such as\nAES-GCM, the IV (Initialization Vector) encoded in the ASN.1 parameters is\ncopied into a fixed-size stack buffer without verifying that its length fits\nthe destination. An attacker can supply a crafted CMS message with an\noversized IV, causing a stack-based out-of-bounds write before any\nauthentication or tag verification occurs.\n\nApplications and services that parse untrusted CMS or PKCS#7 content using\nAEAD ciphers (e.g., S/MIME (Auth)EnvelopedData with AES-GCM) are vulnerable.\nBecause the overflow occurs prior to authentication, no valid key material\nis required to trigger it. While exploitability to remote code execution\ndepends on platform and toolchain mitigations, the stack-based write\nprimitive represents a severe risk.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3 and 3.0 are vulnerable to this issue.\n\nOpenSSL 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "HIGH",
@@ -2933,7 +2933,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:847ef453be1b1c388ad7f79b50cdd316902b77482aefa3fc502f08e0f78a595f",
+          "Fingerprint": "sha256:c1f4a439e38648b05200f75833f2c7ab1fa8eec42ab80275cd4de5aaba62b3e7",
           "Title": "openssl: OpenSSL: Denial of Service via malformed PKCS#12 file processing",
           "Description": "Issue summary: Processing a malformed PKCS#12 file can trigger a NULL pointer\ndereference in the PKCS12_item_decrypt_d2i_ex() function.\n\nImpact summary: A NULL pointer dereference can trigger a crash which leads to\nDenial of Service for an application processing PKCS#12 files.\n\nThe PKCS12_item_decrypt_d2i_ex() function does not check whether the oct\nparameter is NULL before dereferencing it. When called from\nPKCS12_unpack_p7encdata() with a malformed PKCS#12 file, this parameter can\nbe NULL, causing a crash. The vulnerability is limited to Denial of Service\nand cannot be escalated to achieve code execution or memory disclosure.\n\nExploiting this issue requires an attacker to provide a malformed PKCS#12 file\nto an application that processes it. For that reason the issue was assessed as\nLow severity according to our Security Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "HIGH",
@@ -3049,7 +3049,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:f960a579a7bf772f965fdeffa0792a6cd2b8688cb3e5cb02ccb3e3158511a0d3",
+          "Fingerprint": "sha256:b4451c859f09251596db3db285fb936827f1734120de6970d478dc24b905a26a",
           "Title": "openssl: OpenSSL: Arbitrary code execution due to use-after-free in DANE TLSA authentication",
           "Description": "Issue summary: An uncommon configuration of clients performing DANE TLSA-based\nserver authentication, when paired with uncommon server DANE TLSA records, may\nresult in a use-after-free and/or double-free on the client side.\n\nImpact summary: A use after free can have a range of potential consequences\nsuch as the corruption of valid data, crashes or execution of arbitrary code.\n\nHowever, the issue only affects clients that make use of TLSA records with both\nthe PKIX-TA(0/PKIX-EE(1) certificate usages and the DANE-TA(2) certificate\nusage.\n\nBy far the most common deployment of DANE is in SMTP MTAs for which RFC7672\nrecommends that clients treat as 'unusable' any TLSA records that have the PKIX\ncertificate usages.  These SMTP (or other similar) clients are not vulnerable\nto this issue.  Conversely, any clients that support only the PKIX usages, and\nignore the DANE-TA(2) usage are also not vulnerable.\n\nThe client would also need to be communicating with a server that publishes a\nTLSA RRset with both types of TLSA records.\n\nNo FIPS modules are affected by this issue, the problem code is outside the\nFIPS module boundary.",
           "Severity": "HIGH",
@@ -3119,7 +3119,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:680cebd13b4a30694584224e7fea8e1b12c24ee0443926d5d4d3cd0281c392d3",
+          "Fingerprint": "sha256:4dafd46730ba34217fb4cb17af3569e3439859e1b601e3db2048e605b20ffa75",
           "Title": "openssl: OpenSSL: Denial of Service due to NULL pointer dereference in delta CRL processing",
           "Description": "Issue summary: When a delta CRL that contains a Delta CRL Indicator extension\nis processed a NULL pointer dereference might happen if the required CRL\nNumber extension is missing.\n\nImpact summary: A NULL pointer dereference can trigger a crash which\nleads to a Denial of Service for an application.\n\nWhen CRL processing and delta CRL processing is enabled during X.509\ncertificate verification, the delta CRL processing does not check\nwhether the CRL Number extension is NULL before dereferencing it.\nWhen a malformed delta CRL file is being processed, this parameter\ncan be NULL, causing a NULL pointer dereference.\n\nExploiting this issue requires the X509_V_FLAG_USE_DELTAS flag to be enabled in\nthe verification context, the certificate being verified to contain a\nfreshestCRL extension or the base CRL to have the EXFLAG_FRESHEST flag set, and\nan attacker to provide a malformed CRL to an application that processes it.\n\nThe vulnerability is limited to Denial of Service and cannot be escalated to\nachieve code execution or memory disclosure. For that reason the issue was\nassessed as Low severity according to our Security Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -3189,7 +3189,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:4c685d71364bd5bbdb001336b414ae114b312776517134b9eea25d8377ffc865",
+          "Fingerprint": "sha256:99b3757112c3ff8c0b9a9e02140ee64635445d54934d757cda37153ead4e9a43",
           "Title": "openssl: OpenSSL: Denial of Service vulnerability in CMS processing",
           "Description": "Issue summary: During processing of a crafted CMS EnvelopedData message\nwith KeyAgreeRecipientInfo a NULL pointer dereference can happen.\n\nImpact summary: Applications that process attacker-controlled CMS data may\ncrash before authentication or cryptographic operations occur resulting in\nDenial of Service.\n\nWhen a CMS EnvelopedData message that uses KeyAgreeRecipientInfo is\nprocessed, the optional parameters field of KeyEncryptionAlgorithmIdentifier\nis examined without checking for its presence. This results in a NULL\npointer dereference if the field is missing.\n\nApplications and services that call CMS_decrypt() on untrusted input\n(e.g., S/MIME processing or CMS-based protocols) are vulnerable.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -3260,7 +3260,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:01de5aa4a6945ee3870dacde5ad717bbbd5b668d6e5210c5de51a5b15302ea84",
+          "Fingerprint": "sha256:f2381e07590a577497c0774844a5b40a642de5e31164d64b5dcf393c3c8f71f3",
           "Title": "openssl: OpenSSL: Denial of Service due to NULL pointer dereference in CMS EnvelopedData processing",
           "Description": "Issue summary: During processing of a crafted CMS EnvelopedData message\nwith KeyTransportRecipientInfo a NULL pointer dereference can happen.\n\nImpact summary: Applications that process attacker-controlled CMS data may\ncrash before authentication or cryptographic operations occur resulting in\nDenial of Service.\n\nWhen a CMS EnvelopedData message that uses KeyTransportRecipientInfo with\nRSA-OAEP encryption is processed, the optional parameters field of\nRSA-OAEP SourceFunc algorithm identifier is examined without checking\nfor its presence. This results in a NULL pointer dereference if the field\nis missing.\n\nApplications and services that call CMS_decrypt() on untrusted input\n(e.g., S/MIME processing or CMS-based protocols) are vulnerable.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this\nissue, as the affected code is outside the OpenSSL FIPS module boundary.",
           "Severity": "HIGH",
@@ -3342,7 +3342,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:82ad77adcb6a079fef350b0d862fffe26057a3e52a21e2ccad50f570c5bd66e6",
+          "Fingerprint": "sha256:dc8d631f060a9b4393f29e841cdbf8f0f43cd902307ac102886bca339a07b4d3",
           "Title": "openssl: OpenSSL: Arbitrary code execution due to out-of-bounds write in PKCS#12 processing",
           "Description": "Issue summary: Calling PKCS12_get_friendlyname() function on a maliciously\ncrafted PKCS#12 file with a BMPString (UTF-16BE) friendly name containing\nnon-ASCII BMP code point can trigger a one byte write before the allocated\nbuffer.\n\nImpact summary: The out-of-bounds write can cause a memory corruption\nwhich can have various consequences including a Denial of Service.\n\nThe OPENSSL_uni2utf8() function performs a two-pass conversion of a PKCS#12\nBMPString (UTF-16BE) to UTF-8. In the second pass, when emitting UTF-8 bytes,\nthe helper function bmp_to_utf8() incorrectly forwards the remaining UTF-16\nsource byte count as the destination buffer capacity to UTF8_putc(). For BMP\ncode points above U+07FF, UTF-8 requires three bytes, but the forwarded\ncapacity can be just two bytes. UTF8_putc() then returns -1, and this negative\nvalue is added to the output length without validation, causing the\nlength to become negative. The subsequent trailing NUL byte is then written\nat a negative offset, causing write outside of heap allocated buffer.\n\nThe vulnerability is reachable via the public PKCS12_get_friendlyname() API\nwhen parsing attacker-controlled PKCS#12 files. While PKCS12_parse() uses a\ndifferent code path that avoids this issue, PKCS12_get_friendlyname() directly\ninvokes the vulnerable function. Exploitation requires an attacker to provide\na malicious PKCS#12 file to be parsed by the application and the attacker\ncan just trigger a one zero byte write before the allocated buffer.\nFor that reason the issue was assessed as Low severity according to our\nSecurity Policy.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "MEDIUM",
@@ -3419,7 +3419,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:6883ce48986baa352ad0d0e0a51f49e6a06236a2e8a790b98ccb7fb879a6b5e0",
+          "Fingerprint": "sha256:caba16950ec38264ad0183f56a2f8680167661ecacc30f8c4d4ced159f2b6079",
           "Title": "openssl: Out-of-bounds read \u0026 write in RFC 3211 KEK Unwrap",
           "Description": "Issue summary: An application trying to decrypt CMS messages encrypted using\npassword based encryption can trigger an out-of-bounds read and write.\n\nImpact summary: This out-of-bounds read may trigger a crash which leads to\nDenial of Service for an application. The out-of-bounds write can cause\na memory corruption which can have various consequences including\na Denial of Service or Execution of attacker-supplied code.\n\nAlthough the consequences of a successful exploit of this vulnerability\ncould be severe, the probability that the attacker would be able to\nperform it is low. Besides, password based (PWRI) encryption support in CMS\nmessages is very rarely used. For that reason the issue was assessed as\nModerate severity according to our Security Policy.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the CMS implementation is outside the OpenSSL FIPS module\nboundary.",
           "Severity": "MEDIUM",
@@ -3505,7 +3505,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:1eb6092be6dcb733d3d821b7c278855b43c86145cd3f92ce69839a18405cbda5",
+          "Fingerprint": "sha256:6b38d32b59c55cb7ab5e4fd0b664aa49a8fc914ca0a176b5eecea501c80842ab",
           "Title": "openssl: Timing side-channel in SM2 algorithm on 64 bit ARM",
           "Description": "Issue summary: A timing side-channel which could potentially allow remote\nrecovery of the private key exists in the SM2 algorithm implementation on 64 bit\nARM platforms.\n\nImpact summary: A timing side-channel in SM2 signature computations on 64 bit\nARM platforms could allow recovering the private key by an attacker..\n\nWhile remote key recovery over a network was not attempted by the reporter,\ntiming measurements revealed a timing signal which may allow such an attack.\n\nOpenSSL does not directly support certificates with SM2 keys in TLS, and so\nthis CVE is not relevant in most TLS contexts.  However, given that it is\npossible to add support for such certificates via a custom provider, coupled\nwith the fact that in such a custom provider context the private key may be\nrecoverable via remote timing measurements, we consider this to be a Moderate\nseverity issue.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as SM2 is not an approved algorithm.",
           "Severity": "MEDIUM",
@@ -3570,7 +3570,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:c4e845a8fe1bbdada76fb86ffee1210d6da6745d4d781ae4d6360a9f72c682d6",
+          "Fingerprint": "sha256:4264c9fa2987dc35ca3c380c8c465daa139b7decbbf096d9b616f02daaa65138",
           "Title": "openssl: openssl: Information Disclosure from Uninitialized Memory via Invalid RSA Public Key",
           "Description": "Issue summary: Applications using RSASVE key encapsulation to establish\na secret encryption key can send contents of an uninitialized memory buffer to\na malicious peer.\n\nImpact summary: The uninitialized buffer might contain sensitive data from the\nprevious execution of the application process which leads to sensitive data\nleakage to an attacker.\n\nRSA_public_encrypt() returns the number of bytes written on success and -1\non error. The affected code tests only whether the return value is non-zero.\nAs a result, if RSA encryption fails, encapsulation can still return success to\nthe caller, set the output lengths, and leave the caller to use the contents of\nthe ciphertext buffer as if a valid KEM ciphertext had been produced.\n\nIf applications use EVP_PKEY_encapsulate() with RSA/RSASVE on an\nattacker-supplied invalid RSA public key without first validating that key,\nthen this may cause stale or uninitialized contents of the caller-provided\nciphertext buffer to be disclosed to the attacker in place of the KEM\nciphertext.\n\nAs a workaround calling EVP_PKEY_public_check() or\nEVP_PKEY_public_check_quick() before EVP_PKEY_encapsulate() will mitigate\nthe issue.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3, 3.1 and 3.0 are affected by this issue.",
           "Severity": "MEDIUM",
@@ -3646,7 +3646,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:fbd883ee7c0efd4f20abce0a82ca87035d0ea976d493830a2dd385fe3f70bf69",
+          "Fingerprint": "sha256:171229745ac04f903c0855e57125eb3bb33bf7dc201e591c0c387a7363f13209",
           "Title": "openssl: OpenSSL: Denial of Service via NULL pointer dereference in QUIC protocol handling",
           "Description": "Issue summary: If an application using the SSL_CIPHER_find() function in\na QUIC protocol client or server receives an unknown cipher suite from\nthe peer, a NULL dereference occurs.\n\nImpact summary: A NULL pointer dereference leads to abnormal termination of\nthe running process causing Denial of Service.\n\nSome applications call SSL_CIPHER_find() from the client_hello_cb callback\non the cipher ID received from the peer. If this is done with an SSL object\nimplementing the QUIC protocol, NULL pointer dereference will happen if\nthe examined cipher ID is unknown or unsupported.\n\nAs it is not very common to call this function in applications using the QUIC \nprotocol and the worst outcome is Denial of Service, the issue was assessed\nas Low severity.\n\nThe vulnerable code was introduced in the 3.2 version with the addition\nof the QUIC protocol support.\n\nThe FIPS modules in 3.6, 3.5, 3.4 and 3.3 are not affected by this issue,\nas the QUIC implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4 and 3.3 are vulnerable to this issue.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "LOW",
@@ -3752,7 +3752,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:c5b62b8edb0bf118d81ba9b451d3f07c321a295402cdc70b0f8f98faa82fb5fe",
+          "Fingerprint": "sha256:6289aed7042e7c08106ecb2f3d0424bbaaa5ef2db2e12ba2bab5371b3db75719",
           "Title": "openssl: OpenSSL: Denial of Service due to excessive memory allocation in TLS 1.3 certificate compression",
           "Description": "Issue summary: A TLS 1.3 connection using certificate compression can be\nforced to allocate a large buffer before decompression without checking\nagainst the configured certificate size limit.\n\nImpact summary: An attacker can cause per-connection memory allocations of\nup to approximately 22 MiB and extra CPU work, potentially leading to\nservice degradation or resource exhaustion (Denial of Service).\n\nIn affected configurations, the peer-supplied uncompressed certificate\nlength from a CompressedCertificate message is used to grow a heap buffer\nprior to decompression. This length is not bounded by the max_cert_list\nsetting, which otherwise constrains certificate message sizes. An attacker\ncan exploit this to cause large per-connection allocations followed by\nhandshake failure. No memory corruption or information disclosure occurs.\n\nThis issue only affects builds where TLS 1.3 certificate compression is\ncompiled in (i.e., not OPENSSL_NO_COMP_ALG) and at least one compression\nalgorithm (brotli, zlib, or zstd) is available, and where the compression\nextension is negotiated. Both clients receiving a server CompressedCertificate\nand servers in mutual TLS scenarios receiving a client CompressedCertificate\nare affected. Servers that do not request client certificates are not\nvulnerable to client-initiated attacks.\n\nUsers can mitigate this issue by setting SSL_OP_NO_RX_CERTIFICATE_COMPRESSION\nto disable receiving compressed certificates.\n\nThe FIPS modules in 3.6, 3.5, 3.4 and 3.3 are not affected by this issue,\nas the TLS implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4 and 3.3 are vulnerable to this issue.\n\nOpenSSL 3.0, 1.1.1 and 1.0.2 are not affected by this issue.",
           "Severity": "LOW",
@@ -3858,7 +3858,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:3f416571ae3d30fa4512f498cd8046f91f046f8d495f2b739eaf8b46b1bb0e0c",
+          "Fingerprint": "sha256:bf0b25167e91a9bfaf6e527cb754ac8f58a01cfebc62396de04f8a8c425033d3",
           "Title": "openssl: OpenSSL: Denial of Service due to out-of-bounds write in BIO filter",
           "Description": "Issue summary: Writing large, newline-free data into a BIO chain using the\nline-buffering filter where the next BIO performs short writes can trigger\na heap-based out-of-bounds write.\n\nImpact summary: This out-of-bounds write can cause memory corruption which\ntypically results in a crash, leading to Denial of Service for an application.\n\nThe line-buffering BIO filter (BIO_f_linebuffer) is not used by default in\nTLS/SSL data paths. In OpenSSL command-line applications, it is typically\nonly pushed onto stdout/stderr on VMS systems. Third-party applications that\nexplicitly use this filter with a BIO chain that can short-write and that\nwrite large, newline-free data influenced by an attacker would be affected.\nHowever, the circumstances where this could happen are unlikely to be under\nattacker control, and BIO_f_linebuffer is unlikely to be handling non-curated\ndata controlled by an attacker. For that reason the issue was assessed as\nLow severity.\n\nThe FIPS modules in 3.6, 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the BIO implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "LOW",
@@ -3968,7 +3968,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:1a5a545c3b93e94a13ca0d69b2b7948585582ae0e7aa045f7b8268070f977848",
+          "Fingerprint": "sha256:387211a63b06f256a8563121e55d501f68d139eabe7937fed69a414648f67b3e",
           "Title": "openssl: OpenSSL: Information disclosure and data tampering via specific low-level OCB encryption/decryption calls",
           "Description": "Issue summary: When using the low-level OCB API directly with AES-NI or\u003cbr\u003eother hardware-accelerated code paths, inputs whose length is not a multiple\u003cbr\u003eof 16 bytes can leave the final partial block unencrypted and unauthenticated.\u003cbr\u003e\u003cbr\u003eImpact summary: The trailing 1-15 bytes of a message may be exposed in\u003cbr\u003ecleartext on encryption and are not covered by the authentication tag,\u003cbr\u003eallowing an attacker to read or tamper with those bytes without detection.\u003cbr\u003e\u003cbr\u003eThe low-level OCB encrypt and decrypt routines in the hardware-accelerated\u003cbr\u003estream path process full 16-byte blocks but do not advance the input/output\u003cbr\u003epointers. The subsequent tail-handling code then operates on the original\u003cbr\u003ebase pointers, effectively reprocessing the beginning of the buffer while\u003cbr\u003eleaving the actual trailing bytes unprocessed. The authentication checksum\u003cbr\u003ealso excludes the true tail bytes.\u003cbr\u003e\u003cbr\u003eHowever, typical OpenSSL consumers using EVP are not affected because the\u003cbr\u003ehigher-level EVP and provider OCB implementations split inputs so that full\u003cbr\u003eblocks and trailing partial blocks are processed in separate calls, avoiding\u003cbr\u003ethe problematic code path. Additionally, TLS does not use OCB ciphersuites.\u003cbr\u003eThe vulnerability only affects applications that call the low-level\u003cbr\u003eCRYPTO_ocb128_encrypt() or CRYPTO_ocb128_decrypt() functions directly with\u003cbr\u003enon-block-aligned lengths in a single call on hardware-accelerated builds.\u003cbr\u003eFor these reasons the issue was assessed as Low severity.\u003cbr\u003e\u003cbr\u003eThe FIPS modules in 3.6, 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected\u003cbr\u003eby this issue, as OCB mode is not a FIPS-approved algorithm.\u003cbr\u003e\u003cbr\u003eOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\u003cbr\u003e\u003cbr\u003eOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -4078,7 +4078,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:2d8e928b1e83371fa433dfa443f397274dda266de9b7f2df2ac46886c41e1362",
+          "Fingerprint": "sha256:c161c7e0e2b63abb5570a5fe255bc56d85f9b4cf2d2883c6c82847826d722ee7",
           "Title": "openssl: OpenSSL: Denial of Service via malformed TimeStamp Response",
           "Description": "Issue summary: A type confusion vulnerability exists in the TimeStamp Response\nverification code where an ASN1_TYPE union member is accessed without first\nvalidating the type, causing an invalid or NULL pointer dereference when\nprocessing a malformed TimeStamp Response file.\n\nImpact summary: An application calling TS_RESP_verify_response() with a\nmalformed TimeStamp Response can be caused to dereference an invalid or\nNULL pointer when reading, resulting in a Denial of Service.\n\nThe functions ossl_ess_get_signing_cert() and ossl_ess_get_signing_cert_v2()\naccess the signing cert attribute value without validating its type.\nWhen the type is not V_ASN1_SEQUENCE, this results in accessing invalid memory\nthrough the ASN1_TYPE union, causing a crash.\n\nExploiting this vulnerability requires an attacker to provide a malformed\nTimeStamp Response to an application that verifies timestamp responses. The\nTimeStamp protocol (RFC 3161) is not widely used and the impact of the\nexploit is just a Denial of Service. For these reasons the issue was\nassessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the TimeStamp Response implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -4188,7 +4188,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:303d3a949884ebdda00685d5e27d6638ea570a11fadc840a62f7a9a3952c1690",
+          "Fingerprint": "sha256:404d4d3fc1c4e58e471c4c392b5b5c4e0b7fc1d147666cf16ee4d62acd0697dc",
           "Title": "openssl: Out-of-bounds read in HTTP client no_proxy handling",
           "Description": "Issue summary: An application using the OpenSSL HTTP client API functions may\ntrigger an out-of-bounds read if the 'no_proxy' environment variable is set and\nthe host portion of the authority component of the HTTP URL is an IPv6 address.\n\nImpact summary: An out-of-bounds read can trigger a crash which leads to\nDenial of Service for an application.\n\nThe OpenSSL HTTP client API functions can be used directly by applications\nbut they are also used by the OCSP client functions and CMP (Certificate\nManagement Protocol) client implementation in OpenSSL. However the URLs used\nby these implementations are unlikely to be controlled by an attacker.\n\nIn this vulnerable code the out of bounds read can only trigger a crash.\nFurthermore the vulnerability requires an attacker-controlled URL to be\npassed from an application to the OpenSSL function and the user has to have\na 'no_proxy' environment variable set. For the aforementioned reasons the\nissue was assessed as Low severity.\n\nThe vulnerable code was introduced in the following patch releases:\n3.0.16, 3.1.8, 3.2.4, 3.3.3, 3.4.0 and 3.5.0.\n\nThe FIPS modules in 3.5, 3.4, 3.3, 3.2, 3.1 and 3.0 are not affected by this\nissue, as the HTTP client implementation is outside the OpenSSL FIPS module\nboundary.",
           "Severity": "LOW",
@@ -4256,7 +4256,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:b2f9ab0f171c6fee1e928a0b5c80f0824ea8cf79325f96f149d092869fa05350",
+          "Fingerprint": "sha256:1ae5eaacd1d34f014c2ff0c779eb4caf583daff38beb5d4b9d33f0395394c40c",
           "Title": "openssl: OpenSSL: Denial of Service due to type confusion in PKCS#12 file processing",
           "Description": "Issue summary: An invalid or NULL pointer dereference can happen in\nan application processing a malformed PKCS#12 file.\n\nImpact summary: An application processing a malformed PKCS#12 file can be\ncaused to dereference an invalid or NULL pointer on memory read, resulting\nin a Denial of Service.\n\nA type confusion vulnerability exists in PKCS#12 parsing code where\nan ASN1_TYPE union member is accessed without first validating the type,\ncausing an invalid pointer read.\n\nThe location is constrained to a 1-byte address space, meaning any\nattempted pointer manipulation can only target addresses between 0x00 and 0xFF.\nThis range corresponds to the zero page, which is unmapped on most modern\noperating systems and will reliably result in a crash, leading only to a\nDenial of Service. Exploiting this issue also requires a user or application\nto process a maliciously crafted PKCS#12 file. It is uncommon to accept\nuntrusted PKCS#12 files in applications as they are usually used to store\nprivate keys which are trusted by definition. For these reasons, the issue\nwas assessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS12 implementation is outside the OpenSSL FIPS module boundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0 and 1.1.1 are vulnerable to this issue.\n\nOpenSSL 1.0.2 is not affected by this issue.",
           "Severity": "LOW",
@@ -4366,7 +4366,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:9b3bb1ee7027d58fe81ac12a0212a0c3bcdd1ca1994aaeb499025082e62529bb",
+          "Fingerprint": "sha256:4b92d1b4b6be5edf30b4f8cc30c447101ee6afaa63c9be921eda156950fb0612",
           "Title": "openssl: OpenSSL: Denial of Service via type confusion in PKCS#7 signature verification",
           "Description": "Issue summary: A type confusion vulnerability exists in the signature\nverification of signed PKCS#7 data where an ASN1_TYPE union member is\naccessed without first validating the type, causing an invalid or NULL\npointer dereference when processing malformed PKCS#7 data.\n\nImpact summary: An application performing signature verification of PKCS#7\ndata or calling directly the PKCS7_digest_from_attributes() function can be\ncaused to dereference an invalid or NULL pointer when reading, resulting in\na Denial of Service.\n\nThe function PKCS7_digest_from_attributes() accesses the message digest attribute\nvalue without validating its type. When the type is not V_ASN1_OCTET_STRING,\nthis results in accessing invalid memory through the ASN1_TYPE union, causing\na crash.\n\nExploiting this vulnerability requires an attacker to provide a malformed\nsigned PKCS#7 to an application that verifies it. The impact of the\nexploit is just a Denial of Service, the PKCS7 API is legacy and applications\nshould be using the CMS API instead. For these reasons the issue was\nassessed as Low severity.\n\nThe FIPS modules in 3.5, 3.4, 3.3 and 3.0 are not affected by this issue,\nas the PKCS#7 parsing implementation is outside the OpenSSL FIPS module\nboundary.\n\nOpenSSL 3.6, 3.5, 3.4, 3.3, 3.0, 1.1.1 and 1.0.2 are vulnerable to this issue.",
           "Severity": "LOW",
@@ -4476,7 +4476,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:14dc3266643dc1c7265ad059b4f5e3a98a20c3650727e8416b2db2be16db844c",
+          "Fingerprint": "sha256:d73b10025467129891e36d56f8ca88d9aee23f24792e7eda0335d4a03acf60bc",
           "Title": "musl: musl libc: Arbitrary code execution and denial of service via stack-based memory corruption in qsort",
           "Description": "An issue was discovered in musl libc 0.7.10 through 1.2.6. Stack-based memory corruption can occur during qsort of very large arrays, due to incorrectly implemented double-word primitives. The number of elements must exceed about seven million, i.e., the 32nd Leonardo number on 32-bit platforms (or the 64th Leonardo number on 64-bit platforms, which is not practical).",
           "Severity": "HIGH",
@@ -4523,7 +4523,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:35acfc3a0e9aefba52198c30d1db5142dc97fa5806ece4ae67d4008af7b049d6",
+          "Fingerprint": "sha256:0f06964ed9e787a1aa033ad9e8a7be9054106e422a99e19b39dcc33ea798c4bd",
           "Title": "musl libc: GB18030 4-byte Decoder: musl libc: Denial of Service via inefficient algorithmic complexity in iconv",
           "Description": "A security flaw has been discovered in musl libc up to 1.2.6. Affected is the function iconv of the file src/locale/iconv.c of the component GB18030 4-byte Decoder. Performing a manipulation results in inefficient algorithmic complexity. The attack must be initiated from a local position. To fix this issue, it is recommended to deploy a patch.",
           "Severity": "MEDIUM",
@@ -4574,7 +4574,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:63bba1d437246bce34948b48f9c770cad1678ed12d4cfbf98dbc49441d450af7",
+          "Fingerprint": "sha256:ecd3aae814d8c3ea45786d6f73e1d4ad4c8db6f8acdff1f048ee5661017fc0ff",
           "Title": "musl: musl libc: Arbitrary code execution and denial of service via stack-based memory corruption in qsort",
           "Description": "An issue was discovered in musl libc 0.7.10 through 1.2.6. Stack-based memory corruption can occur during qsort of very large arrays, due to incorrectly implemented double-word primitives. The number of elements must exceed about seven million, i.e., the 32nd Leonardo number on 32-bit platforms (or the 64th Leonardo number on 64-bit platforms, which is not practical).",
           "Severity": "HIGH",
@@ -4621,7 +4621,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:dd36a47eaadd6eed3b95f00481eab8c3a01b3e07836a88697659d90ef6f20935",
+          "Fingerprint": "sha256:16a41c217b26472eeb3efa8c292f42f99f78eae13397223df8834b9f7696a40f",
           "Title": "musl libc: GB18030 4-byte Decoder: musl libc: Denial of Service via inefficient algorithmic complexity in iconv",
           "Description": "A security flaw has been discovered in musl libc up to 1.2.6. Affected is the function iconv of the file src/locale/iconv.c of the component GB18030 4-byte Decoder. Performing a manipulation results in inefficient algorithmic complexity. The attack must be initiated from a local position. To fix this issue, it is recommended to deploy a patch.",
           "Severity": "MEDIUM",
@@ -4672,7 +4672,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:c01dce28f8cb320a8d450dbf2dc59524b79c7b028cbbf95f9c3b6e46a8375e82",
+          "Fingerprint": "sha256:9a0594b52c1533eafa18d7961fd1c9071962aa66b3568eb30cac29cddb2e9b79",
           "Title": "In netstat in BusyBox through 1.37.0, local users can launch of networ ...",
           "Description": "In netstat in BusyBox through 1.37.0, local users can launch of network application with an argv[0] containing an ANSI terminal escape sequence, leading to a denial of service (terminal locked up) when netstat is used by a victim.",
           "Severity": "MEDIUM",
@@ -4713,7 +4713,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:200522522f740051d22574a2281329f2fa8ca01fa9482f3cdad729db63cd1363",
+          "Fingerprint": "sha256:d010de612ab140f1765ff32b9344ce0c95eb350252480733788e60971dc765ee",
           "Title": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hid ...",
           "Description": "In tar in BusyBox through 1.37.0, a TAR archive can have filenames hidden from a listing through the use of terminal escape sequences.",
           "Severity": "LOW",
@@ -4766,7 +4766,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:4f678a16f5969bbce6db280e3563a94c7b713c6ba22382334e27aaf9ad054104",
+          "Fingerprint": "sha256:f5cfa7d7e0ad90b9418ec48b58e81f8af021fad673aaca404c19dda3b4b1ec5a",
           "Title": "zlib: zlib: Arbitrary code execution via buffer overflow in untgz utility",
           "Description": "zlib versions up to and including 1.3.1.2 include a global buffer overflow in the untgz utility located under contrib/untgz. The vulnerability is limited to the standalone demonstration utility and does not affect the core zlib compression library. The flaw occurs when a user executes the untgz command with an excessively long archive name supplied via the command line, leading to an out-of-bounds write in a fixed-size global buffer.",
           "Severity": "HIGH",
@@ -4825,7 +4825,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:a0609cddcebe5996b2ae316b473d081862a354894f246f7cace46d1490a895d3",
+          "Fingerprint": "sha256:c9d9d0bd9a77ea21d8ed7e37eb12075ca4207399b143b78c3320302f14961d73",
           "Title": "zlib: zlib: Denial of Service via infinite loop in CRC32 combine functions",
           "Description": "zlib before 1.3.2 allows CPU consumption via crc32_combine64 and crc32_combine_gen64 because x2nmodp can do right shifts within a loop that has no termination condition.",
           "Severity": "MEDIUM",
@@ -4926,7 +4926,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/@mongodb-js/saslprep/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5351,7 +5351,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/@types/webidl-conversions/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5368,7 +5368,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/@types/whatwg-url/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5402,7 +5402,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/accepts/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5572,7 +5572,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/array-flatten/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5606,7 +5606,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/bson/vendor/base64/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5623,7 +5623,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/bcryptjs/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5674,7 +5674,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/body-parser/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5708,7 +5708,7 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/bson/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5725,7 +5725,7 @@
             "BSD-3-Clause"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/buffer-equal-constant-time/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5742,7 +5742,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/bytes/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5776,7 +5776,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/call-bind-apply-helpers/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5793,7 +5793,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/call-bound/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5980,7 +5980,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/content-disposition/package.json",
           "AnalyzedBy": "node-pkg"
@@ -5997,7 +5997,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/content-type/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6014,7 +6014,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/cookie/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6031,7 +6031,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/cookie-signature/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6065,7 +6065,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/cors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6116,7 +6116,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/body-parser/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6133,7 +6133,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/express/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6150,7 +6150,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/finalhandler/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6167,7 +6167,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/send/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6201,7 +6201,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/debug/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6218,7 +6218,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/depd/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6235,7 +6235,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/destroy/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6269,7 +6269,7 @@
             "BSD-2-Clause"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/dotenv/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6286,7 +6286,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/dunder-proto/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6320,7 +6320,7 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/ecdsa-sig-formatter/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6337,7 +6337,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/ee-first/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6405,7 +6405,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/send/node_modules/encodeurl/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6422,7 +6422,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/encodeurl/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6490,7 +6490,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/es-define-property/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6507,7 +6507,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/es-errors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6524,7 +6524,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/es-object-atoms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6541,7 +6541,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/escape-html/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6558,7 +6558,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/etag/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6592,7 +6592,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/express/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6609,7 +6609,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/express-rate-limit/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6626,7 +6626,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/express-validator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6660,7 +6660,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/finalhandler/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6694,7 +6694,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/forwarded/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6711,7 +6711,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/fresh/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6762,7 +6762,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/function-bind/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6779,7 +6779,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/get-intrinsic/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6796,7 +6796,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/get-proto/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6830,7 +6830,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/gopd/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6864,7 +6864,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/has-symbols/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6881,7 +6881,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/hasown/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6898,7 +6898,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/helmet/package.json",
           "AnalyzedBy": "node-pkg"
@@ -6949,7 +6949,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/http-errors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7000,7 +7000,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/iconv-lite/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7085,7 +7085,7 @@
             "ISC"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/inherits/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7136,7 +7136,7 @@
             "ISC"
           ],
           "Layer": {
-            "DiffID": "sha256:e5b7544273784347e933654fd4ba79774103c0c554b2f92cde6579c7abb27df5"
+            "DiffID": "sha256:82aa50f59bfdf355d000e74faa306d4e6de8e55b42831f093043319f9ae85a1a"
           },
           "FilePath": "app/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7187,7 +7187,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/ipaddr.js/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7374,7 +7374,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/jsonwebtoken/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7425,7 +7425,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/jwa/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7442,7 +7442,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/jws/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7459,7 +7459,7 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/kareem/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7663,7 +7663,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7680,7 +7680,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.includes/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7697,7 +7697,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.isboolean/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7714,7 +7714,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.isinteger/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7731,7 +7731,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.isnumber/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7748,7 +7748,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.isplainobject/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7765,7 +7765,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.isstring/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7782,7 +7782,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/lodash.once/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7833,7 +7833,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/math-intrinsics/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7850,7 +7850,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/media-typer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7867,7 +7867,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/memory-pager/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7884,7 +7884,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/merge-descriptors/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7901,7 +7901,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/methods/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7918,7 +7918,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mime/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7935,7 +7935,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mime-db/package.json",
           "AnalyzedBy": "node-pkg"
@@ -7952,7 +7952,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mime-types/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8224,7 +8224,7 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mongodb/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8241,7 +8241,7 @@
             "Apache-2.0"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mongodb-connection-string-url/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8258,7 +8258,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mongoose/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8275,7 +8275,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mpath/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8292,7 +8292,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/mquery/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8309,7 +8309,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/body-parser/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8326,7 +8326,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/express/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8343,7 +8343,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/finalhandler/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8360,7 +8360,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/send/node_modules/debug/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8394,7 +8394,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/ms/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8445,7 +8445,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/negotiator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8717,7 +8717,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/object-assign/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8734,7 +8734,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/object-inspect/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8751,7 +8751,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/on-finished/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8836,7 +8836,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/parseurl/package.json",
           "AnalyzedBy": "node-pkg"
@@ -8887,7 +8887,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/path-to-regexp/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9057,7 +9057,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/proxy-addr/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9074,7 +9074,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/punycode/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9105,7 +9105,7 @@
             "BSD-3-Clause"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/qs/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9122,7 +9122,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/range-parser/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9139,7 +9139,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/raw-body/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9224,7 +9224,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/safe-buffer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9241,7 +9241,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/safer-buffer/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9292,7 +9292,7 @@
             "ISC"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/semver/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9309,7 +9309,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/send/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9326,7 +9326,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/serve-static/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9343,7 +9343,7 @@
             "ISC"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/setprototypeof/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9394,7 +9394,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/side-channel/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9411,7 +9411,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/side-channel-list/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9428,7 +9428,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/side-channel-map/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9445,7 +9445,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/side-channel-weakmap/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9462,7 +9462,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/sift/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9564,7 +9564,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/sparse-bitfield/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9717,7 +9717,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/statuses/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9904,7 +9904,7 @@
             "(Unlicense OR Apache-2.0)"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/bson/vendor/text-encoding/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9955,7 +9955,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/toidentifier/package.json",
           "AnalyzedBy": "node-pkg"
@@ -9972,7 +9972,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/tr46/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10023,7 +10023,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/type-is/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10074,7 +10074,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/unpipe/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10108,7 +10108,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/utils-merge/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10159,7 +10159,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/validator/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10176,7 +10176,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/vary/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10210,7 +10210,7 @@
             "BSD-2-Clause"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/webidl-conversions/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10227,7 +10227,7 @@
             "MIT"
           ],
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "FilePath": "app/node_modules/whatwg-url/package.json",
           "AnalyzedBy": "node-pkg"
@@ -10378,7 +10378,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:b18f49540fd8dc26cd024d788760471313f5550b3a363b0abffec93acb56e2b5",
+          "Fingerprint": "sha256:eec6f1545c8c3c6d1c68af6faf66cde9be4aaae1c2cb79eb328210a9b631533d",
           "Title": "sigstore-core: @sigstore/core: Signature bypass due to incorrect encoding in preAuthEncoding",
           "Description": "sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 3.2.1, the preAuthEncoding function in @sigstore/core uses Node.js ascii encoding when converting the PAE string to bytes, allowing payloadType to be mutated after signing without invalidating the signature and breaking the type-binding guarantee that DSSE is designed to provide. This issue is fixed in version 3.2.1.",
           "Severity": "MEDIUM",
@@ -10429,7 +10429,7 @@
           "FixedVersion": "1.20.6, 2.3.0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-12590",
@@ -10438,7 +10438,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:af303111464478ee6280c1ed475acb3408bef5cf0d0ff690d250f78c58a636d6",
+          "Fingerprint": "sha256:d8e23659385be01eec5e9c5222d232c7e36ec8bf3af7c2f6e27a271f7d4c3d4a",
           "Title": "body-parser: body-parser: Denial of Service via invalid limit option",
           "Description": "Impact: In body-parser versions prior to 1.20.6 (1.x line) and 2.3.0 (2.x line), when the parser is configured with an invalid limit option value such as an unparseable string or NaN, bytes.parse returns null and the request body size check is silently skipped. Applications that rely on limit as their primary safeguard against oversized request bodies will accept arbitrarily large payloads, leading to excessive memory and CPU usage and denial of service. Patches: This issue is fixed in body-parser 1.20.6 and 2.3.0. After the fix, invalid limit values throw a clear error at parser construction time instead of silently disabling enforcement, while null and undefined continue to fall back to the default limit of 100kb. Workarounds: Validate the limit value before passing it to body-parser. For example, parse the value at startup and reject any configuration where the result is null or a non-finite number.",
           "Severity": "LOW",
@@ -10506,7 +10506,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:1b9cc80e96d20e512a6b7ce297b7c1ec6f96797c7e66da101c98d6dbdd497fca",
+          "Fingerprint": "sha256:23bf3df872e20c4d65942c3a036a30da31d990eb6181b5d92eafaed779094ed0",
           "Title": "brace-expansion: Brace-expansion: Denial of Service due to exponential-time complexity",
           "Description": "brace-expansion through 5.0.6 is vulnerable to denial of service. The expand() function exhibits exponential-time complexity in the number of consecutive non-expanding '{}' brace groups. An attacker who passes a crafted string to expand(), directly or transitively, can cause significant CPU consumption and event-loop blocking. The max option does not mitigate this, as it bounds the output size rather than the recursion work.",
           "Severity": "HIGH",
@@ -10594,7 +10594,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:8d8323cb51e4b6b329615a36d21d92ac91cfef9f8a08f61b3028378de59d1497",
+          "Fingerprint": "sha256:382ae323ca89e91fb9809b31a9ada49818e7b952eb31c73b1fc98fe71ef0b909",
           "Title": "brace-expansion: Brace-expansion: Denial of Service via memory exhaustion in expand() function",
           "Description": "brace-expansion through 5.0.7 is vulnerable to denial of service via memory exhaustion. The expand() function limits the number of results with a max option (default 100,000) but does not bound the length of each result string. By chaining multiple brace groups, an attacker keeps the result count under the limit while making each result progressively longer, so total memory scales with both count and string length until the process hits a fatal, uncatchable out-of-memory error. About 7.5 KB of input ('{a,b}'.repeat(1500)) crashes a default Node.js process. Any application that passes attacker-influenced strings to brace-expansion.expand() - directly or transitively via minimatch / glob brace patterns - can be crashed by a small request. Fixed in 5.0.8 by adding a maxLength option (default 4,000,000) that bounds accumulated output and intermediate arrays.",
           "Severity": "HIGH",
@@ -10683,7 +10683,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:f16ab62bf337789a4adb7bccfc73e787c13d66d695f1da25149db589c67537a4",
+          "Fingerprint": "sha256:7cb219ee8339d48c7e79285a9a2056438e62899051f8d5907d703a340c65ee3b",
           "Title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
           "Description": "The brace-expansion library generates arbitrary strings containing a common prefix and suffix. Prior to 1.1.18, 2.1.4, 3.0.6, and 5.0.9, expand() does not apply maxLength while constructing comma-alternative intermediate arrays or padded sequences, allowing attacker-controlled input to exhaust memory or block the event loop. The fix for CVE-2026-14257 is bypassed by the vulnerability. This issue is fixed in versions 1.1.18, 2.1.4, 3.0.6, and 5.0.9.",
           "Severity": "HIGH",
@@ -10768,7 +10768,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:73d24b3edd0dd43aeef868d2d36c5b88e10a6d7ea967c87918b2883c646e9048",
+          "Fingerprint": "sha256:f504e57eb5fbd69eb9f7946bdfaf8e3a0382a9d6319a0c22b7463fec052849de",
           "Title": "brace-expansion: brace-expansion: Denial of Service via zero step value in brace pattern",
           "Description": "The brace-expansion library generates arbitrary strings containing a common prefix and suffix. Prior to versions 5.0.5, 3.0.2, 2.0.3, and 1.1.13, a brace pattern with a zero step value (e.g., `{1..2..0}`) causes the sequence generation loop to run indefinitely, making the process hang for seconds and allocate heaps of memory. Versions 5.0.5, 3.0.2, 2.0.3, and 1.1.13 fix the issue. As a workaround, sanitize strings passed to `expand()` to ensure a step value of `0` is not used.",
           "Severity": "MEDIUM",
@@ -10838,7 +10838,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:93381c336a26d46e3da550e24aac99f4f4051bbafc9ce132d499454f256238a5",
+          "Fingerprint": "sha256:9c108c7622e6c87cbf36448f0c747b2d3516386e8dc6936cfcf3286437b488e4",
           "Title": "brace-expansion: juliangruber brace-expansion index.js expand redos",
           "Description": "A vulnerability was found in juliangruber brace-expansion up to 1.1.11/2.0.1/3.0.0/4.0.0. It has been rated as problematic. Affected by this issue is the function expand of the file index.js. The manipulation leads to inefficient regular expression complexity. The attack may be launched remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. The exploit has been disclosed to the public and may be used. Upgrading to version 1.1.12, 2.0.2, 3.0.1 and 4.0.1 is able to address this issue. The name of the patch is a5b98a4f30d7813266b221435e1eaaf25a1b0ac5. It is recommended to upgrade the affected component.",
           "Severity": "LOW",
@@ -10908,7 +10908,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:e67af3232e891f6a417ed2af0f3ee9ddbf3b2644131d46d8c9e86ac379c700e9",
+          "Fingerprint": "sha256:cc13c43e7ee6e3653c835f9fc90e4402a15fa638b5b6db156cb120845aee7f46",
           "Title": "cross-spawn: regular expression denial of service",
           "Description": "Versions of the package cross-spawn before 6.0.6, from 7.0.0 and before 7.0.5 are vulnerable to Regular Expression Denial of Service (ReDoS) due to improper input sanitization. An attacker can increase the CPU usage and crash the program by crafting a very large and well crafted string.",
           "Severity": "HIGH",
@@ -10975,7 +10975,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:14501723433024653ca6652addd8bd3f3432a7da1991bd67e245b7b5f2b65eeb",
+          "Fingerprint": "sha256:9e8afd3d1c77c742ad3b3daeb7ad694c71788d9d3f6273950fb95ab362ac16f9",
           "Title": "jsdiff: denial of service vulnerability in parsePatch and applyPatch",
           "Description": "jsdiff is a JavaScript text differencing implementation. Prior to versions 8.0.3, 5.2.2, 4.0.4, and 3.5.1, attempting to parse a patch whose filename headers contain the line break characters `\\r`, `\\u2028`, or `\\u2029` can cause the `parsePatch` method to enter an infinite loop. It then consumes memory without limit until the process crashes due to running out of memory. Applications are therefore likely to be vulnerable to a denial-of-service attack if they call `parsePatch` with a user-provided patch as input. A large payload is not needed to trigger the vulnerability, so size limits on user input do not provide any protection. Furthermore, some applications may be vulnerable even when calling `parsePatch` on a patch generated by the application itself if the user is nonetheless able to control the filename headers (e.g. by directly providing the filenames of the files to be diffed). The `applyPatch` method is similarly affected if (and only if) called with a string representation of a patch as an argument, since under the hood it parses that string using `parsePatch`. Other methods of the library are unaffected. Finally, a second and lesser interdependent bug - a ReDOS - also exhibits when those same line break characters are present in a patch's *patch* header (also known as its \"leading garbage\"). A maliciously-crafted patch header of length *n* can take `parsePatch` O(*n*³) time to parse. Versions 8.0.3, 5.2.2, 4.0.4, and 3.5.1 contain a fix. As a workaround, do not attempt to parse patches that contain any of these characters: `\\r`, `\\u2028`, or `\\u2029`.",
           "Severity": "LOW",
@@ -11042,7 +11042,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:5dd61b5d0deff88a4e203fd4d11a150ef35a0b77bea312e19fe02a7bb1a0389d",
+          "Fingerprint": "sha256:4f87bd6aca19d952aad76a3456109c9652c65e21165b2ee9c8774a8cd70d53a8",
           "Title": "glob: glob: Command Injection Vulnerability via Malicious Filenames",
           "Description": "Glob matches files using patterns the shell uses. Starting in version 10.2.0 and prior to versions 10.5.0 and 11.1.0, the glob CLI contains a command injection vulnerability in its -c/--cmd option that allows arbitrary command execution when processing files with malicious names. When glob -c \u003ccommand\u003e \u003cpatterns\u003e are used, matched filenames are passed to a shell with shell: true, enabling shell metacharacters in filenames to trigger command injection and achieve arbitrary code execution under the user or CI account privileges. This issue has been patched in versions 10.5.0 and 11.1.0.",
           "Severity": "HIGH",
@@ -11100,7 +11100,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:9a7a99dc7765d8679a19d3e35d835d4253fd0733ef3ed670bb065698e37a2535",
+          "Fingerprint": "sha256:a4b821b25a353fcc61cfc01ce45ab78d71050054e55ac02ffa76b3abb101d797",
           "Title": "ip-address: ip-address: Inconsistent IP address parsing leads to Server-Side Request Forgery (SSRF) and trust-boundary bypass",
           "Description": "ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. Prior to 10.3.1, Address4 accepts an octet written with a leading zero and decodes it as decimal, while the WHATWG URL host parser, inet_aton, and getaddrinfo all decode a leading zero as octal. The library and the network stack therefore disagree about which host a string names. new Address4('012.0.0.1') reports correctForm() of 12.0.0.1 and isPrivate() of false, but fetch('http://012.0.0.1/') connects to 10.0.0.1. An application that builds a network trust-boundary decision on these checks, for example a filter intended to block Server-Side Request Forgery, or SSRF, will classify an internal target as external and allow the request. The defect is in the parse gate rather than in any one classifier, so every consumer of Address4 inherits it: isPrivate(), isLoopback(), isLinkLocal(), isCGNAT(), isInSubnet(), isHostInSubnet(), and correctForm() are all computed from the mis-decoded octets. This issue is fixed in version 10.3.1.",
           "Severity": "HIGH",
@@ -11183,7 +11183,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:970506b7ba9673e6d86ce0a25053fc80c379db543f3b466536a73e08a80bd4fa",
+          "Fingerprint": "sha256:ebb086fe3e102b83045886c0312263667dba3f20ac3da68fb7b98d65a75c2edd",
           "Title": "ip-address: ip-address: Cross-site scripting via improper HTML escaping of untrusted input",
           "Description": "ip-address is a library for parsing and manipulating IPv4 and IPv6 addresses in JavaScript. Prior to 10.1.1, Address6.group() and Address6.link() do not HTML-escape attacker-controlled content before embedding it in the HTML strings they return, and AddressError.parseMessage (emitted by the Address6 constructor for invalid input) can contain unescaped attacker-controlled content in one branch. An application that (1) passes untrusted input to Address6 and (2) renders the output of these methods, or the thrown error's parseMessage, as HTML (e.g. via innerHTML) is vulnerable to cross-site scripting. This vulnerability is fixed in 10.1.1.",
           "Severity": "MEDIUM",
@@ -11311,7 +11311,7 @@
           "FixedVersion": "3.2.3, 4.0.1",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-65945",
@@ -11320,7 +11320,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:38d90c82ab1511e19d7600d759a3bdbbb056a20ae5fa697330a7157a29c9ac7d",
+          "Fingerprint": "sha256:8230f12d29c15927629443053f04aec858101a1ac75c7a5095f1db2cb68e327c",
           "Title": "node-jws: auth0/node-jws: Improper signature verification in HS256 algorithm",
           "Description": "auth0/node-jws is a JSON Web Signature implementation for Node.js. In versions 3.2.2 and earlier and version 4.0.0, auth0/node-jws has an improper signature verification vulnerability when using the HS256 algorithm under specific conditions. Applications are affected when they use the jws.createVerify() function for HMAC algorithms and use user-provided data from the JSON Web Signature protected header or payload in HMAC secret lookup routines, which can allow attackers to bypass signature verification. This issue has been patched in versions 3.2.3 and 4.0.1.",
           "Severity": "HIGH",
@@ -11371,7 +11371,7 @@
           "FixedVersion": "4.18.0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4800",
@@ -11380,7 +11380,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:4ffec0584845030f56bb55e4ce8eeab94b2dbac7599698ddaa74953e693d5bf7",
+          "Fingerprint": "sha256:ebaf9c47ff03186b42d4c0371026dc8bfbeae3d08534033df597f61777b9d7cb",
           "Title": "lodash: lodash: Arbitrary code execution via untrusted input in template imports",
           "Description": "Impact:\n\nThe fix for CVE-2021-23337 (https://github.com/advisories/GHSA-35jh-r3h4-6jhm) added validation for the variable option in _.template but did not apply the same validation to options.imports key names. Both paths flow into the same Function() constructor sink.\n\nWhen an application passes untrusted input as options.imports key names, an attacker can inject default-parameter expressions that execute arbitrary code at template compilation time.\n\nAdditionally, _.template uses assignInWith to merge imports, which enumerates inherited properties via for..in. If Object.prototype has been polluted by any other vector, the polluted keys are copied into the imports object and passed to Function().\n\nPatches:\n\nUsers should upgrade to version 4.18.0.\n\nWorkarounds:\n\nDo not pass untrusted input as key names in options.imports. Only use developer-controlled, static key names.",
           "Severity": "HIGH",
@@ -11526,7 +11526,7 @@
           "FixedVersion": "4.17.23",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-13465",
@@ -11535,7 +11535,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:4c9ea244a6810f60ba2c86088c2e18acc62313655a1d58e9af426fa7356da76a",
+          "Fingerprint": "sha256:8be5959640f50f07566df98050cbc84bfb728eceb92dd83bee4e91f22034b0b0",
           "Title": "lodash: prototype pollution in _.unset and _.omit functions",
           "Description": "Lodash versions 4.0.0 through 4.17.22 are vulnerable to prototype pollution in the _.unset and _.omit functions. An attacker can pass crafted paths which cause Lodash to delete methods from global prototypes.\n\nThe issue permits deletion of properties but does not allow overwriting their original behavior.\n\nThis issue is patched on 4.17.23",
           "Severity": "MEDIUM",
@@ -11690,7 +11690,7 @@
           "FixedVersion": "4.18.0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-2950",
@@ -11699,7 +11699,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:09bb18924aba0383bb9abf1b647e5daaaec5f1699368374d91c0e8f3134d7f45",
+          "Fingerprint": "sha256:a2eec13e4e6d60f2f994ea6700a8b64fd00d6f83621d2f8caf5a600064b329e9",
           "Title": "lodash: Lodash: Prototype pollution allows deletion of built-in prototype properties via array path bypass",
           "Description": "Impact:\n\nLodash versions 4.17.23 and earlier are vulnerable to prototype pollution in the _.unset and _.omit functions. The fix for (CVE-2025-13465: https://github.com/lodash/lodash/security/advisories/GHSA-xxjr-mmjv-4gpg) only guards against string key members, so an attacker can bypass the check by passing array-wrapped path segments. This allows deletion of properties from built-in prototypes such as Object.prototype, Number.prototype, and String.prototype.\n\nThe issue permits deletion of prototype properties but does not allow overwriting their original behavior.\n\nPatches:\n\nThis issue is patched in 4.18.0.\n\nWorkarounds:\n\nNone. Upgrade to the patched version.",
           "Severity": "MEDIUM",
@@ -11763,7 +11763,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:5bc49a1113e06ea40f7c7bdf844c486bd0c078340ba6ab66e5cda28ea6d15b72",
+          "Fingerprint": "sha256:eeb299db376021767c80c96eebb732d597cf6d5a6c9283260aabf1c1e4d6600a",
           "Title": "minimatch: minimatch: Denial of Service via specially crafted glob patterns",
           "Description": "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Versions 10.2.0 and below are vulnerable to Regular Expression Denial of Service (ReDoS) when a glob pattern contains many consecutive * wildcards followed by a literal character that doesn't appear in the test string. Each * compiles to a separate [^/]*? regex group, and when the match fails, V8's regex engine backtracks exponentially across all possible splits. The time complexity is O(4^N) where N is the number of * characters. With N=15, a single minimatch() call takes ~2 seconds. With N=34, it hangs effectively forever. Any application that passes user-controlled strings to minimatch() as the pattern argument is vulnerable to DoS. This issue has been fixed in version 10.2.1.",
           "Severity": "HIGH",
@@ -11847,7 +11847,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:22dedc23a85d9dc554696107d994eb49cedc7217eb558e8f6d1110788ea54376",
+          "Fingerprint": "sha256:4b799d34efb3e7df62e8e6be5f4014ed22173f25f9d4b83398d7efaccb1dfb39",
           "Title": "minimatch: minimatch: Denial of Service due to unbounded recursive backtracking via crafted glob patterns",
           "Description": "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Prior to version 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.3, `matchOne()` performs unbounded recursive backtracking when a glob pattern contains multiple non-adjacent `**` (GLOBSTAR) segments and the input path does not match. The time complexity is O(C(n, k)) -- binomial -- where `n` is the number of path segments and `k` is the number of globstars. With k=11 and n=30, a call to the default `minimatch()` API stalls for roughly 5 seconds. With k=13, it exceeds 15 seconds. No memoization or call budget exists to bound this behavior. Any application where an attacker can influence the glob pattern passed to `minimatch()` is vulnerable. The realistic attack surface includes build tools and task runners that accept user-supplied glob arguments (ESLint, Webpack, Rollup config), multi-tenant systems where one tenant configures glob-based rules that run in a shared process, admin or developer interfaces that accept ignore-rule or filter configuration as globs, and CI/CD pipelines that evaluate user-submitted config files containing glob patterns. An attacker who can place a crafted pattern into any of these paths can stall the Node.js event loop for tens of seconds per invocation. The pattern is 56 bytes for a 5-second stall and does not require authentication in contexts where pattern input is part of the feature. Versions 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.3 fix the issue.",
           "Severity": "HIGH",
@@ -11904,7 +11904,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:621171f20c07a36903d55eb9058b18fcc3325740c595030e2fc099211da607db",
+          "Fingerprint": "sha256:e02ac3e5026bd8743ac5ac58f15ea60434767afc8a800e1d5e36d083984bf171",
           "Title": "minimatch: Minimatch: Denial of Service via catastrophic backtracking in glob expressions",
           "Description": "minimatch is a minimal matching utility for converting glob expressions into JavaScript RegExp objects. Prior to version 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.4, nested `*()` extglobs produce regexps with nested unbounded quantifiers (e.g. `(?:(?:a|b)*)*`), which exhibit catastrophic backtracking in V8. With a 12-byte pattern `*(*(*(a|b)))` and an 18-byte non-matching input, `minimatch()` stalls for over 7 seconds. Adding a single nesting level or a few input characters pushes this to minutes. This is the most severe finding: it is triggered by the default `minimatch()` API with no special options, and the minimum viable pattern is only 12 bytes. The same issue affects `+()` extglobs equally. Versions 10.2.3, 9.0.7, 8.0.6, 7.4.8, 6.2.2, 5.1.8, 4.2.5, and 3.1.4 fix the issue.",
           "Severity": "HIGH",
@@ -11974,7 +11974,7 @@
           "FixedVersion": "6.13.9, 7.8.9, 8.22.1, 9.1.6",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-42334",
@@ -11983,7 +11983,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:ae5a730725b9df0ad55eb6943a46468bf92dd648f20308f93df974c0621f9342",
+          "Fingerprint": "sha256:cae301444b7a2d42dc992500363025d16728fae1321472dedcabb71576a773b6",
           "Title": "Mongoose's Improper Sanitization of $nor in sanitizeFilter May Allow NoSQL Injection",
           "Description": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Prior to 6.13.9, 7.8.9, 8.22.1, and 9.1.6, a vulnerability allows bypassing Mongoose’s sanitizeFilter query sanitization mechanism via the $nor operator. When sanitizeFilter is enabled, Mongoose wraps query operators in $eq to neutralize them. However, prior to the fix, $nor was not included in the set of logical operators that are recursively sanitized. Because $nor accepts an array (like $and and $or), and arrays do not trigger hasDollarKeys(), malicious operators such as $ne, $gt, or $regex could be injected inside a $nor clause without being sanitized. This vulnerability is fixed in 6.13.9, 7.8.9, 8.22.1, and 9.1.6.",
           "Severity": "HIGH",
@@ -12030,7 +12030,7 @@
           "FixedVersion": "6.13.10, 7.8.10, 8.24.1, 9.7.2",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-73562",
@@ -12039,7 +12039,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:7edd0f694b429d8fee9f934e0fddbdafc5d2ae287ce38dbb859a9713e89302b6",
+          "Fingerprint": "sha256:62bb605f6f6933ce9f222a3f43a1be8b1a66d3b8b8935a0c8682aa3146ebf7e4",
           "Title": "Mongoose: Prototype pollution in mongoose update casting via __proto__-prefixed dotted path (Schema._getSchema/path getter)",
           "Description": "Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment. Prior to 6.13.10, 7.8.10, 8.24.1, and 9.7.2, passing a user-controlled update such as MyModel.updateOne(filter, req.body) can exploit Mongoose update casting with a __proto__.x dotted path under $set. Schema.prototype.path and Schema.prototype._getPathType can treat inherited properties of schema.paths and schema.nested as schema types, allowing the casting process to set $fullPath and $parentSchemaDocArray on Object.prototype before throwing. This prototype pollution makes those properties visible on newly created objects and can cause application integrity and availability impacts. This issue is fixed in versions 6.13.10, 7.8.10, 8.24.1, and 9.7.2.",
           "Severity": "MEDIUM",
@@ -12103,7 +12103,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:9e2c802d761bcff5be2f53f0c0511aab999b63180a8ac655f15e73576b141cc3",
+          "Fingerprint": "sha256:782e28f7bb2a670b33aefae44c362f8cfe92376374e0404cedb3bfb97c5825ee",
           "Title": "Versions of the package pacote from 11.2.7 and before 21.5.1 are vulne ...",
           "Description": "Versions of the package pacote from 11.2.7 and before 21.5.1 are vulnerable to Denial of Service (DoS) via the addGitSha function. An attacker can exploit this vulnerability by supplying a specially crafted spec.rawSpec value that triggers the function’s regex replacement and string-manipulation logic,  causing excessive CPU consumption and potentially stalling or crashing the process.",
           "Severity": "HIGH",
@@ -12153,7 +12153,7 @@
           "FixedVersion": "0.1.13",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4867",
@@ -12162,7 +12162,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:3ac329ba72054cde7933834773ee010f846c99abc9f554b26ea87653f9bbb6f7",
+          "Fingerprint": "sha256:af1e4e4a456456696f602576adbbff2e80261d9505e988816d1fade20feec472",
           "Title": "path-to-regexp: path-to-regexp: Denial of Service via catastrophic backtracking from malformed URL parameters",
           "Description": "Impact:\n\nA bad regular expression is generated any time you have three or more parameters within a single segment, separated by something that is not a period (.). For example, /:a-:b-:c or /:a-:b-:c-:d. The backtrack protection added in path-to-regexp@0.1.12 only prevents ambiguity for two parameters. With three or more, the generated lookahead does not block single separator characters, so capture groups overlap and cause catastrophic backtracking.\n\nPatches:\n\nUpgrade to path-to-regexp@0.1.13\n\nCustom regex patterns in route definitions (e.g., /:a-:b([^-/]+)-:c([^-/]+)) are not affected because they override the default capture group.\n\nWorkarounds:\n\nAll versions can be patched by providing a custom regular expression for parameters after the first in a single segment. As long as the custom regular expression does not match the text before the parameter, you will be safe. For example, change /:a-:b-:c to /:a-:b([^-/]+)-:c([^-/]+).\n\nIf paths cannot be rewritten and versions cannot be upgraded, another alternative is to limit the URL length.",
           "Severity": "HIGH",
@@ -12222,7 +12222,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:d4f3c63366847cf073634022b460c91761577af2a42bbedf0712918bf9d76874",
+          "Fingerprint": "sha256:e3acf86d92462c43f0d8add59e9a1167e22265d872e0ca9a9af73e03e15e0fa6",
           "Title": "postcss-selector-parser: Postcss: Denial of Service via uncontrolled recursion in AST Serialization",
           "Description": "A vulnerability was determined in postcss-selector-parser up to 6.1.2/7.1.2. Affected is the function toString of the file src/selectors/container.js of the component AST Serialization. Executing a manipulation can lead to uncontrolled recursion. It is possible to launch the attack remotely. The exploit has been publicly disclosed and may be utilized. Upgrading to version 6.1.3 and 7.1.3 is able to address this issue. This patch is called 5bc698cef66f8abd12610dc623e5d67cbc0f869d. It is suggested to upgrade the affected component. The vendor explains, that according to his definition \"DoS on server-side on user-generated CSS is low risk for us (since most users compile own CSS with PostCSS).\" The commits were backported to 6.x branch, which was the most downloaded version.",
           "Severity": "LOW",
@@ -12280,7 +12280,7 @@
           "FixedVersion": "6.14.1",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-15284",
@@ -12289,7 +12289,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:c6c9f9547e980287c0599d8b92de140511b557b0bc30834259580fbcd36c1200",
+          "Fingerprint": "sha256:9cc9a81627f70a3a7d54ae5ae946950b0a0a1f90674588ad949272103adb2681",
           "Title": "qs: qs: Denial of Service via improper input validation in array parsing",
           "Description": "Improper Input Validation vulnerability in qs (parse modules) allows HTTP DoS.This issue affects qs: \u003c 6.14.1.\n\n\nSummary\n\nThe arrayLimit option in qs did not enforce limits for bracket notation (a[]=1\u0026a[]=2), only for indexed notation (a[0]=1). This is a consistency bug; arrayLimit should apply uniformly across all array notations.\n\nNote: The default parameterLimit of 1000 effectively mitigates the DoS scenario originally described. With default options, bracket notation cannot produce arrays larger than parameterLimit regardless of arrayLimit, because each a[]=valueconsumes one parameter slot. The severity has been reduced accordingly.\n\nDetails\n\nThe arrayLimit option only checked limits for indexed notation (a[0]=1\u0026a[1]=2) but did not enforce it for bracket notation (a[]=1\u0026a[]=2).\n\nVulnerable code (lib/parse.js:159-162):\n\nif (root === '[]' \u0026\u0026 options.parseArrays) {\n    obj = utils.combine([], leaf);  // No arrayLimit check\n}\n\n\n\n\n\nWorking code (lib/parse.js:175):\n\nelse if (index \u003c= options.arrayLimit) {  // Limit checked here\n    obj = [];\n    obj[index] = leaf;\n}\n\n\n\n\n\nThe bracket notation handler at line 159 uses utils.combine([], leaf) without validating against options.arrayLimit, while indexed notation at line 175 checks index \u003c= options.arrayLimit before creating arrays.\n\n\n\nPoC\n\nconst qs = require('qs');\nconst result = qs.parse('a[]=1\u0026a[]=2\u0026a[]=3\u0026a[]=4\u0026a[]=5\u0026a[]=6', { arrayLimit: 5 });\nconsole.log(result.a.length);  // Output: 6 (should be max 5)\n\n\n\n\n\nNote on parameterLimit interaction: The original advisory's \"DoS demonstration\" claimed a length of 10,000, but parameterLimit (default: 1000) caps parsing to 1,000 parameters. With default options, the actual output is 1,000, not 10,000.\n\nImpact\n\nConsistency bug in arrayLimit enforcement. With default parameterLimit, the practical DoS risk is negligible since parameterLimit already caps the total number of parsed parameters (and thus array elements from bracket notation). The risk increases only when parameterLimit is explicitly set to a very high value.",
           "Severity": "MEDIUM",
@@ -12364,7 +12364,7 @@
           "FixedVersion": "6.16.0",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-82417",
@@ -12373,7 +12373,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:1ec1f4206b71fe15c757cb5a1f2d2137ff6f56f5cd14e69d1eb15009f38b3396",
+          "Fingerprint": "sha256:4bcb05f0dccd74d58776d45a9478935a75a0f638acc50e463ccc38b4b618103e",
           "Title": "qs: qs: Denial of Service via improper validation in stringify function",
           "Description": "### Summary\n\n\n\n`qs.stringify` throws a `TypeError` when it serializes an object whose own `constructor` property has a truthy, non-callable `isBuffer` member. `utils.isBuffer` duck-types buffers by calling `obj.constructor.isBuffer(obj)` after checking only that the property is truthy, so a value such as `{ constructor: { isBuffer: \"x\" } }` makes the call throw `TypeError: obj.constructor.isBuffer is not a function`.\n\n\n\n### Details\n\n\n\n`lib/stringify.js:127` calls `utils.isBuffer` on every non-primitive value it serializes. `utils.isBuffer` (`lib/utils.js:332`) reads `obj.constructor.isBuffer` and invokes it without verifying that it is a function. `constructor` and `isBuffer` are ordinary property names, so any object carrying them as own properties reaches the unchecked call.\n\n\n\nSuch an object can be built from untrusted input. `qs.parse(\"x[constructor][isBuffer]=y\", { plainObjects: true })` or `{ allowPrototypes: true }` keeps the `constructor` key as an own property (the default parse options drop it), and `JSON.parse(\"{\\\"a\\\":{\\\"constructor\\\":{\\\"isBuffer\\\":\\\"x\\\"}}}\")` produces the same shape with no qs option involved. Express 4 with its default `query parser` setting and body-parser with `extended: true` both call `qs.parse` with `allowPrototypes: true`, so on those stacks `req.query` and `req.body` can carry the shape directly.\n\n\n\n#### PoC\n\n\n\n```js\n\n\n\nvar qs = require(\"qs\");\n\n\n\nqs.stringify(qs.parse(\"x[constructor][isBuffer]=y\", { plainObjects: true }));\n\n\n\nqs.stringify(JSON.parse(\"{\\\"a\\\":{\\\"constructor\\\":{\\\"isBuffer\\\":\\\"x\\\"}}}\"));\n\n\n\n// TypeError: obj.constructor.isBuffer is not a function\n\n\n\n//     at Object.isBuffer (lib/utils.js:332:78)\n\n\n\n//     at stringify (lib/stringify.js:127:45)\n\n\n\n```\n\n\n\n#### Fix\n\n\n\n`lib/utils.js`, applied in e83d321 on `main` and released as v6.16.0:\n\n\n\n```diff\n\n\n\n- return !!(obj.constructor \u0026\u0026 obj.constructor.isBuffer \u0026\u0026 obj.constructor.isBuffer(obj));\n\n\n\n+ return !!(obj.constructor \u0026\u0026 typeof obj.constructor.isBuffer === \"function\" \u0026\u0026 obj.constructor.isBuffer(obj));\n\n\n\n```\n\n\n\nReal `Buffer`, `safer-buffer`, and browserify `buffer` polyfill instances serialize exactly as before; only the throw is removed.\n\n\n\n### Affected versions\n\n\n\n`\u003e=2.2.5 \u003c6.16.0`, fixed in v6.16.0.\n\n\n\nThe unguarded duck-type was introduced in 3768a75 and first shipped in v2.2.5 (September 2014). v2.2.4 and earlier used `Buffer.isBuffer` and are not affected. Every release from v2.2.5 through v6.15.3 contains the unguarded call.\n\n\n\n### Impact\n\n\n\nAn unauthenticated request can make any code path that re-serializes attacker-influenced data with `qs.stringify` (for example, rebuilding a query string from `req.query` for a redirect or an upstream request, or serializing a parsed JSON body) throw synchronously. In a typical Node.js HTTP framework the throw is caught by the framework error boundary and the affected request returns a 500; the process survives and other requests are unaffected. Where the call runs outside an error boundary, such as an `async` Express 4 handler (where the throw becomes an unhandled promise rejection) or a background job, the process exits, so the impact in that case depends on the application error handling rather than on qs.",
           "Severity": "MEDIUM",
@@ -12424,7 +12424,7 @@
           "FixedVersion": "6.15.2",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-8723",
@@ -12433,7 +12433,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:13b28153daeeefe17f7f609b357fc6eb5617407647197e211a8fa18486cfc627",
+          "Fingerprint": "sha256:8272d1c3291b8903673a9e8159e46c08d8ccc0794c43826500b78230338b7b49",
           "Title": "qs: qs: Denial of Service due to improper handling of null/undefined array elements",
           "Description": "### Summary\n\n\n\n`qs.stringify` throws `TypeError` when called with `arrayFormat: 'comma'` and `encodeValuesOnly: true` on an array containing `null` or `undefined`. The throw is synchronous and not handled by any of qs's null-related options (`skipNulls`, `strictNullHandling`).\n\n\n\n### Details\n\n\n\nIn the comma + `encodeValuesOnly` branch, `lib/stringify.js:145` mapped the array through the raw encoder before joining:\n\n\n\n```js\n\n\n\nobj = utils.maybeMap(obj, encoder);\n\n\n\n```\n\n\n\n`utils.encode` (`lib/utils.js:195`) reads `str.length` with no null guard, so a `null` or `undefined` element throws `TypeError`. `skipNulls` and `strictNullHandling` are both checked in the per-element loop below this line and never get a chance to run.\n\n\n\nSame class of bug as the filter-array path fixed in 0c180a4. The vulnerable shape of the comma + `encodeValuesOnly` branch was introduced in 4c4b23d (\"encode comma values more consistently\", PR #463, 2023-01-19), first released in v6.11.1.\n\n\n\n#### PoC\n\n\n\n```js\n\n\n\nconst qs = require('qs');\n\n\n\nqs.stringify({ a: [null, 'b'] },      { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\nqs.stringify({ a: [undefined, 'b'] }, { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\nqs.stringify({ a: [null] },           { arrayFormat: 'comma', encodeValuesOnly: true });\n\n\n\n// TypeError: Cannot read properties of null (reading 'length')\n\n\n\n//     at encode (lib/utils.js:195:13)\n\n\n\n//     at Object.maybeMap (lib/utils.js:322:37)\n\n\n\n//     at stringify (lib/stringify.js:145:25)\n\n\n\n```\n\n\n\n#### Fix\n\n\n\n`lib/stringify.js:145`, applied in 21f80b3 on `main` and released as v6.15.2:\n\n\n\n```diff\n\n\n\n- obj = utils.maybeMap(obj, encoder);\n\n\n\n+ obj = utils.maybeMap(obj, function (v) {\n\n\n\n+     return v == null ? v : encoder(v);\n\n\n\n+ });\n\n\n\n```\n\n\n\n`null` and `undefined` now pass through `maybeMap` unchanged and reach the `join(',')` step as-is. For `{ a: [null, 'b'] }` this produces `a=,b`, matching the non-`encodeValuesOnly` comma path (which already joins before encoding and produces `a=%2Cb` for the same input). Single-element `[null]` arrays still collapse via the existing `obj.join(',') || null` and remain subject to `skipNulls` / `strictNullHandling` in the main loop.\n\n\n\n### Affected versions\n\n\n\n`\u003e=6.11.1 \u003c6.15.2` — fixed in v6.15.2.\n\n\n\nThe vulnerable code shape was introduced in 4c4b23d and first shipped in v6.11.1. Earlier versions — including all of 6.7.x, 6.8.x, 6.9.x, 6.10.x, and 6.11.0 — implemented the comma + `encodeValuesOnly` path differently (joining before encoding) and are not affected. Empirically verified across released versions.\n\n\n\n### Impact\n\n\n\nApplication code that calls `qs.stringify` with both `arrayFormat: 'comma'` and `encodeValuesOnly: true` (both non-default) on input that may contain a `null` or `undefined` array element will throw synchronously instead of producing a query string. In a typical Node.js HTTP framework (Express, Fastify, Koa, hapi) the sync throw is caught by the framework's error boundary and the affected request returns a 500; the worker process does not exit and subsequent requests are unaffected. The \"kills the worker process\" framing applies only to call sites outside a request-handler error boundary (background jobs, startup paths, stream pipelines) or to deployments with framework error handling explicitly disabled.\n\n\n\nThe vulnerable input is a `null` or `undefined` entry inside an array; this is reachable from JSON request bodies or from application code constructing arrays from user input, but not from standard HTML form submissions (which produce strings or omitted fields, not literal `null`).",
           "Severity": "MEDIUM",
@@ -12483,7 +12483,7 @@
           "FixedVersion": "6.14.2",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-2391",
@@ -12492,7 +12492,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:7c9408a3f4247a16c04278020f2cfaf8b2625b0cd9ddd61c407dba57018d0d05",
+          "Fingerprint": "sha256:4fd04a3f62bd633b8aa9017e69fb79d8f1a524f2db650eaa7bd30af401678bf9",
           "Title": "qs: qs's arrayLimit bypass in comma parsing allows denial of service",
           "Description": "### Summary\nThe `arrayLimit` option in qs does not enforce limits for comma-separated values when `comma: true` is enabled, allowing attackers to cause denial-of-service via memory exhaustion. This is a bypass of the array limit enforcement, similar to the bracket notation bypass addressed in GHSA-6rw7-vpxm-498p (CVE-2025-15284).\n\n### Details\nWhen the `comma` option is set to `true` (not the default, but configurable in applications), qs allows parsing comma-separated strings as arrays (e.g., `?param=a,b,c` becomes `['a', 'b', 'c']`). However, the limit check for `arrayLimit` (default: 20) and the optional throwOnLimitExceeded occur after the comma-handling logic in `parseArrayValue`, enabling a bypass. This permits creation of arbitrarily large arrays from a single parameter, leading to excessive memory allocation.\n\n**Vulnerable code** (lib/parse.js: lines ~40-50):\n```js\nif (val \u0026\u0026 typeof val === 'string' \u0026\u0026 options.comma \u0026\u0026 val.indexOf(',') \u003e -1) {\n    return val.split(',');\n}\n\nif (options.throwOnLimitExceeded \u0026\u0026 currentArrayLength \u003e= options.arrayLimit) {\n    throw new RangeError('Array limit exceeded. Only ' + options.arrayLimit + ' element' + (options.arrayLimit === 1 ? '' : 's') + ' allowed in an array.');\n}\n\nreturn val;\n```\nThe `split(',')` returns the array immediately, skipping the subsequent limit check. Downstream merging via `utils.combine` does not prevent allocation, even if it marks overflows for sparse arrays.This discrepancy allows attackers to send a single parameter with millions of commas (e.g., `?param=,,,,,,,,...`), allocating massive arrays in memory without triggering limits. It bypasses the intent of `arrayLimit`, which is enforced correctly for indexed (`a[0]=`) and bracket (`a[]=`) notations (the latter fixed in v6.14.1 per GHSA-6rw7-vpxm-498p).\n\n### PoC\n**Test 1 - Basic bypass:**\n```\nnpm install qs\n```\n\n```js\nconst qs = require('qs');\n\nconst payload = 'a=' + ','.repeat(25);  // 26 elements after split (bypasses arrayLimit: 5)\nconst options = { comma: true, arrayLimit: 5, throwOnLimitExceeded: true };\n\ntry {\n  const result = qs.parse(payload, options);\n  console.log(result.a.length);  // Outputs: 26 (bypass successful)\n} catch (e) {\n  console.log('Limit enforced:', e.message);  // Not thrown\n}\n```\n**Configuration:**\n- `comma: true`\n- `arrayLimit: 5`\n- `throwOnLimitExceeded: true`\n\nExpected: Throws \"Array limit exceeded\" error.\nActual: Parses successfully, creating an array of length 26.\n\n\n### Impact\nDenial of Service (DoS) via memory exhaustion.",
           "Severity": "LOW",
@@ -12554,7 +12554,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:3ab77f799e75a5372922198a9c73ec680109487a97f8bb8ede6e1e30d845da09",
+          "Fingerprint": "sha256:bc3f85f119d190f325a767a1636d32109b01a5ff32379b20922bd02a5e71790b",
           "Title": "sigstore: Sigstore: Unauthorized certificates accepted due to ignored `certificateOIDs` verification option",
           "Description": "sigstore-js provides JavaScript libraries for interacting with Sigstore services. Prior to 4.1.1, the documented certificateOIDs option in sigstore.verify() is accepted by the public API but discarded before verification, so required certificate extension OIDs are never checked and applications relying on certificateOIDs to restrict which certificates may sign artifacts can accept unauthorized certificates. This issue is fixed in version 4.1.1.",
           "Severity": "HIGH",
@@ -12615,7 +12615,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:282b01ccdf16fd76ca34a77beb43590210b5d0d67d206c072b2c3a3a32ee0af1",
+          "Fingerprint": "sha256:4f47fec376e92f7ab34aedc34f28e53d1792f61d8867b29ee5577e06d4e872b7",
           "Title": "tar: node-tar: Denial of Service via crafted gzip bomb",
           "Description": "node-tar is a tar archive manipulation library for Node.js. Prior to 7.5.19, node-tar does not enforce hard upper bounds on total decompressed data, entry counts, or decompression ratio in extraction and parsing paths such as src/extract.ts, allowing a small crafted gzip bomb to exhaust disk space and CPU. This issue is fixed in version 7.5.19.",
           "Severity": "CRITICAL",
@@ -12700,7 +12700,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:b90fdb90d3041bb44659c74552050b2814a3c7db29296c2e0f1289260dea11d0",
+          "Fingerprint": "sha256:2b3abfa81bcfcb312ef696c6e0c0d87b5fd067531fdb853e56ee8b5e24486a2f",
           "Title": "node-tar: tar: node-tar: Arbitrary file overwrite and symlink poisoning via unsanitized linkpaths in archives",
           "Description": "node-tar is a Tar for Node.js. The node-tar library (\u003c= 7.5.2) fails to sanitize the linkpath of Link (hardlink) and SymbolicLink entries when preservePaths is false (the default secure behavior). This allows malicious archives to bypass the extraction root restriction, leading to Arbitrary File Overwrite via hardlinks and Symlink Poisoning via absolute symlink targets. This vulnerability is fixed in 7.5.3.",
           "Severity": "HIGH",
@@ -12796,7 +12796,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:3834e2df860889bc93f69e304ab2afe101fa3d113eaaf584f18a767e75f2049c",
+          "Fingerprint": "sha256:1f3603bfd0f8094e1154d25b6d9a5f0355df6a62a3bb1ccfa180646efbff7e47",
           "Title": "node-tar: tar: node-tar: Arbitrary file overwrite via Unicode path collision race condition",
           "Description": "node-tar,a Tar for Node.js, has a race condition vulnerability in versions up to and including 7.5.3. This is due to an incomplete handling of Unicode path collisions in the `path-reservations` system. On case-insensitive or normalization-insensitive filesystems (such as macOS APFS, In which it has been tested), the library fails to lock colliding paths (e.g., `ß` and `ss`), allowing them to be processed in parallel. This bypasses the library's internal concurrency safeguards and permits Symlink Poisoning attacks via race conditions. The library uses a `PathReservations` system to ensure that metadata checks and file operations for the same path are serialized. This prevents race conditions where one entry might clobber another concurrently. This is a Race Condition which enables Arbitrary File Overwrite. This vulnerability affects users and systems using node-tar on macOS (APFS/HFS+). Because of using `NFD` Unicode normalization (in which `ß` and `ss` are different), conflicting paths do not have their order properly preserved under filesystems that ignore Unicode normalization (e.g., APFS (in which `ß` causes an inode collision with `ss`)). This enables an attacker to circumvent internal parallelization locks (`PathReservations`) using conflicting filenames within a malicious tar archive. The patch in version 7.5.4 updates `path-reservations.js` to use a normalization form that matches the target filesystem's behavior (e.g., `NFKD`), followed by first `toLocaleLowerCase('en')` and then `toLocaleUpperCase('en')`. As a workaround, users who cannot upgrade promptly, and who are programmatically using `node-tar` to extract arbitrary tarball data should filter out all `SymbolicLink` entries (as npm does) to defend against arbitrary file writes via this file system entry name collision issue.",
           "Severity": "HIGH",
@@ -12890,7 +12890,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:bd2816eb7dd01bed1ca72a4211d38ed9e77cb2cc3968be9c1b975ad2ba416f65",
+          "Fingerprint": "sha256:5aa0fb144b6884dd26c76a8dad30c1506cee4806d97a1ce94825e24923cbf40b",
           "Title": "node-tar: tar: node-tar: Arbitrary file creation via path traversal bypass in hardlink security check",
           "Description": "node-tar,a Tar for Node.js, contains a vulnerability in versions prior to 7.5.7 where the security check for hardlink entries uses different path resolution semantics than the actual hardlink creation logic. This mismatch allows an attacker to craft a malicious TAR archive that bypasses path traversal protections and creates hardlinks to arbitrary files outside the extraction directory. Version 7.5.7 contains a fix for the issue.",
           "Severity": "HIGH",
@@ -12979,7 +12979,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:847f7e3e20b2666f2cfbda047890a5b5846a1c72df05a467949a05816897f463",
+          "Fingerprint": "sha256:98a09e7a81e83c7db4a18af83e0ed6a0cf15ee6d30097c7361babf67cf878b84",
           "Title": "node-tar: node-tar: Arbitrary file read/write via malicious archive hardlink creation",
           "Description": "node-tar is a full-featured Tar for Node.js. When using default options in versions 7.5.7 and below, an attacker-controlled archive can create a hardlink inside the extraction directory that points to a file outside the extraction root, enabling arbitrary file read and write as the extracting user. Severity is high because the primitive bypasses path protections and turns archive extraction into a direct filesystem access primitive. This issue has been fixed in version 7.5.8.",
           "Severity": "HIGH",
@@ -13043,7 +13043,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:8d08512d6d365dd34986ab414c979a1902c3ff1a87f798f8ccdc4cc84465c2b1",
+          "Fingerprint": "sha256:4840c4701b4a5f521241c6ebbda7245edc990609a59e83161a9112a2bcac78ec",
           "Title": "node-tar: hardlink path traversal via drive-relative linkpath",
           "Description": "node-tar is a full-featured Tar for Node.js. Prior to version 7.5.10, tar can be tricked into creating a hardlink that points outside the extraction directory by using a drive-relative link target such as C:../target.txt, which enables file overwrite outside cwd during normal tar.x() extraction. This issue has been patched in version 7.5.10.",
           "Severity": "HIGH",
@@ -13109,7 +13109,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:2f64eca50a7b45ebac6117cf0a21dc5a8e0fa6a43232b3b6c005bbcb839a7277",
+          "Fingerprint": "sha256:4b57a27f4575bd96093aa69cad6c8748b6e2c7ff242d1b0c4c95664d5fa618b6",
           "Title": "tar: tar: File overwrite via drive-relative symlink traversal",
           "Description": "node-tar is a full-featured Tar for Node.js. Prior to version 7.5.11, tar (npm) can be tricked into creating a symlink that points outside the extraction directory by using a drive-relative symlink target such as C:../../../target.txt, which enables file overwrite outside cwd during normal tar.x() extraction. This vulnerability is fixed in 7.5.11.",
           "Severity": "HIGH",
@@ -13171,7 +13171,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:67aa3609f241b958c41de61f568bb6edc26bcd5a77581654104508814d5b4d7d",
+          "Fingerprint": "sha256:7e25e3b81d26eee35d41e14a99e9bc4e515f6573e7012dc0a581bab1278ba17a",
           "Title": "tar: Node-tar: Denial of Service via malformed tar archive header",
           "Description": "node-tar is a tar archive manipulation library for Node.js. Prior to 7.5.18, tar.replace accepts a checksum-valid tar header with a negative base-256 encoded entry size, causing the archive scanner to make no progress while repeatedly parsing the same header. This issue is fixed in version 7.5.18.",
           "Severity": "HIGH",
@@ -13256,7 +13256,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:cef1f198eb829a5bcc3c0dee8f45970a8b14f5c515561b1ef840d6c59053917d",
+          "Fingerprint": "sha256:977732db3eb142336d245f869a163d00782754b2dafc1dca18195ccf7e3ec32f",
           "Title": "tar: node-tar: Denial of Service via crafted long-path tar archive",
           "Description": "node-tar is a tar archive manipulation library for Node.js. Prior to 7.5.21, node-tar's filesFilter in src/list.ts uses the recursive mapHas helper to walk an archive entry path upward with path.dirname() and no segment cap when tar.t(...) or tar.x(...) receives a non-empty member-selection list. A crafted GNU L or PAX x long-path header with thousands of slash-separated segments reaches this.filter(entry.path, entry) in Parser[CONSUMEHEADER] in src/parse.ts before Unpack[CHECKPATH] applies maxDepth, causing an uncatchable RangeError stack overflow that terminates asynchronous and streaming Node.js consumers. This issue is fixed in version 7.5.21.",
           "Severity": "HIGH",
@@ -13315,7 +13315,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:ad59e101e687915e0a07d87e997ed8c30d3b0c5005aaa8d019f26e7024c4aebd",
+          "Fingerprint": "sha256:cff26f8e45bc68df4a768c0f2f1376f684255012a7accebfad72ea6e90c336cd",
           "Title": "node-tar: node-tar: File smuggling due to inconsistent tar archive parsing",
           "Description": "node-tar is a full-featured Tar for Node.js. Prior to 7.5.16, tar (node-tar) applies a PAX extended header's size= record (and other PAX overrides) to the next header entry of any type, including intermediary metadata headers such as a GNU long-name (L) or long-link (K) entry. Per POSIX pax, a PAX extended header (x) describes the next file entry, not the intermediary extension headers that may sit between the x header and the file it annotates. Because node-tar lets the PAX size override the byte length of an intervening L/K/x header, an attacker can desynchronize node-tar's stream cursor relative to every other mainstream tar implementation (GNU tar, libarchive/bsdtar, Python tarfile, and the now-fixed tar-rs / astral-tokio-tar). The result is a tar parser interpretation differential (CWE-436): a single crafted archive yields a different set of members under node-tar than under the reference tar tools. An attacker can use this to hide a member from one parser while it is visible to another, which defeats security tooling whose scanner and extractor disagree on archive contents (e.g. a malware/secret scanner that lists entries with one library while a downstream step extracts with another) This vulnerability is fixed in 7.5.16.",
           "Severity": "MEDIUM",
@@ -13377,7 +13377,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:b4e240b3da2f23b8c442ba36653992aa91ea2a4d3576e26b9743b4a7242d6746",
+          "Fingerprint": "sha256:ea0d5a01ef2b122a0845c909a3c5db08243471c673ff4196e7d20cf2c971084d",
           "Title": "node-tar: node-tar: Denial of Service due to incorrect PAX path handling",
           "Description": "node-tar is a tar archive manipulation library for Node.js. Prior to 7.5.18, node-tar coerces all-digit PAX path and linkpath values in src/pax.ts to JavaScript numbers, causing downstream path handling such as normalizeWindowsPath(entry.path).split('/') to throw an uncaught TypeError. This issue is fixed in version 7.5.18.",
           "Severity": "MEDIUM",
@@ -13441,7 +13441,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:8d2c9fd82eea486bdeca55c35b9fd951657a23ff4cfbe3041df1bf66857be372",
+          "Fingerprint": "sha256:629dfdf5a5eb72af4f98d8f6d8f479787a615199dce2d9672239d722115f3578",
           "Title": "node-tar: node-tar: Denial of Service via crafted archive with NUL bytes in metadata",
           "Description": "node-tar is a tar archive manipulation library for Node.js. Prior to 7.5.17, node-tar does not strip NUL bytes from PAX path and linkpath records in src/pax.ts, allowing a crafted archive with values to reach fs.lstat or fs.open and terminate the process with an uncaught exception. This issue is fixed in version 7.5.17.",
           "Severity": "MEDIUM",
@@ -13491,7 +13491,7 @@
           "FixedVersion": "13.15.22",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-12758",
@@ -13500,7 +13500,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:300a1a536eb7724bdaee90468f50b3d40aa0c32fea003298f52f790c1a5677d6",
+          "Fingerprint": "sha256:3c1fce0fe9de423b4ea80d01511e6dce5b92a0743f4d1a59d2bd38842f8a70b0",
           "Title": "Validator is Vulnerable to Incomplete Filtering of One or More Instances of Special Elements",
           "Description": "Versions of the package validator before 13.15.22 are vulnerable to Incomplete Filtering of One or More Instances of Special Elements in the isLength() function that does not take into account Unicode variation selectors (\\uFE0F, \\uFE0E) appearing in a sequence which lead to improper string length calculation. This can lead to an application using isLength for input validation accepting strings significantly longer than intended, resulting in issues like data truncation in databases, buffer overflows in other system components, or denial-of-service.",
           "Severity": "HIGH",
@@ -13548,7 +13548,7 @@
           "FixedVersion": "13.15.20",
           "Status": "fixed",
           "Layer": {
-            "DiffID": "sha256:b96af37a6fecbc1923f7b4f2b4413f4fda8d784a1ea5c299cf743f5dbb0ca79c"
+            "DiffID": "sha256:a243736753b358fe60c40db0877aa01a40584dc19181369d2cbf43fed816563e"
           },
           "SeveritySource": "ghsa",
           "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2025-56200",
@@ -13557,7 +13557,7 @@
             "Name": "GitHub Security Advisory npm",
             "URL": "https://github.com/advisories?query=type%3Areviewed+ecosystem%3Anpm"
           },
-          "Fingerprint": "sha256:7c1a894f72c40c1e8af32b59b52d75c8f3bb9c877e11f9dc04a1a67fa8ac1a93",
+          "Fingerprint": "sha256:edaf46d16a4f56d2c87df121da56cd7f45cc65f6e7c352bdb5fa7267f585ce80",
           "Title": "validator.js has a URL validation bypass vulnerability in its isURL function",
           "Description": "A URL validation bypass vulnerability exists in validator.js through version 13.15.15. The isURL() function uses '://' as a delimiter to parse protocols, while browsers use ':' as the delimiter. This parsing difference allows attackers to bypass protocol and domain validation by crafting URLs leading to XSS and Open Redirect attacks.",
           "Severity": "MEDIUM",
