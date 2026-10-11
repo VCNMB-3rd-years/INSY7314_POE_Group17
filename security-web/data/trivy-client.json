@@ -3,9 +3,9 @@
   "Trivy": {
     "Version": "0.74.0"
   },
-  "ReportID": "01a1046d-c4bf-7e51-b5b0-c775eac035c2",
-  "CreatedAt": "2026-10-04T01:01:05.087941013Z",
-  "ArtifactID": "sha256:eb41d6eee556bd1538ba53ce520cc96fdf146c0cabfe9f04739ba4982893ac42",
+  "ReportID": "01a12856-da03-7069-8f92-5450942ec12e",
+  "CreatedAt": "2026-10-11T00:22:22.979028377Z",
+  "ArtifactID": "sha256:905d11c1cb36986cb1d3e8456a958ce457a90b4ca9ba9f380116cff69fbc58bc",
   "ArtifactName": "payments-client",
   "ArtifactType": "container_image",
   "Metadata": {
@@ -14,7 +14,7 @@
       "Family": "alpine",
       "Name": "3.24.2"
     },
-    "ImageID": "sha256:b9a5fef937265050d7f86b5a4b75221bc0fe81dfcade251718158518620723a3",
+    "ImageID": "sha256:7c915c341a935067efcb7269942cfd637a472c66e9f76525e34347b59551ce0b",
     "DiffIDs": [
       "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711",
       "sha256:379f51bf5b58bf458dfe39fe97ba49d63950929004af1808361bfe01ba73d6d0",
@@ -24,8 +24,8 @@
       "sha256:41473198c04ae23f0434ac3a73f8e52549312be4638d2979bc1df9d209bdb9c0",
       "sha256:c86f6810da0b81ee848c1e6cc4bc22c0b7bd4f553f81ef3a33c41791b90631a2",
       "sha256:001b5608a9297e16ed0253a4694ca1cc98fa554c7e39c36ca652742cfc294efc",
-      "sha256:8f8e573a84040c9f6f706a04920926939ca58494b82f0c7b1e09026ce7a4bd79",
-      "sha256:90f6ddd1b4e1eafaed61058878e32c6c1e951c2f41d85857b0002b54a19bd0f6"
+      "sha256:050851f6a10ee14b7cc9ea577f73906f2330fd6fc58eb718509316891fbf4ab3",
+      "sha256:d5d00c7540aa3b67980777fadea591dd83e9c780a3ec04f1d2708164b74387f5"
     ],
     "RepoTags": [
       "payments-client:latest"
@@ -33,7 +33,7 @@
     "Reference": "payments-client:latest",
     "ImageConfig": {
       "architecture": "amd64",
-      "created": "2026-10-04T01:01:03.608277495Z",
+      "created": "2026-10-11T00:22:21.779109485Z",
       "history": [
         {
           "created": "2026-09-17T20:37:20Z",
@@ -148,23 +148,23 @@
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-04T01:00:57Z",
+          "created": "2026-10-11T00:22:18Z",
           "created_by": "COPY nginx.conf /etc/nginx/conf.d/default.conf # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-04T01:01:03Z",
+          "created": "2026-10-11T00:22:21Z",
           "created_by": "COPY /app/dist /usr/share/nginx/html # buildkit",
           "comment": "buildkit.dockerfile.v0"
         },
         {
-          "created": "2026-10-04T01:01:03Z",
+          "created": "2026-10-11T00:22:21Z",
           "created_by": "EXPOSE map[443/tcp:{} 80/tcp:{}]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
         },
         {
-          "created": "2026-10-04T01:01:03Z",
+          "created": "2026-10-11T00:22:21Z",
           "created_by": "CMD [\"nginx\" \"-g\" \"daemon off;\"]",
           "comment": "buildkit.dockerfile.v0",
           "empty_layer": true
@@ -182,8 +182,8 @@
           "sha256:41473198c04ae23f0434ac3a73f8e52549312be4638d2979bc1df9d209bdb9c0",
           "sha256:c86f6810da0b81ee848c1e6cc4bc22c0b7bd4f553f81ef3a33c41791b90631a2",
           "sha256:001b5608a9297e16ed0253a4694ca1cc98fa554c7e39c36ca652742cfc294efc",
-          "sha256:8f8e573a84040c9f6f706a04920926939ca58494b82f0c7b1e09026ce7a4bd79",
-          "sha256:90f6ddd1b4e1eafaed61058878e32c6c1e951c2f41d85857b0002b54a19bd0f6"
+          "sha256:050851f6a10ee14b7cc9ea577f73906f2330fd6fc58eb718509316891fbf4ab3",
+          "sha256:d5d00c7540aa3b67980777fadea591dd83e9c780a3ec04f1d2708164b74387f5"
         ]
       },
       "config": {
@@ -251,11 +251,11 @@
       },
       {
         "Size": 4608,
-        "DiffID": "sha256:8f8e573a84040c9f6f706a04920926939ca58494b82f0c7b1e09026ce7a4bd79"
+        "DiffID": "sha256:050851f6a10ee14b7cc9ea577f73906f2330fd6fc58eb718509316891fbf4ab3"
       },
       {
         "Size": 250880,
-        "DiffID": "sha256:90f6ddd1b4e1eafaed61058878e32c6c1e951c2f41d85857b0002b54a19bd0f6"
+        "DiffID": "sha256:d5d00c7540aa3b67980777fadea591dd83e9c780a3ec04f1d2708164b74387f5"
       }
     ]
   },
@@ -3594,7 +3594,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:1ca5d2464a5e11a7f059012c78e9181abc7a9cdbb71f6c9abbc4e2b1ec9af88a",
+          "Fingerprint": "sha256:e10be4685833ec6ad3c685d8aa598a550df1c38d3d7c7e89935df28928792816",
           "Title": "expat: Expat: XML Injection via Malformed UTF-16 Input",
           "Description": "Expat before 2.8.5 fails to validate that a high surrogate in UTF-16 input is followed by a low surrogate, allowing malformed UTF-16 sequences to be accepted. Attackers can supply UTF-16 encoded XML containing lone high surrogates that consume the following code unit, causing Expat to pass unpaired surrogates to applications built with XML_UNICODE and to silently replace input characters in other builds.",
           "Severity": "HIGH",
@@ -3603,6 +3603,7 @@
           ],
           "VendorSeverity": {
             "alma": 3,
+            "azure": 3,
             "oracle-oval": 3,
             "redhat": 3,
             "rocky": 3
@@ -3614,7 +3615,6 @@
             }
           },
           "References": [
-            "https://access.redhat.com/errata/RHSA-2026:72448",
             "https://access.redhat.com/errata/RHSA-2026:72663",
             "https://access.redhat.com/security/cve/CVE-2026-93990",
             "https://blog.hartwork.org/posts/expat-2-8-5-released/",
@@ -3625,7 +3625,7 @@
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-66046",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-93990",
             "https://errata.almalinux.org/9/ALSA-2026-72663.html",
-            "https://errata.rockylinux.org/RLSA-2026:72448",
+            "https://errata.rockylinux.org/RLSA-2026:72663",
             "https://github.com/libexpat/libexpat",
             "https://github.com/libexpat/libexpat/commit/ff6e1d7e750bbe245178f51a47a965dc8342861a",
             "https://github.com/libexpat/libexpat/pull/1282",
@@ -3659,10 +3659,19 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:2ea344dbf62e6aa93c371af3c0e6fc39b4832cfa7c0ec66633dd8e4006ee128d",
+          "Fingerprint": "sha256:13c68296edb80b24a66cd84112ed3532f9c67513643e1a981726f39c9097c371",
           "Title": "[Use-after-free of zlib input in `png_read_end` after incomplete zTXt, iTXt or iCCP decompression]",
-          "Description": "Use-after-free of zlib input in `png_read_end` after incomplete zTXt, iTXt or iCCP decompression",
-          "Severity": "UNKNOWN"
+          "Description": "[Use-after-free of zlib input in `png_read_end` after incomplete zTXt, iTXt or iCCP decompression]",
+          "Severity": "MEDIUM",
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "References": [
+            "https://github.com/pnggroup/libpng/issues/855",
+            "https://github.com/pnggroup/libpng/security/advisories/GHSA-qvg3-h654-xq3j",
+            "https://ubuntu.com/security/notices/USN-8899-1",
+            "https://www.cve.org/CVERecord?id=CVE-2026-46675"
+          ]
         },
         {
           "VulnerabilityID": "CVE-2026-58055",
@@ -3684,7 +3693,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:308bec5fe98b43cff32383c8dcc5f908db50bf205c24f7c1ad040d4ecb741845",
+          "Fingerprint": "sha256:aabb3590dca09a7615fbf8e9bf95b7a3273397740e069c65440254fa115e569a",
           "Title": "nghttp2: nghttp2: HTTP Request/Response Smuggling and Response-Queue Poisoning via ambiguous HTTP/1.1 Upgrade requests",
           "Description": "nghttp2's nghttpx proxy through 1.69.0 forwards an HTTP/1.1 Upgrade request that also carries a Content-Length header and body onto reusable keep-alive backend connections, re-adding the Upgrade and Connection headers while passing Content-Length verbatim. A backend that resolves the resulting ambiguous message in the attacker's favor enables HTTP request/response smuggling and cross-client response-queue poisoning.",
           "Severity": "MEDIUM",
@@ -3714,14 +3723,13 @@
           },
           "References": [
             "https://access.redhat.com/errata/RHSA-2026:54662",
-            "https://access.redhat.com/errata/RHSA-2026:55804",
             "https://access.redhat.com/security/cve/CVE-2026-58055",
             "https://bugzilla.redhat.com/2493954",
             "https://bugzilla.redhat.com/show_bug.cgi?id=2493954",
             "https://creativecommons.org/licenses/by/4.0/",
             "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-58055",
             "https://errata.almalinux.org/9/ALSA-2026-54662.html",
-            "https://errata.rockylinux.org/RLSA-2026:55804",
+            "https://errata.rockylinux.org/RLSA-2026:54662",
             "https://github.com/advisories/GHSA-xrr7-82jr-v58x",
             "https://github.com/bikini/exploitarium/tree/main/nghttp2-nghttpx-upgrade-queue-poison-poc",
             "https://github.com/nghttp2/nghttp2/commit/ab28105c4a0197da24f8bfc414bc116055249e1e",
@@ -3755,7 +3763,7 @@
             "Name": "Alpine Secdb",
             "URL": "https://secdb.alpinelinux.org/"
           },
-          "Fingerprint": "sha256:3a7704b28c3332ea0f003edf38e5419b830156c705971540591af7e2594fbd39",
+          "Fingerprint": "sha256:5a62394c6f3631e57e78e724b2f0bceed9bcc6c0f39309ed36772b7a247b8d4a",
           "Title": "pcre2: pcre2: Out-of-bounds write via crafted regular expression",
           "Description": "PCRE2 before 10.49, when there is an attacker-controlled regular expression and certain JIT API usage, allows an out-of-bounds write with arbitrary data.",
           "Severity": "HIGH",
@@ -3774,11 +3782,140 @@
           "References": [
             "https://access.redhat.com/security/cve/CVE-2026-103111",
             "https://github.com/PCRE2Project/pcre2/security/advisories/GHSA-r9hj-j2rw-4q3m",
+            "https://lists.debian.org/debian-lts-announce/2026/10/msg00008.html",
             "https://nvd.nist.gov/vuln/detail/CVE-2026-103111",
             "https://www.cve.org/CVERecord?id=CVE-2026-103111"
           ],
           "PublishedDate": "2026-09-30T05:16:45.863Z",
-          "LastModifiedDate": "2026-09-30T20:17:29.847Z"
+          "LastModifiedDate": "2026-10-04T00:16:35.563Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-4775",
+          "PkgID": "tiff@4.7.1-r0",
+          "PkgName": "tiff",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/tiff@4.7.1-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "fc4006af0e688094"
+          },
+          "InstalledVersion": "4.7.1-r0",
+          "FixedVersion": "4.7.2-r0",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:001b5608a9297e16ed0253a4694ca1cc98fa554c7e39c36ca652742cfc294efc"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-4775",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:16968886fa48cfae4fb8c7ebac3a19cbac048dc51e2f16c80269160510c5658e",
+          "Title": "libtiff: libtiff: Arbitrary code execution or denial of service via signed integer overflow in TIFF file processing",
+          "Description": "A flaw was found in the libtiff library. A remote attacker could exploit a signed integer overflow vulnerability in the putcontig8bitYCbCr44tile function by providing a specially crafted TIFF file. This flaw can lead to an out-of-bounds heap write due to incorrect memory pointer calculations, potentially causing a denial of service (application crash) or arbitrary code execution.",
+          "Severity": "HIGH",
+          "CweIDs": [
+            "CWE-190"
+          ],
+          "VendorSeverity": {
+            "alma": 3,
+            "amazon": 3,
+            "azure": 3,
+            "oracle-oval": 3,
+            "photon": 3,
+            "redhat": 3,
+            "rocky": 3
+          },
+          "CVSS": {
+            "redhat": {
+              "V3Vector": "CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H",
+              "V3Score": 7.8
+            }
+          },
+          "References": [
+            "https://access.redhat.com/errata/RHSA-2026:12265",
+            "https://access.redhat.com/errata/RHSA-2026:12271",
+            "https://access.redhat.com/errata/RHSA-2026:14929",
+            "https://access.redhat.com/errata/RHSA-2026:16055",
+            "https://access.redhat.com/errata/RHSA-2026:19150",
+            "https://access.redhat.com/errata/RHSA-2026:19363",
+            "https://access.redhat.com/errata/RHSA-2026:19585",
+            "https://access.redhat.com/errata/RHSA-2026:19586",
+            "https://access.redhat.com/errata/RHSA-2026:19604",
+            "https://access.redhat.com/errata/RHSA-2026:19608",
+            "https://access.redhat.com/errata/RHSA-2026:19609",
+            "https://access.redhat.com/errata/RHSA-2026:19657",
+            "https://access.redhat.com/errata/RHSA-2026:19659",
+            "https://access.redhat.com/errata/RHSA-2026:19702",
+            "https://access.redhat.com/errata/RHSA-2026:20583",
+            "https://access.redhat.com/errata/RHSA-2026:20585",
+            "https://access.redhat.com/errata/RHSA-2026:20591",
+            "https://access.redhat.com/errata/RHSA-2026:20592",
+            "https://access.redhat.com/errata/RHSA-2026:24992",
+            "https://access.redhat.com/errata/RHSA-2026:25096",
+            "https://access.redhat.com/errata/RHSA-2026:25910",
+            "https://access.redhat.com/errata/RHSA-2026:30078",
+            "https://access.redhat.com/errata/RHSA-2026:30087",
+            "https://access.redhat.com/errata/RHSA-2026:30088",
+            "https://access.redhat.com/errata/RHSA-2026:30089",
+            "https://access.redhat.com/errata/RHSA-2026:30349",
+            "https://access.redhat.com/errata/RHSA-2026:33388",
+            "https://access.redhat.com/errata/RHSA-2026:74674",
+            "https://access.redhat.com/security/cve/CVE-2026-4775",
+            "https://bugzilla.redhat.com/2450768",
+            "https://bugzilla.redhat.com/show_bug.cgi?id=2450768",
+            "https://creativecommons.org/licenses/by/4.0/",
+            "https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2026-4775",
+            "https://errata.almalinux.org/9/ALSA-2026-19363.html",
+            "https://errata.rockylinux.org/RLSA-2026:19363",
+            "https://linux.oracle.com/cve/CVE-2026-4775.html",
+            "https://linux.oracle.com/errata/ELSA-2026-24992.html",
+            "https://lists.debian.org/debian-lts-announce/2026/04/msg00016.html",
+            "https://nvd.nist.gov/vuln/detail/CVE-2026-4775",
+            "https://security.access.redhat.com/data/csaf/v2/vex/2026/cve-2026-4775.json",
+            "https://www.cve.org/CVERecord?id=CVE-2026-4775"
+          ],
+          "PublishedDate": "2026-03-24T15:16:39.693Z",
+          "LastModifiedDate": "2026-10-02T02:17:02.313Z"
+        },
+        {
+          "VulnerabilityID": "CVE-2026-85091",
+          "PkgID": "zlib@1.3.2-r0",
+          "PkgName": "zlib",
+          "PkgIdentifier": {
+            "PURL": "pkg:apk/alpine/zlib@1.3.2-r0?arch=x86_64\u0026distro=3.24.2",
+            "UID": "e37054a2982d6c16"
+          },
+          "InstalledVersion": "1.3.2-r0",
+          "FixedVersion": "1.3.2-r1",
+          "Status": "fixed",
+          "Layer": {
+            "DiffID": "sha256:74d97c428c51a828f9051a7a40a53ff1fc99e54fc30323ce36760701b0b7f711"
+          },
+          "PrimaryURL": "https://avd.aquasec.com/nvd/cve-2026-85091",
+          "DataSource": {
+            "ID": "alpine",
+            "Name": "Alpine Secdb",
+            "URL": "https://secdb.alpinelinux.org/"
+          },
+          "Fingerprint": "sha256:53af30797e4098f595aeb59600707976703ac8b5f2ef9c39e5f80c46069b3139",
+          "Title": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vul ...",
+          "Description": "zlib versions 1.3.1.2 through 1.3.2 contain a heap buffer overflow vulnerability in the gz_vacate() function when processing non-blocking gzwrite() operations with stale external buffer pointers. Attackers can trigger the overflow by calling gzprintf() or gzvprintf() after a write stall, causing an unchecked memmove() to write beyond the internal input buffer boundary.",
+          "Severity": "MEDIUM",
+          "CweIDs": [
+            "CWE-787"
+          ],
+          "VendorSeverity": {
+            "ubuntu": 2
+          },
+          "References": [
+            "https://gist.github.com/thesmartshadow/e0b9481792afb7c31e86fee1ff084490",
+            "https://github.com/madler/zlib",
+            "https://github.com/madler/zlib/blob/v1.3.2/gzwrite.c#L393",
+            "https://www.cve.org/CVERecord?id=CVE-2026-85091",
+            "https://www.vulncheck.com/advisories/zlib-1.3.1.2-through-1.3.2-heap-buffer-overflow-via-gz-vacate"
+          ],
+          "PublishedDate": "2026-09-03T13:06:20.573Z",
+          "LastModifiedDate": "2026-09-09T20:41:07.123Z"
         }
       ]
     }
